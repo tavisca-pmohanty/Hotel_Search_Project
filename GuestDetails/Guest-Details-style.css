@@ -1,0 +1,120 @@
+
+#header
+{
+	margin: 0px;
+	flex-grow: 1;
+	background-color: yellow;
+	height: 10px;
+}
+
+#logo img
+{
+	margin-left: 55px;
+	margin-top: 30px;
+	height: 50px;
+	margin-bottom: 15px;
+
+}
+#logo
+{
+
+	border-bottom: 1px solid black;
+}
+#wrapper
+{
+
+	margin-left: 55px;
+}
+#wrapper h1
+{
+	
+	color: #000066;
+	margin-bottom: 5px;
+}
+
+#wrapper h3
+{
+	
+	color: green;
+	margin-bottom: 5px;
+}
+
+#wrapper h4
+{
+	display: flex;
+	color:#1a8cff;
+}
+#wrapper p
+{
+	font-weight: bold;
+	font-size: 22px;
+}
+#parent-container
+{
+	display: flex;
+	flex-direction: row;
+}
+.container
+{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2px;
+	width: 10%;
+	flex-grow: 1;
+	
+}
+
+.container label
+{
+	font-size: 18px;
+}
+
+.container input 
+{
+	height: 40px;
+	width: 90%;
+	box-shadow: 5px 5px 5px #888888;
+	font-size: 15px;
+}
+
+#mobile 
+{
+	margin-bottom: 220px;
+}
+
+#card-number
+{
+	margin-bottom: 120px;
+}
+
+button
+{
+	margin-top: 55px;
+	height: 50px;
+	width: 270px;
+	background-color: yellow;
+	border: .5px solid black;
+	box-shadow: 5px 5px 5px #888888;
+	margin-bottom: 50px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#expiration
+{
+
+	margin-top: 5px;
+	height: 40px;
+	box-shadow: 5px 5px 5px #888888;
+	font-size: 15px;
+	width: 150px;
+	margin-bottom: 5px;
+}
+#hotel-details
+{
+	height: 650px;
+	border: 2px solid black;
+	flex-grow: 1;
+	margin-right: 55px;
+	flex-wrap: wrap;
+}
