@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoComplete", "AutoComplet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceProvider", "ServiceProvider\ServiceProvider.csproj", "{206EA038-C30E-4BF1-9BCD-D8E94E16A465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelSearchEngine", "HotelSearchEngine\HotelSearchEngine.csproj", "{E568D2A7-221B-4BEC-BBFF-A7289E301197}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{206EA038-C30E-4BF1-9BCD-D8E94E16A465}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{206EA038-C30E-4BF1-9BCD-D8E94E16A465}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{206EA038-C30E-4BF1-9BCD-D8E94E16A465}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E568D2A7-221B-4BEC-BBFF-A7289E301197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E568D2A7-221B-4BEC-BBFF-A7289E301197}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E568D2A7-221B-4BEC-BBFF-A7289E301197}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E568D2A7-221B-4BEC-BBFF-A7289E301197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
