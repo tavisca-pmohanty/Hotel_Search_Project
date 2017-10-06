@@ -35,20 +35,12 @@ $("#rooms").on("change",function(){
   						$("#rooms-info").append(appendRoomInfo);
   						}
 	 });
+    var selectedHotel= new Array(13);
 		$("#Location").on("input",function(){
-			// var searchTerm="";
-   //  	if($("#Location").val()=="")
-   //  	{
-   //  		searchTerm="A";
-   //  	}
-   //  	else
-   //  	{
-   //  		searchTerm=$("#Location").val();
-   //  	}
          try {
              $.ajax({
                  type: "GET",
-                 url: "http://localhost:51052//index/AutoComplete/search/"+$("#Location").val(),
+                 url: "http://localhost:51052//index/AutoComplete/search/"+ $("#Location").val(),
                  cache: false,
                  success: getSuccess,
                  
@@ -67,9 +59,25 @@ $("#rooms").on("change",function(){
          	
       source:str,
       minLength: 2,
-      // select: function( event, ui ) {
-      //   log( "Selected: " + ui.item.value + " aka " + ui.item.id );
-      // }
+      select: function( event, ui ) {
+        var hotel=ui.item.value.split(",");
+         for(var i=0;i<obj.length;i++)
+         {
+          if(obj[i].HotelName.toString()==hotel[0].toString())
+          {
+           
+                        selectedHotel[0]=obj[i].ID.toString();
+                        selectedHotel[1]=obj[i].HotelName.toString();
+                        selectedHotel[2]=obj[i].CityName.toString();
+                        selectedHotel[3]=obj[i].StateCode.toString();
+                        selectedHotel[4]=obj[i].CountryCode.toString();
+                        selectedHotel[5]=obj[i].Latitude.toString();
+                        selectedHotel[6]=obj[i].Longitude.toString();
+                        selectedHotel[7]=obj[i].SearchType.toString();
+          
+          }
+         }
+       }
     } );
      };
          
