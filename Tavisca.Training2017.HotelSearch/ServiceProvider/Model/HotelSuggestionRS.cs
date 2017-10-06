@@ -23,7 +23,9 @@ namespace ServiceProvider
 
         public string SearchType { get; }
 
-        public HotelSuggestionRS(string id, string hotelName, string cityName, string stateCode, string countryCode, string latitude, string longitude, string searchType)
+        public string CulteredText { get; }
+
+        public HotelSuggestionRS(string id, string hotelName, string cityName, string stateCode, string countryCode, string latitude, string longitude, string searchType,string culteredText)
         {
             ID = id;
             HotelName = hotelName;
@@ -33,6 +35,7 @@ namespace ServiceProvider
             Latitude = latitude;
             Longitude = longitude;
             SearchType = searchType;
+            CulteredText = culteredText;
         }
     }
 }

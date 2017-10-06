@@ -2,14 +2,14 @@ $(document).ready(function(){
 $("#rooms").on("change",function(){
 	 				$("#rooms-info").empty();
 	 				 val=$("#rooms option:selected").val();
-	 				 	for(i=1;i<=val;i++)
+	 				 	for(i=0;i<val;i++)
 	 				{
 	 				 var appendRooms="<div id=\"room-info-flex\">\
 	 				 <p id=\"adultsText\" class=\"text-info\">Adults(18+)</p>\
 	 				 <p id=\"childenText\" class=\"text-info\">Children(0-17)</p>\
 	 				 </div>";
 	 				 var appendRoomInfo="<div id=\"room-input-box\">\
-                    <select id=\"adults\">\
+                      <select id=\"adults" +i+"\">\
                         <option value=\"1\">1</option>\
                         <option value=\"2\">2</option>\
                         <option value=\"3\">3</option>\
@@ -35,7 +35,7 @@ $("#rooms").on("change",function(){
   						$("#rooms-info").append(appendRoomInfo);
   						}
 	 });
-    var selectedHotel= new Array(13);
+    var selectedHotel;
 		$("#Location").on("input",function(){
          try {
              $.ajax({
@@ -43,37 +43,32 @@ $("#rooms").on("change",function(){
                  url: "http://localhost:51052//index/AutoComplete/search/"+ $("#Location").val(),
                  cache: false,
                  success: getSuccess,
-                 
+                 crossDomain:true,
              });
          } catch (e) {
              alert(e);
          }
          function getSuccess(data) {
          	var obj=JSON.parse(data);
-         	var str= new Array(obj.length);
+         	var hotelList= new Array();
          	for(var i=0;i<obj.length;i++)
          	{
-         		str[i]=obj[i].HotelName+","+obj[i].CityName+","+obj[i].StateCode+","+obj[i].CountryCode;
+         		hotelList.push({
+              value:obj[i].CulteredText,
+              data:obj[i],
+            });
          	}
+
          	 $( "#Location" ).autocomplete({
          	
-      source:str,
+      source:hotelList,
       minLength: 2,
       select: function( event, ui ) {
-        var hotel=ui.item.value.split(",");
-         for(var i=0;i<obj.length;i++)
+         for(var i=0;i<hotelList.length;i++)
          {
-          if(obj[i].HotelName.toString()==hotel[0].toString())
+          if(ui.item.value.toString()==hotelList[i].data.CulteredText.toString())
           {
-           
-                        selectedHotel[0]=obj[i].ID.toString();
-                        selectedHotel[1]=obj[i].HotelName.toString();
-                        selectedHotel[2]=obj[i].CityName.toString();
-                        selectedHotel[3]=obj[i].StateCode.toString();
-                        selectedHotel[4]=obj[i].CountryCode.toString();
-                        selectedHotel[5]=obj[i].Latitude.toString();
-                        selectedHotel[6]=obj[i].Longitude.toString();
-                        selectedHotel[7]=obj[i].SearchType.toString();
+            selectedHotel=hotelList[i].data;
           
           }
          }
@@ -82,4 +77,29 @@ $("#rooms").on("change",function(){
      };
          
  });
+
+    $("#submit").on("click",function(){
+        inDate=$("#indate").val().toString();
+        outDate=$("#outdate").val().toString();
+        numOfRooms=$("#rooms option:selected").val().toString();
+        var adults=0;
+        var children=0;
+        for(var i=0;i<numOfRooms;i++)
+        {
+          var adultId="#adults"+i+" "+"option:selected";
+          var childrenId="#children"+i+" "+"option:selected";
+          adults=adults+parseInt($(adultId).val());
+          children=children+parseInt($(childrenId).val());
+        }
+        numOfAdults=adults.toString();
+        numOfChildren=children.toString();
+        var requestData={
+                        "SelectedHotel":selectedHotel,
+                        "InDate":inDate,
+                        "OutDate":outDate,
+                        "Rooms":numOfRooms,
+                        "Adults":adults,
+                        "Children":children,
+        }
+    });
 	});

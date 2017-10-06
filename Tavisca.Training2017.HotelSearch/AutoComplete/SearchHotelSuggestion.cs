@@ -39,7 +39,7 @@ namespace AutoComplete
             for(int i=0;i<splitString.Length;i++)
             {
                 string str = splitString[i];
-                string []s = Regex.Split(str, ",\"CulturedText\":");
+                string []s = Regex.Split(str, ",\"SubItemList\":");
                 hotelList[i] = s[0];
             }
             return hotelList;
