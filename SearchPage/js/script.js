@@ -1,14 +1,5 @@
 $(document).ready(function(){ 
 $("#rooms").on("change",function(){
-	 				$("#rooms-info").empty();
-	 				 val=$("#rooms option:selected").val();
-	 				 	for(i=0;i<val;i++)
-	 				{
-	 				 var appendRooms="<div id=\"room-info-flex\">\
-	 				 <p id=\"adultsText\" class=\"text-info\">Adults(18+)</p>\
-	 				 <p id=\"childenText\" class=\"text-info\">Children(0-17)</p>\
-	 				 </div>";
-	 				 var appendRoomInfo="<div id=\"room-input-box\">";
                     $("#rooms-info").empty();
                      val=$("#rooms option:selected").val();
                         for(i=0;i<val;i++)
@@ -37,17 +28,6 @@ $("#rooms").on("change",function(){
                         <option value=\"6\">6</option>\
                     </select>\
                     </div>";
-	 			
-	 					 var individualRoom = "<div id=roomNumber"+(i)+"><p>Room " + (i) + "</p></div>";
-	 					$("#rooms-info").append(individualRoom);
-	 					$("#rooms-info").append(appendRooms);
-  						$("#rooms-info").append(appendRoomInfo);
-  						}
-                    }
-	 });
-    var selectedHotel;
-		$("#Location").on("input",function(){
-
                 
                          var individualRoom = "<div id=roomNumber"+(i)+"><p>Room " + (i) + "</p></div>";
                         $("#rooms-info").append(individualRoom);
@@ -69,18 +49,6 @@ $("#rooms").on("change",function(){
              alert(e);
          }
          function getSuccess(data) {
-         	var obj=JSON.parse(data);
-         	var hotelList= new Array();
-         	for(var i=0;i<obj.length;i++)
-         	{
-         		hotelList.push({
-              value:obj[i].CulteredText,
-              data:obj[i],
-            });
-         	}
-
-         	 $( "#Location" ).autocomplete({
-         	
             var obj=JSON.parse(data);
             var hotelList= new Array();
             for(var i=0;i<obj.length;i++)
@@ -101,6 +69,7 @@ $("#rooms").on("change",function(){
           if(ui.item.value.toString()==hotelList[i].data.CulteredText.toString())
           {
             selectedHotel=hotelList[i].data;
+          
           }
          }
        }
