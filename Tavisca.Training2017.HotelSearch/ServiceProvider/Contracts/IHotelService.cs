@@ -8,6 +8,6 @@ namespace ServiceProvider
 {
     public interface IHotelService
     {
-        Task<List<HotelSuggestionRS>> GetHotelSuggestion(string searchTerm);
+       
     }
 }

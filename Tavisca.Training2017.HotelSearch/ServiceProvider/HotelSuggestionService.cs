@@ -1,11 +1,12 @@
 ﻿using AutoComplete;
+using ServiceProvider.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ServiceProvider
 {
-    public class HotelSuggestionService:IHotelService
+    public class HotelSuggestionService:IHotelService,IHotelSuggestion
     {
         List<HotelSuggestionRS> hotelList;
         public HotelSuggestionService()
