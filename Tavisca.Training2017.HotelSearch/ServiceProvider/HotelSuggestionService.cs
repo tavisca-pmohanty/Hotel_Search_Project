@@ -3,22 +3,25 @@ using ServiceProvider.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Json;
+using Newtonsoft.Json;
 
 namespace ServiceProvider
 {
-    public class HotelSuggestionService:IHotelService,IHotelSuggestion
+    public class HotelSuggestionService:IHotelService
     {
         List<HotelSuggestionRS> hotelList;
         public HotelSuggestionService()
         {
             hotelList = new List<HotelSuggestionRS>();
         }
-        public async Task<List<HotelSuggestionRS>> GetHotelSuggestion(string searchTerm)
+        public async Task<string> GetHotelSuggestion(string searchTerm)
         {
             SearchHotelSuggestion search = new SearchHotelSuggestion();
             var suggestionResponse= await search.GetSearchQueryData(searchTerm);
             ParseHoteLData(suggestionResponse);
-            return hotelList;
+            var json = JsonConvert.SerializeObject(hotelList);
+            return json;
         }
         public void ParseHoteLData(string []hotelData)
         {

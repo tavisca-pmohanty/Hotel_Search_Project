@@ -24,8 +24,8 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
             ServiceRepository repository = new ServiceRepository();
             var service = repository.GetService("AutoComplete");
             var hotelList = await service.GetHotelSuggestion(searchTerm);
-            var json = JsonConvert.SerializeObject(hotelList);
-            await HttpContext.Response.WriteAsync(json);
+            //var json = JsonConvert.SerializeObject(hotelList);
+            await HttpContext.Response.WriteAsync(hotelList);
         }
     }
 }
