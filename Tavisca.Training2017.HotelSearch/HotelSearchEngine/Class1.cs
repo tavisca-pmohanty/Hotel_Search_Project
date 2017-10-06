@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HotelEngine
+namespace HotelSearchEngine
 {
     public class Class1
     {
