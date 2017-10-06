@@ -50,14 +50,15 @@ $("#rooms").on("change",function(){
          }
          function getSuccess(data) {
          	var obj=JSON.parse(data);
-         	var str= new Array(obj.length);
+         	var hotelList= new Array(obj.length);
          	for(var i=0;i<obj.length;i++)
          	{
-         		str[i]=obj[i].HotelName+","+obj[i].CityName+","+obj[i].StateCode+","+obj[i].CountryCode;
+         		hotelList[i]=obj[i].HotelName+","+obj[i].CityName+","+obj[i].StateCode+","+obj[i].CountryCode;
          	}
+
          	 $( "#Location" ).autocomplete({
          	
-      source:str,
+      source:hotelList,
       minLength: 2,
       select: function( event, ui ) {
         var hotel=ui.item.value.split(",");
