@@ -69,7 +69,7 @@ $("#rooms").on("change",function(){
           if(ui.item.value.toString()==hotelList[i].data.CulteredText.toString())
           {
             selectedHotel=hotelList[i].data;
-          
+                      
           }
          }
        }
