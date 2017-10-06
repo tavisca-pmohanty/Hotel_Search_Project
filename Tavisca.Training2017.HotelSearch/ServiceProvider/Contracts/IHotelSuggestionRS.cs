@@ -14,5 +14,6 @@ namespace ServiceProvider.Contracts
         string Latitude { get; }
         string Longitude { get; }
         string SearchType { get; }
+        string CulteredText { get; }
     }
 }

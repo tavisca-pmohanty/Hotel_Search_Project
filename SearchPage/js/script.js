@@ -53,7 +53,7 @@ $("#rooms").on("change",function(){
          	var hotelList= new Array(obj.length);
          	for(var i=0;i<obj.length;i++)
          	{
-         		hotelList[i]=obj[i].HotelName+","+obj[i].CityName+","+obj[i].StateCode+","+obj[i].CountryCode;
+         		hotelList[i]=obj[i].CulteredText.toString();
          	}
 
          	 $( "#Location" ).autocomplete({
