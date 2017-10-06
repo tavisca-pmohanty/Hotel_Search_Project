@@ -9,10 +9,9 @@
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/jquery.css" rel="stylesheet">
+       <!--  <link href="css/jquery.css" rel="stylesheet"> -->
           <link  href="css/style.css"  rel="stylesheet">
-          <link  href="css/autocompleteJquery.css"  rel="stylesheet">          
-
+         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.css">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -55,8 +54,8 @@
                 <div class="row">
 
                     <div class="col-lg-6-col-md-6">
-<fieldset>
-                        <div class="form-group">
+<!-- <fieldset>
+ -->                        <div class="form-group">
       <label for="Location">Location:</label>
       <input type="text" class="form-control" id="Location">
     </div>
@@ -66,7 +65,7 @@
     </div>
                         <div class="form-group">
       <label for="checkOutDate">Check-Out:</label>
-      <input type="date" class="form-control" id="Outdate">
+      <input type="date" class="form-control" id="outdate">
     </div>
 
                         <div class="form-group">
@@ -85,7 +84,7 @@
     <form class="form-inline">
   <div id="rooms-info" class="form-group">
     <label for="Adult">Adult</label>
-     <select class="Adult" id="adultNumber">
+     <select class="Adult" id="adults0">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -97,7 +96,7 @@
           </select>
        
     <label for="Child">Children</label>
-                       <select class="child" id="childNumber">
+                       <select class="child" id="children0">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -112,12 +111,11 @@
         <footer>
         
         
-       <button type="button" class="btn btn-primary">SEARCH</button>
+       <button id="submit" type="button" class="btn btn-primary">Search</button>
         
         
         
         </footer>
-    </fieldset>
     </form>
       
       
