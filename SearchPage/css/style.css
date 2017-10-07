@@ -2,12 +2,36 @@
     padding: 0;
     margin: 0;
 }
+
+#logo img
+{
+     margin-left: -34px;
+    margin-top: 13px;
+    height: 50px;
+    margin-bottom: 13px;
+
+}
+#Location
+{
+    width: 68.6%;
+    margin-bottom: 45px;
+    margin-left: 25px;
+}
+.travel-date
+{
+    margin-bottom: 35px;
+    margin-right: 30px;
+}
 body
 {
     overflow-x: hidden;
     font-family: 'open Sans',sans-serif;
      text-rendering: optimizeLegibility  !important;
     -webkit-font-smoothing:antialiased !important;
+}
+#mynavbar
+{
+    margin-bottom: 30%;
 }
 li
 {
@@ -17,11 +41,18 @@ li
 input:hover{
     background: #cce6ff;
 }
+.center-block
+{
+    display:flex;
+    align-items: center !important;
+    justify-content: center !important;
+}
 a
 {
     text-decoration: none;
     transition: all 500ms ease-in-out;
 }
+
 a:hover,
 a:active{
     text text-decoration: none;
@@ -47,13 +78,22 @@ p{
     color:#3c3c3c !important;
     border: 1px solid #fff !important;
 }
-/*Navigation*/
+#rooms-info
+{
+        margin-left: 45px;
+}
+
 .navbar
 {
     background-color: #222222 !important;
     text-transform: uppercase;
     font-family:  'PT Sans Narrow',Arial,sans-serif;
     font-weight: 700;
+}
+.row
+{
+    margin-top: 30px;
+    margin-left: 10px;
 }
 .navbar a
 {
@@ -85,6 +125,20 @@ p{
     background-size: cover;
     color: #fff;
 }
+#indate, #outdate
+{
+    color: black;
+}
+.container
+{
+    background:rgba(0,0,0,0.6);
+    background-size:  80px 60px;
+    margin-right: 90px;
+    margin-top: inherit;
+    padding-left: 0;
+       margin-left: 90px; 
+}
+}
 .header img
 {
     height: 350px;
@@ -100,15 +154,18 @@ p{
 }
 .header h1,
 .header p,
+
+{
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
 .header button
 {
-    margin-top: 20px;
+    margin-top: 56px;
+    margin-left: 5px;
+    margin-bottom: 35px;
 }
-/*.header .btn
-{
-    border-radius: 0;
-    margin: 40px 20px;
-}*/
+
 @media(max-width:768px)
 {
     .header
@@ -146,15 +203,21 @@ p{
         justify-content: flex-start;
         flex-direction: row;
     }
-fieldset
-    {
-        margin-left: 20px;
-        opacity: 0.6;
-    }
-    fieldset:hover
-    {
-        opacity: 1.0;
-        filter: alpha(opacity=100);
-    }
+
     
+
+    
+    
+}
+.form-inline
+{
+    margin-left: 13px;
+}
+button, select {
+    text-transform: none;
+    color: black;
+
+}
+.text-info {
+    color:white;
 }

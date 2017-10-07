@@ -1,4 +1,14 @@
 $(document).ready(function(){ 
+    $("#indate").datepicker({
+        changeMonth: true,
+                    changeYear: true,
+                    minDate: '0m+0d',
+        dateFormat:'yy-mm-dd'});
+     $("#outdate").datepicker({
+        changeMonth: true,
+                    changeYear: true,
+                    minDate: '0m+1d',
+        dateFormat:'yy-mm-dd'});
 $("#rooms").on("change",function(){
                     $("#rooms-info").empty();
                      val=$("#rooms option:selected").val();
@@ -29,7 +39,7 @@ $("#rooms").on("change",function(){
                     </select>\
                     </div>";
                 
-                         var individualRoom = "<div id=roomNumber"+(i)+"><p>Room " + (i) + "</p></div>";
+                         var individualRoom = "<div id=roomNumber"+(i)+"><p>Room " + (i+1) + "</p></div>";
                         $("#rooms-info").append(individualRoom);
                         $("#rooms-info").append(appendRooms);
                         $("#rooms-info").append(appendRoomInfo);
@@ -100,6 +110,31 @@ $("#rooms").on("change",function(){
                         "Rooms":numOfRooms,
                         "Adults":adults,
                         "Children":children,
-        }
+        };
+        var data=JSON.stringify(requestData);
+        try {
+             $.ajax({
+                 headers: { 
+        'Accept': 'application/json',
+        'Content-Type': 'application/json' 
+    },
+                 type: "POST",
+                 url: "http://localhost:51052/index/HotelListing/search/GetHotels",
+                 cache: false,
+                 data:data,
+                // contentType: 'json/application',
+                dataType: 'json',
+                
+                 success: getSuccess,
+                 crossDomain:true,
+             });
+         } catch (e) {
+             alert(e);
+         }
+         function getSuccess(data) {
+            var obj=JSON.parse(data);
+            sessionStorage.setItem('HotelListing',JSON.stringify(obj));
+             window.location="new.html";
+            }
     });
-    });
+});

@@ -1,10 +1,11 @@
 ﻿using AutoComplete;
-using ServiceProvider.Contracts;
+using ServiceProvider;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Json;
 using Newtonsoft.Json;
+using HotelSearchRequest;
 
 namespace ServiceProvider
 {
@@ -15,19 +16,20 @@ namespace ServiceProvider
         {
             hotelList = new List<HotelSuggestionRS>();
         }
-        public async Task<string> GetHotelSuggestion(string searchTerm)
+        public async Task<string> GetData(string searchTerm)
         {
             SearchHotelSuggestion search = new SearchHotelSuggestion();
-            var suggestionResponse= await search.GetSearchQueryData(searchTerm);
+            string suggestionResponse = await search.GetSearchQueryData(searchTerm);
             ParseHoteLData(suggestionResponse);
             var json = JsonConvert.SerializeObject(hotelList);
             return json;
         }
-        public void ParseHoteLData(string []hotelData)
+        public void ParseHoteLData(string hotelData)
         {
-            for(int i=0;i<hotelData.Length;i++)
+            string[] hotels = hotelData.Split(new string[]{ "\"SubItemList\":null}," },StringSplitOptions.None); 
+            for(int i=1;i<hotels.Length;i++)
             { 
-                string []id = hotelData[i].Split(new string[] { "\"Id\":","," },3, StringSplitOptions.None);
+                string []id = hotels[i].Split(new string[] { "\"Id\":","," },3, StringSplitOptions.None);
                 string []hotelName= id[2].Split(new string[] { "\"Name\":", "," },3,StringSplitOptions.None);
                 string[] code = hotelName[2].Split(new string[] { "\"Code\":", "," }, 3, StringSplitOptions.None);
                 string []cityName= code[2].Split(new string[] { "\"CityName\":", "," },3, StringSplitOptions.None);

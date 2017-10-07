@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HotelSearchEngine\HotelSearchEngine.csproj" />
     <ProjectReference Include="..\ServiceProvider\ServiceProvider.csproj" />
   </ItemGroup>
 
