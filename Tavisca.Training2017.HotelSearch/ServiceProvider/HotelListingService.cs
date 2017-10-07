@@ -7,24 +7,36 @@ using System.Threading.Tasks;
 using HotelSearchEngine;
 using HotelSearchRequest;
 
+
 namespace ServiceProvider
 {
     class HotelListingService:IHotelService
     {
-        List<HotelItinerary> itinerary;
+        List<HotelItinerary> itineraries;
         public HotelListingService()
         {
-            itinerary = new List<HotelItinerary>();
+            itineraries = new List<HotelItinerary>();
         }
 
         public async Task<string> GetData(string request)
         {
             HotelSearch search = new HotelSearch();
             var hotelRequest = JsonConvert.DeserializeObject<HotelSearchRq>(request);
-            itinerary = await search.GetHotelListing(hotelRequest);
+            itineraries = await search.GetHotelListing(hotelRequest);
+            List<Hotel> parsedlist = new List<Hotel>();
             //Add a parser over here to your own custom object
-            var hotelItenaries = JsonConvert.SerializeObject(itinerary);
-            return hotelItenaries;
+            foreach(var hotelItinerary in itineraries)
+            {
+                Hotel hotel = new Hotel();
+                hotel.Name = hotelItinerary.HotelProperty.Name;
+                hotel.Address = hotelItinerary.HotelProperty.Address.CompleteAddress;
+                hotel.HotelId = hotelItinerary.HotelProperty.Id;
+                hotel.Price = hotelItinerary.Fare.BaseFare.Amount;
+                parsedlist.Add(hotel);
+            }
+
+            return JsonConvert.SerializeObject(parsedlist);
+           
         }
     }
 }
