@@ -3,42 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using HotelSearchEngine;
+using Newtonsoft.Json;
+using ServiceProvider;
+using Microsoft.AspNetCore.Http;
+using HotelSearchRequest;
 
 namespace Tavisca.Training2017.HotelSearch.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("index/hotelListing/search")]
     public class HotelSearchController : Controller
-    {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
+    { 
+        [Route("GetHotels")]
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task GetHotelListing([FromBody]HotelSearchRq requestData)
         {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var request = JsonConvert.SerializeObject(requestData);
+            ServiceRepository repository = new ServiceRepository();
+            var service=repository.GetService("HotelListing");
+            string hotelListing = await service.GetData(request);
+            await HttpContext.Response.WriteAsync(hotelListing);
         }
     }
 }

@@ -1,14 +1,24 @@
 $(document).ready(function(){ 
+    $("#indate").datepicker({
+        changeMonth: true,
+                    changeYear: true,
+                    minDate: '0m+0d',
+        dateFormat:'yy-mm-dd'});
+     $("#outdate").datepicker({
+        changeMonth: true,
+                    changeYear: true,
+                    minDate: '0m+1d',
+        dateFormat:'yy-mm-dd'});
 $("#rooms").on("change",function(){
-	 				$("#rooms-info").empty();
-	 				 val=$("#rooms option:selected").val();
-	 				 	for(i=0;i<val;i++)
-	 				{
-	 				 var appendRooms="<div id=\"room-info-flex\">\
-	 				 <p id=\"adultsText\" class=\"text-info\">Adults(18+)</p>\
-	 				 <p id=\"childenText\" class=\"text-info\">Children(0-17)</p>\
-	 				 </div>";
-	 				 var appendRoomInfo="<div id=\"room-input-box\">\
+                    $("#rooms-info").empty();
+                     val=$("#rooms option:selected").val();
+                        for(i=0;i<val;i++)
+                    {
+                     var appendRooms="<div id=\"room-info-flex\">\
+                     <p id=\"adultsText\" class=\"text-info\">Adults(18+)</p>\
+                     <p id=\"childenText\" class=\"text-info\">Children(0-17)</p>\
+                     </div>";
+                     var appendRoomInfo="<div id=\"room-input-box\">\
                       <select id=\"adults" +i+"\">\
                         <option value=\"1\">1</option>\
                         <option value=\"2\">2</option>\
@@ -28,15 +38,15 @@ $("#rooms").on("change",function(){
                         <option value=\"6\">6</option>\
                     </select>\
                     </div>";
-	 			
-	 					 var individualRoom = "<div id=roomNumber"+(i)+"><p>Room " + (i) + "</p></div>";
-	 					$("#rooms-info").append(individualRoom);
-	 					$("#rooms-info").append(appendRooms);
-  						$("#rooms-info").append(appendRoomInfo);
-  						}
-	 });
+                
+                         var individualRoom = "<div id=roomNumber"+(i)+"><p>Room " + (i+1) + "</p></div>";
+                        $("#rooms-info").append(individualRoom);
+                        $("#rooms-info").append(appendRooms);
+                        $("#rooms-info").append(appendRoomInfo);
+                        }
+     });
     var selectedHotel;
-		$("#Location").on("input",function(){
+        $("#Location").on("input",function(){
          try {
              $.ajax({
                  type: "GET",
@@ -49,18 +59,18 @@ $("#rooms").on("change",function(){
              alert(e);
          }
          function getSuccess(data) {
-         	var obj=JSON.parse(data);
-         	var hotelList= new Array();
-         	for(var i=0;i<obj.length;i++)
-         	{
-         		hotelList.push({
+            var obj=JSON.parse(data);
+            var hotelList= new Array();
+            for(var i=0;i<obj.length;i++)
+            {
+                hotelList.push({
               value:obj[i].CulteredText,
               data:obj[i],
             });
-         	}
+            }
 
-         	 $( "#Location" ).autocomplete({
-         	
+             $( "#Location" ).autocomplete({
+            
       source:hotelList,
       minLength: 2,
       select: function( event, ui ) {
@@ -100,6 +110,31 @@ $("#rooms").on("change",function(){
                         "Rooms":numOfRooms,
                         "Adults":adults,
                         "Children":children,
-        }
+        };
+        var data=JSON.stringify(requestData);
+        try {
+             $.ajax({
+                 headers: { 
+        'Accept': 'application/json',
+        'Content-Type': 'application/json' 
+    },
+                 type: "POST",
+                 url: "http://localhost:51052/index/HotelListing/search/GetHotels",
+                 cache: false,
+                 data:data,
+                // contentType: 'json/application',
+                dataType: 'json',
+                
+                 success: getSuccess,
+                 crossDomain:true,
+             });
+         } catch (e) {
+             alert(e);
+         }
+         function getSuccess(data) {
+            var obj=JSON.parse(data);
+            sessionStorage.setItem('HotelListing',JSON.stringify(obj));
+             window.location="new.html";
+            }
     });
-	});
+});

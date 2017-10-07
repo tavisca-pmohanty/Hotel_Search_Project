@@ -1,29 +1,29 @@
-﻿using ServiceProvider.Contracts;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ServiceProvider
+namespace HotelSearchRequest
 {
-   public class HotelSuggestionRS:IHotelSuggestionRS
+   public class HotelSuggestionRS
     {
-        public string ID { get; }
+        public string ID { get; set; }
 
-        public string HotelName { get; }
+        public string HotelName { get; set; }
 
-        public string CityName { get; }
+        public string CityName { get; set; }
 
-        public string StateCode { get; }
+        public string StateCode { get; set; }
 
-        public string CountryCode { get; }
+        public string CountryCode { get; set; }
 
-        public string Latitude { get; }
+        public string Latitude { get; set; }
 
-        public string Longitude { get; }
+        public string Longitude { get; set; }
 
-        public string SearchType { get; }
+        public string SearchType { get; set; }
 
-        public string CulteredText { get; }
+        public string CulteredText { get; set; }
 
         public HotelSuggestionRS(string id, string hotelName, string cityName, string stateCode, string countryCode, string latitude, string longitude, string searchType,string culteredText)
         {
