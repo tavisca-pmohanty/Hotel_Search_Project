@@ -24,7 +24,10 @@ namespace HotelSearchRequest
         public string SearchType { get; set; }
 
         public string CulteredText { get; set; }
+        public HotelSuggestionRS()
+        {
 
+        }
         public HotelSuggestionRS(string id, string hotelName, string cityName, string stateCode, string countryCode, string latitude, string longitude, string searchType,string culteredText)
         {
             ID = id;

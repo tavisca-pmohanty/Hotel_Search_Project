@@ -72,7 +72,7 @@ namespace HotelSearchEngine
             float.TryParse(request.SelectedHotel.Longitude, out longitude);
             float latitude;
             float.TryParse(request.SelectedHotel.Latitude, out latitude);
-            GeoCoordinates geocode = new GeoCoordinates(longitude,latitude);
+            GeoCoordinates geocode = new GeoCoordinates(longitude, latitude);
             listingRequest.HotelSearchCriterion = new HotelSearchCriterion();
             listingRequest.HotelSearchCriterion.MatrixResults = _matrixResults;
             listingRequest.HotelSearchCriterion.MaximumResults = _maxResults;
@@ -81,7 +81,7 @@ namespace HotelSearchEngine
             listingRequest.HotelSearchCriterion.Pos.Requester = GetDefaultRequester();
             listingRequest.HotelSearchCriterion.PriceCurrencyCode = _defaultPriceCurrencyCode;
             listingRequest.HotelSearchCriterion.Guests = GetGuestDetails(request.Adults, request.Children);
-            listingRequest.HotelSearchCriterion.Location = GetLocation(request.SelectedHotel.CityName,request.SelectedHotel.SearchType,geocode);
+            listingRequest.HotelSearchCriterion.Location = GetLocation(request.SelectedHotel.CityName, request.SelectedHotel.SearchType, geocode);
             listingRequest.HotelSearchCriterion.NoOfRooms = GetMinimumRoomsRequired(request.Adults, request.Children);
             listingRequest.HotelSearchCriterion.ProcessingInfo = new HotelSearchProcessingInfo()
             {
@@ -122,17 +122,17 @@ namespace HotelSearchEngine
             int children = 0;
             Int32.TryParse(adultsCount, out adults);
             Int32.TryParse(childrenCount, out children);
-            if (adults%2==0)
+            if (adults % 2 == 0)
             {
                 return (adults / 2 + children / 2);
             }
             else
             {
-                return (adults / 2 + children / 2)+1;
+                return (adults / 2 + children / 2) + 1;
             }
         }
 
-        private Location GetLocation(string name,string type, GeoCoordinates geoCode)
+        private Location GetLocation(string name, string type, GeoCoordinates geoCode)
         {
             var json = JsonConvert.SerializeObject(geoCode);
             return new Location()
@@ -141,16 +141,16 @@ namespace HotelSearchEngine
                 Radius = new Distance()
                 {
                     Amount = _deafultSearchRadius,
-                    From =LocationCodeContext.GeoCode,
+                    From = LocationCodeContext.GeoCode,
                     Unit = DistanceUnit.mi
                 },
                 GeoCode = JsonConvert.DeserializeObject<GeoCode>(json)
             };
         }
 
-        private PassengerTypeQuantity[] GetGuestDetails(string adultsCount,string childrenCount)
+        private PassengerTypeQuantity[] GetGuestDetails(string adultsCount, string childrenCount)
         {
-            int adultNum = 0,childrenNum=0;
+            int adultNum = 0, childrenNum = 0;
             Int32.TryParse(adultsCount, out adultNum);
             Int32.TryParse(childrenCount, out childrenNum);
             PassengerTypeQuantity[] passengerTypeQuantity = new PassengerTypeQuantity[2];
@@ -168,7 +168,7 @@ namespace HotelSearchEngine
             {
                 childPassengers.Ages = new int[childrenNum];
             }
-            for (int i=0;i<childPassengers.Ages.Length;i++)
+            for (int i = 0; i < childPassengers.Ages.Length; i++)
             {
                 childPassengers.Ages[i] = 12;
             }
@@ -205,4 +205,3 @@ namespace HotelSearchEngine
 
     }
 }
-
