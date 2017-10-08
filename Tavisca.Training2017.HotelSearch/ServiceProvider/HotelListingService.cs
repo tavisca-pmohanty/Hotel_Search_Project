@@ -12,10 +12,10 @@ namespace ServiceProvider
 {
     class HotelListingService:IHotelService
     {
-        List<HotelItinerary> itineraries;
+        List<HotelListingResponse> itineraries;
         public HotelListingService()
         {
-            itineraries = new List<HotelItinerary>();
+            itineraries = new List<HotelListingResponse>();
         }
 
         public async Task<string> GetData(string request)
@@ -23,20 +23,9 @@ namespace ServiceProvider
             HotelSearch search = new HotelSearch();
             var hotelRequest = JsonConvert.DeserializeObject<HotelSearchRq>(request);
             itineraries = await search.GetHotelListing(hotelRequest);
-            List<Hotel> parsedlist = new List<Hotel>();
-            //Add a parser over here to your own custom object
-            foreach(var hotelItinerary in itineraries)
-            {
-                Hotel hotel = new Hotel();
-                hotel.Name = hotelItinerary.HotelProperty.Name;
-                hotel.Address = hotelItinerary.HotelProperty.Address.CompleteAddress;
-                hotel.HotelId = hotelItinerary.HotelProperty.Id;
-                hotel.Price = hotelItinerary.Fare.BaseFare.Amount;
-                parsedlist.Add(hotel);
-            }
-
-            return JsonConvert.SerializeObject(parsedlist);
+            return JsonConvert.SerializeObject(itineraries);
            
         }
+
     }
 }

@@ -131,9 +131,16 @@ $("#rooms").on("change",function(){
          } catch (e) {
              alert(e);
          }
-         function getSuccess(data) {
-            var obj=JSON.parse(data);
-            sessionStorage.setItem('HotelListing',JSON.stringify(obj));
+         function getSuccess(data) {    
+            var hotelItineraries=new Array();
+             for(var i=0;i<data.length;i++)
+                 {
+                     hotelItineraries.push({
+                         itinerary:data[i].Itinerary,
+                         sessionId:data[i].SessionId,
+                     });
+                 }
+            sessionStorage.setItem('HotelListing',JSON.stringify(hotelItineraries));
              window.location="new.html";
             }
     });
