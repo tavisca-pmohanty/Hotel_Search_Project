@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace HotelEngineTest
 {
-    public class UnitTest1
+    public class MultiAvailTest
     {
         [Fact]
         public async void Sending_Request_To_Hotel_Engine_To_Get_Hotel_List()
