@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{28384C5D-C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelEngineTest", "HotelEngineTest\HotelEngineTest.csproj", "{43E9288B-3358-4B45-BFAB-14CA0B36B786}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelSearchRequest", "HotelSearchRequest\HotelSearchRequest.csproj", "{BF3504AE-C249-487E-ACCE-B686B2D791A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelSearchRequest", "HotelSearchRequest\HotelSearchRequest.csproj", "{BF3504AE-C249-487E-ACCE-B686B2D791A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
