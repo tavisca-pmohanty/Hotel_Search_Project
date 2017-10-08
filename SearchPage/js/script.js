@@ -1,14 +1,17 @@
 $(document).ready(function(){ 
+    var changeInDate='0m+1d';
     $("#indate").datepicker({
         changeMonth: true,
                     changeYear: true,
                     minDate: '0m+0d',
-        dateFormat:'yy-mm-dd'});
-     $("#outdate").datepicker({
+        dateFormat:'yy-mm-dd',
+    });
+    $("#outdate").datepicker({
         changeMonth: true,
                     changeYear: true,
                     minDate: '0m+1d',
         dateFormat:'yy-mm-dd'});
+    
 $("#rooms").on("change",function(){
                     $("#rooms-info").empty();
                      val=$("#rooms option:selected").val();
