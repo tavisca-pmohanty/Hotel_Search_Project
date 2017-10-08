@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HotelSearchEngine.SessionLog
 {
-    class SessionData
+   public class SessionData
     {
         public string SessionId { get; set; }
         public HotelSearchCriterion HotelSearchCriterionData { get; set; } 
