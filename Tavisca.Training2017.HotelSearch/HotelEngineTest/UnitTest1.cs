@@ -9,8 +9,9 @@ namespace HotelEngineTest
         [Fact]
         public void Test1()
         {
-            HotelSearch search = new HotelSearch();
-            //search.GetHotelListing()
+            HotelListingResponse res = new HotelListingResponse();
+            RoomRequestParser parser = new RoomRequestParser();
+            parser.Parser(res);
         }
     }
 }
