@@ -22,9 +22,9 @@ namespace ServiceProvider
                 case "HotelListing":
                     service = new HotelListingService();
                     break;
-                //case "HotelRooms":
-                //    service = new RoomInfoService();
-                //     break;
+                case "HotelRooms":
+                   service = new RoomInfoService();
+                    break;
                    
             }
             return service;
