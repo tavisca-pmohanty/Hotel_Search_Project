@@ -16,7 +16,7 @@ namespace HotelSearchEngine
         public RoomRequestParser()
         {
             roomRequest = new HotelRoomAvailRQ();
-            
+         
         }
         public HotelRoomAvailRQ Parser(HotelListingResponse request)
         {
