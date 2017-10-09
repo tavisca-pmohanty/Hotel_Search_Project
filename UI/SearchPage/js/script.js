@@ -108,9 +108,19 @@ $("#rooms").on("change",function(){
         }
         numOfAdults=adults.toString();
         numOfChildren=children.toString();
-        if(hotelName.toString()=="" || inDate.toString=="" || outDate.toString== "")
+        if(hotelName.toString()=="") 
         {
-            alert("All the fields must be filled");
+            alert("Search field must be filled");
+            return;
+        }
+        if(inDate.toString()=="") 
+        {
+            alert("Check-In date field must be filled");
+            return;
+        }
+         if(outDate.toString()=="") 
+        {
+            alert("Check-Out date field must be filled");
             return;
         }
         var requestData={
