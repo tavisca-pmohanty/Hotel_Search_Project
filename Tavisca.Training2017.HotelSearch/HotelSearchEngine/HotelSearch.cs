@@ -28,19 +28,20 @@ namespace HotelSearchEngine
                 HotelListingResponse listingResponse = new HotelListingResponse();
                 listingResponse.Itinerary = response.Itineraries[i];
                 listingResponse.SessionId = response.SessionId;
+                listingResponse.HotelCriterion = searchRequest.HotelSearchCriterion;
                 itineraries.Add(listingResponse);
             }
-            PreservingSessionData(searchRequest);
+            //PreservingSessionData(searchRequest);
             return itineraries;
         }
-        public void PreservingSessionData(HotelSearchRQ searchRequest)
-        {
-            //List<SessionData> list = new List<SessionData>();
-            SessionData sessionData = new SessionData();
-            sessionData.SessionId = searchRequest.SessionId;
-            sessionData.HotelSearchCriterionData = searchRequest.HotelSearchCriterion;
-            //list.Add(sessionData);
-            File.WriteAllText(@"D:\Hotel_Search_Project\Tavisca.Training2017.HotelSearch\HotelSearchEngine\SessionLog\HotelSearchCriterion_Json.txt", JsonConvert.SerializeObject(sessionData));
-        }
+        //public void PreservingSessionData(HotelSearchRQ searchRequest)
+        //{
+        //    //List<SessionData> list = new List<SessionData>();
+        //    SessionData sessionData = new SessionData();
+        //    sessionData.SessionId = searchRequest.SessionId;
+        //    sessionData.HotelSearchCriterionData = searchRequest.HotelSearchCriterion;
+        //    //list.Add(sessionData);
+        //    File.WriteAllText(@"D:\Hotel_Search_Project\Tavisca.Training2017.HotelSearch\HotelSearchEngine\SessionLog\HotelSearchCriterion_Json.txt", JsonConvert.SerializeObject(sessionData));
+        //}
     }
 }
