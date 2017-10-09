@@ -162,6 +162,7 @@ $("#rooms").on("change",function(){
                  }
             sessionStorage.setItem('HotelListing',JSON.stringify(hotelItineraries));
              window.location="listing-page.html";
+
             }
     });
 });

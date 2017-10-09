@@ -16,6 +16,7 @@ namespace ServiceProvider
         public HotelListingService()
         {
             itineraries = new List<HotelListingResponse>();
+        
         }
 
         public async Task<string> GetData(string request)

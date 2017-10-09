@@ -17,6 +17,7 @@ namespace ServiceProvider
         {
             roomItinaries = new HotelRoomAvailResponse();
         }
+
         public async Task<string> GetData(string searchTerm)
         {
             RoomSearch search = new RoomSearch();
