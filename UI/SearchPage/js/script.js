@@ -164,6 +164,7 @@ $("#rooms").on("change",function(){
 
              window.location="listing-page.html";
 
+
             }
     });
 });
