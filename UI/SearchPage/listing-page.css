@@ -148,7 +148,7 @@ margin-top: 31px;
     margin-left: 0px;
 
 }
-#room-button
+.room-button
 {
 	flex-shrink: 3;
     height: 47px;
