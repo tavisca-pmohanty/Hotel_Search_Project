@@ -20,7 +20,7 @@ namespace HotelSearchEngine
         }
         public HotelRoomAvailRQ Parser(HotelListingResponse request)
         {
-            var stream = File.OpenText("HotelSearchEngine\\SessionLog\\HotelSearchCriterion_Json.txt");             
+            var stream = File.OpenText(@"D:\Hotel_Search_Project\Tavisca.Training2017.HotelSearch\HotelSearchEngine\SessionLog\HotelSearchCriterion_Json.txt");             
             string data = stream.ReadToEnd();
             var sessionData = JsonConvert.DeserializeObject<SessionData>(data);
             roomRequest.ResultRequested = ResponseType.Complete;
