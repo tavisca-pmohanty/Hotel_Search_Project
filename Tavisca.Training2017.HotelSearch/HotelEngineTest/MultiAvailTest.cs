@@ -29,7 +29,7 @@ namespace HotelEngineTest
             request.SelectedHotel.SearchType = "City";
             request.SelectedHotel.StateCode = "";
             HotelSearch search = new HotelSearch();
-            List<HotelItinerary> hotelItinerary=await search.GetHotelListing(request);
+            List<HotelListingResponse> hotelItinerary=await search.GetHotelListing(request);
             bool itemsInList = false;
             if(hotelItinerary.Count>0)
             {
