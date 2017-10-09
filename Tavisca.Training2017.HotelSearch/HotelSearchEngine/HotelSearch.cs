@@ -15,6 +15,7 @@ namespace HotelSearchEngine
         List<HotelListingResponse> itineraries;
         public HotelSearch()
         {
+           
             itineraries = new List<HotelListingResponse>();
         }
         public async Task<List<HotelListingResponse>> GetHotelListing(HotelSearchRq request)
@@ -37,7 +38,7 @@ namespace HotelSearchEngine
             SessionData sessionData = new SessionData();
             sessionData.SessionId = searchRequest.SessionId;
             sessionData.HotelSearchCriterionData = searchRequest.HotelSearchCriterion;
-            File.WriteAllText(("D:\\Hotel_Search_Project\\Tavisca.Training2017.HotelSearch\\HotelSearchEngine\\SessionLog\\HotelSearchCriterion_Json.txt"), JsonConvert.SerializeObject(sessionData));
+            File.WriteAllText((@"D:\Hotel_Search_Project\Tavisca.Training2017.HotelSearch\HotelSearchEngine\SessionLog\HotelSearchCriterion_Json.txt"), JsonConvert.SerializeObject(sessionData));
         }
     }
 }
