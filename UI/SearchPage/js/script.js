@@ -1,14 +1,17 @@
 $(document).ready(function(){ 
+    var changeInDate='0m+1d';
     $("#indate").datepicker({
         changeMonth: true,
                     changeYear: true,
                     minDate: '0m+0d',
-        dateFormat:'yy-mm-dd'});
-     $("#outdate").datepicker({
+        dateFormat:'yy-mm-dd',
+    });
+    $("#outdate").datepicker({
         changeMonth: true,
                     changeYear: true,
                     minDate: '0m+1d',
         dateFormat:'yy-mm-dd'});
+    
 $("#rooms").on("change",function(){
                     $("#rooms-info").empty();
                      val=$("#rooms option:selected").val();
@@ -45,12 +48,13 @@ $("#rooms").on("change",function(){
                         $("#rooms-info").append(appendRoomInfo);
                         }
      });
+    var hotelName=""; 
     var selectedHotel;
         $("#Location").on("input",function(){
          try {
              $.ajax({
                  type: "GET",
-                 url: "http://localhost:61641/index/AutoComplete/search/"+ $("#Location").val(),
+                 url: "http://localhost:51052/index/AutoComplete/search/"+ $("#Location").val(),
                  cache: false,
                  success: getSuccess,
                  crossDomain:true,
@@ -74,6 +78,7 @@ $("#rooms").on("change",function(){
       source:hotelList,
       minLength: 2,
       select: function( event, ui ) {
+        hotelName=ui.item.value.toString();
          for(var i=0;i<hotelList.length;i++)
          {
           if(ui.item.value.toString()==hotelList[i].data.CulteredText.toString())
@@ -103,6 +108,11 @@ $("#rooms").on("change",function(){
         }
         numOfAdults=adults.toString();
         numOfChildren=children.toString();
+        if(hotelName.toString()=="" || inDate.toString=="" || outDate.toString== "")
+        {
+            alert("All the fields must be filled");
+            return;
+        }
         var requestData={
                         "SelectedHotel":selectedHotel,
                         "InDate":inDate,
@@ -119,7 +129,7 @@ $("#rooms").on("change",function(){
         'Content-Type': 'application/json' 
     },
                  type: "POST",
-                 url: "http://localhost:61641/index/HotelListing/search/GetHotels",
+                 url: "http://localhost:51052/index/HotelListing/search/GetHotels",
                  cache: false,
                  data:data,
                 // contentType: 'json/application',
