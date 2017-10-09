@@ -158,6 +158,7 @@ $("#rooms").on("change",function(){
                      hotelItineraries.push({
                          itinerary:data[i].Itinerary,
                          sessionId:data[i].SessionId,
+                         hotelCriterion:data[i].HotelCriterion,
                      });
                  }
             sessionStorage.setItem('HotelListing',JSON.stringify(hotelItineraries));

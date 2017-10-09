@@ -21,9 +21,9 @@ namespace HotelSearchEngine
         }
         public HotelRoomAvailRQ Parser(HotelListingResponse request)
         {
-            var stream = File.OpenText(@"D:\Hotel_Search_Project\Tavisca.Training2017.HotelSearch\HotelSearchEngine\SessionLog\HotelSearchCriterion_Json.txt");
-            string data = stream.ReadToEnd();
-            var sessionDataList = JsonConvert.DeserializeObject<SessionData>(data);
+            //var stream = File.OpenText(@"D:\Hotel_Search_Project\Tavisca.Training2017.HotelSearch\HotelSearchEngine\SessionLog\HotelSearchCriterion_Json.txt");
+            //string data = stream.ReadToEnd();
+            //var sessionDataList = JsonConvert.DeserializeObject<SessionData>(data);
             roomRequest.ResultRequested = ResponseType.Complete;
             roomRequest.SessionId = request.SessionId;
             roomRequest.Itinerary = request.Itinerary;
@@ -35,7 +35,7 @@ namespace HotelSearchEngine
             //        break;
             //    }
             //}
-            roomRequest.HotelSearchCriterion = sessionDataList.HotelSearchCriterionData;
+            roomRequest.HotelSearchCriterion = request.HotelCriterion;
             return roomRequest;
         }
     }
