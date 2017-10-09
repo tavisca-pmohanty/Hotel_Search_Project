@@ -48,6 +48,7 @@ $("#rooms").on("change",function(){
                         $("#rooms-info").append(appendRoomInfo);
                         }
      });
+    var hotelName=""; 
     var selectedHotel;
         $("#Location").on("input",function(){
          try {
@@ -77,6 +78,7 @@ $("#rooms").on("change",function(){
       source:hotelList,
       minLength: 2,
       select: function( event, ui ) {
+        hotelName=ui.item.value.toString();
          for(var i=0;i<hotelList.length;i++)
          {
           if(ui.item.value.toString()==hotelList[i].data.CulteredText.toString())
@@ -106,6 +108,11 @@ $("#rooms").on("change",function(){
         }
         numOfAdults=adults.toString();
         numOfChildren=children.toString();
+        if(hotelName.toString()=="" || inDate.toString=="" || outDate.toString== "")
+        {
+            alert("All the fields must be filled");
+            return;
+        }
         var requestData={
                         "SelectedHotel":selectedHotel,
                         "InDate":inDate,
