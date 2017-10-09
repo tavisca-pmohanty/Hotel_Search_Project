@@ -23,49 +23,7 @@
 		}
 
 		
-		$("#room-button").on("click",function()
-		{
-				var hotelName=this.val();
-				for(var i=0;i<result.length;i++)
-				{
-					if(hotelName.toString()==(result[i].itinerary.HotelProperty.Name.toString()+result[i].itinerary.HotelProperty.Address.City.Name.toString()))
-					{
-						var data=JSON.stringify(result[i]);
-						 try
-						  {
-					             $.ajax({
-					                headers: 
-					                { 
-						       		 	'Accept': 'application/json',
-						        		'Content-Type': 'application/json' 
-					    			},
-					                 type: "POST",
-					                 url: "http://localhost:51052/index/HotelListing/search/GetHotelRooms",
-					                 cache: false,
-					                 data:data,
-					                // contentType: 'json/application',
-					                 dataType: 'json',
-					                
-					                 success: getSuccess,
-					                 crossDomain:true,
-					             });
-					      } 
-					    catch (e)
-					     {
-					         	alert(e);
-					     }
-			         function getSuccess(data)
-			          {
-			            var obj=JSON.parse(data);
-			            sessionStorage.setItem('HotelListing',JSON.stringify(obj));
-			            window.location="new.html";
-			          }
-			            break;
-					}
-				}
 		
-		});
-
 	  var template = $('#hotel-item');
 
 	  var compiledTemplate = Handlebars.compile(template.html());
@@ -86,4 +44,54 @@
 	        x.className = "topnav";
 	    }
 	}
+		$("#room-button").on("click",function()
+		{
+				var hotelName=this.value;
+				for(var i=0;i<result.length;i++)
+				{
+					if(hotelName.toString()==(result[i].itinerary.HotelProperty.Name.toString()+" "+result[i].itinerary.HotelProperty.Address.City.Name.toString()))
+					{
+						var data=JSON.stringify(result[i]);
+						 try
+						  {
+					             $.ajax({
+					                headers: 
+					                { 
+						       		 	'Accept': 'application/json',
+						        		'Content-Type': 'application/json' 
+					    			},
+					                 type: "POST",
+					                 url: "http://localhost:61641/index/HotelListing/search/GetHotelRooms",
+					                 cache: false,
+					                 data:data,
+					                 dataType: 'json',
+					                
+					                 success: getSuccess,
+					                 crossDomain:true,
+					             });
+					      } 
+					    catch (e)
+					     {
+					         	alert(e);
+					     }
+			         function getSuccess(data)
+			          {
+			             
+			            	var roomItineraries=new Array();
+             			for(var i=0;i<data.length;i++)
+                 	{
+                     	roomItineraries.push({
+                         itinerary:data[i].Itinerary,
+                         sessionId:data[i].SessionId,
+                     });
+                 }
+            sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
+
+             window.location="roomlist.html";
+						  return;
+					}
+				}
+				}
+		});
+
 	});
