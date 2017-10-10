@@ -9,5 +9,6 @@ namespace HotelSearchEngine.Model
     {
         public string SessionId { get; set; }
         public HotelItinerary Itinerary { get; set; }
+        public HotelSearchCriterion HotelCriterionData { get; set; }
     }
 }
