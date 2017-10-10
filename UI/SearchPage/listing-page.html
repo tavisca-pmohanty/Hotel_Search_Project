@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="Utf-8">
+<head>
+  <title>Expedia</title>
+  <link rel="stylesheet" type="text/css" href="listing-page.css">
+</head>
+
+<body>
+  <div id="header-container">
+    <div id="logo"> 
+      <img src="download.png">
+    </div>
+    <div id="welcome-page">
+      <p>Welcome To Expedia</p>
+    </div>
+  </div>
+
+  <div class="topnav" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>  
+
+  
+
+  <div id="hotelList-container">
+    <!-- //rendenring data -->
+  </div>
+
+  <script id="hotel-item" type="text/x-handlebars-template">
+    {{#each this}} 
+    <div class="layout" >
+     
+     <img id="hotel-image" src="{{image}}">
+     
+      <div id="data-container">
+          <h2 id="hotel-name">{{name}}</h2>
+          <h2 id="hotel-address">Place:{{city}}</h2>
+          <h2 id="rating">Rating:{{rating}}</h2>
+          <h2 id="hotel-price">BestFare:{{price}}</h2>
+      </div>
+<div>
+      <button type="submit" class="room-button" value="{{name}} {{city}}" alt="Hotel Image Unavailable">Room Details</button>
+    </div>
+    </div>
+   {{/each}}
+    </script>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+   <script src="listing-page.js"></script>
+  
+</body>
+
+</html>

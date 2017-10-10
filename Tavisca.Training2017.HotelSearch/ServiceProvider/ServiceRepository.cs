@@ -18,7 +18,14 @@ namespace ServiceProvider
             {
                 case "AutoComplete":
                     service= new HotelSuggestionService();
-                    break;                    
+                    break;
+                case "HotelListing":
+                    service = new HotelListingService();
+                    break;
+                case "HotelRooms":
+                   service = new RoomInfoService();
+                    break;
+                   
             }
             return service;
         }

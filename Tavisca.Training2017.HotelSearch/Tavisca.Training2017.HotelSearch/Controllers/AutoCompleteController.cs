@@ -21,9 +21,9 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
         [HttpGet]
         public  async Task GetHotelSuggestionAsync(string searchTerm)
         {
-            ServiceRepository repository = new ServiceRepository();
+      ServiceRepository repository = new ServiceRepository();
             var service = repository.GetService("AutoComplete");
-            var hotelList = await service.GetHotelSuggestion(searchTerm);
+            var hotelList = await service.GetData(searchTerm);
             //var json = JsonConvert.SerializeObject(hotelList);
             await HttpContext.Response.WriteAsync(hotelList);
         }
