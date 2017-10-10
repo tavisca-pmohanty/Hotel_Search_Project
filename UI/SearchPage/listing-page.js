@@ -17,7 +17,7 @@
 			image:imageUrl,
 			name:result[i].itinerary.HotelProperty.Name,
 			city:result[i].itinerary.HotelProperty.Address.City.Name,
-			rating:result[i].itinerary.HotelProperty.HotelRating.Rating,
+			rating:result[i].itinerary.HotelProperty.HotelRating.Rating+"/5",
 			price:"Rs."+result[i].itinerary.Fare.BaseFare.Amount+"/-",
 			});
 		}
