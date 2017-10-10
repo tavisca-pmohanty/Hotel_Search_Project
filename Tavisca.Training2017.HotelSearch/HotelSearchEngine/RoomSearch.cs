@@ -21,6 +21,7 @@ namespace HotelSearchEngine
             HotelRoomAvailRS response=await client.HotelRoomAvailAsync(roomAvailRequest);
             roomList.Itinerary = response.Itinerary;
             roomList.SessionId = response.SessionId;
+            roomList.HotelCriterionData = request.HotelCriterion;
             return roomList;
         }
 

@@ -77,18 +77,11 @@
 			         function getSuccess(data)
 			          {
 			             
-			            	var roomItineraries=new Array();
-             			for(var i=0;i<data.length;i++)
-                 	{
-                     	roomItineraries.push({
-                         itinerary:data[i].Itinerary,
-                         sessionId:data[i].SessionId,
-                     });
-                 }
-            sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
+			            	var roomItineraries=data;
+            				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
-             window.location="roomlist.html";
-						  return;
+             				window.location="roomlist.html";
+						  
 					}
 				}
 				}
