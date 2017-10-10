@@ -77,14 +77,24 @@
 			         function getSuccess(data)
 			          {
 			             
+<<<<<<< HEAD
 			            	var roomItineraries=data;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
              				window.location="roomlist.html";
 						  
 					}
+=======
+			            	
+                    sessionStorage.setItem('RoomListing',JSON.stringify(data));
+
+                        window.location="roomlist.html";
+//						  
+					
+>>>>>>> Some changes made in Roomlisting UI
 				}
 				}
-		});
+		}
 
 	});
+    });

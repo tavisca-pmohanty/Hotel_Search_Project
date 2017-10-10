@@ -24,7 +24,8 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
             string hotelListing = await service.GetData(request);
             await HttpContext.Response.WriteAsync(hotelListing);
         }
-      
+
+     
         //Room-Avail-Api
        [Route("GetHotelRooms")]
         [HttpPost]

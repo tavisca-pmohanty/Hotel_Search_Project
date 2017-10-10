@@ -1,24 +1,35 @@
-var d = {"SelectedHotel":{"ID":"46738","HotelName":"Lohegaon Arpt","CityName":"Pune","StateCode":"","CountryCode":"IN","Latitude":"18.5791","Longitude":"73.9097","SearchType":"Airport","CulteredText":"Pune, India - Lohegaon Arpt (PNQ)"},"InDate":"2017-10-08","OutDate":"2017-10-09","Rooms":"1","Adults":1,"Children":0};
 
+$(document).ready(function(){
+                
+    
+    var data=sessionStorage.getItem('RoomListing');
+   var roomItinerary= JSON.parse(data);
+        var typeOfRooms= new Array();
+    for(var i=0;i<roomItinerary.Itinerary.Rooms.length;i++)
+        {
+            typeOfRooms.push({
+               roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
+                roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
+                bedType:roomItinerary.Itinerary.Rooms[i].BedType,
+                roomFare:roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.Amount,
+            });
+        }
+    var template = $('#hotel-item');
 
+	  var compiledTemplate = Handlebars.compile(template.html());
 
-$.ajax({
-  url: "http://localhost:61641/index/HotelListing/search/GetHotels",
-  method:"post",
-    data:JSON.stringify(d),
-    contentType:"application/json",
-  cache: false,
-    crossDomain:"true",
-    dataType:"json",
-  success: successFunction
+	  var html = compiledTemplate(hotelList);
+
+	  $('#hotelList-container').html(html);
+//    successFunction(roomItinerary);
+//    
+//                  });
+//
+//function successFunction(result)
+//{
+//        for(var pic of result.Itinerary.HotelProperty.MediaContent){
+//        var imglink='img width=100 height=100 src='+pic.url+'"/>';
+//            $("#carousel-container").append(imglink);
+//   }
 });
 
-
-
-function successFunction(result){
-    for(var hotel of result){
-        for(var pic of hotel.Itinerary.HotelProperty.MediaContent){
-    $("#carousel-container").append('<div class="item"><img src="'+pic.Url+'" alt="FirstPicImage" style="width:100%;"><div class="carousel-caption"><h3>Enjoy the Comfort</h3><p>Book before its Too late!</p></div></div>');
-    }
-}
-}
