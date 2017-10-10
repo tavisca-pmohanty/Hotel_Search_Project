@@ -1,0 +1,11 @@
+#room-image
+{
+   
+       border: 2px solid black;
+    width: 228px;
+    height: 217px;
+    flex-shrink: 1;
+    margin-top: 10px;
+    margin-left: 0px;
+
+}

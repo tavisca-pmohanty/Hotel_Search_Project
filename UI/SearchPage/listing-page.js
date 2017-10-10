@@ -61,7 +61,7 @@
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-					                 url: "http://localhost:51052/index/HotelListing/search/GetHotelRooms",
+					                 url: "http://localhost:61641/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
 					                 data:data,
 					                 dataType: 'json',
@@ -77,14 +77,16 @@
 			         function getSuccess(data)
 			          {
 			             
+
 			            	var roomItineraries=data;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
-             				window.location="roomlist.html";
+             				window.location="roomDetail.html";
 						  
-					}
+	
 				}
 				}
-		});
+		}
 
 	});
+    });
