@@ -81,7 +81,7 @@
 			            	var roomItineraries=data;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
-             				window.location="RoomDetail.html";
+             				window.location="roomDetail.html";
 						  
 	
 				}

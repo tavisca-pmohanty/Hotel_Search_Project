@@ -16,14 +16,7 @@ $(document).ready(function(){
                 roomFare:"Rs."+roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.Amount,
             });
         }
-//    typeOfRooms.push({
-//                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLxmBuSqBLEVe6FZkt8CK7GxewFiDHOihhgod4ncC8H0hPVV6w",
-//               roomType:"Deluxe room",
-//                roomDescription:"Agdgkdhjs",
-//              bedType:"aahgakajha",
-//              roomFare:"gsjdkaslfk",
-//    });
-//    successFunction(roomItinerary);
+/
 var template = $('#room-items');
 
   var compiledTemplate = Handlebars.compile(template.html());
