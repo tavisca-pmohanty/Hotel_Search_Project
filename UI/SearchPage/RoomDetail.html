@@ -2,6 +2,7 @@
 
 <head>
     <title>Expedia</title>
+    <link rel="stylesheet" type="text/css" href="roomDetail.css">
 
 </head>
 
@@ -11,23 +12,25 @@
 
 <div id="roomList-container">
       
- 
-      </div>
+    
+    
+    
+  </div>
 
 <script id="room-items" type="text/x-handlebars-template">
 {{#each this}}
 <div class="layout">
     
-<img id="room-image" scr="{{image}}">    
+<img id="room-image" scr="{{image}}" alt="No image Available">    
     
 <div id ="data-container">    
     
-    <h2 id="room-name">{{name}}</h2>
+    <h2 id="room-name">Room Type:{{roomType}}</h2>
     <h2 id="room -address">RoomDescription:{{roomDescription}}</h2>
-    <h2 id="bed-type">Bed-Type:{{bed-type}}</h2>
+<!--    <h2 id="bed-type">Bed-Type:{{bed-type}}</h2>-->
     <h2 id="room-fare">Room-Fare:{{roomFare}}</h2>
     
-    </div>
+</div>
 </div>
 
 
