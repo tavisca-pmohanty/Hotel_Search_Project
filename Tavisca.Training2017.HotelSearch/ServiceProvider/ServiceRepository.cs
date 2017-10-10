@@ -6,11 +6,11 @@ namespace ServiceProvider
 {
     public class ServiceRepository
     {
-        Dictionary<string, IHotelService> services;
-        public ServiceRepository()
-        {
-            services = new Dictionary<string, IHotelService>();
-        }
+        //Dictionary<string, IHotelService> services;
+        //public ServiceRepository()
+        //{
+        //    services = new Dictionary<string, IHotelService>();
+        //}
         public IHotelService GetService(string serviceType)
         {
             IHotelService service=null;
@@ -25,7 +25,11 @@ namespace ServiceProvider
                 case "HotelRooms":
                    service = new RoomInfoService();
                     break;
-                   
+                case "RoomPricing":
+                    service = new RoomPricingService();
+                    break;
+                default:
+                    break;
             }
             return service;
         }
