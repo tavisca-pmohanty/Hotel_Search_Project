@@ -1,7 +1,6 @@
 using System;
 using Xunit;
 using HotelSearchEngine;
-using HotelSearchRequest;
 using HotelEngienSearch;
 using System.Collections.Generic;
 

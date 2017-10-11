@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using HotelSearchEngine;
-using HotelSearchRequest;
 
 
 namespace ServiceProvider
