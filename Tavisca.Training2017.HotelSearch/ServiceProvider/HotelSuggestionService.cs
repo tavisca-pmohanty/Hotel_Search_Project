@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Json;
 using Newtonsoft.Json;
-using HotelSearchRequest;
+using HotelEngienSearch;
 
 namespace ServiceProvider
 {
