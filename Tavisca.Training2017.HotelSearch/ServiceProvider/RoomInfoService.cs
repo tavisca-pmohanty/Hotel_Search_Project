@@ -18,7 +18,7 @@ namespace ServiceProvider
             roomItinaries = new HotelRoomAvailResponse();
         }
 
-        public async Task<string> GetData(string searchTerm)
+        public async Task<string> GetRequestedData(string searchTerm)
         {
             RoomSearch search = new RoomSearch();
             var request = JsonConvert.DeserializeObject<RoomListingRequest>(searchTerm);

@@ -9,6 +9,6 @@ namespace ServiceProvider
 {
     public interface IHotelService
     {
-        Task<string> GetData(string searchTerm);
+        Task<string> GetRequestedData(string searchTerm);
     }
 }

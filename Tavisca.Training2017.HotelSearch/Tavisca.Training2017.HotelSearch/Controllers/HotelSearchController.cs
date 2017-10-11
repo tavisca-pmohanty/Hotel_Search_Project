@@ -1,41 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using HotelSearchEngine;
 using Newtonsoft.Json;
 using ServiceProvider;
 using Microsoft.AspNetCore.Http;
-using HotelSearchRequest;
-using HotelSearchEngine.Model;
 
 namespace Tavisca.Training2017.HotelSearch.Controllers
 {
     [Route("index/hotelListing/search")]
     public class HotelSearchController : Controller
-    { 
+    {
         [Route("GetHotels")]
         [HttpPost]
-        public async Task GetHotelListing([FromBody]HotelSearchRq requestData)
+        public async Task GetHotelListing([FromBody]string requestData)
         {
-            var request = JsonConvert.SerializeObject(requestData);
             ServiceRepository repository = new ServiceRepository();
-            var service=repository.GetService("HotelListing");
-            string hotelListing = await service.GetData(request);
+            var service = repository.GetService("HotelListing");
+            string hotelListing = await service.GetRequestedData(requestData);
             await HttpContext.Response.WriteAsync(hotelListing);
         }
 
-     
+
         //Room-Avail-Api
-       [Route("GetHotelRooms")]
+        [Route("GetHotelRooms")]
         [HttpPost]
-        public async Task GetHotelRooms([FromBody]HotelListingResponse requestData)
+        public async Task GetHotelRooms([FromBody]string requestData)
         {
-            var request = JsonConvert.SerializeObject(requestData);
             ServiceRepository repository = new ServiceRepository();
             var service = repository.GetService("HotelRooms");
-            string hotelListing = await service.GetData(request);
+            string hotelListing = await service.GetRequestedData(requestData);
             await HttpContext.Response.WriteAsync(hotelListing);
         }
 

@@ -3,8 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HotelSearchEngine.Model
-{
+namespace HotelEngienSearch
+{ 
     public class RoomListingRequest
     {
         public HotelItinerary Itinerary { get; set; }
