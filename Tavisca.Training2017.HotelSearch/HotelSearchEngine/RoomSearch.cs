@@ -14,7 +14,7 @@ namespace HotelSearchEngine
         {
             roomList = new HotelRoomAvailResponse();
         }
-        public async Task<HotelRoomAvailResponse> GetRoomDetails(HotelListingResponse request)
+        public async Task<HotelRoomAvailResponse> GetRoomDetails(RoomListingRequest request)
         {
             HotelEngineClient client = new HotelEngineClient();
             HotelRoomAvailRQ roomAvailRequest = new RoomRequestParser().Parser(request);
