@@ -54,11 +54,7 @@ $("#rooms").on("change",function(){
          try {
              $.ajax({
                  type: "GET",
-<<<<<<< HEAD
-                 url: "http://localhost:52467/index/AutoComplete/search/"+ $("#Location").val(),
-=======
                  url: "http://localhost:51052/index/AutoComplete/search/"+ $("#Location").val(),
->>>>>>> Removed multiple dependencies
                  cache: false,
                  success: getSuccess,
                  crossDomain:true,
