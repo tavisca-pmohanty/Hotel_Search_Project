@@ -58,6 +58,7 @@ namespace HotelSearchEngine
         {
 
             HotelSearchRQ listingRequest = new HotelSearchRQ();
+            listingRequest.SessionId = Guid.NewGuid().ToString();
             listingRequest.ResultRequested = ResponseType.Complete;
             listingRequest.SessionId = Guid.NewGuid().ToString();
             listingRequest.Filters = new AvailabilityFilter[1]
