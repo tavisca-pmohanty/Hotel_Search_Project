@@ -63,7 +63,7 @@
 					                 type: "POST",
 					                 url: "http://localhost:51052/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
-					                 data:data,
+					                 data:JSON.stringify(data),
 					                 dataType: 'json',
 					                
 					                 success: getSuccess,
