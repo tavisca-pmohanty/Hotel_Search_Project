@@ -47,7 +47,7 @@ $(".room-button").click(function()
                                         'Content-Type': 'application/json' 
                                     },
                                      type: "POST",
-                                     url: "http://localhost:51052/index/HotelListing/search/GetRoomPricing",
+                                     url: "http://localhost:52363/index/HotelListing/search/GetRoomPricing",
                                      cache: false,
                                      data:JSON.stringify(data),
                                      dataType: 'json',
@@ -60,10 +60,25 @@ $(".room-button").click(function()
                          {
                                 alert(e);
                          }
-            function getSuccess(data)
+            function getSuccess(dynamicData)
                     {
-                        var obj=JSON.parse(data);
-                        sessionStorage.setItem('HotelListing',JSON.stringify(obj));
+                      var dynamicPricing;
+                      if(data.Itinerary==null)
+                      {
+                         dynamicPricing={
+                              data:data,
+                              roomSelected:roomName
+                        };
+                      }
+                      else
+                      {
+                        dynamicPricing={
+                              data:dynamicData,
+                              roomSelected:roomName
+                        }
+                      }
+                        
+                        sessionStorage.setItem('HotelListing',JSON.stringify(dynamicPricing));
 			            window.location="Guest-Details.html";
                     }
                 });      

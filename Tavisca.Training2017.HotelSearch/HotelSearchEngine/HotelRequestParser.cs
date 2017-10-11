@@ -7,7 +7,7 @@ using System.Text;
 
 namespace HotelSearchEngine
 {
-    class HotelRequsetParser
+    class HotelRequestParser
     {
         private readonly bool _AvailableItineraries = true;
         private readonly int _maxResults = 1500;
@@ -58,7 +58,7 @@ namespace HotelSearchEngine
         {
 
             HotelSearchRQ listingRequest = new HotelSearchRQ();
-            listingRequest.SessionId = Guid.NewGuid().ToString();
+            //listingRequest.SessionId = Guid.NewGuid().ToString();
             listingRequest.ResultRequested = ResponseType.Complete;
             listingRequest.SessionId = Guid.NewGuid().ToString();
             listingRequest.Filters = new AvailabilityFilter[1]
@@ -157,6 +157,11 @@ namespace HotelSearchEngine
             PassengerTypeQuantity adultPassengers = new PassengerTypeQuantity();
             adultPassengers.PassengerType = PassengerType.Adult;
             adultPassengers.Quantity = adultNum;
+            adultPassengers.Ages = new int[adultNum];
+            for(int i=0;i<adultPassengers.Ages.Length;i++)
+            {
+                adultPassengers.Ages[i] = 30;
+            }
             PassengerTypeQuantity childPassengers = new PassengerTypeQuantity();
             childPassengers.PassengerType = PassengerType.Child;
             childPassengers.Ages = new int[childrenNum];
