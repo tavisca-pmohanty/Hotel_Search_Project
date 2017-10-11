@@ -10,7 +10,6 @@ namespace ServiceProvider
         public ServiceRepository()
         {
             services = new Dictionary<string, IHotelService>();
-
             services.Add("AutoComplete", new HotelSuggestionService());
             services.Add("HotelListing", new HotelListingService());
             services.Add("HotelRooms", new RoomInfoService());
