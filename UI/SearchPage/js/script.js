@@ -54,11 +54,7 @@ $("#rooms").on("change",function(){
          try {
              $.ajax({
                  type: "GET",
-<<<<<<< HEAD
-                 url: "http://localhost:52467/index/AutoComplete/search/"+ $("#Location").val(),
-=======
                  url: "http://localhost:51052/index/AutoComplete/search/"+ $("#Location").val(),
->>>>>>> Removed multiple dependencies
                  cache: false,
                  success: getSuccess,
                  crossDomain:true,
@@ -143,11 +139,7 @@ $("#rooms").on("change",function(){
         'Content-Type': 'application/json' 
     },
                  type: "POST",
-<<<<<<< HEAD
-                 url: "http://localhost:52467/index/HotelListing/search/GetHotels",
-=======
                  url: "http://localhost:51052/index/HotelListing/search/GetHotels",
->>>>>>> Removed multiple dependencies
                  cache: false,
                  data:JSON.stringify(data),
                 // contentType: 'json/application',
