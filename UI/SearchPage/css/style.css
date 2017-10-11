@@ -123,7 +123,11 @@ p{
     background-size: cover;
     height: 688px;
    
+<<<<<<< HEAD
     background-repeat: no-repeat;
+=======
+    background-repeat: no repeat;
+>>>>>>> Updated Layout with Trip Engine parsing
     
     color: #fff;
 }
