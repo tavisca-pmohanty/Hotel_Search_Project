@@ -22,7 +22,7 @@ namespace HotelSearchEngine
         private readonly string _defaultCompanyCode = "DTP";
         private readonly CompanyCodeContext _defaultCompanyCodeContext = CompanyCodeContext.PersonalTravelClient;
         private readonly string _defaultCompanyDk = "3285301P";
-        private readonly string _defaultCompanyName = "Rovia";
+        private readonly string _defaultCompanyName = "ROVIA";
         private readonly int _defaultCompanyId = 0;
         private readonly string _defaultPriceCurrencyCode = "INR";
         private readonly float _deafultSearchRadius = 30;
