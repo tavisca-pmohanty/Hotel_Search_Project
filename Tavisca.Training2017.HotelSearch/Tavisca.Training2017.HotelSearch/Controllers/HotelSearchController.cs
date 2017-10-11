@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using ServiceProvider;
 using Microsoft.AspNetCore.Http;
 using HotelSearchRequest;
+using HotelSearchEngine.Model;
 
 namespace Tavisca.Training2017.HotelSearch.Controllers
 {
@@ -36,6 +37,17 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
             var service = repository.GetService("HotelRooms");
             string hotelListing = await service.GetData(request);
             await HttpContext.Response.WriteAsync(hotelListing);
+        }
+
+        [Route("GetRoomPricing")]
+        [HttpPost]
+        public async Task GetRoomPrice([FromBody]  HotelRoomAvailResponse requestData)
+        {
+            var request = JsonConvert.SerializeObject(requestData);
+            ServiceRepository repository = new ServiceRepository();
+            var service = repository.GetService("RoomPricing");
+            string roomPricingData = await service.GetData(request);
+            await HttpContext.Response.WriteAsync(roomPricingData);
         }
     }
 }

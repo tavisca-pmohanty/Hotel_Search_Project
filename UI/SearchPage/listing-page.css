@@ -62,9 +62,11 @@
 {
 	display: flex-inline;
 	flex-direction: column;
-	margin-top: 95px;
-	margin-left: 55px;
-	margin-right: 55px;
+	margin-top: 48px;
+	
+  background-image: url("background.png");
+  background-repeat: no-repeat;
+   background-size: cover;
 
 }
 h2
@@ -102,6 +104,10 @@ h2
 	flex-shrink: 1;
 	min-width: 361px;
 	justify-content: space-evenly;
+}
+body
+{
+  background: black;
 }
 #header-container
 {
