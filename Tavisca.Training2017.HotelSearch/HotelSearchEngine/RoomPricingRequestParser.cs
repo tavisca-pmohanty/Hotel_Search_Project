@@ -17,7 +17,7 @@ namespace HotelSearchEngine
         {
             pricingRequest.HotelSearchCriterion = request.HotelCriterionData;
             pricingRequest.Itinerary = request.Itinerary;
-            pricingRequest.SessionId = Guid.NewGuid().ToString();
+            pricingRequest.SessionId = request.SessionId;
             pricingRequest.ResultRequested = ResponseType.Unknown;
             pricingRequest.AdditionalInfo = request.HotelCriterionData.Attributes;
             return pricingRequest;
