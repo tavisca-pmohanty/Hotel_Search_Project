@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using HotelSearchEngine;
+using HotelEngienSearch;
 
 namespace HotelEngineTest
 {
@@ -9,7 +10,7 @@ namespace HotelEngineTest
         [Fact]
         public void Test1()
         {
-            HotelListingResponse res = new HotelListingResponse();
+            RoomListingRequest res = new RoomListingRequest();
             RoomRequestParser parser = new RoomRequestParser();
             parser.Parser(res);
         }
