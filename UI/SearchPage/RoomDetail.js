@@ -7,8 +7,17 @@ $(document).ready(function(){
     
     for(var i=0;i<roomItinerary.Itinerary.Rooms.length;i++)
        {
+      //       var imageUrl="";
+      // for(j=0;j<result[i].itinerary.HotelProperty.MediaContent.length;j++)
+      //   {
+      //     if(result[i].itinerary.HotelProperty.MediaContent[j].Url!=null)
+      //     {
+      //     imageUrl=result[i].itinerary.HotelProperty.MediaContent[j].Url.toString();
+      //     break;
+      //     }
+      //   }
             typeOfRooms.push({
-                image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].url,
+                image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
                roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
               
                 roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
@@ -25,7 +34,7 @@ var template = $('#room-items');
 
   $('#roomList-container').html(html);
 
-$("#room-button").click(function()
+$(".room-button").click(function()
                        {
     var roomName=this.value;
     var data=JSON.stringify(roomItinerary);
