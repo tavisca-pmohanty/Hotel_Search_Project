@@ -6,32 +6,19 @@ namespace ServiceProvider
 {
     public class ServiceRepository
     {
-        //Dictionary<string, IHotelService> services;
-        //public ServiceRepository()
-        //{
-        //    services = new Dictionary<string, IHotelService>();
-        //}
+        Dictionary<string, IHotelService> services;
+        public ServiceRepository()
+        {
+            services = new Dictionary<string, IHotelService>();
+            services.Add("Autocomplete", new HotelSuggestionService());
+            services.Add("HotelListing", new HotelListingService());
+            services.Add("HotelRooms", new RoomInfoService());
+        }
         public IHotelService GetService(string serviceType)
         {
             IHotelService service=null;
-            switch(serviceType)
-            {
-                case "AutoComplete":
-                    service= new HotelSuggestionService();
-                    break;
-                case "HotelListing":
-                    service = new HotelListingService();
-                    break;
-                case "HotelRooms":
-                   service = new RoomInfoService();
-                    break;
-                case "RoomPricing":
-                    service = new RoomPricingService();
-                    break;
-                default:
-                    break;
-            }
-            return service;
+           
+            return service=services[serviceType];
         }
     }
 }
