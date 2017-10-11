@@ -8,6 +8,7 @@ using System.Text;
 using Json;
 using Newtonsoft.Json;
 using System.Collections;
+using HotelSearchEngine.Model;
 
 namespace HotelSearchEngine
 {
@@ -19,7 +20,7 @@ namespace HotelSearchEngine
             roomRequest = new HotelRoomAvailRQ();
          
         }
-        public HotelRoomAvailRQ Parser(HotelListingResponse request)
+        public HotelRoomAvailRQ Parser(RoomListingRequest request)
         {
             //var stream = File.OpenText(@"D:\Hotel_Search_Project\Tavisca.Training2017.HotelSearch\HotelSearchEngine\SessionLog\HotelSearchCriterion_Json.txt");
             //string data = stream.ReadToEnd();

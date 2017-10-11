@@ -21,7 +21,7 @@ namespace ServiceProvider
         public async Task<string> GetData(string searchTerm)
         {
             RoomSearch search = new RoomSearch();
-            var request = JsonConvert.DeserializeObject<HotelListingResponse>(searchTerm);
+            var request = JsonConvert.DeserializeObject<RoomListingRequest>(searchTerm);
             roomItinaries=await search.GetRoomDetails(request);
             return JsonConvert.SerializeObject(roomItinaries);
         }
