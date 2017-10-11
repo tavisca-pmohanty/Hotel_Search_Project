@@ -18,7 +18,7 @@
 			name:result[i].itinerary.HotelProperty.Name,
 			city:result[i].itinerary.HotelProperty.Address.City.Name,
 			rating:result[i].itinerary.HotelProperty.HotelRating.Rating+"/5",
-			price:"Rs."+result[i].itinerary.Fare.BaseFare.Amount+"/-",
+			price:"Rs."+result[i].itinerary.Fare.TotalFare.Amount+"/-",
 			});
 		}
 
@@ -63,7 +63,7 @@
 					                 type: "POST",
 					                 url: "http://localhost:51052/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
-					                 data:data,
+					                 data:JSON.stringify(data),
 					                 dataType: 'json',
 					                
 					                 success: getSuccess,
@@ -80,7 +80,7 @@
 			            	var roomItineraries=data;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
-             				window.location="roomlist.html";
+             				window.location="roomdetail.html";
 						  
 					}
 				}

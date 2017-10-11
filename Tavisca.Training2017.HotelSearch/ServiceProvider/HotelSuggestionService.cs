@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Json;
 using Newtonsoft.Json;
-using HotelSearchRequest;
+using HotelEngienSearch;
 
 namespace ServiceProvider
 {
@@ -16,7 +16,7 @@ namespace ServiceProvider
         {
             hotelList = new List<HotelSuggestionRS>();
         }
-        public async Task<string> GetData(string searchTerm)
+        public async Task<string> GetRequestedData(string searchTerm)
         {
             SearchHotelSuggestion search = new SearchHotelSuggestion();
             string suggestionResponse = await search.GetSearchQueryData(searchTerm);

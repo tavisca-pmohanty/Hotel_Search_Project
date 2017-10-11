@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using HotelSearchEngine;
-using HotelSearchRequest;
 
 
 namespace ServiceProvider
@@ -19,7 +18,7 @@ namespace ServiceProvider
         
         }
 
-        public async Task<string> GetData(string request)
+        public async Task<string> GetRequestedData(string request)
         {
             HotelSearch search = new HotelSearch();
             var hotelRequest = JsonConvert.DeserializeObject<HotelSearchRq>(request);

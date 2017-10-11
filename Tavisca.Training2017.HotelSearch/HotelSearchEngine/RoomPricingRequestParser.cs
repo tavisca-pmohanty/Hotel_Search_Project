@@ -13,7 +13,7 @@ namespace HotelSearchEngine
         {
             pricingRequest = new HotelRoomPriceRQ();
         }
-        public HotelRoomPriceRQ Parser(HotelRoomAvailResponse request)
+        public HotelRoomPriceRQ Parser(RoomPricingRequest request)
         {
             pricingRequest.HotelSearchCriterion = request.HotelCriterionData;
             pricingRequest.Itinerary = request.Itinerary;

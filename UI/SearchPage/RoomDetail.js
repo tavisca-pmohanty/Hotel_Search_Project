@@ -28,6 +28,7 @@ var template = $('#room-items');
 $("#room-button").click(function()
                        {
     var roomName=this.value;
+    var data=JSON.stringify(roomItinerary);
                     try
                           {
                                  $.ajax({
@@ -37,9 +38,9 @@ $("#room-button").click(function()
                                         'Content-Type': 'application/json' 
                                     },
                                      type: "POST",
-                                     url: "http://localhost:52467/index/HotelListing/search/GetRoomPricing",
+                                     url: "http://localhost:51052/index/HotelListing/search/GetRoomPricing",
                                      cache: false,
-                                     data:JSON.stringify(roomItinerary),
+                                     data:JSON.stringify(data),
                                      dataType: 'json',
                                     
                                      success: getSuccess,
@@ -52,7 +53,7 @@ $("#room-button").click(function()
                          }
             function getSuccess(data)
                     {
-                        var obj=Json.parse(data);
+                        var obj=JSON.parse(data);
                         sessionStorage.setItem('HotelListing',JSON.stringify(obj));
 			            window.location="Guest-Details.html";
                     }
