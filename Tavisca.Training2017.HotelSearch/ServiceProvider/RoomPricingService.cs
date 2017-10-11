@@ -12,7 +12,7 @@ namespace ServiceProvider
     {
         public async Task<string> GetRequestedData(string requestData)
         {
-            var request = JsonConvert.DeserializeObject<HotelRoomAvailResponse>(requestData);
+            var request = JsonConvert.DeserializeObject<RoomPricingRequest>(requestData);
             RoomPrice roomPriceService = new RoomPrice();
             HotelRoomPriceResponse response=await roomPriceService.GetRoomPrice(request);
             return JsonConvert.SerializeObject(response);

@@ -33,12 +33,11 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
 
         [Route("GetRoomPricing")]
         [HttpPost]
-        public async Task GetRoomPrice([FromBody]  string requestData)
+        public async Task GetRoomPrice([FromBody] string requestData)
         {
-            var request = JsonConvert.SerializeObject(requestData);
             ServiceRepository repository = new ServiceRepository();
             var service = repository.GetService("RoomPricing");
-            string roomPricingData = await service.GetRequestedData(request);
+            string roomPricingData = await service.GetRequestedData(requestData);
             await HttpContext.Response.WriteAsync(roomPricingData);
         }
     }
