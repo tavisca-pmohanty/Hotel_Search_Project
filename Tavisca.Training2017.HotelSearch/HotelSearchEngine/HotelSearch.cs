@@ -24,23 +24,15 @@ namespace HotelSearchEngine
             HotelSearchRS response = await client.HotelAvailAsync(searchRequest);
             for(int i=0;i<response.Itineraries.Length;i++)
             {
-                HotelListingResponse listingResponse = new HotelListingResponse();
-                listingResponse.Itinerary = response.Itineraries[i];
-                listingResponse.SessionId = response.SessionId;
-                listingResponse.HotelCriterion = searchRequest.HotelSearchCriterion;
+                HotelListingResponse listingResponse = new HotelListingResponse
+                {
+                    Itinerary = response.Itineraries[i],
+                    SessionId = response.SessionId,
+                    HotelCriterion = searchRequest.HotelSearchCriterion
+                };
                 itineraries.Add(listingResponse);
             }
-            //PreservingSessionData(searchRequest);
             return itineraries;
         }
-        //public void PreservingSessionData(HotelSearchRQ searchRequest)
-        //{
-        //    //List<SessionData> list = new List<SessionData>();
-        //    SessionData sessionData = new SessionData();
-        //    sessionData.SessionId = searchRequest.SessionId;
-        //    sessionData.HotelSearchCriterionData = searchRequest.HotelSearchCriterion;
-        //    //list.Add(sessionData);
-        //    File.WriteAllText(@"D:\Hotel_Search_Project\Tavisca.Training2017.HotelSearch\HotelSearchEngine\SessionLog\HotelSearchCriterion_Json.txt", JsonConvert.SerializeObject(sessionData));
-        //}
     }
 }
