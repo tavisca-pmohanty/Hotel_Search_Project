@@ -79,7 +79,7 @@ $(".room-button").click(function()
                       }
                         
                         sessionStorage.setItem('HotelListing',JSON.stringify(dynamicPricing));
-			            window.location="Guest-Details.html";
+			            window.location="guest-details.html";
                     }
                 });      
 });
