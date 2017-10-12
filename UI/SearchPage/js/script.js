@@ -1,4 +1,5 @@
 $(document).ready(function(){ 
+    $("#loaderdiv").hide();
     $("#Location").value="";
     var changeInDate='0m+1d';
     $("#indate").datepicker({
@@ -124,6 +125,7 @@ $("#rooms").on("change",function(){
             alert("Check-Out date field must be filled");
             return;
         }
+        $("#loaderdiv").show();
         var requestData={
                         "SelectedHotel":selectedHotel,
                         "InDate":inDate,
@@ -162,10 +164,10 @@ $("#rooms").on("change",function(){
                          hotelCriterion:data[i].HotelCriterion,
                      });
                  }
-            sessionStorage.setItem('HotelListing',JSON.stringify(hotelItineraries));
+            
 
              window.location="listing-page.html";
-
+             sessionStorage.setItem('HotelListing',JSON.stringify(hotelItineraries));
 
             }
     });
