@@ -13,7 +13,7 @@ $(document).ready(function(){
 	}
 	var inDate=updatedItinerary.data.Itinerary.StayPeriod.Start.toString().split('T');
 	var outDate=updatedItinerary.data.Itinerary.StayPeriod.End.toString().split('T');
-	var currencyType=updatedItinerary.data.Itinerary.Rooms[0].DisplayRoomRate.TotalFare.Currency;
+	var currencyType=roomData.DisplayRoomRate.TotalFare.Currency;
 	var htmlData={
 		hotelName:updatedItinerary.data.Itinerary.HotelProperty.Name,
 	 	roomType:roomData.RoomName,
@@ -31,4 +31,9 @@ var template = $('#itinerary-details');
   var html = compiledTemplate(htmlData);
 
   $('#booking-details').html(html);
+  $("#booking").click(function(){
+  			var cardNumber=$("#cardNum").value;
+  			var cvv=$("#cvv").value;
+  			var mobileNum=$("#mobile").value;
+  });
 });
