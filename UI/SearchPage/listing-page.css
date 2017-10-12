@@ -74,8 +74,8 @@ h2
 {
   color: white;
   margin-top: 29px;
-    margin-left:18px; 
-    margin-right: 5px;
+  margin-left:0px; 
+  margin-right: 5px;
    
 }
 #hotel-detail-container
@@ -96,11 +96,10 @@ h2
   margin-bottom: 92px; 
   margin-top: 25px;
   background-color: #05675e;
-
   border-radius: 1.5em;
   box-shadow: 10px 10px 5px #888888;
-  margin-right: 53px;
-  margin-left: 72px;
+  margin-right: 90px;
+  margin-left: 111px;
   height: auto;
   margin-bottom: 65px;
   flex-flow: wrap;
@@ -132,30 +131,40 @@ p
 }
 
 #hotel-name
-{    color: #e1ff00;
+{   color: #e1ff00;
     font-size: 32px;
     flex-shrink: 1;
     flex-wrap: wrap;
     margin-left: 0px;
-    width: 205px;
+    width: 316px;
 }
-
+#hotel-price
+{
+  width: 316px;
+  color: white;
+}
 #hotel-address
 {
-  font-size: 20px;
+  font-size: 25px;
   flex-shrink: 1;
-margin-top: 31px;
+  margin-top: 31px;
+  width: 316px;
+  color: white;
 }
-
+#rating
+{
+  color: white;
+}
 #hotel-image
 {
    
-       border: 2px solid black;
-    width: 228px;
-    height: 217px;
+    border: 2px solid black;
+    width: 243px;
+    height: 245px;
     flex-shrink: 1;
     margin-top: 43px;
     margin-left: 0px;
+    margin-bottom: inherit;
 
 }
 .room-button

@@ -1,3 +1,11 @@
+Handlebars.registerHelper('times', function (n, block) {
+    var accum = '';
+    for (var i = 0; i < n; ++i)
+        accum += block.fn(i);
+    return accum;
+});
+
+
 	$(document).ready(function(){
 	var result=sessionStorage.getItem('HotelListing');
 	result= JSON.parse(result);
@@ -17,7 +25,7 @@
 			image:imageUrl,
 			name:result[i].itinerary.HotelProperty.Name,
 			city:result[i].itinerary.HotelProperty.Address.City.Name,
-			rating:result[i].itinerary.HotelProperty.HotelRating.Rating+"/5",
+			rating:result[i].itinerary.HotelProperty.HotelRating.Rating,
 			price:result[i].itinerary.Fare.TotalFare.Currency+" "+result[i].itinerary.Fare.TotalFare.Amount,
 			});
 		}
@@ -64,7 +72,7 @@
 
 					                 url: "http://localhost:52467/index/HotelListing/search/GetHotelRooms",
 
-					                 url: "http://localhost:52363/index/HotelListing/search/GetHotelRooms",
+					                 
 
 					                 cache: false,
 					                 data:JSON.stringify(data),
