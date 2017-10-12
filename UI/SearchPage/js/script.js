@@ -1,4 +1,5 @@
 $(document).ready(function(){ 
+    $("#Location").value="";
     var changeInDate='0m+1d';
     $("#indate").datepicker({
         changeMonth: true,

@@ -112,7 +112,7 @@ button
 }
 #booking-details
 {
-	width:100px;
+	width:auto;
 	height: fit-content;
 	border: 2px solid black;
 	flex-grow: 1;

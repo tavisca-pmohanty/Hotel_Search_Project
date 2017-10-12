@@ -7,21 +7,11 @@ $(document).ready(function(){
     
     for(var i=0;i<roomItinerary.Itinerary.Rooms.length;i++)
        {
-      //       var imageUrl="";
-      // for(j=0;j<result[i].itinerary.HotelProperty.MediaContent.length;j++)
-      //   {
-      //     if(result[i].itinerary.HotelProperty.MediaContent[j].Url!=null)
-      //     {
-      //     imageUrl=result[i].itinerary.HotelProperty.MediaContent[j].Url.toString();
-      //     break;
-      //     }
-      //   }
+    
             typeOfRooms.push({
                 image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
                roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
-              
                 roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
-//                bedType:roomItinerary.Itinerary.Rooms[i].BedType,
                 roomFare:"Rs."+roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.Amount,
             });
         }
@@ -37,6 +27,7 @@ var template = $('#room-items');
 $(".room-button").click(function()
                        {
     var roomName=this.value;
+    var numOfRooms=roomItinerary.HotelCriterionData.NoOfRooms;
     var data=JSON.stringify(roomItinerary);
                     try
                           {
@@ -60,26 +51,26 @@ $(".room-button").click(function()
                          {
                                 alert(e);
                          }
-            function getSuccess(dynamicData)
+            function getSuccess(dynamicPricingData)
                     {
                       var dynamicPricing;
-                      if(data.Itinerary==null)
+                      if(dynamicPricingData.Itinerary==null)
                       {
-                         dynamicPricing={
-                              data:data,
-                              roomSelected:roomName
-                        };
+                         alert("Cannot connect to the server at this moment to get the updated price.Please try again later or select some other room");
+                         return;
                       }
                       else
                       {
                         dynamicPricing={
-                              data:dynamicData,
-                              roomSelected:roomName
-                        }
+                              data:dynamicDataPricing,
+                              sessionId:roomItinerary.sessionId,
+                              roomSelected:roomName,
+                              rooms:numOfRooms
+                         }
                       }
                         
-                        sessionStorage.setItem('HotelListing',JSON.stringify(dynamicPricing));
-			            window.location="guest-details.html";
+                        sessionStorage.setItem('UpdatedRoomListing',JSON.stringify(dynamicPricing));
+			                  window.location="guest-details.html";
                     }
                 });      
 });
