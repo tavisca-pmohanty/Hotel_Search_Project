@@ -1,4 +1,28 @@
-
+body{
+	background-color: beige;
+}
+#trip-info{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	background-color: white;
+}
+#guest-details{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	width: 60%;
+	justify-content: space-between;
+}
+#payment-details{
+	border: 1px solid black;
+	width: auto;
+	background-color: white;
+	display: flex;
+	margin-top: 10px;
+	flex-direction: column;
+	justify-content: space-between;
+}
 #header
 {
 	margin: 0px;
@@ -6,7 +30,9 @@
 	background-color: yellow;
 	height: 10px;
 }
-
+#guest-name{
+	width: 500px;
+}
 #logo img
 {
 	margin-left: 55px;
@@ -53,11 +79,13 @@
 {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 .container
 {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	margin-bottom: 2px;
 	width: 10%;
 	flex-grow: 1;
@@ -112,10 +140,13 @@ button
 }
 #booking-details
 {
-	width:auto;
+	width:40%;
 	height: fit-content;
 	border: 2px solid black;
 	flex-grow: 1;
 	margin-right: 55px;
+	border-spacing: 10px;
 	flex-wrap: wrap;
+	color:white;
+	background-color: blue;
 }

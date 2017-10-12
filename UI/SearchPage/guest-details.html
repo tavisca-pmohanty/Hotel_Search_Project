@@ -22,8 +22,10 @@
 					<p>Room 1</p>
 					<div id="parent-container">
 							<div class="container">
+								<div id="trip-info">
+									<div id=guest-details>
 										    <label><b>Guest Name</b></label>
-										    <input type="text" placeholder="Guest Name" name="guest Name" required>
+										    <input type="text" id="guest-name" placeholder="Guest Name" name="guest Name" required>
 										    <br>
 										    <label><b>Country Code</b></label>
 										    <select   id="expiration" name="year" >
@@ -56,11 +58,16 @@
 													<option value="">Bulgaria +359</option>
 
 												</select>
-										    <br>
 										    <label><b>Mobile No</b></label>
 										    <input id="mobile" type="Mobile No" placeholder="Mobile No" name="mobile" required>
-										    <br>
-										
+										    </div>
+											
+											<div id="booking-details">
+												
+
+											</div>
+											</div>
+											<div id="payment-details">
 											<label><b>CardHolder Name</b></label>
 										    	<input type="text" placeholder="CardHolder Name" name="CardHolder Name" required>
 										    	<br>
@@ -120,11 +127,8 @@
 										    <label><b>Email-Id</b></label>
 										    <input type="text" placeholder="Email-Id" name="Email-Id" required>
 							</div>
+						</div>
 
-							<div id="booking-details">
-												
-
-							</div>
 							<script id="itinerary-details" type="text/x-handlebars-template">
 								<div class="layout">
     
