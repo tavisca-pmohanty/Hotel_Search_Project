@@ -20,7 +20,7 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
         [Route("search/{searchTerm}")]
         [HttpGet]
         public async Task GetHotelSuggestionAsync(string searchTerm)
-        {
+        { 
             ServiceRepository repository = new ServiceRepository();
             var service = repository.GetService("AutoComplete");
             var hotelList = await service.GetRequestedData(searchTerm);
