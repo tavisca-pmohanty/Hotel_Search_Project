@@ -16,9 +16,10 @@ namespace HotelSearchEngine
         public HotelRoomPriceRQ Parser(RoomPricingRequest request)
         {
             pricingRequest.HotelSearchCriterion = request.HotelCriterionData;
+            pricingRequest.HotelSearchCriterion.StayPeriod.Duration=request.Itinerary.StayPeriod.Duration;
             pricingRequest.Itinerary = request.Itinerary;
             pricingRequest.SessionId = request.SessionId;
-            pricingRequest.ResultRequested = ResponseType.Complete;
+            pricingRequest.ResultRequested = ResponseType.Unknown;
             pricingRequest.AdditionalInfo = request.HotelCriterionData.Attributes;
             return pricingRequest;
         }

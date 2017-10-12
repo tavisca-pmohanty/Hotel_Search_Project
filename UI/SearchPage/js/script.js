@@ -1,4 +1,6 @@
 $(document).ready(function(){ 
+    $("#loaderdiv").hide();
+    $("#Location").value="";
     var changeInDate='0m+1d';
     $("#indate").datepicker({
         changeMonth: true,
@@ -54,7 +56,11 @@ $("#rooms").on("change",function(){
          try {
              $.ajax({
                  type: "GET",
+
                  url: "http://localhost:52467/index/AutoComplete/search/"+ $("#Location").val(),
+
+                 //url: "http://localhost:52363/index/AutoComplete/search/"+ $("#Location").val(),
+
                  cache: false,
                  success: getSuccess,
                  crossDomain:true,
@@ -123,6 +129,7 @@ $("#rooms").on("change",function(){
             alert("Check-Out date field must be filled");
             return;
         }
+        $("#loaderdiv").show();
         var requestData={
                         "SelectedHotel":selectedHotel,
                         "InDate":inDate,
@@ -139,7 +146,10 @@ $("#rooms").on("change",function(){
         'Content-Type': 'application/json' 
     },
                  type: "POST",
+
                  url: "http://localhost:52467/index/HotelListing/search/GetHotels",
+
+                 //url: "http://localhost:52363/index/HotelListing/search/GetHotels",
                  cache: false,
                  data:JSON.stringify(data),
                 // contentType: 'json/application',
@@ -161,10 +171,10 @@ $("#rooms").on("change",function(){
                          hotelCriterion:data[i].HotelCriterion,
                      });
                  }
-            sessionStorage.setItem('HotelListing',JSON.stringify(hotelItineraries));
+            
 
              window.location="listing-page.html";
-
+             sessionStorage.setItem('HotelListing',JSON.stringify(hotelItineraries));
 
             }
     });

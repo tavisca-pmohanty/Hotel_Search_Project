@@ -4,7 +4,7 @@
 	<head>
 		<title>GuestDetails</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="Guest-Details-style.css">
+		<link rel="stylesheet" type="text/css" href="guest-details-style.css">
 		<script src="Guest-Details.js"></script>
 	</head>
 	<body>
@@ -22,8 +22,10 @@
 					<p>Room 1</p>
 					<div id="parent-container">
 							<div class="container">
+								<div id="trip-info">
+									<div id=guest-details>
 										    <label><b>Guest Name</b></label>
-										    <input type="text" placeholder="Guest Name" name="guest Name" required>
+										    <input type="text" id="guest-name" placeholder="Guest Name" name="guest Name" required>
 										    <br>
 										    <label><b>Country Code</b></label>
 										    <select   id="expiration" name="year" >
@@ -56,11 +58,16 @@
 													<option value="">Bulgaria +359</option>
 
 												</select>
-										    <br>
 										    <label><b>Mobile No</b></label>
 										    <input id="mobile" type="Mobile No" placeholder="Mobile No" name="mobile" required>
-										    <br>
-										
+										    </div>
+											
+											<div id="booking-details">
+												
+
+											</div>
+											</div>
+											<div id="payment-details">
 											<label><b>CardHolder Name</b></label>
 										    	<input type="text" placeholder="CardHolder Name" name="CardHolder Name" required>
 										    	<br>
@@ -120,15 +127,27 @@
 										    <label><b>Email-Id</b></label>
 										    <input type="text" placeholder="Email-Id" name="Email-Id" required>
 							</div>
+						</div>
 
-							<div id="hotel-details">
-												
+							<script id="itinerary-details" type="text/x-handlebars-template">
+								<div class="layout">
+    
+								<div id ="data-container">    
+    							<h2 id="hotel-name">Hotel Name:{{hotelName}}</h2>
+    							<h2 id="room-name">Room Type:{{roomType}}</h2>
+   							 	<h2 id="room-fare">Room-Fare:{{roomFare}}</h2>
+   							 	<h2 id="check-in">Check-In Date:{{checkInDate}}</h2>
+   							 	<h2 id="check-out">Check-Out Date:{{checkOutDate}}</h2>
+    							<h2 id="duration">No. of nights:{{duration}}</h2>
+    							<h2 id="numberOfRooms">Rooms:{{numOfRooms}}</h2>
+    							<h2 id="totalFare">Total Amount:{{amount}}</h2>
+								</div>
+								</div>
+  								</script>
 
-							</div>
+						</div>
 
-					</div>
-
-					<button>
+						<button>
 						Complete Booking
 					</button>
 				</div>
@@ -136,5 +155,8 @@
 			
 			</div>
 		</div>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  			<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+  			<script src="guest-details.js"></script>
 	</body>
 	</html>

@@ -1,15 +1,15 @@
 #logo img
 {
-	margin-left: 55px;
-	margin-top: 30px;
-	height: 50px;
-	margin-bottom: 15px;
+  margin-left: 55px;
+  margin-top: 13px;
+    height: 98px;
+    margin-bottom: 4px;
 
 }
 #logo
 {
 
-	border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 .topnav {
   overflow: hidden;
@@ -60,25 +60,27 @@
 
 #hotelList-container
 {
-	display: flex-inline;
-	flex-direction: column;
-	margin-top: 48px;
-	
-  background-image: url("background.png");
+  display: flex-inline;
+  flex-direction: column;
+  margin-top: 48px;
+  
+ 
   background-repeat: no-repeat;
    background-size: cover;
 
 }
 h2
 
-{margin-top: 29px;
-    margin-left:18px;	
-		margin-right: 5px;
-	 
+{
+  color: white;
+  margin-top: 29px;
+    margin-left:18px; 
+    margin-right: 5px;
+   
 }
 #hotel-detail-container
 {
-	    margin-left: inherit;
+      margin-left: inherit;
 }
 #data-container
 {
@@ -88,48 +90,47 @@ h2
 }
 .layout
 {
-	display: flex;
-	font-size: 16px;
-	border:solid 1px gray;
-	margin-bottom: 92px; 
-	margin-top: 25px;
-	background-color: lightgrey;
-	border-radius: 1.5em;
-	box-shadow: 10px 10px 5px #888888;
-	margin-right: 53px;
+  display: flex;
+  font-size: 16px;
+  border:solid 1px gray;
+  margin-bottom: 92px; 
+  margin-top: 25px;
+  background-color: #05675e;
+
+  border-radius: 1.5em;
+  box-shadow: 10px 10px 5px #888888;
+  margin-right: 53px;
   margin-left: 72px;
-	height: 252px;
-	margin-bottom: 65px;
-	flex-flow: wrap;
-	flex-shrink: 1;
-	min-width: 361px;
-	justify-content: space-evenly;
+  height: auto;
+  margin-bottom: 65px;
+  flex-flow: wrap;
+  flex-shrink: 1;
+  min-width: 361px;
+  justify-content: space-evenly;
 }
-body
-{
-  background: black;
-}
+
 #header-container
 {
-	display: inline-flex;
+  display: inline-flex;
     flex-flow: row;
     justify-content: space-between;
     width: 100%;
-        background: #ff704d;
+    background:#d45903;
+        
 }
 
 p
 {
-	margin-right: 65px;
-	align-items: flex-end;
+  margin-right: 65px;
+  align-items: flex-end;
     font-size: 31px;
-    color: teal;
+    color: #232e82;
     font-weight: bold;
 }
 
 #hotel-name
-{    color: blue;
-    font-size: 18px;
+{    color: #e1ff00;
+    font-size: 32px;
     flex-shrink: 1;
     flex-wrap: wrap;
     margin-left: 0px;
@@ -138,8 +139,8 @@ p
 
 #hotel-address
 {
-	font-size: 20px;
-	flex-shrink: 1;
+  font-size: 20px;
+  flex-shrink: 1;
 margin-top: 31px;
 }
 
@@ -156,22 +157,19 @@ margin-top: 31px;
 }
 .room-button
 {
-	flex-shrink: 3;
+     flex-shrink: 3;
     height: 47px;
-        margin-top: 103px;
+    margin-top: 103px;
     font-weight: bold;
     width: 119px;
-    background-color: #ff9999;
+    background-color: yellow;
     flex-flow: row;
 }
 #room-click
 {
-	margin-left: inherit;
+  margin-left: inherit;
     margin-top: -95px;
 }
-
-
-
 
 
 

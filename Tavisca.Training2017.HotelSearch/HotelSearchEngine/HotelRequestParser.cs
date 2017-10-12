@@ -7,7 +7,7 @@ using System.Text;
 
 namespace HotelSearchEngine
 {
-    class HotelRequsetParser
+    class HotelRequestParser
     {
         private readonly bool _AvailableItineraries = true;
         private readonly int _maxResults = 1500;
@@ -22,7 +22,7 @@ namespace HotelSearchEngine
         private readonly string _defaultCompanyCode = "DTP";
         private readonly CompanyCodeContext _defaultCompanyCodeContext = CompanyCodeContext.PersonalTravelClient;
         private readonly string _defaultCompanyDk = "3285301P";
-        private readonly string _defaultCompanyName = "Rovia";
+        private readonly string _defaultCompanyName = "ROVIA";
         private readonly int _defaultCompanyId = 0;
         private readonly string _defaultPriceCurrencyCode = "INR";
         private readonly float _deafultSearchRadius = 30;
@@ -58,6 +58,7 @@ namespace HotelSearchEngine
         {
 
             HotelSearchRQ listingRequest = new HotelSearchRQ();
+            //listingRequest.SessionId = Guid.NewGuid().ToString();
             listingRequest.ResultRequested = ResponseType.Complete;
             listingRequest.SessionId = Guid.NewGuid().ToString();
             listingRequest.Filters = new AvailabilityFilter[1]
@@ -156,6 +157,11 @@ namespace HotelSearchEngine
             PassengerTypeQuantity adultPassengers = new PassengerTypeQuantity();
             adultPassengers.PassengerType = PassengerType.Adult;
             adultPassengers.Quantity = adultNum;
+            adultPassengers.Ages = new int[adultNum];
+            for(int i=0;i<adultPassengers.Ages.Length;i++)
+            {
+                adultPassengers.Ages[i] = 30;
+            }
             PassengerTypeQuantity childPassengers = new PassengerTypeQuantity();
             childPassengers.PassengerType = PassengerType.Child;
             childPassengers.Ages = new int[childrenNum];
