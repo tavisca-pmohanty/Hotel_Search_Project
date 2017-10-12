@@ -1,48 +1,60 @@
 <!doctype html>
-
+<meta charset="Utf-8">
 <head>
-    <title>Expedia</title>
-    <link rel="stylesheet" type="text/css" href="roomDetail.css">
-
+  <title>Expedia</title>
+  <link rel="stylesheet" type="text/css" href="roomDetail.css">
 </head>
 
 <body>
-
-  <h1>Room List page</h1>
-
-<div id="roomList-container">
-      
-    
-    
-    
+  <div id="header-container">
+    <div id="logo"> 
+      <img src="download.png">
+    </div>
+    <div id="welcome-page">
+      <p>Welcome To Expedia</p>
+    </div>
   </div>
 
-<script id="room-items" type="text/x-handlebars-template">
-{{#each this}}
-<div class="layout">
+  <div class="topnav" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>  
+	
+  <div id="roomList-container">
+      
+      
+      
+<div>
+               
     
-<img id="room-image" scr="{{image}}" alt="No image Available">    
     
-<div id ="data-container">    
-    
-    <h2 id="room-name">Room Type:{{roomType}}</h2>
-    <h2 id="room -address">RoomDescription:{{roomDescription}}</h2>
-<!--    <h2 id="bed-type">Bed-Type:{{bed-type}}</h2>-->
-    <h2 id="room-fare">Room-Fare:{{roomFare}}</h2>
-    
-</div>
-<button  class="room-button" value="{{roomType}}">Reserve</button>
 </div>
 
 
 
+  <script id="RoomListing" type="text/x-handlebars-template">
+    {{#each this}} 
+    <div class="layout" >
+ 
+      <div id="data-container">
+          <h2 id="roomType">{{roomType}}</h2>
+          <h2 id="roomDescription"><div>RoomDescription:{{roomDescription}}</div></h2>
+          
+          <h2 id="Room-price">Fare:{{roomFare}}</h2>
+           <button type="submit" id="room-button" value="{{roomType}}">BookNow</button>
+      </div>
+    <div id>
 
- {{/each}}
-  </script>
+      
+    </div>
+    </div>
+   {{/each}}
+    </script>
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
-  <script src="roomDetail.js"></script>
+   <script src="RoomDetail.js"></script>
+  
 </body>
 
 </html>

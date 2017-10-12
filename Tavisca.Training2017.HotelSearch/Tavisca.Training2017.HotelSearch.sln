@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{35
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engines", "Engines", "{A35C05E8-11EF-4C66-B44C-C979FD037206}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTripFolder", "BookTripFolder\BookTripFolder.csproj", "{9A3D026B-5785-4426-98DD-DFEADB368F91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{43E9288B-3358-4B45-BFAB-14CA0B36B786}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43E9288B-3358-4B45-BFAB-14CA0B36B786}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43E9288B-3358-4B45-BFAB-14CA0B36B786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A3D026B-5785-4426-98DD-DFEADB368F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A3D026B-5785-4426-98DD-DFEADB368F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A3D026B-5785-4426-98DD-DFEADB368F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A3D026B-5785-4426-98DD-DFEADB368F91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{206EA038-C30E-4BF1-9BCD-D8E94E16A465} = {35A0B72B-C607-4ED6-89B7-BFB79BB3D54B}
 		{6DE12CC6-FEFF-4537-A435-E9BD40858B59} = {A35C05E8-11EF-4C66-B44C-C979FD037206}
 		{43E9288B-3358-4B45-BFAB-14CA0B36B786} = {28384C5D-CD56-4D3C-84A3-16D8DAB69792}
+		{9A3D026B-5785-4426-98DD-DFEADB368F91} = {A35C05E8-11EF-4C66-B44C-C979FD037206}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1596307C-6306-42CB-8402-F63DDD4B6456}

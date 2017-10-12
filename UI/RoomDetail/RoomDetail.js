@@ -12,6 +12,7 @@ $(document).ready(function(){
                 roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
                 bedType:roomItinerary.Itinerary.Rooms[i].BedType,
                 roomFare:roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.Amount,
+                MaximumOccupancy:roomItinerary.Itinerary.Rooms[i].MaximumOccupancy;
             });
         }
     successFunction(roomItinerary);
@@ -34,7 +35,7 @@ $("#room-button").click(function()
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type:"POST",
-					                 url: "http://localhost:61641/index/HotelListing/search/GetRooms",
+					                 url: "http://localhost:58336/index/HotelListing/search/GetRooms",
 					                 cache: false,
 					                 data:data,
 					               
@@ -73,7 +74,7 @@ $("#room-button").click(function()
 
 
 
-  var template = $('#room-items');
+  var template = $('#RoomListing');
 
   var compiledTemplate = Handlebars.compile(template.html());
 

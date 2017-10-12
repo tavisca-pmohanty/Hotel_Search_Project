@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BookTripFolder\BookTripFolder.csproj" />
     <ProjectReference Include="..\HotelSearchEngine\HotelSearchEngine.csproj" />
   </ItemGroup>
 
