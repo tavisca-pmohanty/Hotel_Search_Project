@@ -16,7 +16,7 @@ namespace ServiceProvider
         {
             hotelList = new List<HotelSuggestionRS>();
         }
-        public async Task<string> GetRequestedData(string searchTerm)
+        public async Task<string> GetRequestedDataAsync(string searchTerm)
         {
             SearchHotelSuggestion search = new SearchHotelSuggestion();
             string suggestionResponse = await search.GetSearchQueryData(searchTerm);

@@ -11,11 +11,11 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
     {
         [Route("GetHotels")]
         [HttpPost]
-        public async Task GetHotelListing([FromBody]string requestData)
+        public async Task GetHotelListingAsync([FromBody]string requestData)
         {
             ServiceRepository repository = new ServiceRepository();
             var service = repository.GetService("HotelListing");
-            string hotelListing = await service.GetRequestedData(requestData);
+            string hotelListing = await service.GetRequestedDataAsync(requestData);
             await HttpContext.Response.WriteAsync(hotelListing);
         }
 
@@ -27,7 +27,7 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
         {
             ServiceRepository repository = new ServiceRepository();
             var service = repository.GetService("HotelRooms");
-            string hotelListing = await service.GetRequestedData(requestData);
+            string hotelListing = await service.GetRequestedDataAsync(requestData);
             await HttpContext.Response.WriteAsync(hotelListing);
         }
 
@@ -37,7 +37,7 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
         {
             ServiceRepository repository = new ServiceRepository();
             var service = repository.GetService("RoomPricing");
-            string roomPricingData = await service.GetRequestedData(requestData);
+            string roomPricingData = await service.GetRequestedDataAsync(requestData);
             await HttpContext.Response.WriteAsync(roomPricingData);
         }
     }
