@@ -7,16 +7,15 @@ $(document).ready(function(){
     
     for(var i=0;i<roomItinerary.Itinerary.Rooms.length;i++)
        {
-    
             typeOfRooms.push({
-                image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
+                image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].url,
                roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
                 roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
                 roomFare:"Rs."+roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.Amount,
             });
         }
 
-var template = $('#room-items');
+var template = $('#RoomListing');
 
   var compiledTemplate = Handlebars.compile(template.html());
 
@@ -24,7 +23,7 @@ var template = $('#room-items');
 
   $('#roomList-container').html(html);
 
-$(".room-button").click(function()
+$("#room-button").click(function()
                        {
     var roomName=this.value;
     var numOfRooms=roomItinerary.HotelCriterionData.NoOfRooms;
