@@ -115,17 +115,18 @@ h2
     flex-flow: row;
     justify-content: space-between;
     width: 100%;
-    background:#d45903;
+    background:#160a03;
         
 }
 
 p
 {
-  margin-right: 65px;
-  align-items: flex-end;
+    margin-right: 20px;
+    align-items: flex-end;
     font-size: 31px;
-    color: #232e82;
+    color: #94a4d1;
     font-weight: bold;
+    margin-left: 23px;
 }
 
 #hotel-name
@@ -151,18 +152,19 @@ margin-top: 31px;
     width: 228px;
     height: 217px;
     flex-shrink: 1;
-    margin-top: 10px;
+    margin-top: 43px;
     margin-left: 0px;
 
 }
 .room-button
 {
-     flex-shrink: 3;
+    flex-shrink: 3;
     height: 47px;
     margin-top: 103px;
     font-weight: bold;
     width: 119px;
-    background-color: yellow;
+    background-color: black;
+    color: white;
     flex-flow: row;
 }
 #room-click
@@ -170,6 +172,8 @@ margin-top: 31px;
   margin-left: inherit;
     margin-top: -95px;
 }
-
-
+#welcome-page
+{
+margin-top: 50px;
+}
 

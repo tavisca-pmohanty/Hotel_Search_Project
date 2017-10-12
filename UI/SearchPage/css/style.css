@@ -5,8 +5,9 @@
 
 #logo img
 {
+    margin-left: 24px;
     margin-top: 13px;
-    height: 120px;
+    height: 91px;
     margin-bottom: 13px;
 
 }
@@ -139,10 +140,9 @@ p{
     background: rgba(0,0,0,0.6);
     background-size: 80px 60px;
     width: 79%;
-    margin-right: 93px;
     margin-top: inherit;
     padding-left: 0;
-    margin-left: 73px;
+    
 }
 
 
