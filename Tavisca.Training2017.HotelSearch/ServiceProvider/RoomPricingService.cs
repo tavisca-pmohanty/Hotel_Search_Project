@@ -10,7 +10,7 @@ namespace ServiceProvider
 {
     public class RoomPricingService : IHotelService
     {
-        public async Task<string> GetRequestedData(string requestData)
+        public async Task<string> GetRequestedDataAsync(string requestData)
         {
             var request = JsonConvert.DeserializeObject<RoomPricingRequest>(requestData);
             RoomPrice roomPriceService = new RoomPrice();
