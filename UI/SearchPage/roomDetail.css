@@ -12,3 +12,8 @@ body{
     margin-left: 0px;
 
 }
+#rromList-container{
+	border: 2px solid black;
+	width:300px;
+	height: fit-content;
+}

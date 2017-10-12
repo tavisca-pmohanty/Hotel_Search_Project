@@ -121,14 +121,29 @@
 										    <input type="text" placeholder="Email-Id" name="Email-Id" required>
 							</div>
 
-							<div id="hotel-details">
+							<div id="booking-details">
 												
 
 							</div>
+							<script id="itinerary-details" type="text/x-handlebars-template">
+								<div class="layout">
+    
+								<div id ="data-container">    
+    							<h2 id="hotel-name">Hotel Name:{{hotelName}}</h2>
+    							<h2 id="room-name">Room Type:{{roomType}}</h2>
+   							 	<h2 id="room-fare">Room-Fare:{{roomFare}}</h2>
+   							 	<h2 id="check-in">Check-In Date:{{checkInDate}}</h2>
+   							 	<h2 id="check-out">Check-Out Date:{{checkOutDate}}</h2>
+    							<h2 id="duration">No. of nights:{{duration}}</h2>
+    							<h2 id="numberOfRooms">Rooms:{{numofRooms}}</h2>
+    							<h2 id="totalFare">Total Amount:{{amount}}</h2>
+								</div>
+								</div>
+  								</script>
 
-					</div>
+						</div>
 
-					<button>
+						<button>
 						Complete Booking
 					</button>
 				</div>
@@ -136,5 +151,8 @@
 			
 			</div>
 		</div>
+		 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  			<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+  			<script src="Guest-Details.js"></script>
 	</body>
 	</html>

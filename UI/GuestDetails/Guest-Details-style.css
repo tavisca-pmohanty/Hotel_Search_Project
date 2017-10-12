@@ -1,4 +1,7 @@
 
+body{
+	background-color: 
+}
 #header
 {
 	margin: 0px;
@@ -110,9 +113,10 @@ button
 	width: 150px;
 	margin-bottom: 5px;
 }
-#hotel-details
+#booking-details
 {
-	height: 650px;
+	width:100px;
+	height: fit-content;
 	border: 2px solid black;
 	flex-grow: 1;
 	margin-right: 55px;
