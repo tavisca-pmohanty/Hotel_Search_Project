@@ -28,22 +28,69 @@ var template = $('#itinerary-details');
   			var cardNumber=$("#cardNum").val();
   			var cvv=$("#cvv").val();
   			var mobileNum=$("#mobile").val();
-  			var cardDigits=cardNumber.split('');
-  			var mobileDigits=mobileNum.split('');
+  			var expiryMonth=$("#expiryMonth option:selected").val();
+  			var expiryYear=$("#expiryYear option:selected").val();
+  			var countryCode=$("#country-code option:selected").val();
+  			var guestName=$("#guest-name").val();
+  			var emailId=$("#email").val();
+  			var cardHolderName=$("#cardHolder").val();
   			if(mobileNum.length>10 || mobileNum.length<10)
   			{
   				alert("Please enter a valid mobile number");
   				return;
   			}
-  			if(cardDigits.length>16 || cardDigits.length<16)
+  			if(cardNumber.length>16 || cardNumber.length<16)
   			{
   				alert("Please enter a valid credit card number");
   				return;
   			}
-  			if(cvv.length>3 || cardDigits.length<3)
+  			if(cvv.length>3 || cvv.length<3)
   			{
   				alert("Please enter a valid cvv number");
   				return;
   			}
+  			if(expiryMonth==" ")
+  			{
+  				alert("Please enter a valid expiration month");
+  				return;
+  			}
+  			if(expiryYear==" ")
+  			{
+  				alert("Please enter a valid expiration year");
+  				return;
+  			}
+  			var tripFolderRequest={
+  				TripDetails:updatedData.data,
+  				SessionId:updatedData.sessionId,
+  				GuestName:guestName,
+  				CountryCode:countryCode,
+  				MobileNum:mobileNum,
+  				CardHolderName:cardHolderName,
+  				ExpiryMonth:expiryMonth,
+  				ExpiryYear:expiryYear,
+  				Cvv:cvv,
+  				Email_Id:emailId
+  			}
+  			var data=JSON.stringify(tripFolderRequest);
+  			try {
+             $.ajax({
+                 headers: { 
+       						 'Accept': 'application/json',
+        					'Content-Type': 'application/json' 
+   				 },
+                 type: "POST",
+                 url: "http://localhost:52363/api/tripfolder/booktrip",
+                 cache: false,
+                 data:JSON.stringify(data),
+                dataType: 'json',
+                
+                 success: getSuccess,
+                 crossDomain:true,
+             });
+         } catch (e) {
+             alert(e);
+         }
+         function getSuccess(data) { 
+         }
   });
 });
