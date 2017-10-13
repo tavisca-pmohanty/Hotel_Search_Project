@@ -146,6 +146,7 @@ $("#rooms").on("change",function(){
                  type: "POST",
 
 
+
                  url: "http://localhost:52467/index/HotelListing/search/GetHotels",
 
                  cache: false,
