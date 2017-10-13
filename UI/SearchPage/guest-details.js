@@ -30,7 +30,6 @@ var template = $('#itinerary-details');
 
   var html = compiledTemplate(htmlData);
 
-
   $('#booking-details').html(html);
   $("#booking").click(function(){
   			var cardNumber=$("#cardNum").val();
