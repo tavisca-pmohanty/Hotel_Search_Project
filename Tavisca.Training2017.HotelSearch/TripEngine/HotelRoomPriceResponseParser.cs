@@ -1,9 +1,11 @@
-﻿using HotelEngienSearch;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TripEngine.Models;
+using TripEngineServices;
 
-namespace HotelSearchEngine
+namespace TripEngine
 {
     class HotelRoomPriceResponseParser
     {
@@ -12,10 +14,9 @@ namespace HotelSearchEngine
         {
             response = new HotelRoomPriceResponse();
         }
-        public HotelRoomPriceResponse Parser(HotelRoomPriceRS roomPriceRS)
+        public HotelRoomPriceResponse Parser(TripProductPriceRS roomPriceRS)
         {
-            response.Itinerary = roomPriceRS.Itinerary;
-            response.Occupancy = roomPriceRS.RoomOccupancyTypes;
+            response.TripDetails = roomPriceRS.TripProduct;
             response.SessionId = roomPriceRS.SessionId;
             return response;
         }
