@@ -20,7 +20,6 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
         }
 
 
-        //Room-Avail-Api
         [Route("GetHotelRooms")]
         [HttpPost]
         public async Task GetHotelRooms([FromBody]string requestData)
