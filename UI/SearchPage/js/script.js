@@ -65,7 +65,7 @@ $("#rooms").on("change",function(){
              $.ajax({
                  type: "GET",
 
-                 url: "http://localhost:52467/index/AutoComplete/search/"+ $("#Location").val(),
+                 url: "http://localhost:52363/index/AutoComplete/search/"+ $("#Location").val(),
 
                  //url: "http://localhost:52363/index/AutoComplete/search/"+ $("#Location").val(),
 
@@ -155,7 +155,7 @@ $("#rooms").on("change",function(){
     },
                  type: "POST",
 
-                 url: "http://localhost:52467/index/HotelListing/search/GetHotels",
+                 url: "http://localhost:52363/index/HotelListing/search/GetHotels",
 
                  //url: "http://localhost:52363/index/HotelListing/search/GetHotels",
                  cache: false,
