@@ -59,8 +59,6 @@ $("#rooms").on("change",function(){
 
                  url: "http://localhost:52467/index/AutoComplete/search/"+ $("#Location").val(),
 
-                 //url: "http://localhost:52363/index/AutoComplete/search/"+ $("#Location").val(),
-
                  cache: false,
                  success: getSuccess,
                  crossDomain:true,
@@ -147,9 +145,9 @@ $("#rooms").on("change",function(){
     },
                  type: "POST",
 
+
                  url: "http://localhost:52467/index/HotelListing/search/GetHotels",
 
-                 //url: "http://localhost:52363/index/HotelListing/search/GetHotels",
                  cache: false,
                  data:JSON.stringify(data),
                 // contentType: 'json/application',
