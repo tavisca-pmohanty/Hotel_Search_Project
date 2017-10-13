@@ -1,28 +1,18 @@
 $(document).ready(function(){
  	var data=sessionStorage.getItem('UpdatedRoomListing');
- 	var updatedItinerary=JSON.parse(data);
+ 	var updatedData=JSON.parse(data);
 	
-	var roomData;
-	for(var i=0;i<updatedItinerary.data.Itinerary.Rooms.length;i++)
-	{
-		if(updatedItinerary.data.Itinerary.Rooms[i].RoomName.toString()==updatedItinerary.roomSelected.toString())
-		{
-			roomData=updatedItinerary.data.Itinerary.Rooms[i];
-			break;
-		}
-	}
-	var inDate=updatedItinerary.data.Itinerary.StayPeriod.Start.toString().split('T');
-	var outDate=updatedItinerary.data.Itinerary.StayPeriod.End.toString().split('T');
-	var currencyType=roomData.DisplayRoomRate.TotalFare.Currency;
+	var inDate=updatedData.data.Itinerary.StayPeriod.Start.toString().split('T');
+	var outDate=updatedData.data.Itinerary.StayPeriod.End.toString().split('T');
+	var currencyType=updatedData.DisplayRoomRate.TotalFare.Currency;
 	var htmlData={
-		hotelName:updatedItinerary.data.Itinerary.HotelProperty.Name,
-	 	roomType:roomData.RoomName,
-	 	numOfRooms:updatedItinerary.rooms,
-	 	roomFare:currencyType+" "+roomData.DisplayRoomRate.TotalFare.Amount,
-	 	checkInDate:inDate[0],
-	 	checkOutDate:outDate[0],
-	 	duration:updatedItinerary.data.Itinerary.StayPeriod.Duration,
-	 	amount:currencyType+" "+eval(roomData.DisplayRoomRate.TotalFare.Amount*updatedItinerary.rooms*updatedItinerary.data.Itinerary.StayPeriod.Duration)
+		hotelName:" "+updatedData.data.HotelItinerary.HotelProperty.Name.toString(),
+	 	roomType:" "+updatedData.data.HotelItinerary.Rooms[0].RoomName.toString(),
+	 	numOfRooms:" "+updatedData.rooms.toString(),
+	 	checkInDate:" "+inDate[0].toString(),
+	 	checkOutDate:" "+outDate[0].toString(),
+	 	duration:" "+updatedData.data.HotelItinerary.StayPeriod.Duration.toString(),
+	 	amount:" "+(currencyType+" "+updatedData.data.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.Amount).toString()
 }
 var template = $('#itinerary-details');
 
@@ -33,9 +23,24 @@ var template = $('#itinerary-details');
   $('#booking-details').html(html);
   $("#booking").click(function(){
   			var cardNumber=$("#cardNum").val();
-  			var cvv=$("#cvv").value;
+  			var cvv=$("#cvv").val();
   			var mobileNum=$("#mobile").val();
   			var cardDigits=cardNumber.split('');
   			var mobileDigits=mobileNum.split('');
+  			if(mobileNum.length>10 || mobileNum.length<10)
+  			{
+  				alert("Please enter a valid mobile number");
+  				return;
+  			}
+  			if(cardDigits.length>16 || cardDigits.length<16)
+  			{
+  				alert("Please enter a valid credit card number");
+  				return;
+  			}
+  			if(cvv.length>3 || cardDigits.length<3)
+  			{
+  				alert("Please enter a valid cvv number");
+  				return;
+  			}
   });
 });
