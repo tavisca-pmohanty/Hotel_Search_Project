@@ -203,12 +203,7 @@ p{
         justify-content: space-between;
         flex-direction: column;
     }
-    #rooms-info-flex{
-        display: inline-flex;
-        justify-content: flex-start;
-        flex-direction: row;
-    }
-
+   
     
 #loader-div{
     align-content: center;
@@ -249,4 +244,14 @@ button, select {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+ #room-info-flex{
+        display: flex;
+        justify-content: space-around;
+        flex-direction:row;
+    }
+#room-input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
