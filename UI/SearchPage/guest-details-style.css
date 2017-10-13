@@ -107,7 +107,8 @@ body{
 
 #mobile 
 {
-	margin-bottom: 220px;
+	margin-bottom: 100px;
+	width: 300px;
 }
 
 #card-number
