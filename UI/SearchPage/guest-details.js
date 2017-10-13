@@ -1,10 +1,12 @@
 $(document).ready(function(){
- 	var data=sessionStorage.getItem('UpdatedRoomListing');
- 	var updatedData=JSON.parse(data);
+
+	var data=sessionStorage.getItem('UpdatedRoomListing');
+	var updatedData=JSON.parse(data);
 	
-	var inDate=updatedData.data.Itinerary.StayPeriod.Start.toString().split('T');
-	var outDate=updatedData.data.Itinerary.StayPeriod.End.toString().split('T');
-	var currencyType=updatedData.DisplayRoomRate.TotalFare.Currency;
+	
+	var inDate=updatedData.data.HotelItinerary.StayPeriod.Start.toString().split('T');
+	var outDate=updatedData.data.HotelItinerary.StayPeriod.End.toString().split('T');
+	var currencyType=updatedData.data.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.Currency;
 	var htmlData={
 		hotelName:" "+updatedData.data.HotelItinerary.HotelProperty.Name.toString(),
 	 	roomType:" "+updatedData.data.HotelItinerary.Rooms[0].RoomName.toString(),
@@ -14,6 +16,7 @@ $(document).ready(function(){
 	 	duration:" "+updatedData.data.HotelItinerary.StayPeriod.Duration.toString(),
 	 	amount:" "+(currencyType+" "+updatedData.data.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.Amount).toString()
 }
+
 var template = $('#itinerary-details');
 
   var compiledTemplate = Handlebars.compile(template.html());
