@@ -7,6 +7,14 @@ $(document).ready(function(){
                     changeYear: true,
                     minDate: '0m+0d',
         dateFormat:'yy-mm-dd',
+        onSelect: function () {
+            var checkOutDate = $('#outdate');
+            var startDate = $(this).datepicker('getDate');
+            startDate.setDate(startDate.getDate() + 1);
+            var minDate = $(this).datepicker('getDate');
+            checkOutDate.datepicker('setDate', minDate);
+            checkOutDate.datepicker('option', 'minDate', minDate);
+        }
     });
     $("#outdate").datepicker({
         changeMonth: true,
@@ -160,7 +168,14 @@ $("#rooms").on("change",function(){
          } catch (e) {
              alert(e);
          }
-         function getSuccess(data) {    
+         function getSuccess(data) { 
+         if(data.length==0)
+         {
+            alert("Sorry,Could not fetch the hotel details at this moment.Please try again after sometime");
+            $("#loaderdiv").hide();
+            return;
+         } 
+         else{  
             var hotelItineraries=new Array();
              for(var i=0;i<data.length;i++)
                  {
@@ -174,7 +189,7 @@ $("#rooms").on("change",function(){
 
              window.location="listing-page.html";
              sessionStorage.setItem('HotelListing',JSON.stringify(hotelItineraries));
-
+         }
             }
     });
 });
