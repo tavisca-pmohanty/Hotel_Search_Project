@@ -678,7 +678,7 @@ namespace HotelEngienSearch
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="HotelItinerary", Namespace="http://tavisca.com")]
     public partial class HotelItinerary : HotelEngienSearch.TripItinerary
-    {
+    { 
         
         private HotelEngienSearch.Deposit[] AcceptableDepositsField;
         

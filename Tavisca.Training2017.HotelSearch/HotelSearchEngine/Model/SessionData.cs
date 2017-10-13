@@ -7,7 +7,7 @@ namespace HotelSearchEngine.SessionLog
 {
    public class SessionData
     {
-        public string SessionId { get; set; }
+        public string SessionId { get; set; }   
         public HotelSearchCriterion HotelSearchCriterionData { get; set; } 
     }
 }
