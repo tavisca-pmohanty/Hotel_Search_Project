@@ -1,5 +1,8 @@
 body{
-	background-color: beige;
+	background:url("roomlist.jpg") ;
+    color:aliceblue;
+    font-family: sans-serif
+    
 }
 #room-image
 {
@@ -19,9 +22,63 @@ body{
 }
 .room-button{
 			border: 1px solid black;
-			background-color: yellow;
+			background-color:white;
 			height:40px;
 			margin-left: 10px;
 			margin-bottom: 10px;
 			border-radius: 5px;	
+}
+#logo img
+{
+  margin-left: 55px;
+  margin-top: 13px;
+    height: 98px;
+    margin-bottom: 4px;
+
+}
+#logo
+{
+
+  border-bottom: 1px solid black;
+}
+#header-container
+{
+  display: inline-flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 192px;
+    background:#160a03;
+        
+}
+      
+#welcome-page
+{
+margin-top: 50px;
+}
+p
+{
+    margin: 0px;
+    margin-right: 20px;
+    align-items: flex-end;
+    font-size: 31px;
+    color: #94a4d1;
+    font-weight: bold;
+    margin-left: 23px;
+}
+#ReserveBtn
+{
+    align-content: center;
+    padding-left: 200px;
+    background-color: black;
+    color:white;
+    
+}
+#room-fare
+{
+   text-align:right;
+}
+#room-name
+{
+    text-align: left;
 }

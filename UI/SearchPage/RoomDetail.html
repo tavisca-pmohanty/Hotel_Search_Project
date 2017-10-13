@@ -1,12 +1,26 @@
 <!doctype html>
 
 <head>
-    <title>Relaxzzz</title>
+     <title>Hotel-Amour</title>
     <link rel="stylesheet" type="text/css" href="roomDetail.css">
+    
 
 </head>
 
 <body>
+    
+    <div id="header-container">
+    <div id="logo"> 
+
+        <img src="logo.png">
+      <p>Hotel-Amour</p>
+<img src="relaxzz.png">
+    </div>
+    <div id="welcome-page">
+      <p>Say Yes To New Adventures!!!</p>
+    </div>
+  </div>
+    
 
   <h1>Room List page</h1>
 
@@ -21,19 +35,24 @@
 {{#each this}}
 <div class="layout">
     
-<img id="room-image" scr="{{image}}" alt="No image Available">    
+
     
 <div id ="data-container">    
     
-    <h2 id="room-name">Room Type:{{roomType}}</h2>
-    <h2 id="room -address">RoomDescription:{{roomDescription}}</h2>
-<!--    <h2 id="bed-type">Bed-Type:{{bed-type}}</h2>-->
-    <h2 id="room-fare">Room-Fare:{{roomFare}}</h2>
+
+    <div id="fare-Type">
+    <h1 id="room-fare">Fare:{{roomFare}}</h1>
+    <h1 id="room-name">Room-Type:{{roomType}}</h1>
+    </div>
+    <h2 id="room -address">Ameneties:{{roomDescription}}</h2>
+
+ 
     
 </div>
-<button  class="room-button" value="{{roomType}}">Reserve</button>
+    <div id ="ReserveBtn">
+  <button  class="room-button" value="{{roomType}}">Reserve</button>
+    </div>
 </div>
-
 
 
 
