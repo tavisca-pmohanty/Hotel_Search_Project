@@ -27,8 +27,14 @@ var template = $('#room-items');
 $(".room-button").click(function()
                        {
     var roomName=this.value;
+    var pricingRequest={
+                    SessionId:roomItinerary.SessionId,
+                    Itinerary:roomItinerary.Itinerary,
+                    HotelCriterionData:roomItinerary.HotelCriterionData,
+                    RoomName:roomName
+    }
     var numOfRooms=roomItinerary.HotelCriterionData.NoOfRooms;
-    var data=JSON.stringify(roomItinerary);
+    var data=JSON.stringify(pricingRequest);
                     try
                           {
                                  $.ajax({
@@ -54,7 +60,7 @@ $(".room-button").click(function()
             function getSuccess(dynamicPricingData)
                     {
                       var dynamicPricing;
-                      if(dynamicPricingData.Itinerary==null)
+                      if(dynamicPricingData.TripDetails==null)
                       {
                          alert("Cannot connect to the server at this moment to get the updated price.Please try again later or select some other room");
                          return;
@@ -62,9 +68,8 @@ $(".room-button").click(function()
                       else
                       {
                         dynamicPricing={
-                              data:dynamicDataPricing,
-                              sessionId:roomItinerary.sessionId,
-                              roomSelected:roomName,
+                              data:dynamicPricingData.TripDetails,
+                              sessionId:dynamicPricingData.SessionId,
                               rooms:numOfRooms
                          }
                       }

@@ -5,14 +5,13 @@
 		<title>GuestDetails</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="guest-details-style.css">
-		<script src="Guest-Details.js"></script>
 	</head>
 	<body>
-
+		<form>
 		<div class="main-container">
 			<div id="header">
 						<div id="logo"> 
-							 <img src="download.png" alt="Expedia">
+							 <img src="logo.png" alt="Hotel Amour">
 						</div>
 				<div id="wrapper">
 					<h1>Review And Book</h1>
@@ -25,8 +24,7 @@
 								<div id="trip-info">
 									<div id=guest-details>
 										    <label><b>Guest Name</b></label>
-										    <input type="text" id="guest-name" placeholder="Guest Name" name="guest Name" required>
-										    <br>
+										    <input type="text" id="guest-name" maxlength="50" placeholder="Guest Name" name="guest Name" required>
 										    <label><b>Country Code</b></label>
 										    <select   id="expiration" name="year" >
 		   											<option  value="">India +91</option>
@@ -59,7 +57,7 @@
 
 												</select>
 										    <label><b>Mobile No</b></label>
-										    <input id="mobile" type="Mobile No" placeholder="Mobile No" name="mobile" required>
+										    <input id="mobile" type="number" placeholder="Mobile Number" maxlength="10" name="mobile" required="true">
 										    </div>
 											
 											<div id="booking-details">
@@ -69,11 +67,9 @@
 											</div>
 											<div id="payment-details">
 											<label><b>CardHolder Name</b></label>
-										    	<input type="text" placeholder="CardHolder Name" name="CardHolder Name" required>
-										    	<br>
+										    	<input type="text" placeholder="CardHolder Name" maxlength="30" name="CardHolder Name" required="true>
 										    <label><b>Debit/Credit Card Number</b></label>
-										    	<input type="text" placeholder="Card number" name="Card number" required>
-										    	<br>
+										    	<input type="number" id="cardNum" placeholder="Card number" name="Card number" required="true">
 										    <label><b>Expiry Date</b></label>
 										    
 										    <div>
@@ -119,13 +115,9 @@
 											</div>
  		  
 										    <label><b>CVV Number</b></label>
-										    <input id="cvv" type="text" placeholder="cvv" name="cvv" required>
-										    <br>
-
-
-
+										    <input id="cvv" type=number placeholder="cvv" name="cvv" required="true">
 										    <label><b>Email-Id</b></label>
-										    <input type="text" placeholder="Email-Id" name="Email-Id" required>
+										    <input type="text" placeholder="Email-Id" name="Email-Id" required="true">
 							</div>
 						</div>
 
@@ -135,7 +127,6 @@
 								<div id ="data-container">    
     							<h2 id="hotel-name">Hotel Name:{{hotelName}}</h2>
     							<h2 id="room-name">Room Type:{{roomType}}</h2>
-   							 	<h2 id="room-fare">Room-Fare:{{roomFare}}</h2>
    							 	<h2 id="check-in">Check-In Date:{{checkInDate}}</h2>
    							 	<h2 id="check-out">Check-Out Date:{{checkOutDate}}</h2>
     							<h2 id="duration">No. of nights:{{duration}}</h2>
@@ -147,14 +138,13 @@
 
 						</div>
 
-						<button>
+						<button type="submit" id="booking">
 						Complete Booking
 					</button>
 				</div>
-					
-			
 			</div>
 		</div>
+	</form>
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   			<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
   			<script src="guest-details.js"></script>
