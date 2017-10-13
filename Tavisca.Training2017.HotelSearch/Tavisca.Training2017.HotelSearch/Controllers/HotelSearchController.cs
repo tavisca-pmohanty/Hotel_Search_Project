@@ -1,44 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using ServiceProvider;
+using Microsoft.AspNetCore.Http;
 
 namespace Tavisca.Training2017.HotelSearch.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("index/hotelListing/search")]
     public class HotelSearchController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
+        [Route("GetHotels")]
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task GetHotelListingAsync([FromBody]string requestData)
         {
+            ServiceRepository repository = new ServiceRepository();
+            var service = repository.GetService("HotelListing");
+            string hotelListing = await service.GetRequestedDataAsync(requestData);
+            await HttpContext.Response.WriteAsync(hotelListing);
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+
+        [Route("GetHotelRooms")]
+        [HttpPost]
+        public async Task GetHotelRooms([FromBody]string requestData)
         {
+            ServiceRepository repository = new ServiceRepository();
+            var service = repository.GetService("HotelRooms");
+            string hotelListing = await service.GetRequestedDataAsync(requestData);
+            await HttpContext.Response.WriteAsync(hotelListing);
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [Route("GetRoomPricing")]
+        [HttpPost]
+        public async Task GetRoomPrice([FromBody] string requestData)
         {
+            ServiceRepository repository = new ServiceRepository();
+            var service = repository.GetService("RoomPricing");
+            string roomPricingData = await service.GetRequestedDataAsync(requestData);
+            await HttpContext.Response.WriteAsync(roomPricingData);
         }
     }
 }

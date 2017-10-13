@@ -1,0 +1,44 @@
+<!doctype html>
+
+<head>
+    <title>Expedia</title>
+
+</head>
+
+<body>
+
+  <h1>Room List page</h1>
+
+<div id="roomList-container">
+      
+ 
+      </div>
+
+<script id="room-items" type="text/x-handlebars-template">
+{{#each this}}
+<div class="layout">
+    
+<img id="room-image" scr="{{image}}">    
+    
+<div id ="data-container">    
+    
+    <h2 id="room-name">{{roomType}}</h2>
+    <h2 id="room -address">RoomDescription:{{roomDescription}}</h2>
+    <h2 id="bed-type">Bed-Type:{{bed-type}}</h2>
+    <h2 id="room-fare">Room-Fare:{{roomFare}}</h2>
+    
+    </div>
+</div>
+
+
+<button type="submit" id="room-button" value="{{name}}">BookNow</button>
+
+ {{/each}}
+  </script>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+  <script src="RoomDetail.js"></script>
+</body>
+
+</html>

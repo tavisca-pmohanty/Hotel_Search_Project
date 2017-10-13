@@ -1,0 +1,27 @@
+body{
+	background-color: beige;
+}
+#room-image
+{
+   
+       border: 2px solid black;
+    width: 228px;
+    height: 217px;
+    flex-shrink: 1;
+    margin-top: 10px;
+    margin-left: 0px;
+
+}
+.layout{
+	border: 2px solid black;
+	width:auto;
+	height: fit-content;
+}
+.room-button{
+			border: 1px solid black;
+			background-color: yellow;
+			height:40px;
+			margin-left: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;	
+}
