@@ -1,29 +1,21 @@
 $(document).ready(function(){
 	var data=sessionStorage.getItem('UpdatedRoomListing');
-	var updatedItinerary=JSON.parse(data);
+	var updatedData=JSON.parse(data);
 	
-	var roomData;
-	for(var i=0;i<updatedItinerary.data.Itinerary.Rooms.length;i++)
-	{
-		if(updatedItinerary.data.Itinerary.Rooms[i].RoomName.toString()==updatedItinerary.roomSelected.toString())
-		{
-			roomData=updatedItinerary.data.Itinerary.Rooms[i];
-			break;
-		}
-	}
-	var inDate=updatedItinerary.data.Itinerary.StayPeriod.Start.toString().split('T');
-	var outDate=updatedItinerary.data.Itinerary.StayPeriod.End.toString().split('T');
-	var currencyType=roomData.DisplayRoomRate.TotalFare.Currency;
+	
+	var inDate=updatedData.data.HotelItinerary.StayPeriod.Start.toString().split('T');
+	var outDate=updatedData.data.HotelItinerary.StayPeriod.End.toString().split('T');
+	var currencyType=updatedData.data.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.Currency;
 	var htmlData={
-		hotelName:updatedItinerary.data.Itinerary.HotelProperty.Name,
-	 	roomType:roomData.RoomName,
-	 	numOfRooms:updatedItinerary.rooms,
-	 	roomFare:currencyType+" "+roomData.DisplayRoomRate.TotalFare.Amount,
-	 	checkInDate:inDate[0],
-	 	checkOutDate:outDate[0],
-	 	duration:updatedItinerary.data.Itinerary.StayPeriod.Duration,
-	 	amount:currencyType+" "+eval(roomData.DisplayRoomRate.TotalFare.Amount*updatedItinerary.rooms*updatedItinerary.data.Itinerary.StayPeriod.Duration)
+		hotelName:updatedData.data.HotelItinerary.HotelProperty.Name.toString(),
+	 	roomType:updatedData.data.HotelItinerary.Rooms[0].RoomName.toString(),
+	 	numOfRooms:updatedData.rooms.toString(),
+	 	checkInDate:inDate[0].toString(),
+	 	checkOutDate:outDate[0].toString(),
+	 	duration:updatedData.data.HotelItinerary.StayPeriod.Duration.toString(),
+	 	amount:(currencyType+" "+updatedData.data.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.Amount).toString()
 }
+
 var template = $('#itinerary-details');
 
   var compiledTemplate = Handlebars.compile(template.html());

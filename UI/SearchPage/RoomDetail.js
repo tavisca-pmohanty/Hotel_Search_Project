@@ -70,7 +70,6 @@ $(".room-button").click(function()
                         dynamicPricing={
                               data:dynamicPricingData.TripDetails,
                               sessionId:dynamicPricingData.SessionId,
-                              roomSelected:roomName,
                               rooms:numOfRooms
                          }
                       }
