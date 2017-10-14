@@ -41,6 +41,7 @@ namespace HotelSearchEngine
             {
                 Log.LogError(ex);
                 throw ex;
+
             }
         }
     }

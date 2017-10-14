@@ -14,7 +14,7 @@ namespace ServiceProvider
             services.Add("HotelListing", new HotelListingService());
             services.Add("HotelRooms", new RoomInfoService());
             services.Add("RoomPricing", new RoomPricingService());
-            //services.Add("CompleteBooking", new CompleteBookingService());
+            services.Add("BookTripFolder", new BookTripService());
         }
         public IHotelService GetService(string serviceType)
         {
