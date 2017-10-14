@@ -41,7 +41,8 @@ label
 li
 {
     list-style:none;
-    display: inline-block
+    display: inline-block;
+	width:250px;
 }
 input:hover{
     background: #cce6ff;

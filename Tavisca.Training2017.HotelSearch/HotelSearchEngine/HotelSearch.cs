@@ -28,7 +28,7 @@ namespace HotelSearchEngine
                 {
                     Itinerary = response.Itineraries[i],
                     SessionId = response.SessionId,
-                    HotelCriterion = searchRequest.HotelSearchCriterion
+                    HotelCriterion = searchRequest.HotelSearchCriterion,
                 };
                 itineraries.Add(listingResponse);
             }
