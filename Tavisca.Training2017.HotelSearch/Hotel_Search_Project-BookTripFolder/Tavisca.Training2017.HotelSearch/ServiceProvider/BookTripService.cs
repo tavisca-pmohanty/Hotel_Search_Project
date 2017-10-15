@@ -17,7 +17,6 @@ namespace ServiceProvider
             
             var request = JsonConvert.DeserializeObject<HotelSearchRQ>(requestData);
             return null;
-               
         }
     }
 }

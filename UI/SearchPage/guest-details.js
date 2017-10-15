@@ -64,6 +64,7 @@ var template = $('#itinerary-details');
   				SessionId:updatedData.sessionId,
   				GuestName:guestName,
   				CountryCode:countryCode,
+          CardNumber:cardNumber,
   				MobileNum:mobileNum,
   				CardHolderName:cardHolderName,
   				ExpiryMonth:expiryMonth,
@@ -79,7 +80,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-                 url: "http://localhost:52363/api/tripfolder/booktrip",
+                 url: "http://localhost:52363/book/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
