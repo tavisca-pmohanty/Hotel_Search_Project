@@ -128,9 +128,7 @@ Handlebars.registerHelper('times', function (n, block) {
 		$("#hotelList-container").empty();
 		var template = $('#hotel-item');
 	  var compiledTemplate = Handlebars.compile(template.html());
-
 	  var html = compiledTemplate(filteredHotelList);
-
 	  $('#hotelList-container').html(html);
 	  	$(".room-button").click(function()
 		{
