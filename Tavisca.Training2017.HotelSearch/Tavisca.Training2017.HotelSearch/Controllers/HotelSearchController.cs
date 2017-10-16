@@ -13,31 +13,52 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
         [HttpPost]
         public async Task GetHotelListingAsync([FromBody]string requestData)
         {
-            ServiceRepository repository = new ServiceRepository();
-            var service = repository.GetService("HotelListing");
-            string hotelListing = await service.GetRequestedDataAsync(requestData);
-            await HttpContext.Response.WriteAsync(hotelListing);
+            if (requestData == null)
+            {
+                BadRequest();
+            }
+            else
+            {
+                ServiceRepository repository = new ServiceRepository();
+                var service = repository.GetService("HotelListing");
+                string hotelListing = await service.GetRequestedDataAsync(requestData);
+                await HttpContext.Response.WriteAsync(hotelListing);
+            }
         }
 
 
         [Route("GetHotelRooms")]
         [HttpPost]
-        public async Task GetHotelRooms([FromBody]string requestData)
+        public async Task GetHotelRoomsAsync([FromBody]string requestData)
         {
-            ServiceRepository repository = new ServiceRepository();
-            var service = repository.GetService("HotelRooms");
-            string hotelListing = await service.GetRequestedDataAsync(requestData);
-            await HttpContext.Response.WriteAsync(hotelListing);
+            if (requestData == null)
+            {
+                BadRequest();
+            }
+            else
+            {
+                ServiceRepository repository = new ServiceRepository();
+                var service = repository.GetService("HotelRooms");
+                string hotelListing = await service.GetRequestedDataAsync(requestData);
+                await HttpContext.Response.WriteAsync(hotelListing);
+            }
         }
 
         [Route("GetRoomPricing")]
         [HttpPost]
-        public async Task GetRoomPrice([FromBody] string requestData)
+        public async Task GetRoomPriceAsync([FromBody] string requestData)
         {
-            ServiceRepository repository = new ServiceRepository();
-            var service = repository.GetService("RoomPricing");
-            string roomPricingData = await service.GetRequestedDataAsync(requestData);
-            await HttpContext.Response.WriteAsync(roomPricingData);
+            if (requestData == null)
+            {
+                BadRequest();
+            }
+            else
+            {
+                ServiceRepository repository = new ServiceRepository();
+                var service = repository.GetService("RoomPricing");
+                string roomPricingData = await service.GetRequestedDataAsync(requestData);
+                await HttpContext.Response.WriteAsync(roomPricingData);
+            }
         }
     }
 }

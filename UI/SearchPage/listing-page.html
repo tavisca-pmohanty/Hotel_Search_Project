@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" type="text/css" href="listing-page.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
   <div id="header-container">
@@ -27,12 +27,57 @@
   <a href="index.html">Home</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>  
-  
+  <div id="main-container">
+    <div id="filter-container">
+      <h2>Filters:</h2>
+      <h3>By Star Rating:</h3>
+      <div class="rating-container">
+       <input class="radioBtn" type="radio" name="rating" value="5">
+      <p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+      </p>
+    </div>
+     <div class="rating-container">
+      <input class="radioBtn" type="radio" name="rating" value="4">
+      <p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+      </p>
+    </div>
+     <div class="rating-container">
+      <input class="radioBtn" type="radio" name="rating" value="3">
+      <p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+      </p>
+    </div>
+     <div class="rating-container">
+      <input class="radioBtn" type="radio" name="rating" value="2">
+      <p>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+      </p>
+    </div>
+     <div class="rating-container">
+      <input class="radioBtn" type="radio" name="rating" value="1">
+      <p>
+        <span class="glyphicon glyphicon-star"></span>
+      </p>
+    </div>  
+    </div>
   <div id="hotelList-container">
 <div>
                 <img src="bus.gif" alt="Loading.." />
             </div>
     </div>
+  </div>
 <script id="hotel-item" type="text/x-handlebars-template">
     {{#each this}} 
     <div class="layout">
@@ -55,6 +100,7 @@
     </script>
 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
    <script src="listing-page.js"></script>
   
