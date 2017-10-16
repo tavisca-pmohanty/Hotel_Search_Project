@@ -1,7 +1,7 @@
 #logo img
 {
-  margin-left: 32px;
-  margin-top: 13px;
+    margin-left: 32px;
+    margin-top: 13px;
     height: 98px;
     margin-bottom: 4px;
 
@@ -9,7 +9,7 @@
 #logo
 {
 
-  border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
 #hotelList-container
 {
@@ -31,16 +31,16 @@ p
 }
 #welcome-page
 {
-margin-top: 50px;
+    margin-top: 50px;
 }
 .topnav 
 {
-  overflow: hidden;
-  background-color: #333;
+    overflow: hidden;
+    background-color: #333;
 }
 #header-container
 {
-      padding: 22px 15px;
+    padding: 22px 15px;
     display: inline-flex;
     flex-flow: row;
     justify-content: space-between;
@@ -49,32 +49,34 @@ margin-top: 50px;
     background:#160a03;
         
 }
-
 .topnav a
 {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+    display: block;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 .topnav a:hover 
 {
-  background-color: teal;
-  color: black;
+    background-color: teal;
+    color: black;
 }
 
 .topnav .icon 
 {
-  display: none;
+    display: none;
 }
 
 @media screen and (max-width: 600px) 
 {
-  .topnav a:not(:first-child) {display: none;}
+  .topnav a:not(:first-child) 
+  {
+    display: none;
+  }
   .topnav a.icon 
   {
     float: right;
@@ -84,7 +86,10 @@ margin-top: 50px;
 
 @media screen and (max-width: 600px) 
 {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive 
+  {
+    position: relative;
+  }
   .topnav.responsive .icon 
   {
     position: absolute;
@@ -101,23 +106,21 @@ margin-top: 50px;
 }
 #roomlist-container
 {
-      border:2px solid black;
-      display: flex-inline;
-      flex-direction: column;
-      margin-top: 48px; 
-      background-repeat: no-repeat;
-      background-size: cover;
-
+    border:2px solid black;
+    display: flex-inline;
+    flex-direction: column;
+    margin-top: 48px; 
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #data-container
 {
-  margin-left: 2px;
+    margin-left: 2px;
     width: 178px;
-   margin-top: 3px;
- }
+    margin-top: 3px;
+}
 #hotel-image
-{
-   
+{   
     border: 2px solid black;
     width: 243px;
     height: 245px;
@@ -125,27 +128,26 @@ margin-top: 50px;
     margin-top: 43px;
     margin-left: 0px;
     margin-bottom: inherit;
-
 }
 .layout
 {
-  width: 75% ;
-  display: flex;
-  font-size: 16px;
-  border:solid 1px gray;
-  margin-bottom: 92px; 
-  margin-top: 25px;
-  background-color: #0f1717;
-  border-radius: 1.5em;
-  box-shadow: 10px 10px 5px #888888;
-  margin-right: 139px;
-  margin-left: 148px;
-  height: auto;
-  margin-bottom: 43px;
-  flex-flow: wrap;
-  flex-shrink: 1;
-  min-width: 361px;
-  justify-content: space-evenly;
+    width: 75% ;
+    display: flex;
+    font-size: 16px;
+    border:solid 1px gray;
+    margin-bottom: 92px; 
+    margin-top: 25px;
+    background-color: #0f1717;
+    border-radius: 1.5em;
+    box-shadow: 10px 10px 5px #888888;
+    margin-right: 139px;
+    margin-left: 148px;
+    height: auto;
+    margin-bottom: 43px;
+    flex-flow: wrap;
+    flex-shrink: 1;
+    min-width: 361px;
+    justify-content: space-evenly;
 }   
 #room-name
 {   color: #e1ff00;
@@ -153,28 +155,27 @@ margin-top: 50px;
     flex-shrink: 1;
     flex-wrap: wrap;
     margin-left: 0px;
-   width: 222px;
+    width: 222px;
 }
 #hotel-price
 {
-  width: 316px;
-  color: white;
+    width: 316px;
+    color: white;
 }
 #room-address
 {
-  font-size: 25px;
-  flex-shrink: 1;
-  margin-top: 31px;
-  width: 316px;
-  color: white;
+    font-size: 25px;
+    flex-shrink: 1;
+    margin-top: 31px;
+    width: 316px;
+    color: white;
 }
 #rating
 {
-  color: white;
+    color: white;
 }
 #hotel-image
 {
-   
     border: 2px solid black;
     width: 243px;
     height: 245px;
@@ -182,14 +183,13 @@ margin-top: 50px;
     margin-top: 43px;
     margin-left: 0px;
     margin-bottom: inherit;
-
 }
 .room-button
 {
 
     flex-shrink: 3;
     height: 47px;
-        margin-top: 266px;
+    margin-top: 266px;
     font-weight: bold;
     width: 119px;
     background-color: black;

@@ -52,6 +52,17 @@ input:hover{
     align-items: center !important;
     justify-content: center !important;
 }
+
+#site-name
+{   
+      font: 400 45px/01.7 'Courgette', Helvetica, sans-serif;
+      margin: 5 33px 10px;
+      align-items: flex-end;
+      font-size: 23px;
+      color: #94a4d1;
+      font-weight: bold;
+      margin-left: 23px;
+}
 a
 {
     text-decoration: none;
