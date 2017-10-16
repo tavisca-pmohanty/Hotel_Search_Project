@@ -14,11 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HotelSearchEngine\HotelSearchEngine.csproj" />
-<<<<<<< HEAD
-=======
-    <ProjectReference Include="..\HotelSearchRequest\HotelSearchRequest.csproj" />
     <ProjectReference Include="..\TripEngine\TripEngine.csproj" />
->>>>>>> Updated Layout with Trip Engine parsing
   </ItemGroup>
 
 </Project>
