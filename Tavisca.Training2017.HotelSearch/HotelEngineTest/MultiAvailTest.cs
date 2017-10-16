@@ -3,6 +3,8 @@ using Xunit;
 using HotelSearchEngine;
 using HotelEngienSearch;
 using System.Collections.Generic;
+using Tavisca.Training2017.HotelSearch.Controllers;
+using System.Threading.Tasks;
 
 namespace HotelEngineTest
 {
@@ -28,13 +30,21 @@ namespace HotelEngineTest
             request.SelectedHotel.SearchType = "City";
             request.SelectedHotel.StateCode = "";
             HotelSearch search = new HotelSearch();
-            List<HotelListingResponse> hotelItinerary=await search.GetHotelListing(request);
+            List<HotelListingResponse> hotelItinerary = await search.GetHotelListing(request);
             bool itemsInList = false;
-            if(hotelItinerary.Count>0)
+            if (hotelItinerary.Count > 0)
             {
                 itemsInList = true;
             }
             Assert.True(itemsInList);
+        }
+
+        [Fact]
+        public async void Sending_Request_To_Hotel_Search_Controller_To_Get_Hotel_List_With_Null_Request_Data()
+        {
+            HotelSearchController controller = new HotelSearchController();
+            await controller.GetHotelListingAsync(null);
+
         }
     }
 }

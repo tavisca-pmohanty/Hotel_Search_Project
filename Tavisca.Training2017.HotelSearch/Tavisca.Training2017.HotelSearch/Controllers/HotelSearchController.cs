@@ -29,7 +29,7 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
 
         [Route("GetHotelRooms")]
         [HttpPost]
-        public async Task GetHotelRooms([FromBody]string requestData)
+        public async Task GetHotelRoomsAsync([FromBody]string requestData)
         {
             if (requestData == null)
             {
@@ -46,7 +46,7 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
 
         [Route("GetRoomPricing")]
         [HttpPost]
-        public async Task GetRoomPrice([FromBody] string requestData)
+        public async Task GetRoomPriceAsync([FromBody] string requestData)
         {
             if (requestData == null)
             {
