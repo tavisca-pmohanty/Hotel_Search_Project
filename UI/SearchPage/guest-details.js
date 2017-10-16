@@ -79,7 +79,7 @@ var template = $('#itinerary-details');
              $.ajax({
                  headers: { 
        						 'Accept': 'application/json',
-        					'Content-Type': 'application/json' 
+        					'Content-Type': 'application/json'
    				 },
                  type: "POST",
                  url: "http://localhost:49633/api/tripfolder/booktrip",

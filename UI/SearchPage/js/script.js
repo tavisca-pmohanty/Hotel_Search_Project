@@ -151,7 +151,7 @@ $("#rooms").on("change",function(){
         'Content-Type': 'application/json' 
     },
                  type: "POST",
-                 url: "http://localhost:52363/index/HotelListing/search/GetHotels",
+                 url: "http://localhost:49633/index/HotelListing/search/GetHotels",
                  cache: false,
                  data:JSON.stringify(data),
                 // contentType: 'json/application',
