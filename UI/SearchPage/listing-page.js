@@ -98,5 +98,41 @@ Handlebars.registerHelper('times', function (n, block) {
 				}
 				}
 		});
+		$('input[type="radio"]').on('click change', function(e) {
+   				var ratingSelected=this.value;
+   				var filteredHotelList= new Array();
+		for(i=0;i<result.length;i++)
+		{
+			if(result[i].itinerary.HotelProperty.HotelRating.Rating==ratingSelected)
+			{
+			var imageUrl="";
+			for(j=0;j<result[i].itinerary.HotelProperty.MediaContent.length;j++)
+				{
+					if(result[i].itinerary.HotelProperty.MediaContent[j].Url!=null)
+					{
+					imageUrl=result[i].itinerary.HotelProperty.MediaContent[j].Url.toString();
+					break;
+					}
+				}
+			filteredHotelList.push({
+			image:imageUrl,
+			name:result[i].itinerary.HotelProperty.Name,
+			city:result[i].itinerary.HotelProperty.Address.City.Name,
+			rating:result[i].itinerary.HotelProperty.HotelRating.Rating,
+			price:result[i].itinerary.Fare.TotalFare.Currency+" "+result[i].itinerary.Fare.TotalFare.Amount,
+			});
+		}
+		}
+		$("#hotelList-container").empty();
+		var template = $('#hotel-item');
+
+	  var compiledTemplate = Handlebars.compile(template.html());
+
+	  var html = compiledTemplate(filteredHotelList);
+
+	  $('#hotelList-container').html(html);
+
+
+			});
 
 	});
