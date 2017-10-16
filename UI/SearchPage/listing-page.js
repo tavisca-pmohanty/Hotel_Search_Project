@@ -131,8 +131,54 @@ Handlebars.registerHelper('times', function (n, block) {
 	  var html = compiledTemplate(filteredHotelList);
 
 	  $('#hotelList-container').html(html);
+	  	$(".room-button").click(function()
+		{
+				var hotelName=this.value;
+				for(var i=0;i<result.length;i++)
+				{
+					if(hotelName.toString()==(result[i].itinerary.HotelProperty.Name.toString()+" "+result[i].itinerary.HotelProperty.Address.City.Name.toString()))
+					{
+						var data=JSON.stringify(result[i]);
+						 try
+						  {
+					             $.ajax({
+					                headers: 
+					                { 
+						       		 	'Accept': 'application/json',
+						        		'Content-Type': 'application/json' 
+					    			},
+					                 type: "POST",
 
+					                 url: "http://localhost:52363/index/HotelListing/search/GetHotelRooms",
+
+					                 
+
+					                 cache: false,
+					                 data:JSON.stringify(data),
+					                 dataType: 'json',
+					                
+					                 success: getSuccess,
+					                 crossDomain:true,
+					             });
+					      } 
+					    catch (e)
+					     {
+					         	alert(e);
+					     }
+			         function getSuccess(data)
+			          {
+			             
+			            	var roomItineraries=data;
+            				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
+
+             				window.location="roomDetail.html";
+						  
+					}
+				}
+				}
+		});
 
 			});
 
 	});
+
