@@ -81,113 +81,128 @@ h2
 #hotel-detail-container
 {
       margin-left: inherit;
-}
-#data-container
-{
-  margin-left: 2px;
-    width: 178px;
-    margin-top: -22px;
-}
-.layout
-{
-  display: flex;
-  font-size: 16px;
-  border:solid 1px gray;
-  margin-bottom: 92px; 
-  margin-top: 25px;
-  background-color: #05675e;
-  border-radius: 1.5em;
-  box-shadow: 10px 10px 5px #888888;
-  margin-right: 90px;
-  margin-left: 111px;
-  height: auto;
-  margin-bottom: 65px;
-  flex-flow: wrap;
-  flex-shrink: 1;
-  min-width: 361px;
-  justify-content: space-evenly;
-}
+  }
 
-#header-container
-{
-  display: inline-flex;
-    flex-flow: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 192px;
-    background:#160a03;
-        
-}
+  #data-container
+  {
+      margin-left: 2px;
+      width: 178px;
+      margin-top: 3px;
+  }
+  
+  .layout
+  {
+      width: auto ;
+      display: flex;
+      font-size: 16px;
+      border:solid 1px gray;
+      margin-bottom: 92px; 
+      margin-top: 25px;
+      background-color: #0f1717;
+      border-radius: 1.5em;
+      box-shadow: 10px 10px 5px #888888;
+      margin-right: 139px;
+      margin-left: 148px;
+      height: auto;
+      margin-bottom: 43px;
+      flex-flow: wrap;
+      flex-shrink: 1;
+      min-width: 361px;
+      justify-content: space-evenly;
+  }
 
-p
-{
-    margin: 0px;
-    margin-right: 20px;
-    align-items: flex-end;
-    font-size: 31px;
-    color: #94a4d1;
-    font-weight: bold;
-    margin-left: 23px;
-}
+  #header-container
+  {
+      padding: 22px 15px;
+      display: inline-flex;
+      flex-flow: row;
+      justify-content: space-between;
+      width: 100%;
+      height: 192px;
+      background:#160a03;          
+  }
 
-#hotel-name
-{   color: #e1ff00;
-    font-size: 32px;
-    flex-shrink: 1;
-    flex-wrap: wrap;
-    margin-left: 0px;
-    width: 316px;
-}
-#hotel-price
-{
-  width: 316px;
-  color: white;
-}
-#hotel-address
-{
-  font-size: 25px;
-  flex-shrink: 1;
-  margin-top: 31px;
-  width: 316px;
-  color: white;
-}
-#rating
-{
-  color: white;
-}
-#hotel-image
-{
-   
-    border: 2px solid black;
-    width: 243px;
-    height: 245px;
-    flex-shrink: 1;
-    margin-top: 43px;
-    margin-left: 0px;
-    margin-bottom: inherit;
+  p
+  {
+      font: 400 45px/01.7 'Courgette', Helvetica, sans-serif;
+      margin: 5 33px 10px;
+      align-items: flex-end;
+      font-size: 31px;
+      color: #94a4d1;
+      font-weight: bold;
+      margin-left: 23px;
+  }
 
-}
-.room-button
-{
-    flex-shrink: 3;
-    height: 47px;
-    margin-top: 103px;
-    font-weight: bold;
-    width: 119px;
-    background-color: black;
-    color: white;
-    flex-flow: row;
-}
-#room-click
-{
-  margin-left: inherit;
-    margin-top: -95px;
-}
-#welcome-page
-{
-margin-top: 50px;
-}
+  #hotel-name
+  {   color: #e1ff00;
+      font-size: 17px;
+      flex-shrink: 1;
+      flex-wrap: wrap;
+      margin-left: 0px;
+      width: 222px;
+  }
+  #hotel-price
+  {
+      font-size:  15px;
+      color: white;
+  }
 
+  #hotel-address
+  {
+      font-size: 15px;
+      flex-shrink: 1;
+      margin-top: 31px;
+      width: 316px;
+      color: white;
+  }
+
+  #rating
+  {
+      color: white;
+      font-size: 15px;
+  }
+  #hotel-image
+  {
+     
+      border: 2px solid black;
+      width: 150px;
+      height: 150px;
+      flex-shrink: 1;
+      margin-top: 43px;
+      margin-left: 0px;
+      margin-bottom: inherit;
+
+  }
+  .room-button
+  {
+      flex-shrink: 3;
+      height: auto;
+      margin-top: 167px;
+      font-weight: bold;
+      width: auto;
+      background-color: black;
+      color: white;
+      flex-flow: row;
+  }
+
+  #welcome-page
+  {
+      margin-top: 50px;
+  }
+
+  .glyphicon 
+  {
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      color: goldenrod;
+      -moz-osx-font-smoothing: grayscale;
+  }
 #main-container{
   display:flex;
   flex-direction: row;
@@ -198,7 +213,7 @@ margin-top: 50px;
   flex-direction: column;
   margin-top: 80px;
   margin-left: 40px;
-  width: 11%;
+  width: auto;
   height:400px;
   border: 5px solid black;
 }

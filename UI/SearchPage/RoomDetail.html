@@ -26,9 +26,9 @@
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>  
      <div id="roomlist-container">
-              <!-- <div>
+              <div>
                 <img src="bus.gif" alt="Loading.." />
-              </div>  -->
+              </div> 
     </div>
             
             <script id="room-item" type="text/x-handlebars-template">
@@ -37,23 +37,20 @@
                   <img id="hotel-image" src="{{image}}"> 
                         <div id="data-container">
                             <h2 id="room-name">{{roomType}}</h2>
-                            <h2 id="room-address">{{roomDescription}}</h2>
+                            <h2 id="room-address">{{{roomDescription}}}</h2>
 
                             
                             <h2 id="hotel-price">Fare:{{roomFare}}</h2>
                         </div>
                         <div>
-                              <button   type="submit" class="room-button" value="{{name}} {{city}}" alt="Hotel Image Unavailable">Book Now</button>
+                              <button   type="submit" class="room-button" value="{{roomType}}" alt="Hotel Image Unavailable">Book Now</button>
                         </div>
               </div>
             {{/each}}
             </script>
  
- <!-- <h3 id="rating">Rating:{{#times rating}}
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            {{/times}}</h3> -->
-           
-        
+ 
+    
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
     <script src="RoomDetail.js"></script>
