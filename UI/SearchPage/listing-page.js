@@ -12,6 +12,7 @@ Handlebars.registerHelper('times', function (n, block) {
 		var hotelList= new Array();
 		for(i=0;i<result.length;i++)
 		{
+			
 			var imageUrl="";
 			for(j=0;j<result[i].itinerary.HotelProperty.MediaContent.length;j++)
 				{
@@ -26,8 +27,9 @@ Handlebars.registerHelper('times', function (n, block) {
 			name:result[i].itinerary.HotelProperty.Name,
 			city:result[i].itinerary.HotelProperty.Address.City.Name,
 			rating:result[i].itinerary.HotelProperty.HotelRating.Rating,
-			price:result[i].itinerary.Fare.TotalFare.Currency+" "+result[i].itinerary.Fare.TotalFare.Amount,
-			});
+			price:result[i].itinerary.Fare.TotalFare.BaseEquivCurrency+" "+result[i].itinerary.Fare.TotalFare.UsdEquivAmount,
+            });
+			
 		}
 
 		

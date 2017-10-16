@@ -8,12 +8,15 @@ $(document).ready(function(){
     for(var i=0;i<roomItinerary.Itinerary.Rooms.length;i++)
        {
     
+             if(roomItinerary.Itinerary.Rooms[i].HotelFareSource.Name=="HotelBeds Test")
+          {
             typeOfRooms.push({
                 image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
                roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
                 roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
-                roomFare:"Rs."+roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.Amount,
+                roomFare:roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.BaseEquivCurrency+" "+roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.UsdEquivAmount,
             });
+          }
         }
 
 var template = $('#room-items');
