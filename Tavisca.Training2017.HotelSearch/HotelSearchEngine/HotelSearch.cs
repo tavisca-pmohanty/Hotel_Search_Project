@@ -20,7 +20,7 @@ namespace HotelSearchEngine
         public async Task<List<HotelListingResponse>> GetHotelListing(HotelSearchRq request)
         {
             HotelEngineClient client = new HotelEngineClient();
-            HotelSearchRQ searchRequest = new HotelRequestParser().Parser(request);
+            HotelSearchRQ searchRequest =await new HotelRequestParser().ParserAsync(request);
             HotelSearchRS response = await client.HotelAvailAsync(searchRequest);
             for(int i=0;i<response.Itineraries.Length;i++)
             {

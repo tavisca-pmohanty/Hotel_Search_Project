@@ -9,6 +9,7 @@ using Json;
 using Newtonsoft.Json;
 using System.Collections;
 using HotelSearchEngine.Model;
+using System.Threading.Tasks;
 
 namespace HotelSearchEngine
 {
@@ -20,7 +21,7 @@ namespace HotelSearchEngine
             roomRequest = new HotelRoomAvailRQ();
          
         }
-        public HotelRoomAvailRQ Parser(RoomListingRequest request)
+        public async Task<HotelRoomAvailRQ> ParserAsync(RoomListingRequest request)
         {
             roomRequest.ResultRequested = ResponseType.Complete;
             roomRequest.SessionId = request.SessionId;
