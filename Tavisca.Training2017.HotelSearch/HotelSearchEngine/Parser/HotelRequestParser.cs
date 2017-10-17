@@ -83,7 +83,9 @@ namespace HotelSearchEngine
             listingRequest.HotelSearchCriterion.PriceCurrencyCode = _defaultPriceCurrencyCode;
             listingRequest.HotelSearchCriterion.Guests = GetGuestDetails(request.Adults, request.Children);
             listingRequest.HotelSearchCriterion.Location = GetLocation(request.SelectedHotel.CityName, request.SelectedHotel.SearchType, geocode);
-            listingRequest.HotelSearchCriterion.NoOfRooms = GetMinimumRoomsRequired(request.Adults, request.Children);
+            int totalRooms = 1;
+            int.TryParse(request.Rooms, out totalRooms);
+            listingRequest.HotelSearchCriterion.NoOfRooms = totalRooms;
             listingRequest.HotelSearchCriterion.ProcessingInfo = new HotelSearchProcessingInfo()
             {
                 DisplayOrder = HotelDisplayOrder.ByRelevanceScoreDescending
