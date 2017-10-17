@@ -11,21 +11,24 @@ $(document).ready(function(){
              if(roomItinerary.Itinerary.Rooms[i].HotelFareSource.Name=="HotelBeds Test")
           {
             typeOfRooms.push({
+                //name:roomItinerary.itinerary.HotelProperty.Name,
                 image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
-               roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
+                roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
                 roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
                 roomFare:roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.BaseEquivCurrency+" "+roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.UsdEquivAmount,
             });
           }
         }
 
-var template = $('#room-items');
+var template = $('#room-item');
 
   var compiledTemplate = Handlebars.compile(template.html());
 
   var html = compiledTemplate(typeOfRooms);
 
-  $('#roomList-container').html(html);
+  $('#roomlist-container').html(html);
+
+
 
 $(".room-button").click(function()
                        {
@@ -47,7 +50,7 @@ $(".room-button").click(function()
                                         'Content-Type': 'application/json' 
                                     },
                                      type: "POST",
-                                     url: "http://localhost:52363/index/HotelListing/search/GetRoomPricing",
+                                     url: "http://localhost:64160/index/HotelListing/search/GetRoomPricing",
                                      cache: false,
                                      data:JSON.stringify(data),
                                      dataType: 'json',
@@ -78,7 +81,7 @@ $(".room-button").click(function()
                       }
                         
                         sessionStorage.setItem('UpdatedRoomListing',JSON.stringify(dynamicPricing));
-			                  window.location="guest-details.html";
+                        window.location="guest-details.html";
                     }
                 });      
 });
