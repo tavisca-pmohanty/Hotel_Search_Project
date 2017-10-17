@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace HotelSearchEngine
 {
@@ -54,7 +55,7 @@ namespace HotelSearchEngine
         private readonly int _defaultTotalRecordsBeforeFiltering = 0;
         private readonly int _defaultTotalResults = 0;
 
-        public HotelSearchRQ Parser(HotelSearchRq request)
+        public async Task<HotelSearchRQ> ParserAsync(HotelSearchRq request)
         {
 
             HotelSearchRQ listingRequest = new HotelSearchRQ();

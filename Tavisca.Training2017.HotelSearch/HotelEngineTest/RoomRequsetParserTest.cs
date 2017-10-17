@@ -11,7 +11,7 @@ namespace HotelEngineTest
         {
             RoomListingRequest res = new RoomListingRequest();
             RoomRequestParser parser = new RoomRequestParser();
-            parser.Parser(res);
+            parser.ParserAsync(res);
         }
     }
 }

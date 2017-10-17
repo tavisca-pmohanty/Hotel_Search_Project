@@ -17,7 +17,7 @@ namespace HotelSearchEngine
         public async Task<HotelRoomAvailResponse> GetRoomDetails(RoomListingRequest request)
         {
             HotelEngineClient client = new HotelEngineClient();
-            HotelRoomAvailRQ roomAvailRequest = new RoomRequestParser().Parser(request);
+            HotelRoomAvailRQ roomAvailRequest = await new RoomRequestParser().ParserAsync(request);
             HotelRoomAvailRS response=await client.HotelRoomAvailAsync(roomAvailRequest);
             roomList.Itinerary = response.Itinerary;
             roomList.SessionId = response.SessionId;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using TripEngineServices;
 
 namespace TripEngine
@@ -12,7 +13,7 @@ namespace TripEngine
         {
             pricingRequest = new TripProductPriceRQ();
         }
-        public TripProductPriceRQ Parser(RoomPricingRequest request)
+        public async Task<TripProductPriceRQ> ParserAsync(RoomPricingRequest request)
         {
             HotelItinerary itinerary = new HotelItinerary();
             Room roomDetails = new Room();
