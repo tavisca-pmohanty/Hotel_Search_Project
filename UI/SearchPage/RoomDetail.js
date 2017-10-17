@@ -11,8 +11,9 @@ $(document).ready(function(){
              if(roomItinerary.Itinerary.Rooms[i].HotelFareSource.Name=="HotelBeds Test")
           {
             typeOfRooms.push({
+                //name:roomItinerary.itinerary.HotelProperty.Name,
                 image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
-               roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
+                roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
                 roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
                 roomFare:roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.BaseEquivCurrency+" "+roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.UsdEquivAmount,
             });
