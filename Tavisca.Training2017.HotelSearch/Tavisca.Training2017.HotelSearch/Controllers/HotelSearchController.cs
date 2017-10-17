@@ -73,8 +73,6 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
             string bookingData = await service.GetRequestedDataAsync(requestData);
             await HttpContext.Response.WriteAsync(bookingData);
         }
-    }
-
 
         [Route("index/")]
         public class CompleteBooKingParser : Controller
@@ -210,3 +208,4 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
         }
 
     }
+}
