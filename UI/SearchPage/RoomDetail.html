@@ -32,8 +32,10 @@
     </div>
             
             <script id="room-item" type="text/x-handlebars-template">
+               <label>{{name}}</label>
             {{#each this}}  
               <div class="layout">
+
                   <img id="hotel-image" src="{{image}}"> 
                         <div id="data-container">
                             <h2 id="room-name">{{roomType}}</h2>

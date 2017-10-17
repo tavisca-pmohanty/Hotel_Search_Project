@@ -1,5 +1,6 @@
 body{
 	background-color: beige;
+	background-color: #0f1717;
 }
 #trip-info{
 	display: flex;
@@ -11,7 +12,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	border: 1px solid black;
-	width: 60%;
+	width: 47%;
 	justify-content: space-between;
 }
 #payment-details{
@@ -54,7 +55,7 @@ body{
 #wrapper h1
 {
 	
-	color: #000066;
+	color: aliceblue;
 	margin-bottom: 5px;
 }
 
@@ -103,12 +104,20 @@ body{
 	width: 90%;
 	box-shadow: 5px 5px 5px #888888;
 	font-size: 15px;
+	margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 #mobile 
 {
 	margin-bottom: 100px;
 	width: 300px;
+}
+#country-code
+{
+	margin-top: 15px;
+    margin-bottom: 15px;
+    height: 41px;
 }
 
 #card-number
@@ -148,6 +157,5 @@ button
 	margin-right: 55px;
 	border-spacing: 10px;
 	flex-wrap: wrap;
-	color:white;
-	background-color: blue;
-}
+	color:black;
+	}

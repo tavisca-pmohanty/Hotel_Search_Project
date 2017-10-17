@@ -99,30 +99,29 @@
   #data-container
   {
       margin-left: 2px;
-      width: 178px;
+      width: 208px;
       margin-top: 3px;
   }
   
   .layout
-  {
-      width: 75% ;
-      display: flex;
-      font-size: 16px;
-      border:solid 1px gray;
-      margin-bottom: 92px; 
-      margin-top: 25px;
-      background-color: #0f1717;
-      border-radius: 1.5em;
-      box-shadow: 10px 10px 5px #888888;
-      margin-right: 139px;
-      margin-left: 148px;
-      height: auto;
-      margin-bottom: 43px;
-      flex-flow: wrap;
-      flex-shrink: 1;
-      min-width: 361px;
-      justify-content: space-evenly;
-  }
+{
+       width: auto;
+    display: flex;
+    font-size: 16px;
+    border: solid 1px gray;
+    margin-bottom: 92px;
+    margin-top: 25px;
+    background-color: #0f1717;
+    box-shadow: 10px 10px 5px #888888;
+    margin-right: 139px;
+    margin-left: 100px;
+    height: 250px;
+    margin-bottom: 43px;
+    flex-flow: wrap;
+    flex-shrink: 1;
+    min-width: 361px;
+    justify-content: space-evenly;
+}   
 
   #header-container
   {
@@ -148,7 +147,7 @@
 
   #hotel-name
   {   color: #e1ff00;
-      font-size: 32px;
+      font-size: 17px;
       flex-shrink: 1;
       flex-wrap: wrap;
       margin-left: 0px;
@@ -156,13 +155,13 @@
   }
   #hotel-price
   {
-      width: 316px;
+      font-size: 15px;
       color: white;
   }
 
   #hotel-address
   {
-      font-size: 25px;
+      font-size: 15px;
       flex-shrink: 1;
       margin-top: 31px;
       width: 316px;
@@ -172,13 +171,14 @@
   #rating
   {
       color: white;
+      font-size: 13px;
   }
   #hotel-image
   {
      
       border: 2px solid black;
-      width: 243px;
-      height: 245px;
+      width: 150px;
+      height: 150px;
       flex-shrink: 1;
       margin-top: 43px;
       margin-left: 0px;
@@ -186,16 +186,17 @@
 
   }
   .room-button
-  {
-      flex-shrink: 3;
-      height: 47px;
-      margin-top: 167px;
-      font-weight: bold;
-      width: 119px;
-      background-color: black;
-      color: white;
-      flex-flow: row;
-  }
+{
+
+    flex-shrink: 3;
+    height: auto;
+    margin-top: 150px;
+    font-weight: bold;
+    width: auto;
+    background-color: black;
+    color: white;
+    flex-flow: row;
+}       
 
   #welcome-page
   {

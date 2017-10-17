@@ -4,7 +4,8 @@ using System.Text;
 
 namespace TripEngine.Models
 {
-    class TripEngineResponse
+    public class TripEngineResponse
     {
+        public string SessionId { get; set; }
     }
 }
