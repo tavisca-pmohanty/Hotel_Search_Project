@@ -16,7 +16,7 @@ namespace ServiceProvider
         public async Task<string> GetRequestedDataAsync(string requestData)
         {
             TripFolderClient tripFolder = new TripFolderClient();
-            var request = JsonConvert.DeserializeObject<HotelSearchR>(requestData);
+            var request = JsonConvert.DeserializeObject<HotelSearchRequestBooking>(requestData);
             var response = await tripFolder.GetTripFolderAsync(request);
             var responseData = JsonConvert.SerializeObject(response);
             return responseData;

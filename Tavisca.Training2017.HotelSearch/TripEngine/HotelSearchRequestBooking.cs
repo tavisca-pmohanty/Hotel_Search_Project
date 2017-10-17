@@ -5,7 +5,7 @@ using TripEngineServices;
 
 namespace TripEngine
 {
-    public class HotelSearchR
+    public class HotelSearchRequestBooking
     {
         public HotelTripProduct TripDetails { get; set; }
         public string SessionId { get; set; }
@@ -18,7 +18,7 @@ namespace TripEngine
         public string ExpiryMonth { get; set; }
         public string ExpiryYear { get; set; }
         public string Cvv { get; set; }
-        public HotelSearchR()
+        public HotelSearchRequestBooking()
         {
             TripDetails = new HotelTripProduct();
         }

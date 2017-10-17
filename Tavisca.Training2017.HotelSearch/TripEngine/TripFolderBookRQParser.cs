@@ -206,7 +206,7 @@ namespace TripEngine
         //    var response = await tripsEngineClient.BookTripFolderAsync(tripFolderBookRQ);
         //    return response;
         //}
-        public async Task<TripFolderBookRQ> Get(HotelSearchR request)
+        public async Task<TripFolderBookRQ> Get(HotelSearchRequestBooking request)
         {
 
             TripFolderBookRQ tripFolderBookRQ = new TripFolderBookRQ()
