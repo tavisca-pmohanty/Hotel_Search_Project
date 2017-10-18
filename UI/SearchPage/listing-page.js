@@ -174,6 +174,7 @@ Handlebars.registerHelper('times', function (n, block) {
 
 			});
 		$("#remove-filters").click(function(){
+			$('input[name=rating]').attr('checked',false);
 				$("#hotelList-container").empty();
 		var template = $('#hotel-item');
 
