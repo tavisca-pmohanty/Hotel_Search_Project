@@ -9,7 +9,9 @@ namespace TripEngine
     {
         public HotelTripProduct TripDetails { get; set; }
         public string SessionId { get; set; }
-        public string GuestName { get; set; }
+        public string GuestFirstName { get; set; }
+        public string GuestLastName { get; set; }
+        public GuestName Name { get; set; }
         public long CountryCode { get; set; }
         public string MobileNum { get; set; }
         public string Email_Id { get; set; }
