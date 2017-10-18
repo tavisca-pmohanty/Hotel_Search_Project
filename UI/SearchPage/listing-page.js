@@ -117,7 +117,7 @@ Handlebars.registerHelper('times', function (n, block) {
 			name:result[i].itinerary.HotelProperty.Name,
 			city:result[i].itinerary.HotelProperty.Address.City.Name,
 			rating:result[i].itinerary.HotelProperty.HotelRating.Rating,
-			price:result[i].itinerary.Fare.TotalFare.Currency+" "+result[i].itinerary.Fare.TotalFare.Amount,
+			price:result[i].itinerary.Fare.TotalFare.BaseEquivCurrency+" "+result[i].itinerary.Fare.TotalFare.UsdEquivAmount,
 			});
 		}
 		}
