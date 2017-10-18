@@ -173,6 +173,16 @@ Handlebars.registerHelper('times', function (n, block) {
 		});
 
 			});
+		$("#remove-filters").click(function(){
+				$("#hotelList-container").empty();
+		var template = $('#hotel-item');
+
+	  var compiledTemplate = Handlebars.compile(template.html());
+
+	  var html = compiledTemplate(hotelList);
+
+	  $('#hotelList-container').html(html);
+		});
 
 	});
 
