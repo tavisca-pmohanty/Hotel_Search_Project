@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
 }
-
+.travel-date{
+    color:black;
+}
 #logo img
 {
     margin-left: 24px;
@@ -311,6 +313,6 @@ button, select {
 .left-addon input {
     padding-left: 30px;
 }
-.black {
+.travel-date {
     color: black;
 }

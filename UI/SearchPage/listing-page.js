@@ -71,7 +71,6 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-
 					                 url: "http://localhost:49633/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
 					                 data:JSON.stringify(data),
@@ -118,7 +117,7 @@ Handlebars.registerHelper('times', function (n, block) {
 			name:result[i].itinerary.HotelProperty.Name,
 			city:result[i].itinerary.HotelProperty.Address.City.Name,
 			rating:result[i].itinerary.HotelProperty.HotelRating.Rating,
-			price:result[i].itinerary.Fare.TotalFare.Currency+" "+result[i].itinerary.Fare.TotalFare.Amount,
+			price:result[i].itinerary.Fare.TotalFare.BaseEquivCurrency+" "+result[i].itinerary.Fare.TotalFare.UsdEquivAmount,
 			});
 		}
 		}
@@ -147,8 +146,12 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-
+<<<<<<< HEAD
 					                 url: "http://localhost:49633/index/HotelListing/search/GetHotelRooms",
+=======
+
+					                 url: "http://localhost:49898/index/HotelListing/search/GetHotelRooms",
+>>>>>>> 1893347405e34329275ed9be6fda0cc226a098ea
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
@@ -175,6 +178,17 @@ Handlebars.registerHelper('times', function (n, block) {
 		});
 
 			});
+		$("#remove-filters").click(function(){
+			$('input[name=rating]').attr('checked',false);
+				$("#hotelList-container").empty();
+		var template = $('#hotel-item');
+
+	  var compiledTemplate = Handlebars.compile(template.html());
+
+	  var html = compiledTemplate(hotelList);
+
+	  $('#hotelList-container').html(html);
+		});
 
 	});
 

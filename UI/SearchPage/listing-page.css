@@ -199,7 +199,8 @@
       height: 150px;
       flex-shrink: 1;
       margin-top: 43px;
-      margin-left: 0px;
+      margin-left: 50px;
+      margin-right: 50px;
       margin-bottom: inherit;
 
   }
@@ -214,6 +215,7 @@
     background-color: black;
     color: white;
     flex-flow: row;
+    margin-right: 40px;
 }       
   #welcome-page
   {
@@ -256,4 +258,7 @@ input[type=radio] {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+}
+#remove-filters{
+  font-size: 15px;
 }
