@@ -146,7 +146,12 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
+<<<<<<< HEAD
 					                 url: "http://localhost:49633/index/HotelListing/search/GetHotelRooms",
+=======
+
+					                 url: "http://localhost:49898/index/HotelListing/search/GetHotelRooms",
+>>>>>>> 1893347405e34329275ed9be6fda0cc226a098ea
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
