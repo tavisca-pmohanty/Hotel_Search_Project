@@ -31,7 +31,8 @@ var template = $('#itinerary-details');
   			var expiryMonth=$("#expiryMonth option:selected").val();
   			var expiryYear=$("#expiryYear option:selected").val();
   			var countryCode=$("#country-code option:selected").val();
-  			var guestName=$("#guest-name").val();
+  			var guestFirstName=$("#guest-Fname").val();
+            var guestLastName=$("#guest-Lname").val();      
   			var emailId=$("#email").val();
   			var cardHolderName=$("#cardHolder").val();
   			if(mobileNum.length>10 || mobileNum.length<10)
@@ -62,8 +63,10 @@ var template = $('#itinerary-details');
   			var tripFolderRequest={
   				TripDetails:updatedData.data,
   				SessionId:updatedData.sessionId,
-  				GuestName:guestName,
+  				GuestFName:guestFirstName,
+                GuestLName:guestLastName,
   				CountryCode:countryCode,
+                CardNumber:cardNumber,
   				MobileNum:mobileNum,
   				CardHolderName:cardHolderName,
   				ExpiryMonth:expiryMonth,

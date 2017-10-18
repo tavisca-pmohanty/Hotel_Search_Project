@@ -42,6 +42,12 @@ body{
 	margin-bottom: 15px;
 
 }
+#guest-Fname{
+	width: 500px;
+}
+#guest-Lname{
+	width: 500px;
+}
 #logo
 {
 
