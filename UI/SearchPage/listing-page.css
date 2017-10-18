@@ -69,6 +69,25 @@
         display: block;
         text-align: left;
       }
+      .layout
+  {
+       width:max-content;
+    display: flex;
+    font-size: 16px;
+    border: solid 1px gray;
+    margin-bottom: 92px;
+    margin-top: 25px;
+    background-color: #0f1717;
+    box-shadow: 10px 10px 5px #888888;
+    margin-right: 139px;
+    margin-left: 100px;
+    height: 250px;
+    margin-bottom: 43px;
+    flex-flow: wrap;
+    flex-shrink: 1;
+    min-width: 361px;
+    justify-content: space-evenly;
+}   
 
   }
 
@@ -104,7 +123,7 @@
   
   .layout
 {
-       width: auto;
+       width:max-content;
     display: flex;
     font-size: 16px;
     border: solid 1px gray;
