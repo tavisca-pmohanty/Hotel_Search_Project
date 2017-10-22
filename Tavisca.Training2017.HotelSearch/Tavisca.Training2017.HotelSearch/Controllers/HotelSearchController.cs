@@ -109,26 +109,24 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
 
             public async Task<CompleteBookingRS> BookRequest()
             {
-                try
+                CompleteBookingRQ CompleteBookingRequestParser = new CompleteBookingRQ()
                 {
-                    CompleteBookingRQ CompleteBookingRequestParser = new CompleteBookingRQ()
+                    ResultRequested = ResponseType.Unknown,
+                    SessionId = Guid.NewGuid().ToString(),
+                    ExternalPayment = new CreditCardPayment()
                     {
-                        ResultRequested = ResponseType.Unknown,
-                        SessionId = Guid.NewGuid().ToString(),
-                        ExternalPayment = new CreditCardPayment()
+                        Amount = new Money()
                         {
-                            Amount = new Money()
-                            {
-                                BaseEquivAmount = 0M,
-                                BaseEquivCurrency = "USD",
-                                Currency = "USD",
-                                DisplayAmount = 41.20M,
-                                Amount = 41.20M,
-                                DisplayCurrency = "USD",
-                                UsdEquivAmount = 0M
-                            },
-                            Attributes = new StateBag[]
-                                {
+                            BaseEquivAmount = 0M,
+                            BaseEquivCurrency = "USD",
+                            Currency = "USD",
+                            DisplayAmount = 41.20M,
+                            Amount = 41.20M,
+                            DisplayCurrency = "USD",
+                            UsdEquivAmount = 0M
+                        },
+                        Attributes = new StateBag[]
+                             {
                        new StateBag()
                        {
                            Name ="PointOfSale",
@@ -195,59 +193,56 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
                            Name ="_AttributeRule_Rovia_Password",
                            Value = "true"
                        },
-                                },
-                            BillingAddress = new Address()
+                             },
+                        BillingAddress = new Address()
+                        {
+                            CodeContext = LocationCodeContext.Address,
+                            GmtOffsetMinutes = 0,
+                            Id = 0,
+                            AddressLine1 = "5360 Legacy Drive Suite 300",
+                            City = new City
                             {
-                                CodeContext = LocationCodeContext.Address,
+                                CodeContext = LocationCodeContext.City,
                                 GmtOffsetMinutes = 0,
                                 Id = 0,
-                                AddressLine1 = "5360 Legacy Drive Suite 300",
-                                City = new City
-                                {
-                                    CodeContext = LocationCodeContext.City,
-                                    GmtOffsetMinutes = 0,
-                                    Id = 0,
-                                    Name = "Plano",
-                                    Country = "US",
-                                    State = "TX"
-                                },
-                                PhoneNumber = "1214 - 231 - 5445",
-                                ZipCode = "75024"
+                                Name = "Plano",
+                                Country = "US",
+                                State = "TX"
                             },
-                            Id = Guid.Parse("00000000-0000-0000-0000-000000000000"),
-                            PaymentType = PaymentType.Credit,
-                            Rph = 0,
-                            CardMake = new CreditCardMake()
-                            {
-                                Code = "VI",
-                                Name = "Visa"
-                            },
-                            CardType = CreditCardType.Personal,
-                            ExpiryMonthYear = new DateTime(2019, 01, 01),
-                            IsThreeDAuthorizeRequired = false,
-                            NameOnCard = "Saurabh Cache",
-                            Number = "0000000000001111",
-                            SecurityCode = "123"
+                            PhoneNumber = "1214 - 231 - 5445",
+                            ZipCode = "75024"
                         },
-                        TripFolderId = Guid.Parse("bb900986-6117-40f5-8d2e-f72a32ea5185")
-                    };
-                }
-                catch(Exception ex)
-                {
-                    Logger.Log.LogError(ex);
-                }
-
+                        Id = Guid.Parse("00000000-0000-0000-0000-000000000000"),
+                        PaymentType = PaymentType.Credit,
+                        Rph = 0,
+                        CardMake = new CreditCardMake()
+                        {
+                            Code = "VI",
+                            Name = "Visa"
+                        },
+                        CardType = CreditCardType.Personal,
+                        ExpiryMonthYear = new DateTime(2019, 01, 01),
+                        IsThreeDAuthorizeRequired = false,
+                        NameOnCard = "Saurabh Cache",
+                        Number = "0000000000001111",
+                        SecurityCode = "123"
+                    },
+                    TripFolderId = Guid.Parse("bb900986-6117-40f5-8d2e-f72a32ea5185")
+                };
+                CompleteBookingRS result = null;
                 try
                 {
                     TripsEngineClient tripsEngineClient = new TripsEngineClient();
-                    CompleteBookingRS result = await tripsEngineClient.CompleteBookingAsync(CompleteBookingRequestParser);
-                    return result;
+                    result = await tripsEngineClient.CompleteBookingAsync(CompleteBookingRequestParser);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
+
                     Logger.Log.LogError(ex);
                 }
+                return result;
             }
+            
         }
 
     }
