@@ -24,7 +24,7 @@ namespace Logger
             message += "-----------------------------------------------------------";
             message += Environment.NewLine;
             //string path = Server.MapPath("~/ErrorLog/ErrorLog.txt");
-            using (StreamWriter writer = new StreamWriter("C:/Desktop/Log.txt", true))
+            using (StreamWriter writer = new StreamWriter("d:/Log.txt", true))
             {
                 writer.WriteLine(message);
                 writer.Close();
