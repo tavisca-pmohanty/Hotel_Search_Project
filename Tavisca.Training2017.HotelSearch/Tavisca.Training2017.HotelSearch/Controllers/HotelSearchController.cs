@@ -22,10 +22,17 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
             }
             else
             {
-                ServiceRepository repository = new ServiceRepository();
-                var service = repository.GetService("HotelListing");
-                string hotelListing = await service.GetRequestedDataAsync(requestData);
-                await HttpContext.Response.WriteAsync(hotelListing);
+                try
+                {
+                    ServiceRepository repository = new ServiceRepository();
+                    var service = repository.GetService("HotelListing");
+                    string hotelListing = await service.GetRequestedDataAsync(requestData);
+                    await HttpContext.Response.WriteAsync(hotelListing);
+                }
+                catch(Exception ex)
+                {
+                    Logger.Log.LogError(ex);
+                }
             }
         }
 
@@ -40,10 +47,18 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
             }
             else
             {
-                ServiceRepository repository = new ServiceRepository();
-                var service = repository.GetService("HotelRooms");
-                string hotelListing = await service.GetRequestedDataAsync(requestData);
-                await HttpContext.Response.WriteAsync(hotelListing);
+                try
+                {
+                    ServiceRepository repository = new ServiceRepository();
+                    var service = repository.GetService("HotelRooms");
+                    string hotelListing = await service.GetRequestedDataAsync(requestData);
+                    await HttpContext.Response.WriteAsync(hotelListing);
+                }
+                catch(Exception ex)
+                {
+                    Logger.Log.LogError(ex);
+                    throw ex;
+                }
             }
         }
 
@@ -57,27 +72,44 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
             }
             else
             {
-                ServiceRepository repository = new ServiceRepository();
-                var service = repository.GetService("RoomPricing");
-                string roomPricingData = await service.GetRequestedDataAsync(requestData);
-                await HttpContext.Response.WriteAsync(roomPricingData);
+                try
+                {
+                    ServiceRepository repository = new ServiceRepository();
+                    var service = repository.GetService("RoomPricing");
+                    string roomPricingData = await service.GetRequestedDataAsync(requestData);
+                    await HttpContext.Response.WriteAsync(roomPricingData);
+                }
+                catch(Exception ex)
+                {
+                    Logger.Log.LogError(ex);
+                    throw ex;
+                }
             }
         }
         [Route("GetBookingDetails")]
         [HttpPost]
         public async Task GetBookingDetail([FromBody] string requestData)
         {
+            try
+            {
 
-            ServiceRepository repository = new ServiceRepository();
-            var service = repository.GetService("CompleteBooking");
-            string bookingData = await service.GetRequestedDataAsync(requestData);
-            await HttpContext.Response.WriteAsync(bookingData);
+                ServiceRepository repository = new ServiceRepository();
+                var service = repository.GetService("CompleteBooking");
+                string bookingData = await service.GetRequestedDataAsync(requestData);
+                await HttpContext.Response.WriteAsync(bookingData);
+            }
+            catch(Exception ex)
+            {
+                Logger.Log.LogError(ex);
+                throw ex;
+            }
         }
 
         [Route("index/")]
         public class CompleteBooKingParser : Controller
         {
             [HttpGet("book")]
+
             public async Task<CompleteBookingRS> BookRequest()
             {
                 CompleteBookingRQ CompleteBookingRequestParser = new CompleteBookingRQ()
@@ -97,7 +129,7 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
                             UsdEquivAmount = 0M
                         },
                         Attributes = new StateBag[]
-                            {
+                             {
                        new StateBag()
                        {
                            Name ="PointOfSale",
@@ -164,7 +196,7 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
                            Name ="_AttributeRule_Rovia_Password",
                            Value = "true"
                        },
-                            },
+                             },
                         BillingAddress = new Address()
                         {
                             CodeContext = LocationCodeContext.Address,
@@ -200,11 +232,20 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
                     },
                     TripFolderId = Guid.Parse("bb900986-6117-40f5-8d2e-f72a32ea5185")
                 };
-                TripsEngineClient tripsEngineClient = new TripsEngineClient();
-                CompleteBookingRS result = await tripsEngineClient.CompleteBookingAsync(CompleteBookingRequestParser);
-                return result;
+                CompleteBookingRS result = null;
+                try
+                {
+                    TripsEngineClient tripsEngineClient = new TripsEngineClient();
+                    result = await tripsEngineClient.CompleteBookingAsync(CompleteBookingRequestParser);
+                }
+                catch (Exception ex)
+                {
 
+                    Logger.Log.LogError(ex);
+                }
+                return result;
             }
+            
         }
 
     }

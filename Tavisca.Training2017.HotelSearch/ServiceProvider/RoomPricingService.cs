@@ -1,4 +1,5 @@
 ﻿using HotelSearchEngine;
+using Logger;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,19 @@ namespace ServiceProvider
     {
         public async Task<string> GetRequestedDataAsync(string requestData)
         {
-            var request = JsonConvert.DeserializeObject<RoomPricingRequest>(requestData);
-            DynamicRoomPricing roomPriceService = new DynamicRoomPricing();
-            HotelRoomPriceResponse response =await roomPriceService.GetDynamicPricingAsync(request);
-            var result = JsonConvert.SerializeObject(response);
-            return result;
+            try
+            {
+                var request = JsonConvert.DeserializeObject<RoomPricingRequest>(requestData);
+                DynamicRoomPricing roomPriceService = new DynamicRoomPricing();
+                HotelRoomPriceResponse response = await roomPriceService.GetDynamicPricingAsync(request);
+                var result = JsonConvert.SerializeObject(response);
+                return result;
+            }
+            catch(Exception ex)
+            {
+                Log.LogError(ex);
+                throw ex;
+            }
         }
     }
 }

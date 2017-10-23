@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using HotelSearchEngine;
-
+using Logger;
 
 namespace ServiceProvider
 {
@@ -19,12 +19,19 @@ namespace ServiceProvider
         }
 
         public async Task<string> GetRequestedDataAsync(string request)
-        {
-            HotelSearch search = new HotelSearch();
-            var hotelRequest = JsonConvert.DeserializeObject<HotelSearchRq>(request);
-            itineraries = await search.GetHotelListingAsync(hotelRequest);
-            return JsonConvert.SerializeObject(itineraries);
-           
+        { 
+            try
+            {
+                HotelSearch search = new HotelSearch();
+                var hotelRequest = JsonConvert.DeserializeObject<HotelSearchRq>(request);
+                itineraries = await search.GetHotelListingAsync(hotelRequest);
+                return JsonConvert.SerializeObject(itineraries);
+            }
+            catch(Exception ex)
+            {
+                Log.LogError(ex);
+                throw ex;
+            }
         }
 
     }

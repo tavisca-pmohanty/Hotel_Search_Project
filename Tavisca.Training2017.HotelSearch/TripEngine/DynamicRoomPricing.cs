@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logger;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace TripEngine
             }
             catch(Exception ex)
             {
+                Log.LogError(ex);
                 throw ex;
             }
         }

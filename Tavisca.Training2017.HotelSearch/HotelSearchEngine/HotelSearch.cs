@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
 using HotelSearchEngine.SessionLog;
+using Logger;
 
 namespace HotelSearchEngine
 {
@@ -38,6 +39,7 @@ namespace HotelSearchEngine
             }
             catch (Exception ex)
             {
+                Log.LogError(ex);
                 throw ex;
             }
         }

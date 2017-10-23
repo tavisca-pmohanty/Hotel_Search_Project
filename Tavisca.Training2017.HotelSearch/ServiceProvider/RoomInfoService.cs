@@ -1,6 +1,7 @@
 ﻿using HotelEngienSearch;
 using HotelSearchEngine;
 using HotelSearchEngine.Model;
+using Logger;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -20,10 +21,18 @@ namespace ServiceProvider
 
         public async Task<string> GetRequestedDataAsync(string searchTerm)
         {
-            RoomSearch search = new RoomSearch();
-            var request = JsonConvert.DeserializeObject<RoomListingRequest>(searchTerm);
-            roomItinaries=await search.GetRoomDetailsAsync(request);
-            return JsonConvert.SerializeObject(roomItinaries);
+            try
+            {
+                RoomSearch search = new RoomSearch();
+                var request = JsonConvert.DeserializeObject<RoomListingRequest>(searchTerm);
+                roomItinaries = await search.GetRoomDetailsAsync(request);
+                return JsonConvert.SerializeObject(roomItinaries);
+            }
+            catch(Exception ex)
+            {
+                Log.LogError(ex);
+                throw ex;
+            }
         }
         }
 }

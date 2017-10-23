@@ -28,6 +28,7 @@ namespace HotelSearchEngine
             }
             catch (Exception ex)
             {
+                Log.LogError(ex);
                 throw ex;
             }
         }

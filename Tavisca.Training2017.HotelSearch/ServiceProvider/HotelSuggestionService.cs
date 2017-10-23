@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Json;
 using Newtonsoft.Json;
 using HotelEngienSearch;
+using Logger;
 
 namespace ServiceProvider
 {
@@ -18,11 +19,19 @@ namespace ServiceProvider
         }
         public async Task<string> GetRequestedDataAsync(string searchTerm)
         {
-            SearchHotelSuggestion search = new SearchHotelSuggestion();
-            string suggestionResponse = await search.GetSearchQueryData(searchTerm);
-            ParseHoteLData(suggestionResponse);
-            var json = JsonConvert.SerializeObject(hotelList);
-            return json;
+            try
+            {
+                SearchHotelSuggestion search = new SearchHotelSuggestion();
+                string suggestionResponse = await search.GetSearchQueryData(searchTerm);
+                ParseHoteLData(suggestionResponse);
+                var json = JsonConvert.SerializeObject(hotelList);
+                return json;
+            }
+            catch(Exception ex)
+            {
+                Log.LogError(ex);
+                throw ex;
+            }
         }
         public void ParseHoteLData(string hotelData)
         {
