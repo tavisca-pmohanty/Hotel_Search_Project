@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TripEngineServices;
 
@@ -206,15 +207,23 @@ namespace TripEngine
         //    var response = await tripsEngineClient.BookTripFolderAsync(tripFolderBookRQ);
         //    return response;
         //}
-        public async Task<TripFolderBookRQ> Get(HotelSearchRequestBooking request)
+        public async Task<TripFolderBookRQ> ParserAsync(HotelSearchRequestBooking request)
         {
-
+            List<HotelCancellationRule> cancellationRuleList = new List<HotelCancellationRule>();
+            HotelItinerary itinerary = request.TripDetails.HotelItinerary;
+            itinerary.HotelCancellationPolicy.CancellationRules = new HotelCancellationRule[]
+            {
+                new HotelCancellationRule(),
+            };
+            itinerary.HotelCancellationPolicy.CancellationRules = cancellationRuleList.ToArray();
+            HotelSearchCriterion criterion = request.TripDetails.HotelSearchCriterion;
             TripFolderBookRQ tripFolderBookRQ = new TripFolderBookRQ()
             {
                 SessionId = request.SessionId,
                 ResultRequested = ResponseType.Unknown,
                 TripFolder = new TripFolder()
                 {
+                    CreatedDate = DateTime.Now,
                     Creator = new User()
                     {
                         AdditionalInfo = new StateBag[]
@@ -229,9 +238,9 @@ namespace TripEngine
                         UserId = 26149061229281280,
                         UserName = "sshrikhande"
                     },
-                    FolderName = "testrequest" + request.SessionId,
-                    Id = Guid.NewGuid(),
-                    LastModifiedDate = new DateTime(),
+                    FolderName = "TripFolder" + DateTime.Now,
+                    Id = new Guid("00000000-0000-0000-0000-000000000000"),
+                    LastModifiedDate = DateTime.Now,
                     Owner = new User()
                     {
                         AdditionalInfo = new StateBag[]
@@ -282,42 +291,56 @@ namespace TripEngine
                                 AgencyAddress = new Address()
                                 {
                                     CodeContext = LocationCodeContext.Address,
+                                    GmtOffsetMinutes = 0,
+                                    Id = 0,
                                     AddressLine1 = "Test1",
                                     AddressLine2 = "Test2",
-                                    ZipCode = "89002"
+                                    ZipCode = "890002",
+                                    City = new City()
+                                    {
+                                        CodeContext = LocationCodeContext.City,
+                                        GmtOffsetMinutes = 0,
+                                        Id = 0,
+                                        Name = "Nevada",
+                                        Country = "Us",
+                                        State = "Nv"
+
+                                    },
+
                                 },
+                                AgencyId = 0,
                                 AgencyName = "WV",
                             },
                             Code = "DTP",
                             CodeContext = CompanyCodeContext.Airline,
                             DK = "3285301P",
-                            FullName = "Rovia"
+                            FullName = "Rovia",
+                            ID = 0,
                         }
                     },
                     Type = TripFolderType.Personal,
+                    EndDate = DateTime.Now,
                     Passengers = new Passenger[]
-                   {
-                        new Passenger()
-                        {
-                            Age = 27,
-                            BirthDate = new DateTime(1990,03,03),
-                            CustomFields=new StateBag[]
+                    {
+                    new Passenger()
+                    {
+                        Age=30,
+                        BirthDate=new DateTime(1987,06,16),
+                        CustomFields=new StateBag[]
                         {
                             new StateBag(){ Name="Boyd Gaming"},
                             new StateBag(){ Name="IsPassportRequired" , Value="false"}
                         },
-                            Email = "shrikhande@tavisca.com",
-                            FirstName = "Shweta",
-                            Gender = Gender.Male,
-                            LastName = "Shrikhande",
-                            PassengerId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            PassengerType = PassengerType.Adult,
-                            PhoneNumber = "123456789",
-                            Rph = 0,
-                            UserId = 0,
-                            UserName = "sshrikhande@tavisca.com"
-                        }
-                   },
+                        Email="rsarda@tavisca.com",
+                        FirstName="Sandbox",
+                        Gender=Gender.Male,
+                        KnownTravelerNumber="789456",
+                        LastName="Test",
+                        PassengerType=PassengerType.Adult,
+                        PhoneNumber="1111111111",
+                        UserName="rsarda@tavisca.com"
+                    }
+                },
                     Payments = new CreditCardPayment[]
                    {
                        new CreditCardPayment()
@@ -378,7 +401,7 @@ namespace TripEngine
                            new StateBag{ Name ="IsLoginWhileSearching", Value="Y"},
                            new StateBag{ Name ="IsInsuranceSelected", Value="no"},
                        },
-                       /*Id=Guid.Parse("372c3e4b-7e20-4590-8e83-2a0c54f3303f"),*/
+                       Id=Guid.NewGuid(),
                        IsOnlyLeadPaxInfoRequired=true,
                        Owner=new User()
                        {
@@ -403,7 +426,7 @@ namespace TripEngine
                            {
                                BookingStatus=TripProductStatus.Planned,
                                PostBookingStatus=PostBookingTripStatus.None,
-                               Rph=0
+                               Rph=4
                            }
                        },
                        PaymentBreakups=new PaymentBreakup[]
@@ -412,10 +435,10 @@ namespace TripEngine
                            {
                                Amount=new Money()
                                {
-                                   Amount = request.TripDetails.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.BaseEquivAmount,
-                                Currency = "USD",
-                                DisplayAmount = request.TripDetails.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.BaseEquivAmount,
-                                DisplayCurrency = "USD"
+                                    Amount = request.TripDetails.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.BaseEquivAmount,
+                                    Currency = "USD",
+                                    DisplayAmount = request.TripDetails.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.BaseEquivAmount,
+                                    DisplayCurrency = "USD"
                                }
                            }
                        },
@@ -426,8 +449,15 @@ namespace TripEngine
                            PaymentType.Credit
                        },
                        Rph=4,
-                       HotelItinerary=request.TripDetails.HotelItinerary,
-                       HotelSearchCriterion=request.TripDetails.HotelSearchCriterion,
+                       CancellationDetails=new CancellationDetails()
+                       {
+                          AppliedRule=new HotelCancellationRule()
+                          {
+                             
+                          }
+                       },
+                       HotelItinerary=itinerary,
+                       HotelSearchCriterion=criterion,
                        RoomOccupancyTypes=new RoomOccupancyType[]
                        {
                            new RoomOccupancyType()
@@ -436,9 +466,9 @@ namespace TripEngine
                                {
                                    new PassengerTypeQuantity()
                                    {
-                                       Ages=request.TripDetails.HotelSearchCriterion.Guests[0].Ages,
+                                       Ages=criterion.Guests[0].Ages,
                                        PassengerType=PassengerType.Adult,
-                                       Quantity=request.TripDetails.HotelSearchCriterion.Guests[0].Quantity
+                                       Quantity=criterion.Guests[0].Quantity
                                    }
                                }
                            }
@@ -450,12 +480,12 @@ namespace TripEngine
                 },
                 TripProcessingInfo = new TripProcessingInfo()
                 {
-                    TripProductRphs = new int[] { 0 }
+                    TripProductRphs = new int[] { 4 }
                 }
 
             };
 
-            tripFolderBookRQ.TripFolder.Products[0].Owner = tripFolderBookRQ.TripFolder.Owner;
+            //tripFolderBookRQ.TripFolder.Products[0].Owner = tripFolderBookRQ.TripFolder.Owner;
             return tripFolderBookRQ;
         }
     }

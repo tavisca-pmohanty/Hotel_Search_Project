@@ -13,7 +13,7 @@ namespace TripEngine
             try
             {
                 TripsEngineClient tripsEngineClient = new TripsEngineClient();
-                TripFolderBookRQ tripFolderBookRQ = await new TripFolderBookRQparser().Get(request);
+                TripFolderBookRQ tripFolderBookRQ = await new TripFolderBookRQparser().ParserAsync(request);
                 TripFolderBookRS tripFolderBookRS = await tripsEngineClient.BookTripFolderAsync(tripFolderBookRQ);
                 return tripFolderBookRS;
             }
