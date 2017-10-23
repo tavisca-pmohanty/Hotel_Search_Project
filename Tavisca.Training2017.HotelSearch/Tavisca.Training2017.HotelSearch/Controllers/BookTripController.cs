@@ -8,7 +8,11 @@ using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using HotelSearchEngine;
 using TripEngineServices;
+<<<<<<< HEAD
 using TripEngine;
+=======
+using hotelsearchengine;
+>>>>>>> 7252c59ea013d87e92ac1f79c4f4fb8e54cce0fc
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

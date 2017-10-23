@@ -89,7 +89,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json'
    				 },
                  type: "POST",
-                 url: "http://localhost:49633/book/tripfolder/booktrip",
+                 url: "http://localhost:52363/book/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
