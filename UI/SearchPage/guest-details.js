@@ -82,7 +82,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-                 url: "http://localhost:49633/api/tripfolder/booktrip",
+                 url: "http://localhost:49898/book/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -93,7 +93,32 @@ var template = $('#itinerary-details');
          } catch (e) {
              alert(e);
          }
-         function getSuccess(data) { 
+         function getSuccess(tripFolderResponseData) {
+          var data=JSON.stringify(tripFolderResponseData);
+              try {
+             $.ajax({
+                 headers: { 
+                   'Accept': 'application/json',
+                  'Content-Type': 'application/json' 
+           },
+                 type: "POST",
+                 url: "http://localhost:49898/complete/booking/bookingcomplete",
+                 cache: false,
+                 data:JSON.stringify(data),
+                dataType: 'json',
+                
+                 success: getSuccess,
+                 crossDomain:true,
+             });
+         } catch (e) {
+             alert(e);
+         }
+         function getSuccess(completeBookingResponseData) {
+
+              
+
+         }
+
          }
   });
 });

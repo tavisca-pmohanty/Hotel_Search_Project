@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TripEngine.Models;
 using TripEngineServices;
 
 namespace TripEngine
@@ -9,7 +10,7 @@ namespace TripEngine
     public class TripFolderBookRQparser
     {
        
-        public async Task<TripFolderBookRQ> ParserAsync(HotelSearchRequestBooking request)
+        public async Task<TripFolderBookRQ> ParserAsync(HotelSearchBookingRequest request)
         {
             List<HotelCancellationRule> cancellationRuleList = new List<HotelCancellationRule>();
             HotelItinerary itinerary = request.TripDetails.HotelItinerary;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using TripEngine;
+using TripEngine.Models;
 
 namespace ServiceProvider
 {
@@ -16,7 +17,7 @@ namespace ServiceProvider
         public async Task<string> GetRequestedDataAsync(string requestData)
         {
             TripFolderClient tripFolder = new TripFolderClient();
-            var request = JsonConvert.DeserializeObject<HotelSearchRequestBooking>(requestData);
+            var request = JsonConvert.DeserializeObject<HotelSearchBookingRequest>(requestData);
             var response = await tripFolder.GetTripFolderAsync(request);
             var responseData = JsonConvert.SerializeObject(response);
             return responseData;              
