@@ -20,10 +20,17 @@ namespace ServiceProvider
 
         public async Task<string> GetRequestedDataAsync(string searchTerm)
         {
-            RoomSearch search = new RoomSearch();
-            var request = JsonConvert.DeserializeObject<RoomListingRequest>(searchTerm);
-            roomItinaries=await search.GetRoomDetailsAsync(request);
-            return JsonConvert.SerializeObject(roomItinaries);
+            try
+            {
+                RoomSearch search = new RoomSearch();
+                var request = JsonConvert.DeserializeObject<RoomListingRequest>(searchTerm);
+                roomItinaries = await search.GetRoomDetailsAsync(request);
+                return JsonConvert.SerializeObject(roomItinaries);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
         }
 }
