@@ -71,7 +71,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-					                 url: "http://localhost:49633/index/HotelListing/search/GetHotelRooms",
+					                 url: "http://localhost:49898/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
@@ -123,8 +123,11 @@ Handlebars.registerHelper('times', function (n, block) {
 		}
 		$("#hotelList-container").empty();
 		var template = $('#hotel-item');
+
 	  var compiledTemplate = Handlebars.compile(template.html());
+
 	  var html = compiledTemplate(filteredHotelList);
+
 	  $('#hotelList-container').html(html);
 	  	$(".room-button").click(function()
 		{
@@ -143,7 +146,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-					                 url: "http://localhost:49633/index/HotelListing/search/GetHotelRooms",
+					                 url: "http://localhost:49898/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
