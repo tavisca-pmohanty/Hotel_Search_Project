@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using TripEngine;
 
-
 namespace ServiceProvider
 {
     public class BookTripService : IHotelService
