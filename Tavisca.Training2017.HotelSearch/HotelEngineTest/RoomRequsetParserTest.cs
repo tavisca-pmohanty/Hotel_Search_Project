@@ -2,7 +2,6 @@ using System;
 using Xunit;
 using HotelSearchEngine;
 using HotelEngienSearch;
-
 namespace HotelEngineTest
 {
     public class RoomRequsetParserTest

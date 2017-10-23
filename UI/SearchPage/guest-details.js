@@ -63,9 +63,8 @@ var template = $('#itinerary-details');
   			var tripFolderRequest={
   				TripDetails:updatedData.data,
   				SessionId:updatedData.sessionId,
-                
-  				//GuestFirstName:guestFirstName,
-                //GuestLastName:guestLastName,
+  				GuestFName:guestFirstName,
+                GuestLName:guestLastName,
   				CountryCode:countryCode,
                 CardNumber:cardNumber,
   				MobileNum:mobileNum,
@@ -74,22 +73,16 @@ var template = $('#itinerary-details');
   				ExpiryYear:expiryYear,
   				Cvv:cvv,
   				Email_Id:emailId
-                
   			}
-            var GuestName={
-                
-  				GuestFirstName:guestFirstName,
-                GuestLastName:guestLastName,
-            }
   			var data=JSON.stringify(tripFolderRequest);
   			try {
              $.ajax({
                  headers: { 
        						 'Accept': 'application/json',
-        					'Content-Type': 'application/json'
+        					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-                 url: "http://localhost:52363/book/tripfolder/booktrip",
+                 url: "http://localhost:49633/api/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -97,16 +90,10 @@ var template = $('#itinerary-details');
                  success: getSuccess,
                  crossDomain:true,
              });
-                
-                
-                
-                
          } catch (e) {
              alert(e);
          }
-         function getSuccess(data) {
-             
-             
+         function getSuccess(data) { 
          }
   });
 });
