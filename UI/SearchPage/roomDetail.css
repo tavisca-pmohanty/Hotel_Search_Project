@@ -1,3 +1,5 @@
+
+
 #logo img
 {
     margin-left: 32px;
@@ -37,6 +39,7 @@ p
 {
     overflow: hidden;
     background-color: #333;
+
 }
 #header-container
 {
@@ -174,25 +177,65 @@ p
 {
     color: white;
 }
-#hotel-image
-{
-    border: 2px solid black;
-    width: 150px;
-    height: 150px;
-    flex-shrink: 1;
-    margin-top: 43px;
-    margin-left: 0px;
-    margin-bottom: inherit;
+.room-button{
+			border: 1px solid black;
+			background-color:white;
+			height:40px;
+			margin-left: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;	
 }
-.room-button
+#logo img
+{
+  margin-left: 55px;
+  margin-top: 13px;
+    height: 98px;
+    margin-bottom: 4px;
+
+}
+#logo
 {
 
-    flex-shrink: 3;
-    height: auto;
-    margin-top: 150px;
-    font-weight: bold;
-    width: auto;
-    background-color: black;
-    color: white;
+  border-bottom: 1px solid black;
+}
+#header-container
+{
+  display: inline-flex;
     flex-flow: row;
-}       
+    justify-content: space-between;
+    width: 100%;
+    height: 192px;
+    background:#160a03;
+        
+}
+      
+#welcome-page
+{
+margin-top: 50px;
+}
+p
+{
+    margin: 0px;
+    margin-right: 20px;
+    align-items: flex-end;
+    font-size: 31px;
+    color: #94a4d1;
+    font-weight: bold;
+    margin-left: 23px;
+}
+#ReserveBtn
+{
+    align-content: center;
+    padding-left: 200px;
+    background-color: black;
+    color:white;
+    
+}
+#room-fare
+{
+   text-align:right;
+}
+#room-name
+{
+    text-align: left;
+}

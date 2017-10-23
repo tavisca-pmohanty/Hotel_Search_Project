@@ -2,59 +2,70 @@
 <!DOCTYPE html>
 <html>
 <head>
+     <title>Hotel-Amour</title>
+    <link rel="stylesheet" type="text/css" href="roomDetail.css">
+
 <title>Hotel-Amour</title>
       <link rel="stylesheet" type="text/css" href="roomDetail.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
 </head>
-</head>
+
 <body>
+    
     <div id="header-container">
-        <div id="logo"> 
-            <img src="logo.png">
-            <p>Hotel-Amour</p>
-        </div>
-        <div id="welcome-page">
-          <p>Say Yes To New Adventures!!!</p>
-        </div>
-    </div>
-     <div class="topnav" id="myTopnav">
-        <a href="index.html">Home</a>
-        <a >About Us</a>
-        <a href="index.html">Feedback</a>
-        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-    </div>  
-     <div id="roomlist-container">
-              <div>
-                <img src="bus.gif" alt="Loading.." />
-              </div> 
-    </div>
-            
-            <script id="room-item" type="text/x-handlebars-template">
-               <label>{{name}}</label>
-            {{#each this}}  
-              <div class="layout">
+    <div id="logo"> 
 
-                  <img id="hotel-image" src="{{image}}"> 
-                        <div id="data-container">
-                            <h2 id="room-name">{{roomType}}</h2>
-                            <h2 id="room-address">{{{roomDescription}}}</h2>
+        <img src="logo.png">
+      <p>Hotel-Amour</p>
+<img src="relaxzz.png">
+    </div>
+    <div id="welcome-page">
+      <p>Say Yes To New Adventures!!!</p>
+    </div>
+  </div>
+    
 
-                            
-                            <h2 id="hotel-price">Fare:{{roomFare}}</h2>
-                        </div>
-                        <div>
-                              <button   type="submit" class="room-button" value="{{roomType}}" alt="Hotel Image Unavailable">Book Now</button>
-                        </div>
-              </div>
-            {{/each}}
-            </script>
- 
+  <h1>Room List page</h1>
+
+<div id="roomList-container">
+      
+    
+    
+    
+  </div>
+
+<script id="room-items" type="text/x-handlebars-template">
+{{#each this}}
+<div class="layout">
+    
+
+    
+<div id ="data-container">    
+    
+
+    <div id="fare-Type">
+    <h1 id="room-fare">Fare:{{roomFare}}</h1>
+    <h1 id="room-name">Room-Type:{{roomType}}</h1>
+    </div>
+    <h2 id="room -address">Ameneties:{{roomDescription}}</h2>
+
  
     
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
-    <script src="RoomDetail.js"></script>
+</div>
+    <div id ="ReserveBtn">
+  <button  class="room-button" value="{{roomType}}">Reserve</button>
+    </div>
+</div>
+
+
+
+ {{/each}}
+  </script>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+  <script src="roomDetail.js"></script>
 </body>
 </html>
