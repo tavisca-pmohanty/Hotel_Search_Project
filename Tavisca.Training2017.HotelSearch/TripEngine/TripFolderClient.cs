@@ -10,10 +10,17 @@ namespace TripEngine
     {
         public async Task<TripFolderBookRS> GetTripFolderAsync(HotelSearchRequestBooking request)
         {
-            TripsEngineClient tripsEngineClient = new TripsEngineClient();
-            TripFolderBookRQ tripFolderBookRQ = await new TripFolderBookRQparser().Get(request);
-            TripFolderBookRS tripFolderBookRS = await tripsEngineClient.BookTripFolderAsync(tripFolderBookRQ);
-            return tripFolderBookRS;
+            try
+            {
+                TripsEngineClient tripsEngineClient = new TripsEngineClient();
+                TripFolderBookRQ tripFolderBookRQ = await new TripFolderBookRQparser().Get(request);
+                TripFolderBookRS tripFolderBookRS = await tripsEngineClient.BookTripFolderAsync(tripFolderBookRQ);
+                return tripFolderBookRS;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
