@@ -129,6 +129,7 @@ body{
 #card-number
 {
 	margin-bottom: 120px;
+    width: 50%;
 }
 
 button
@@ -165,3 +166,30 @@ button
 	flex-wrap: wrap;
 	color:black;
 	}
+
+
+#cvv
+{
+	width:100px;
+	
+}
+#cardHolder
+{
+  width:400px;	
+
+}
+#cardNum
+{
+	width:400px;
+}
+#email
+{
+	width:350px;
+}
+#country-code
+{
+	width:100px;
+}
+
+
+
