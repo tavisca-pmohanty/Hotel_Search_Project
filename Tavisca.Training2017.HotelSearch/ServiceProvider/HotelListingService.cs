@@ -22,7 +22,7 @@ namespace ServiceProvider
         {
             HotelSearch search = new HotelSearch();
             var hotelRequest = JsonConvert.DeserializeObject<HotelSearchRq>(request);
-            itineraries = await search.GetHotelListing(hotelRequest);
+            itineraries = await search.GetHotelListingAsync(hotelRequest);
             return JsonConvert.SerializeObject(itineraries);
            
         }
