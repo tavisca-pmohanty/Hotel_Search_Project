@@ -97,10 +97,16 @@ var template = $('#itinerary-details');
                  success: getSuccess,
                  crossDomain:true,
              });
+                
+                
+                
+                
          } catch (e) {
              alert(e);
          }
-         function getSuccess(data) { 
+         function getSuccess(data) {
+             
+             
          }
   });
 });
