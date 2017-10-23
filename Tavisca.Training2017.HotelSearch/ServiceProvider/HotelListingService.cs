@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using HotelSearchEngine;
-
+using Logger;
 
 namespace ServiceProvider
 {
@@ -29,6 +29,7 @@ namespace ServiceProvider
             }
             catch(Exception ex)
             {
+                Log.LogError(ex);
                 throw ex;
             }
         }

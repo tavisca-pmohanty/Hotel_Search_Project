@@ -1,6 +1,7 @@
 ﻿using HotelEngienSearch;
 using HotelSearchEngine;
 using HotelSearchEngine.Model;
+using Logger;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace ServiceProvider
             }
             catch(Exception ex)
             {
+                Log.LogError(ex);
                 throw ex;
             }
         }

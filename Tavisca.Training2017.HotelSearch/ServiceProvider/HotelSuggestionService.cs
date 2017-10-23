@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Json;
 using Newtonsoft.Json;
 using HotelEngienSearch;
+using Logger;
 
 namespace ServiceProvider
 {
@@ -28,6 +29,7 @@ namespace ServiceProvider
             }
             catch(Exception ex)
             {
+                Log.LogError(ex);
                 throw ex;
             }
         }

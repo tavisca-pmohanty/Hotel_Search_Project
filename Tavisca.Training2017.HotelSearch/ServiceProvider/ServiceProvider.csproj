@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AutoComplete\AutoComplete.csproj" />
     <ProjectReference Include="..\HotelSearchEngine\HotelSearchEngine.csproj" />
+    <ProjectReference Include="..\Logger\Logger.csproj" />
     <ProjectReference Include="..\TripEngine\TripEngine.csproj" />
   </ItemGroup>
 
