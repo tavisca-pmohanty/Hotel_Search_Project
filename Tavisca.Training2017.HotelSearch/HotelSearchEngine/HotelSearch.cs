@@ -17,7 +17,7 @@ namespace HotelSearchEngine
            
             itineraries = new List<HotelListingResponse>();
         }
-        public async Task<List<HotelListingResponse>> GetHotelListing(HotelSearchRq request)
+        public async Task<List<HotelListingResponse>> GetHotelListingAsync(HotelSearchRq request)
         {
             try
             {
