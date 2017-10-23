@@ -1,5 +1,6 @@
 ﻿using HotelEngienSearch;
 using HotelSearchEngine.Model;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Text;
