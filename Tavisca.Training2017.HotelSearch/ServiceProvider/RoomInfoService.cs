@@ -22,7 +22,7 @@ namespace ServiceProvider
         {
             RoomSearch search = new RoomSearch();
             var request = JsonConvert.DeserializeObject<RoomListingRequest>(searchTerm);
-            roomItinaries=await search.GetRoomDetails(request);
+            roomItinaries=await search.GetRoomDetailsAsync(request);
             return JsonConvert.SerializeObject(roomItinaries);
         }
         }

@@ -15,11 +15,18 @@ namespace TripEngine
         }
         public async Task<HotelRoomPriceResponse> GetDynamicPricingAsync(RoomPricingRequest request)
         {
-            TripsEngineClient client = new TripsEngineClient();
-            TripProductPriceRQ tripProductPriceRQ = await new TripProductPriceRequestParser().ParserAsync(request);
-            TripProductPriceRS response = await client.PriceTripProductAsync(tripProductPriceRQ);
-            hotelRoomPriceResponse = await new HotelRoomPriceResponseParser().ParserAsync(response);
-            return hotelRoomPriceResponse;
+            try
+            {
+                TripsEngineClient client = new TripsEngineClient();
+                TripProductPriceRQ tripProductPriceRQ = await new TripProductPriceRequestParser().ParserAsync(request);
+                TripProductPriceRS response = await client.PriceTripProductAsync(tripProductPriceRQ);
+                hotelRoomPriceResponse = await new HotelRoomPriceResponseParser().ParserAsync(response);
+                return hotelRoomPriceResponse;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

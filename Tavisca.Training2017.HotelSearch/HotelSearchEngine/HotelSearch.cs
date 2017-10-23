@@ -17,22 +17,29 @@ namespace HotelSearchEngine
            
             itineraries = new List<HotelListingResponse>();
         }
-        public async Task<List<HotelListingResponse>> GetHotelListing(HotelSearchRq request)
+        public async Task<List<HotelListingResponse>> GetHotelListingAsync(HotelSearchRq request)
         {
-            HotelEngineClient client = new HotelEngineClient();
-            HotelSearchRQ searchRequest =await new HotelRequestParser().ParserAsync(request);
-            HotelSearchRS response = await client.HotelAvailAsync(searchRequest);
-            for(int i=0;i<response.Itineraries.Length;i++)
+            try
             {
-                HotelListingResponse listingResponse = new HotelListingResponse
+                HotelEngineClient client = new HotelEngineClient();
+                HotelSearchRQ searchRequest = await new HotelRequestParser().ParserAsync(request);
+                HotelSearchRS response = await client.HotelAvailAsync(searchRequest);
+                for (int i = 0; i < response.Itineraries.Length; i++)
                 {
-                    Itinerary = response.Itineraries[i],
-                    SessionId = response.SessionId,
-                    HotelCriterion = searchRequest.HotelSearchCriterion
-                };
-                itineraries.Add(listingResponse);
+                    HotelListingResponse listingResponse = new HotelListingResponse
+                    {
+                        Itinerary = response.Itineraries[i],
+                        SessionId = response.SessionId,
+                        HotelCriterion = searchRequest.HotelSearchCriterion
+                    };
+                    itineraries.Add(listingResponse);
+                }
+                return itineraries;
             }
-            return itineraries;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

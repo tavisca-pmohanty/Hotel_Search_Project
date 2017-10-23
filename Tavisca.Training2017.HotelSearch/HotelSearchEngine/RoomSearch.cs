@@ -14,15 +14,22 @@ namespace HotelSearchEngine
         {
             roomList = new HotelRoomAvailResponse();
         }
-        public async Task<HotelRoomAvailResponse> GetRoomDetails(RoomListingRequest request)
+        public async Task<HotelRoomAvailResponse> GetRoomDetailsAsync(RoomListingRequest request)
         {
-            HotelEngineClient client = new HotelEngineClient();
-            HotelRoomAvailRQ roomAvailRequest = await new RoomRequestParser().ParserAsync(request);
-            HotelRoomAvailRS response=await client.HotelRoomAvailAsync(roomAvailRequest);
-            roomList.Itinerary = response.Itinerary;
-            roomList.SessionId = response.SessionId;
-            roomList.HotelCriterionData = request.HotelCriterion;
-            return roomList;
+            try
+            {
+                HotelEngineClient client = new HotelEngineClient();
+                HotelRoomAvailRQ roomAvailRequest = await new RoomRequestParser().ParserAsync(request);
+                HotelRoomAvailRS response = await client.HotelRoomAvailAsync(roomAvailRequest);
+                roomList.Itinerary = response.Itinerary;
+                roomList.SessionId = response.SessionId;
+                roomList.HotelCriterionData = request.HotelCriterion;
+                return roomList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }
