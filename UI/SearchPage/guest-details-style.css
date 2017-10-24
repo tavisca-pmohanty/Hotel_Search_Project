@@ -44,9 +44,11 @@ body{
 }
 #guest-Fname{
 	width: 500px;
+	padding-left: 10px;
 }
 #guest-Lname{
 	width: 500px;
+	padding-left: 10px;
 }
 #logo
 {
@@ -98,6 +100,10 @@ body{
 	flex-grow: 1;
 	
 }
+#expiryMonth
+{
+	margin-bottom: 12px;
+}
 
 .container label
 {
@@ -144,7 +150,10 @@ button
 	font-size: 15px;
 	font-weight: bold;
 }
-
+span
+{
+	color: red;
+}
 #expiration
 {
 
