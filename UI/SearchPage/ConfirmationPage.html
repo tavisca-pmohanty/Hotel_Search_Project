@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Hotel-Amour</title>
-      <link rel="stylesheet" type="text/css" href="roomDetail.css">
+      <link rel="stylesheet" type="text/css" href="ConfirmationPage.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
@@ -24,18 +24,31 @@
         <a href="index.html">Feedback</a>
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>  
-     <div id="roomlist-container">
-              <div>
-                <img src="bus.gif" alt="Loading.." />
-              </div> 
-    </div>
-            
-            <script id="room-item" type="text/x-handlebars-template">
-               <label>{{name}}</label>
-            {{#each this}}  
-              <div class="layout">
 
-                  <img id="hotel-image" src="{{image}}"> 
+    <div class="confirmation-container">
+    	<div class="layout">
+	    	<div class="data-field">
+	    	<label>TransactionId:</label>
+	    	<h4>TransactionId</h4>
+	    	</div>
+	    	<div class="data-field">
+	    	<label>Hotel-Name:</label>
+	    	<h4>Hotel-Name</h4>
+	    	</div>
+	    	<div class="data-field">
+	    	<label>Room-Name:</label>
+	    	<h4>Room-Name</h4>
+	    	</div>
+	    	<div class="data-field">
+	    	<label>Check-In-Date:</label>
+	    	<h4>check-in-date</h4>
+	    	</div>
+	    	<div class="data-field">
+	    	<label>No-Of-Nights:</label>
+	    	<h4>no-of-nights</h4>
+	    	</div>
+    		<h1>Your Booking Is Confirmed</h1>
+                  <!-- <img id="hotel-image" src="{{image}}"> 
                         <div id="data-container">
                             <h2 id="room-name">{{roomType}}</h2>
                             <h2 id="room-address">{{{roomDescription}}}</h2>
@@ -45,15 +58,10 @@
                         </div>
                         <div>
                               <button   type="submit" class="room-button" value="{{roomType}}" alt="Hotel Image Unavailable">Book Now</button>
-                        </div>
-              </div>
-            {{/each}}
-            </script>
- 
- 
-    
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
-    <script src="RoomDetail.js"></script>
+                        </div> -->
+        </div>
+    	
+    </div>
+
 </body>
 </html>
