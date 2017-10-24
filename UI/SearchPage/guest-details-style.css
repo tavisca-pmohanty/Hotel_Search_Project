@@ -48,12 +48,15 @@ p
     width: 107px;
     height: 94px;
 }
-#guest-Fname{
+#guest-Fname
+{
+
 	
 	padding-left: 10px;
 }
-#guest-Lname{
-	
+#guest-Lname
+{
+		width: 500px;
 	padding-left: 10px;
 }
 #logo
@@ -107,10 +110,12 @@ p
 	margin-right: 84px;
 	
 }
+
 #data-container
 {
 	margin-left: 15px;
 }
+
 #expiryMonth
 {
 	margin-bottom: 12px;
