@@ -50,11 +50,14 @@ namespace HotelSearchEngine
             {"Tags",HotelSearchType.Tags },
             {"Hotel", HotelSearchType.GeoCode}
         };
-        private readonly int _defaultPagingInfoStartNumber = 100;
-        private readonly int _defaultPagingInfoEndNumber = 120;
+        //private readonly int _defaultPagingInfoStartNumber = 100;
+        //private readonly int _defaultPagingInfoEndNumber = 120;
+        //private readonly int _defaultTotalRecordsBeforeFiltering = 0;
+        //private readonly int _defaultTotalResults = 0;
+        private readonly int _defaultPagingInfoStartNumber = 0;
+        private readonly int _defaultPagingInfoEndNumber = 0;
         private readonly int _defaultTotalRecordsBeforeFiltering = 0;
         private readonly int _defaultTotalResults = 0;
-
         public async Task<HotelSearchRQ> ParserAsync(HotelSearchRq request)
         {
 
@@ -101,7 +104,8 @@ namespace HotelSearchEngine
             listingRequest.HotelSearchCriterion.StayPeriod = GetStayPeriod(request.InDate, request.OutDate);
             listingRequest.PagingInfo = new PagingInfo()
             {
-                Enabled = true,
+               // Enabled = true,
+               Enabled=false,
                 StartNumber = _defaultPagingInfoStartNumber,
                 EndNumber = _defaultPagingInfoEndNumber,
                 TotalRecordsBeforeFiltering = _defaultTotalRecordsBeforeFiltering,
