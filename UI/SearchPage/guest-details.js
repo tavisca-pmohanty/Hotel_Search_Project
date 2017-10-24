@@ -2,8 +2,6 @@ $(document).ready(function(){
 
 	var data=sessionStorage.getItem('UpdatedRoomListing');
 	var updatedData=JSON.parse(data);
-	
-	
 	var inDate=updatedData.data.HotelItinerary.StayPeriod.Start.toString().split('T');
 	var outDate=updatedData.data.HotelItinerary.StayPeriod.End.toString().split('T');
 	var currencyType=updatedData.data.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.Currency;
@@ -82,7 +80,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-                 url: "http://localhost:49898/book/tripfolder/booktrip",
+                 url: "http://localhost:64160/book/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -102,7 +100,7 @@ var template = $('#itinerary-details');
                   'Content-Type': 'application/json' 
            },
                  type: "POST",
-                 url: "http://localhost:49898/complete/booking/bookingcomplete",
+                 url: "http://localhost:64160/complete/booking/bookingcomplete",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -125,7 +123,7 @@ var template = $('#itinerary-details');
                   Email_Id:emailId
                 }
                 sessionStorage.setItem('BookingSuccessfull',responseData);
-                        window.location="confirmation.html";
+                        window.location="ConfirmationPage.html";
               }
               else
               {
