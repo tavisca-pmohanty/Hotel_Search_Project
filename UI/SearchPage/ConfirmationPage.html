@@ -3,10 +3,7 @@
 <head>
 <title>Hotel-Amour</title>
       <link rel="stylesheet" type="text/css" href="ConfirmationPage.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
-</head>
+      <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <div id="header-container">
@@ -24,44 +21,40 @@
         <a href="index.html">Feedback</a>
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>  
-
-    <div class="confirmation-container">
-    	<div class="layout">
-	    	<div class="data-field">
-	    	<label>TransactionId:</label>
-	    	<h4>TransactionId</h4>
-	    	</div>
-	    	<div class="data-field">
-	    	<label>Hotel-Name:</label>
-	    	<h4>Hotel-Name</h4>
-	    	</div>
-	    	<div class="data-field">
-	    	<label>Room-Name:</label>
-	    	<h4>Room-Name</h4>
-	    	</div>
-	    	<div class="data-field">
-	    	<label>Check-In-Date:</label>
-	    	<h4>check-in-date</h4>
-	    	</div>
-	    	<div class="data-field">
-	    	<label>No-Of-Nights:</label>
-	    	<h4>no-of-nights</h4>
-	    	</div>
-    		<h1>Your Booking Is Confirmed</h1>
-                  <!-- <img id="hotel-image" src="{{image}}"> 
-                        <div id="data-container">
-                            <h2 id="room-name">{{roomType}}</h2>
-                            <h2 id="room-address">{{{roomDescription}}}</h2>
-
-                            
-                            <h2 id="hotel-price">Fare:{{roomFare}}</h2>
-                        </div>
-                        <div>
-                              <button   type="submit" class="room-button" value="{{roomType}}" alt="Hotel Image Unavailable">Book Now</button>
-                        </div> -->
-        </div>
-    	
+    <div id="confirmation-container">
+      
     </div>
 
+    <script id="confirmation-item" type="text/x-handlebars-template">
+        
+          <div class="layout">
+            <div class="data-field">
+            <label>TransactionId:</label>
+            <h4>{{transactionId}}</h4>
+            </div>
+            <div class="data-field">
+            <label>Hotel-Name:</label>
+            <h4>{{hotelName}}</h4>
+            </div>
+            <div class="data-field">
+            <label>Room-Name:</label>
+            <h4>{{roomName}}</h4>
+            </div>
+            <div class="data-field">
+            <label>Check-In-Date:</label>
+            <h4>{{checkIn}}</h4>
+            </div>
+            <label>Check-Out-Date</label>
+            <h4>{{checkOut}}</h4>
+            <div class="data-field">
+            <label>No-Of-Nights:</label>
+            <h4>{{noOfNights}}</h4>
+            </div>
+            <h1>Your Booking Is Confirmed</h1>
+          </div>
+  </script> 
+                 
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+        <script src="ConfirmationPage.js"></script>
 </body>
 </html>
