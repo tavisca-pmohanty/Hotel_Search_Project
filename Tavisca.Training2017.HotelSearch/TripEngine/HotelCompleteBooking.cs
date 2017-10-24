@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using TripEngine.Models;
 using TripEngine.Parser;
 using TripEngineServices;
 
@@ -10,14 +11,15 @@ namespace TripEngine
 {
     public class HotelCompleteBooking
     {
-        public async Task<CompleteBookingRS> CompleteHotelBooking(TripFolderBookRS request)
+        public async Task<CompleteBookingResponse> CompleteHotelBooking(TripFolderBookRS request)
         {
             try
             {
                 TripsEngineClient tripsEngineClient = new TripsEngineClient();
                 CompleteBookingRQ completeBookingRQ = await new CompleteBookingRequestParser().ParserAsync(request);
                 CompleteBookingRS completeBookingRS = await tripsEngineClient.CompleteBookingAsync(completeBookingRQ);
-                return completeBookingRS;
+                CompleteBookingResponse completeBookingResponse = await new CompleteBookingResponseParser().ResponseParserAsync(completeBookingRS);
+                return completeBookingResponse;
             }
             catch(Exception ex)
             {

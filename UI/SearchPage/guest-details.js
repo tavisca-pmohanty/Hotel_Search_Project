@@ -82,7 +82,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-                 url: "http://localhost:56883/book/tripfolder/booktrip",
+                 url: "http://localhost:49898/book/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -102,21 +102,33 @@ var template = $('#itinerary-details');
                   'Content-Type': 'application/json' 
            },
                  type: "POST",
-                 url: "http://localhost:56883/complete/booking/bookingcomplete",
+                 url: "http://localhost:49898/complete/booking/bookingcomplete",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
                 
                  success: getSuccess,
+                  statusCode: {
+                  500: function(xhr) {
+                   alert('page not found');
+                    }},
                  crossDomain:true,
              });
          } catch (e) {
              alert(e);
          }
          function getSuccess(completeBookingResponseData) {
-
+              if(completeBookingResponseData!=null)
+              {
+                sessionStorage.setItem('BookingSuccessfull',completeBookingResponseData);
+                        window.location="confirmation.html";
+              }
+              else
+              {
+                alert("Cannot confirm your booking at this moment.Please try again after sometime");
+                return;
+              }
               
-
          }
 
          }

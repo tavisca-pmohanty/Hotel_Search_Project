@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Logger;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,10 +13,18 @@ namespace ServiceProvider
     {
         public async Task<string> GetRequestedDataAsync(string requestData)
         {
-            var request = JsonConvert.DeserializeObject<TripFolderBookRS>(requestData);
-            HotelCompleteBooking hotelCompleteBooking = new HotelCompleteBooking();
-            var response = await hotelCompleteBooking.CompleteHotelBooking(request);
-            return JsonConvert.SerializeObject(response);
+            try
+            {
+                var request = JsonConvert.DeserializeObject<TripFolderBookRS>(requestData);
+                HotelCompleteBooking hotelCompleteBooking = new HotelCompleteBooking();
+                var response = await hotelCompleteBooking.CompleteHotelBooking(request);
+                return JsonConvert.SerializeObject(response);
+            }
+            catch(Exception ex)
+            {
+                Log.LogError(ex);
+                throw ex;
+            }
         }
     }
 }
