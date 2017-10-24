@@ -116,7 +116,6 @@
     margin-bottom: 43px;
     flex-flow: wrap;
     flex-shrink: 1;
-    
     justify-content: space-evenly;
 }   
 
@@ -145,19 +144,12 @@
 {
     margin-top: 50px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Modified Looks
+
 #filter-container h2
 {
   align-content: center;
   background: cyan;
-<<<<<<< HEAD
-=======
->>>>>>> basic layout changes
-=======
->>>>>>> Modified Looks
+
 
 }
   #hotel-name
@@ -210,21 +202,15 @@
 
     flex-shrink: 3;
     height: auto;
-<<<<<<< HEAD
     margin-top: 15px;
-=======
-    margin-top: 110px;
->>>>>>> Modified Looks
     font-weight: bold;
     width: auto;
     background-color: #272020;
     color: white;
     flex-flow: row;
     margin-right: 7px;
-<<<<<<< HEAD
     margin-bottom: 10px;
-=======
->>>>>>> Modified Looks
+
 }       
   #welcome-page
   {
