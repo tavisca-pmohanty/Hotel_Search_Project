@@ -12,7 +12,7 @@ $(document).ready(function(){
             var startDate = $(this).datepicker('getDate');
             startDate.setDate(startDate.getDate() + 1);
             var minDate = $(this).datepicker('getDate');
-            checkOutDate.datepicker('setDate', minDate);
+            checkOutDate.datepicker('setDate', startDate);
             checkOutDate.datepicker('option', 'minDate', minDate);
         }
     });

@@ -10,7 +10,7 @@ $(document).ready(function(){
     
              if(roomItinerary.Itinerary.Rooms[i].HotelFareSource.Name=="HotelBeds Test")
           {
-            typeOfRooms.push({
+              typeOfRooms.push({
                 //name:roomItinerary.itinerary.HotelProperty.Name,
                 image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
                 roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
@@ -50,7 +50,7 @@ $(".room-button").click(function()
                                         'Content-Type': 'application/json' 
                                     },
                                      type: "POST",
-                                     url: "http://localhost:64160/index/HotelListing/search/GetRoomPricing",
+                                     url: "http://localhost:56883/index/HotelListing/search/GetRoomPricing",
                                      cache: false,
                                      data:JSON.stringify(data),
                                      dataType: 'json',
