@@ -23,10 +23,17 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
         [HttpPost]
         public async Task GetBookTripFolder([FromBody] string requestData)
         {
-            ServiceRepository repository = new ServiceRepository();
-            var service = repository.GetService("BookTrip");
-            string requestedData = await service.GetRequestedDataAsync(requestData);
-            await HttpContext.Response.WriteAsync(requestedData);
+            try
+            {
+                ServiceRepository repository = new ServiceRepository();
+                var service = repository.GetService("BookTrip");
+                string requestedData = await service.GetRequestedDataAsync(requestData);
+                await HttpContext.Response.WriteAsync(requestedData);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
