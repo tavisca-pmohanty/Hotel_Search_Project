@@ -2,9 +2,7 @@
     padding: 0;
     margin: 0;
 }
-.travel-date{
-    color:black;
-}
+
 #logo img
 {
     margin-left: 24px;
@@ -23,6 +21,7 @@
 {
     margin-bottom: 35px;
     margin-right: 32px;
+    color:black;
 }
 body
 {
@@ -239,14 +238,14 @@ p{
     color: black;
     margin-left: 13px;
 }
-button, select {
+ select {
     text-transform: none;
     color: black;
         height: 32px;
 
 }
 .text-info {
-    color:white;
+    color:black;
 }
 
 .loader {
@@ -313,6 +312,7 @@ button, select {
 .left-addon input {
     padding-left: 30px;
 }
-.travel-date {
+
+.ui-datepicker-month, .ui-datepicker-year{
     color: black;
 }
