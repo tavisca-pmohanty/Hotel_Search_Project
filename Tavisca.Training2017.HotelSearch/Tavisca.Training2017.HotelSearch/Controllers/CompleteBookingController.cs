@@ -26,6 +26,7 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
             }
             catch(Exception ex)
             {
+                Logger.Log.LogError(ex);
                 throw ex;
             }
         }

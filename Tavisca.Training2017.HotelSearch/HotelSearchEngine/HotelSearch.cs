@@ -13,16 +13,18 @@ namespace HotelSearchEngine
     public class HotelSearch
     {
         List<HotelListingResponse> itineraries;
+        HotelEngineClient client;
         public HotelSearch()
         {
            
             itineraries = new List<HotelListingResponse>();
+            client = new HotelEngineClient();
         }
         public async Task<List<HotelListingResponse>> GetHotelListingAsync(HotelSearchRq request)
         {
+            
             try
             {
-                HotelEngineClient client = new HotelEngineClient();
                 HotelSearchRQ searchRequest = await new HotelRequestParser().ParserAsync(request);
                 HotelSearchRS response = await client.HotelAvailAsync(searchRequest);
                 for (int i = 0; i < response.Itineraries.Length; i++)
@@ -41,6 +43,10 @@ namespace HotelSearchEngine
             {
                 Log.LogError(ex);
                 throw ex;
+            }
+            finally
+            {
+                await client.CloseAsync();
             }
         }
     }

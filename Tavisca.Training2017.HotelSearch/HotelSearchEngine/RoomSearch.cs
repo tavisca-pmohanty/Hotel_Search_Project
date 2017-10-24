@@ -11,17 +11,23 @@ namespace HotelSearchEngine
     public class RoomSearch
     {
         HotelRoomAvailResponse roomList;
+        HotelEngineClient client ;
         public RoomSearch()
         {
             roomList = new HotelRoomAvailResponse();
+            client = new HotelEngineClient();
         }
         public async Task<HotelRoomAvailResponse> GetRoomDetailsAsync(RoomListingRequest request)
         {
+          
             try
             {
-                HotelEngineClient client = new HotelEngineClient();
+                
                 HotelRoomAvailRQ roomAvailRequest = await new RoomRequestParser().ParserAsync(request);
                 HotelRoomAvailRS response = await client.HotelRoomAvailAsync(roomAvailRequest);
+               
+                HotelSearchCriterion hotelSearchCriterion = new HotelSearchCriterion();
+                
                 roomList.Itinerary = response.Itinerary;
                 roomList.SessionId = response.SessionId;
                 roomList.HotelCriterionData = request.HotelCriterion;
@@ -32,6 +38,11 @@ namespace HotelSearchEngine
                 Log.LogError(ex);
                 throw ex;
             }
+            finally
+            {
+                await client.CloseAsync();
+            }
+            
         }
 
     }

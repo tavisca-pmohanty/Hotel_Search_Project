@@ -11,11 +11,17 @@ namespace TripEngine
 {
     public class HotelCompleteBooking
     {
+        TripsEngineClient tripsEngineClient;
+        public HotelCompleteBooking()
+        {
+            tripsEngineClient =new TripsEngineClient();
+        }
         public async Task<CompleteBookingResponse> CompleteHotelBooking(TripFolderBookRS request)
         {
+
             try
             {
-                TripsEngineClient tripsEngineClient = new TripsEngineClient();
+              
                 CompleteBookingRQ completeBookingRQ = await new CompleteBookingRequestParser().ParserAsync(request);
                 CompleteBookingRS completeBookingRS = await tripsEngineClient.CompleteBookingAsync(completeBookingRQ);
                 CompleteBookingResponse completeBookingResponse = await new CompleteBookingResponseParser().ResponseParserAsync(completeBookingRS);
@@ -26,6 +32,12 @@ namespace TripEngine
                 Log.LogError(ex);
                 throw ex;
             }
+            finally
+            {
+
+                await tripsEngineClient.CloseAsync();
+            }
         }
+       
     }
 }
