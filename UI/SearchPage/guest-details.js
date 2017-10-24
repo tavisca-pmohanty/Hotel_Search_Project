@@ -120,7 +120,11 @@ var template = $('#itinerary-details');
          function getSuccess(completeBookingResponseData) {
               if(completeBookingResponseData!=null)
               {
-                sessionStorage.setItem('BookingSuccessfull',completeBookingResponseData);
+                var responseData={
+                  data:completeBookingResponseData,
+                  Email_Id:emailId
+                }
+                sessionStorage.setItem('BookingSuccessfull',responseData);
                         window.location="confirmation.html";
               }
               else
