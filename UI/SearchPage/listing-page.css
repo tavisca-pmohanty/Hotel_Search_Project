@@ -153,15 +153,19 @@
   }
 
   p
-  {
-      font: 400 45px/01.7 'Courgette', Helvetica, sans-serif;
-      margin: 5 33px 10px;
-      align-items: flex-end;
-      font-size: 31px;
-      color: #94a4d1;
-      font-weight: bold;
-      margin-left: 23px;
-  }
+{
+    font: 400 45px/01.7 'Courgette', Helvetica, sans-serif;
+    
+    align-items: flex-end;
+    font-size: 31px;
+    color: #94a4d1;
+    font-weight: bold;
+    margin-left: 23px;
+}
+#welcome-page
+{
+    margin-top: 50px;
+}
 
   #hotel-name
   {   color: #e1ff00;

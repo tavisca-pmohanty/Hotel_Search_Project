@@ -24,6 +24,15 @@ body{
 	flex-direction: column;
 	justify-content: space-between;
 }
+p
+{
+    font: 400 45px/01.7 'Courgette', Helvetica, sans-serif;
+    align-items: flex-end;
+    font-size: 26px;
+    color: #94a4d1;
+    font-weight: bold;
+    margin-left: 47px;
+}
 #header
 {
 	margin: 0px;
@@ -31,28 +40,25 @@ body{
 	background-color: yellow;
 	height: 10px;
 }
-#guest-name{
-	width: 500px;
-}
+
 #logo img
 {
 	margin-left: 55px;
-	margin-top: 30px;
-	width:200px;
-	margin-bottom: 15px;
-
+    margin-top: 30px;
+    width: 107px;
+    height: 94px;
 }
 #guest-Fname{
-	width: 500px;
+	
 	padding-left: 10px;
 }
 #guest-Lname{
-	width: 500px;
+	
 	padding-left: 10px;
 }
 #logo
 {
-
+	height: 198px;
 	border-bottom: 1px solid black;
 }
 #wrapper
@@ -98,7 +104,12 @@ body{
 	margin-bottom: 2px;
 	width: 10%;
 	flex-grow: 1;
+	margin-right: 84px;
 	
+}
+#data-container
+{
+	margin-left: 15px;
 }
 #expiryMonth
 {
@@ -123,7 +134,7 @@ body{
 #mobile 
 {
 	margin-bottom: 100px;
-	width: 300px;
+	
 }
 #country-code
 {
@@ -184,6 +195,7 @@ span
 }
 #cardHolder
 {
+	
   width:400px;	
 
 }
