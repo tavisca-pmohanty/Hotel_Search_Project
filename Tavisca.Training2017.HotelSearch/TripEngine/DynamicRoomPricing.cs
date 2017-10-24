@@ -10,16 +10,18 @@ namespace TripEngine
    public class DynamicRoomPricing
     {
         HotelRoomPriceResponse hotelRoomPriceResponse;
+        TripsEngineClient client;
+
         public DynamicRoomPricing()
         {
             hotelRoomPriceResponse = new HotelRoomPriceResponse();
+            client =new TripsEngineClient();
         }
         public async Task<HotelRoomPriceResponse> GetDynamicPricingAsync(RoomPricingRequest request)
         {
             try
             {
-                TripsEngineClient client = new TripsEngineClient();
-                TripProductPriceRQ tripProductPriceRQ = await new TripProductPriceRequestParser().ParserAsync(request);
+                          TripProductPriceRQ tripProductPriceRQ = await new TripProductPriceRequestParser().ParserAsync(request);
                 TripProductPriceRS response = await client.PriceTripProductAsync(tripProductPriceRQ);
                 hotelRoomPriceResponse = await new HotelRoomPriceResponseParser().ParserAsync(response);
                 return hotelRoomPriceResponse;
@@ -28,6 +30,10 @@ namespace TripEngine
             {
                 Log.LogError(ex);
                 throw ex;
+            }
+            finally
+            {
+                await client.CloseAsync();
             }
         }
     }
