@@ -10,11 +10,13 @@ $(document).ready(function(){
     
              if(roomItinerary[i].SupplierName=="HotelBeds Test"|| roomItinerary.SupplierName=="TouricoTGSTest")
           {
-              typeOfRooms.push({
-                image:roomItinerary[i].ImageUrl,
-                roomType:roomItinerary[i].RoomName,
-                roomDescription:roomItinerary[i].RoomDescription,
-                roomFare:roomItinerary[i].CurrencyType+" "+roomItinerary[i].Price,
+          typeOfRooms.push({
+                //name:roomItinerary.Itinerary.HotelProperty.Name,
+                image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
+                roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
+                roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
+                roomFare:roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.BaseEquivCurrency+" "+roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.UsdEquivAmount,
+
             });
         }
       }
