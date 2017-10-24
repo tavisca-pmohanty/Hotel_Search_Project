@@ -20,11 +20,11 @@
 							<div class="container">
 								<div id="trip-info">
 									<div id=guest-details>
-										    <label><b>Guest FirstName</b></label>
-                                <input type="text" id="guest-Fname" maxlength="50" placeholder="Guest Name" name="guest Name" required="true">
-                                         <label><b>Guest LastName</b></label>
+										    <label><b>Guest FirstName</b><span>*</span></label>
+                                			<input type="text" id="guest-Fname" maxlength="50" placeholder="Guest Name" name="guest Name" required="true">
+                                        	<label><b>Guest LastName</b><span>*</span></label>
 										    <input type="text" id="guest-Lname" maxlength="50" placeholder="Guest Name" name="guest Name" required="true">
-										    <label><b>Country Code</b></label>
+										    <label><b>Country Code</b><span>*</span></label>
 										    <select   id="country-code" name="year" >
 		   											<option  value="91">India +91</option>
 		   											<option  value="62">Indonesia +62</option>
@@ -55,7 +55,7 @@
 													<option value="359">Bulgaria +359</option>
 
 												</select>
-										    <label><b>Mobile No</b></label>
+										    <label><b>Mobile No</b><span>*</span></label>
 										    <input id="mobile" type="number" placeholder="Mobile Number" maxlength="10" name="mobile" required="true">
 										    </div>
 											
@@ -65,14 +65,14 @@
 											</div>
 											</div>
 											<div id="payment-details">
-											<label><b>CardHolder Name</b></label>
+											<label><b>CardHolder Name</b><span>*</span></label>
 										    	<input type="text" id="cardHolder" placeholder="CardHolder Name" maxlength="30" name="CardHolder Name" required="true">
-										    <label><b>Debit/Credit Card Number</b></label>
+										    <label><b>Debit/Credit Card Number</b><span>*</span></label>
 										    	<input type="number" id="cardNum" placeholder="Card number" name="Card number" required="true">
-										    <label><b>Expiry Date</b></label>
+										    <label><b>Expiry Date</b><span>*</span></label>
 										    
 										    <div>
-											    <select   id="expiryMonth" name="month" >
+											    <select id="expiryMonth" name="month" >
 		   											<option  value=" ">Month</option>
 		   											<option  value="01-January">01-January</option>
 		   											<option  value="02-February">02-February</option>
@@ -113,9 +113,9 @@
 											 
 											</div>
  		  
-										    <label><b>CVV Number</b></label>
+										    <label><b>CVV Number</b><span>*</span></label>
 										    <input id="cvv" type="password" placeholder="cvv" name="cvv" required="true">
-										    <label><b>Email-Id</b></label>
+										    <label><b>Email-Id</b><span>*</span></label>
 										    <input type="text" id="email" placeholder="Email-Id" name="Email-Id" required="true">
 							</div>
 						</div>
