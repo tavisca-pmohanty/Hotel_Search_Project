@@ -116,10 +116,6 @@
     margin-bottom: 43px;
     flex-flow: wrap;
     flex-shrink: 1;
-<<<<<<< HEAD
-=======
-    
->>>>>>> b13de8a8f5f4521a4d8b687528ee3c830650d9ea
     justify-content: space-evenly;
 }   
 
@@ -148,7 +144,6 @@
 {
     margin-top: 50px;
 }
-<<<<<<< HEAD
 
 #filter-container h2
 {
@@ -159,20 +154,6 @@
     padding-left: 31%;
     flex-shrink: 3;
     flex-wrap: wrap;
-
-
-=======
-#filter-container h2
-{
-
-   align-content: center;
-    background: #089090;
-    margin-right: 0px;
-    padding-right: 31%;
-    padding-left: 31%;
-    flex-shrink: 3;
-    flex-wrap: wrap;
->>>>>>> b13de8a8f5f4521a4d8b687528ee3c830650d9ea
 }
   #hotel-name
   { 
@@ -232,10 +213,6 @@
     flex-flow: row;
     margin-right: 7px;
     margin-bottom: 10px;
-<<<<<<< HEAD
-
-=======
->>>>>>> b13de8a8f5f4521a4d8b687528ee3c830650d9ea
 }       
   #welcome-page
   {
@@ -285,18 +262,10 @@ input[type=radio] {
 {
   color:black;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> b13de8a8f5f4521a4d8b687528ee3c830650d9ea
 #remove-filters
 {
   flex-shrink: 3;
   margin-top: 13%;
   padding-left: 32%;
-<<<<<<< HEAD
-  font-size: 15px;
-=======
->>>>>>> b13de8a8f5f4521a4d8b687528ee3c830650d9ea
   font-size: 15px;
 }
