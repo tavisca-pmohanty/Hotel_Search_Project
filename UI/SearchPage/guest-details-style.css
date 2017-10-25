@@ -1,6 +1,6 @@
 body{
-	background-color: beige;
-	background-color: #0f1717;
+	margin:0;
+	background-color: white
 }
 #trip-info{
 	display: flex;
@@ -12,8 +12,9 @@ body{
 	display: flex;
 	flex-direction: column;
 	border: 1px solid black;
-	width: 47%;
+	width: 50%;
 	justify-content: space-between;
+	box-shadow: 10px 10px 5px teal;
 }
 #payment-details{
 	border: 1px solid black;
@@ -23,6 +24,7 @@ body{
 	margin-top: 10px;
 	flex-direction: column;
 	justify-content: space-between;
+	box-shadow: 10px 10px 5px teal;
 }
 p
 {
@@ -55,13 +57,13 @@ p
 }
 #guest-Lname
 {
-		width: 500px;
 	padding-left: 10px;
 }
 #logo
 {
 	height: 198px;
 	border-bottom: 1px solid black;
+	background: black;
 }
 #wrapper
 {
@@ -71,7 +73,7 @@ p
 #wrapper h1
 {
 	
-	color: aliceblue;
+	color: green
 	margin-bottom: 5px;
 }
 
@@ -115,7 +117,16 @@ p
 }
 #expiryMonth
 {
+	padding-left: 10px;
+	height: 39px;
 	margin-bottom: 12px;
+	box-shadow: 5px 5px 5px #888888;
+}
+#expiryYear
+{
+	padding-left: 10px;
+	height: 39px;
+	box-shadow: 5px 5px 5px #888888;
 }
 
 #data-container
@@ -123,10 +134,6 @@ p
 	margin-left: 15px;
 }
 
-#expiryMonth
-{
-	margin-bottom: 12px;
-}
 
 .container label
 {
@@ -145,11 +152,14 @@ p
 
 #mobile 
 {
+	padding-left: 10px;
 	margin-bottom: 100px;
+	padding-left: 10px;
 	
 }
 #country-code
 {
+	padding-left: 10px;
 	margin-top: 15px;
     margin-bottom: 15px;
     height: 41px;
@@ -157,6 +167,7 @@ p
 
 #card-number
 {
+	padding-left: 10px;
 	margin-bottom: 120px;
     width: 50%;
 }
@@ -168,7 +179,7 @@ button
 	width: 270px;
 	background-color: yellow;
 	border: .5px solid black;
-	box-shadow: 5px 5px 5px #888888;
+	box-shadow: 10px 10px 5px teal;
 	margin-bottom: 50px;
 	font-size: 15px;
 	font-weight: bold;
@@ -190,10 +201,10 @@ span
 #booking-details
 {
 	width:40%;
-	height: fit-content;
+	box-shadow: 10px 10px 5px teal;
 	border: 2px solid black;
 	flex-grow: 1;
-	margin-right: 55px;
+	
 	border-spacing: 10px;
 	flex-wrap: wrap;
 	color:black;
@@ -202,25 +213,29 @@ span
 
 #cvv
 {
+	padding-left: 10px;
 	width:100px;
 	
 }
 #cardHolder
 {
-	
-  width:400px;	
+	padding-left: 10px;
+	width:400px;	
 
 }
 #cardNum
 {
+	padding-left: 10px;
 	width:400px;
 }
 #email
 {
+	padding-left: 10px;
 	width:350px;
 }
 #country-code
 {
+	padding-left: 10px;
 	width:100px;
 }
 
