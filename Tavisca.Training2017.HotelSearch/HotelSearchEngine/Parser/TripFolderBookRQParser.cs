@@ -174,7 +174,7 @@ namespace HotelSearchEngine.Parser
                             new StateBag(){ Name="Boyd Gaming"},
                             new StateBag(){ Name="IsPassportRequired" , Value="false"}
                         },
-                        Email="rsarda@tavisca.com",
+                        Email="bmahapatra@tavisca.com",
                         FirstName="Sandbox",
                         Gender=Gender.Male,
                         KnownTravelerNumber="789456",
