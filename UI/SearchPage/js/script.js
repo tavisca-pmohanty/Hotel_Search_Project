@@ -64,7 +64,7 @@ $("#rooms").on("change",function(){
          try {
              $.ajax({
                  type: "GET",
-                 url: "http://localhost:64160/index/AutoComplete/search/"+ $("#Location").val(),
+                 url: "http://localhost:53552/index/AutoComplete/search/"+ $("#Location").val(),
                  cache: false,
                  success: getSuccess,
                  crossDomain:true,
@@ -150,7 +150,7 @@ $("#rooms").on("change",function(){
         'Content-Type': 'application/json' 
     },
                  type: "POST",
-                 url: "http://localhost:64160/index/HotelListing/search/GetHotels",
+                 url: "http://localhost:53552/index/HotelListing/search/GetHotels",
                  cache: false,
                  data:JSON.stringify(data),
                 // contentType: 'json/application',
@@ -169,20 +169,10 @@ $("#rooms").on("change",function(){
             $("#loaderdiv").hide();
             return;
          } 
-         else{  
-            var hotelItineraries=new Array();
-             for(var i=0;i<data.length;i++)
-                 {
-                     hotelItineraries.push({
-                         itinerary:data[i].Itinerary,
-                         sessionId:data[i].SessionId,
-                         hotelCriterion:data[i].HotelCriterion,
-                     });
-                 }
-            
+         else{
 
              window.location="listing-page.html";
-             sessionStorage.setItem('HotelListing',JSON.stringify(hotelItineraries));
+             sessionStorage.setItem('HotelListing',JSON.stringify(data));
          }
             }
     });

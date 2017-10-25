@@ -15,7 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\HotelSearchEngine\HotelSearchEngine.csproj" />
     <ProjectReference Include="..\Tavisca.Training2017.HotelSearch\Tavisca.Training2017.HotelSearch.csproj" />
-    <ProjectReference Include="..\TripEngine\TripEngine.csproj" />
   </ItemGroup>
 
 </Project>

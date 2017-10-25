@@ -2,17 +2,17 @@ $(document).ready(function(){
 
 	var data=sessionStorage.getItem('UpdatedRoomListing');
 	var updatedData=JSON.parse(data);
-	var inDate=updatedData.data.HotelItinerary.StayPeriod.Start.toString().split('T');
-	var outDate=updatedData.data.HotelItinerary.StayPeriod.End.toString().split('T');
-	var currencyType=updatedData.data.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.Currency;
+	var inDate=updatedData.CheckInDate.toString().split('T');
+	var outDate=updatedData.CheckOutDate.toString().split('T');
+	var currencyType=updatedData.CurrencyType;
 	var htmlData={
-		hotelName:" "+updatedData.data.HotelItinerary.HotelProperty.Name.toString(),
-	 	roomType:" "+updatedData.data.HotelItinerary.Rooms[0].RoomName.toString(),
-	 	numOfRooms:" "+updatedData.rooms.toString(),
-	 	checkInDate:" "+inDate[0].toString(),
-	 	checkOutDate:" "+outDate[0].toString(),
-	 	duration:" "+updatedData.data.HotelItinerary.StayPeriod.Duration.toString(),
-	 	amount:" "+(currencyType+" "+updatedData.data.HotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.Amount).toString()
+		hotelName:" "+updatedData.HotelName,
+	 	roomType:" "+updatedData.RoomName,
+	 	numOfRooms:" "+updatedData.rooms,
+	 	checkInDate:" "+inDate[0],
+	 	checkOutDate:" "+outDate[0],
+	 	duration:" "+updatedData.Duration,
+	 	amount:" "+(currencyType+" "+updatedData.Price)
 }
 
 var template = $('#itinerary-details');
@@ -59,8 +59,7 @@ var template = $('#itinerary-details');
   				return;
   			}
   			var tripFolderRequest={
-  				TripDetails:updatedData.data,
-  				SessionId:updatedData.sessionId,
+  				SessionId:updatedData.SessionId,
   				GuestFName:guestFirstName,
                 GuestLName:guestLastName,
   				CountryCode:countryCode,
@@ -80,7 +79,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-                 url: "http://localhost:64160/book/tripfolder/booktrip",
+                 url: "http://localhost:53552/book/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -100,7 +99,7 @@ var template = $('#itinerary-details');
                   'Content-Type': 'application/json' 
            },
                  type: "POST",
-                 url: "http://localhost:64160/complete/booking/bookingcomplete",
+                 url: "http://localhost:53552/complete/booking/bookingcomplete",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',

@@ -1,13 +1,14 @@
-﻿using Logger;
+﻿using APITripEngine;
+using HotelSearchEngine.Model;
+using HotelSearchEngine.Parser;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using TripEngine.Models;
-using TripEngine.Parser;
-using TripEngineServices;
 
-namespace TripEngine
+
+namespace HotelSearchEngine
 {
     public class HotelCompleteBooking
     {
