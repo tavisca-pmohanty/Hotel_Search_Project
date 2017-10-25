@@ -35,9 +35,22 @@ namespace HotelSearchEngine.Parser
                     }
                 }
                 hotelRoomAvailResponse.HotelName = hotelItinerary.HotelProperty.Name;
+                HotelEngienSearch.HotelSearchCriterion hotelSearchCriterion = GetCachedCriterion(sessionId);
+                hotelRoomAvailResponse.NumOfRooms = hotelSearchCriterion.NoOfRooms;
                 roomList.Add(hotelRoomAvailResponse);
             }
             return roomList;
+        }
+
+        public HotelSearchCriterion GetCachedCriterion(string sessionId)
+        {
+            HotelSearchCriterionCache hotelSearchCriterionCache = new HotelSearchCriterionCache();
+            HotelEngienSearch.HotelSearchCriterion hotelSearchCriterion = new HotelSearchCriterion();
+            if(hotelSearchCriterionCache.CheckIfPresent(sessionId))
+            {
+                hotelSearchCriterion = hotelSearchCriterionCache.FetchCriterion(sessionId);
+            }
+            return hotelSearchCriterion;
         }
     }
 }

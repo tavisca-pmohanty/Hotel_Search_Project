@@ -15,6 +15,7 @@ namespace HotelSearchEngine.Model
         public decimal Price { get; set; }
         public string CurrencyType { get; set; }
         public string RoomName { get; set; }
+        public int NumOfRooms { get; set; }
         public string SessionId { get; set; }
     }
 }
