@@ -101,7 +101,7 @@ Handlebars.registerHelper('times', function (n, block) {
 			if(result[i].Rating==ratingSelected)
 			{
 			filteredHotelList.push({
-			image:ImageUrl,
+			image:result[i].ImageUrl,
 			name:result[i].HotelName,
 			city:result[i].Address,
 			rating:result[i].Rating,
