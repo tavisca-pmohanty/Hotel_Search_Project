@@ -1,12 +1,11 @@
 ﻿using HotelSearchEngine;
+using HotelSearchEngine.Model;
 using Logger;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using TripEngine;
-using TripEngine.Models;
 
 namespace ServiceProvider
 {

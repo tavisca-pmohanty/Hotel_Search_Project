@@ -27,7 +27,7 @@ namespace HotelSearchEngine
                 HotelRoomAvailRQ roomAvailRequest = await new RoomRequestParser().ParserAsync(request);
                 HotelRoomAvailRS response = await client.HotelRoomAvailAsync(roomAvailRequest);
                 CachingItinerary(response.SessionId, response.Itinerary);
-                roomList = await new RoomResponseParser().ParserAsync(response.SessionId,roomAvailRequest.Itinerary);
+                roomList = await new RoomResponseParser().ParserAsync(response.SessionId,response.Itinerary);
                 return roomList;
             }
             catch (Exception ex)

@@ -7,7 +7,7 @@ namespace Cache.CacheData
 {
     class SingleAvailCache
     {
-        Dictionary<string, HotelItinerary> itineraryDict;
+        static Dictionary<string, HotelItinerary> itineraryDict;
         public SingleAvailCache()
         {
             itineraryDict = new Dictionary<string, HotelItinerary>();
