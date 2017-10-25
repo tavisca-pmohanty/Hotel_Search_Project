@@ -13,10 +13,10 @@ namespace ServiceProvider
     public class RoomInfoService :IHotelService
     {
 
-        HotelRoomAvailResponse roomItinaries;
+        List<HotelRoomAvailResponse> roomItinaries;
         public RoomInfoService()
         {
-            roomItinaries = new HotelRoomAvailResponse();
+            roomItinaries = new List<HotelRoomAvailResponse>();
         }
 
         public async Task<string> GetRequestedDataAsync(string searchTerm)

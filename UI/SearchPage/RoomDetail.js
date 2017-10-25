@@ -5,17 +5,16 @@ $(document).ready(function(){
    var roomItinerary= JSON.parse(data);
         var typeOfRooms= new Array();
     
-    for(var i=0;i<roomItinerary.Itinerary.Rooms.length;i++)
+    for(var i=0;i<roomItinerary.length;i++)
        {
     
-             if(roomItinerary.Itinerary.Rooms[i].HotelFareSource.Name=="HotelBeds Test")
+             if(roomItinerary[i].SupplierName=="HotelBeds Test")
           {
               typeOfRooms.push({
-                //name:roomItinerary.itinerary.HotelProperty.Name,
-                image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
-                roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
-                roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
-                roomFare:roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.BaseEquivCurrency+" "+roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.UsdEquivAmount,
+                image:roomItinerary[i].ImageUrl,
+                roomType:roomItinerary[i].RoomName,
+                roomDescription:roomItinerary[i].RoomDescription,
+                roomFare:roomItinerary[i].CurrencyType+" "+roomItinerary[i].Price,
             });
           }
         }
@@ -35,7 +34,6 @@ $(".room-button").click(function()
     var roomName=this.value;
     var pricingRequest={
                     SessionId:roomItinerary.SessionId,
-                    Itinerary:roomItinerary.Itinerary,
                     HotelCriterionData:roomItinerary.HotelCriterionData,
                     RoomName:roomName
     }
