@@ -6,13 +6,13 @@ $(document).ready(function(){
 	var outDate=updatedData.CheckOutDate.toString().split('T');
 	var currencyType=updatedData.CurrencyType;
 	var htmlData={
-		hotelName:" "+updatedData.HotelName.toString(),
-	 	roomType:" "+updatedData.RoomName.toString(),
-	 	numOfRooms:" "+updatedData.rooms.toString(),
-	 	checkInDate:" "+inDate[0].toString(),
-	 	checkOutDate:" "+outDate[0].toString(),
-	 	duration:" "+updatedData.Duration.toString(),
-	 	amount:" "+(currencyType+" "+updatedData.Price).toString()
+		hotelName:" "+updatedData.HotelName,
+	 	roomType:" "+updatedData.RoomName,
+	 	numOfRooms:" "+updatedData.rooms,
+	 	checkInDate:" "+inDate[0],
+	 	checkOutDate:" "+outDate[0],
+	 	duration:" "+updatedData.Duration,
+	 	amount:" "+(currencyType+" "+updatedData.Price)
 }
 
 var template = $('#itinerary-details');
@@ -59,7 +59,7 @@ var template = $('#itinerary-details');
   				return;
   			}
   			var tripFolderRequest={
-  				SessionId:updatedData.sessionId,
+  				SessionId:updatedData.SessionId,
   				GuestFName:guestFirstName,
                 GuestLName:guestLastName,
   				CountryCode:countryCode,

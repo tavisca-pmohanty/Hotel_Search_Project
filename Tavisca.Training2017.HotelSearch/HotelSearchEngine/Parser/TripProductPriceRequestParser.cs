@@ -42,8 +42,7 @@ namespace HotelSearchEngine.Parser
             pricingRequest.TripProduct = product;
             pricingRequest.SessionId = request.SessionId;
             pricingRequest.ResultRequested = APITripEngine.ResponseType.Unknown;
-            //string jsonAttributes = JsonConvert.SerializeObject(hotelSearchCriterion.Attributes);
-            //pricingRequest.AdditionalInfo = JsonConvert.DeserializeObject(APITripEngine.StateBag)(jsonAttributes);
+            pricingRequest.AdditionalInfo = product.HotelSearchCriterion.Attributes;
             return pricingRequest;
         }
 

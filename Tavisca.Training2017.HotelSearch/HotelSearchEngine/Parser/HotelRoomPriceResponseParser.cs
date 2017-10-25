@@ -29,6 +29,7 @@ namespace HotelSearchEngine.Parser
             response.RoomName = hotelItinerary.Rooms[0].RoomName;
             response.SessionId = roomPriceRS.SessionId;
             response.CurrencyType = hotelItinerary.Rooms[0].DisplayRoomRate.TotalFare.Currency;
+            response.NumOfRooms = hotelTripProduct.HotelSearchCriterion.NoOfRooms;
             return response;
         }
     }
