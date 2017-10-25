@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="listing-page.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
 </head>
 <body>
   <div id="header-container">
@@ -25,7 +26,7 @@
   <div id="main-container">
     <div id="filter-container">
       <a id="remove-filters">Remove Filters</a>
-      <h2>Filters:</h2>
+      <h2>Filters</h2>
       <h3>By Star Rating:</h3>
       <div class="rating-container">
        <input class="radioBtn" type="radio" name="rating" value="5">
@@ -82,11 +83,11 @@
      
       <div id="data-container">
           <h2 id="hotel-name">{{name}}</h2>
-          <h2 id="hotel-address">Place:{{city}}</h2>
+          <h2 id="hotel-address">Address:{{city}}</h2>
           <h3 id="rating">Rating:{{#times rating}}
                             <span class="glyphicon glyphicon-star-empty"></span>
                             {{/times}}</h3>
-          <h2 id="hotel-price">Fare:{{price}}</h2>
+          <h2 id="hotel-price">Fare:<div>{{price}}</div></h2>
       </div>
 <div>
       <button  class="room-button" value="{{name}} {{city}}" alt="Hotel Image Unavailable">Room Details</button>

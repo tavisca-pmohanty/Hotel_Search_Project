@@ -7,7 +7,6 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
 </head>
-</head>
 <body>
     <div id="header-container">
         <div id="logo"> 
@@ -26,29 +25,36 @@
     </div>  
      <div id="roomlist-container">
               <div>
-                <img src="bus.gif" alt="Loading.." />
+                <img src="bus.gif" alt="Loading.."  />
               </div> 
     </div>
             
-            <script id="room-item" type="text/x-handlebars-template">
-               <label>{{name}}</label>
-            {{#each this}}  
-              <div class="layout">
+    <script id="room-item" type="text/x-handlebars-template">
+        <!-- <div id="hotel-name"><h2>{{name}}</h2></div> --> 
+<<<<<<< HEAD
 
+           {{#each this}} 
+
+=======
+           {{#each this}} 
+>>>>>>> b13de8a8f5f4521a4d8b687528ee3c830650d9ea
+              <div class="layout">
                   <img id="hotel-image" src="{{image}}"> 
                         <div id="data-container">
                             <h2 id="room-name">{{roomType}}</h2>
                             <h2 id="room-address">{{{roomDescription}}}</h2>
-
-                            
-                            <h2 id="hotel-price">Fare:{{roomFare}}</h2>
+                            <h2 id="hotel-price">Fare: <div>{{roomFare}}</div></h2>
                         </div>
+                        <iframe class="map-bottom" width="258" height="230" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCIYzzzQZGLWDSOSovKWaq2UsyX1dQ796c&q={{this.latitude}},{{this.longitude}}" allowfullscreen>
+                        </iframe>
                         <div>
-                              <button   type="submit" class="room-button" value="{{roomType}}" alt="Hotel Image Unavailable">Book Now</button>
+                              <button type="submit" class="room-button" value="{{roomType}}" alt="Hotel Image Unavailable">Book Now</button>
+                          
                         </div>
               </div>
-            {{/each}}
-            </script>
+          {{/each}}
+
+    </script>
  
  
     

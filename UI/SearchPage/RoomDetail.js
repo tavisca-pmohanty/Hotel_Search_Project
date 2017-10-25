@@ -8,15 +8,34 @@ $(document).ready(function(){
     for(var i=0;i<roomItinerary.length;i++)
        {
     
-             if(roomItinerary[i].SupplierName=="HotelBeds Test"|| roomItinerary.SupplierName=="TouricoTGSTest")
+<<<<<<< HEAD
+
+       if(roomItinerary[i].SupplierName=="HotelBeds Test"|| roomItinerary.SupplierName=="TouricoTGSTest")
           {
-              typeOfRooms.push({
+
+            typeOfRooms.push({
+                longitude:roomItinerary.Itinerary.HotelProperty.GeoCode.Longitude,
+                latitude:roomItinerary.Itinerary.HotelProperty.GeoCode.Latitude,
+                // name:roomItinerary.Itinerary.HotelProperty.Name,
+                image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
+                roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
+                roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
+                roomFare:roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.BaseEquivCurrency+" "+roomItinerary.Itinerary.Rooms[i].DisplayRoomRate.TotalFare.UsdEquivAmount,
+
+
+=======
+             if(roomItinerary[i].SupplierName=="HotelBeds Test"|| roomItinerary.SupplierName=="TouricoTGSTest")
+           {
+               typeOfRooms.push({
                 image:roomItinerary[i].ImageUrl,
                 roomType:roomItinerary[i].RoomName,
                 roomDescription:roomItinerary[i].RoomDescription,
                 roomFare:roomItinerary[i].CurrencyType+" "+roomItinerary[i].Price,
+                latitude:roomItinerary[i].Latitude,
+                longitude:roomItinerary[i].Longitude
+>>>>>>> b13de8a8f5f4521a4d8b687528ee3c830650d9ea
             });
-        }
+         }
       }
 
 var template = $('#room-item');
@@ -47,7 +66,7 @@ $(".room-button").click(function()
                                         'Content-Type': 'application/json' 
                                     },
                                      type: "POST",
-                                     url: "http://localhost:56883/index/HotelListing/search/GetRoomPricing",
+                                     url: "http://localhost:64160/index/HotelListing/search/GetRoomPricing",
                                      cache: false,
                                      data:JSON.stringify(data),
                                      dataType: 'json',
