@@ -14,5 +14,6 @@ namespace HotelSearchEngine
         public string ImageUrl { get; set; }
         public string CurrencyType { get; set; }
         public decimal Price { get; set; }
+        public string SupplierName { get; set; }
     }
 }

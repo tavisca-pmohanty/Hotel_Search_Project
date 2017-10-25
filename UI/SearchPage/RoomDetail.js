@@ -8,15 +8,15 @@ $(document).ready(function(){
     for(var i=0;i<roomItinerary.length;i++)
        {
     
-             if(roomItinerary[i].SupplierName=="HotelBeds Test"|| roomItinerary.SupplierName=="TouricoTGSTest")
-          {
+          //    if(roomItinerary[i].SupplierName=="HotelBeds Test"|| roomItinerary.SupplierName=="TouricoTGSTest")
+          // {
               typeOfRooms.push({
                 image:roomItinerary[i].ImageUrl,
                 roomType:roomItinerary[i].RoomName,
                 roomDescription:roomItinerary[i].RoomDescription,
                 roomFare:roomItinerary[i].CurrencyType+" "+roomItinerary[i].Price,
             });
-          }
+          // }
         }
 
 var template = $('#room-item');

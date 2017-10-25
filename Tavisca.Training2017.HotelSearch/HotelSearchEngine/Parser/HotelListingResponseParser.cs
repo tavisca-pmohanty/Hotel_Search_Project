@@ -33,6 +33,7 @@ namespace HotelSearchEngine.Parser
                         break;
                     }
                 }
+                hotelListingResponse.SupplierName = hotelSearchRS.Itineraries[i].HotelFareSource.Name;
                 hotelListingResponseList.Add(hotelListingResponse);
             }
             return hotelListingResponseList;

@@ -37,7 +37,7 @@ namespace HotelSearchEngine.Parser
             string jsonItinerary = JsonConvert.SerializeObject(itinerary);
             product.HotelItinerary = JsonConvert.DeserializeObject<APITripEngine.HotelItinerary>(jsonItinerary);
             HotelEngienSearch.HotelSearchCriterion hotelSearchCriterion = GetCachedCriterion(request.SessionId);
-            string jsonCriterion= JsonConvert.SerializeObject(hotelSearchCriterion);
+            string jsonCriterion = JsonConvert.SerializeObject(hotelSearchCriterion);
             product.HotelSearchCriterion = JsonConvert.DeserializeObject<APITripEngine.HotelSearchCriterion>(jsonCriterion);
             pricingRequest.TripProduct = product;
             pricingRequest.SessionId = request.SessionId;
@@ -49,8 +49,8 @@ namespace HotelSearchEngine.Parser
         private HotelEngienSearch.HotelSearchCriterion GetCachedCriterion(string sessionId)
         {
             HotelSearchCriterionCache hotelSearchCriterionCache = new HotelSearchCriterionCache();
-            HotelEngienSearch.HotelSearchCriterion hotelSearchCriterion = new HotelEngienSearch.HotelSearchCriterion(); 
-            if(hotelSearchCriterionCache.CheckIfPresent(sessionId))
+            HotelEngienSearch.HotelSearchCriterion hotelSearchCriterion = new HotelEngienSearch.HotelSearchCriterion();
+            if (hotelSearchCriterionCache.CheckIfPresent(sessionId))
             {
                 hotelSearchCriterion = hotelSearchCriterionCache.FetchCriterion(sessionId);
             }
@@ -62,9 +62,9 @@ namespace HotelSearchEngine.Parser
             HotelEngienSearch.HotelItinerary hotelItinerary = new HotelEngienSearch.HotelItinerary();
             SingleAvailCache singleAvailCache = new SingleAvailCache();
             if (singleAvailCache.CheckIfPresent(sessionId))
-                {
+            {
                 hotelItinerary = singleAvailCache.FetchItinerary(sessionId);
-                }
+            }
             return hotelItinerary;
         }
     }
