@@ -70,9 +70,13 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
+<<<<<<< HEAD
 
 					                 url: "http://localhost:64160/index/HotelListing/search/GetHotelRooms",
 
+=======
+					                 url: "http://localhost:64160/index/HotelListing/search/GetHotelRooms",
+>>>>>>> b13de8a8f5f4521a4d8b687528ee3c830650d9ea
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
@@ -145,7 +149,6 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-
 					                 url: "http://localhost:64160/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
 					                 data:JSON.stringify(data),

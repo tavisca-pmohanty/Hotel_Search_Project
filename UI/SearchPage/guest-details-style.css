@@ -48,6 +48,7 @@ p
     width: 107px;
     height: 94px;
 }
+<<<<<<< HEAD
 
 #guest-Fname
 {
@@ -57,6 +58,14 @@ p
 {
 		width: 500px;
 
+=======
+#guest-Fname{
+	
+	padding-left: 10px;
+}
+#guest-Lname{
+	
+>>>>>>> b13de8a8f5f4521a4d8b687528ee3c830650d9ea
 	padding-left: 10px;
 }
 #logo
@@ -109,6 +118,14 @@ p
 	flex-grow: 1;
 	margin-right: 84px;
 	
+}
+#data-container
+{
+	margin-left: 15px;
+}
+#expiryMonth
+{
+	margin-bottom: 12px;
 }
 
 #data-container

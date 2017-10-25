@@ -79,9 +79,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-
                  url: "http://localhost:64160/book/tripfolder/booktrip",
-
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -101,9 +99,7 @@ var template = $('#itinerary-details');
                   'Content-Type': 'application/json' 
            },
                  type: "POST",
-
                  url: "http://localhost:64160/complete/booking/bookingcomplete",
-
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
