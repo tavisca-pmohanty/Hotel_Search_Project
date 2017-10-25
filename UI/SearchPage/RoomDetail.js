@@ -11,7 +11,9 @@ $(document).ready(function(){
              if(roomItinerary.Itinerary.Rooms[i].HotelFareSource.Name=="HotelBeds Test")
           {
             typeOfRooms.push({
-                name:roomItinerary.Itinerary.HotelProperty.Name,
+                longitude:roomItinerary.Itinerary.HotelProperty.GeoCode.Longitude,
+                latitude:roomItinerary.Itinerary.HotelProperty.GeoCode.Latitude,
+                // name:roomItinerary.Itinerary.HotelProperty.Name,
                 image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
                 roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
                 roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,

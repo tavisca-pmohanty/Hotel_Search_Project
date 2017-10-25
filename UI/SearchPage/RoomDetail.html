@@ -25,23 +25,21 @@
     </div>  
      <div id="roomlist-container">
               <div>
-                <img src="bus.gif" alt="Loading.." />
+                <img src="bus.gif" alt="Loading.."  />
               </div> 
     </div>
             
     <script id="room-item" type="text/x-handlebars-template">
-        <div id="hotel-name"><h2>{{name}}</h2></div> 
+        <!-- <div id="hotel-name"><h2>{{name}}</h2></div> --> 
            {{#each this}} 
-         
               <div class="layout">
-
                   <img id="hotel-image" src="{{image}}"> 
                         <div id="data-container">
                             <h2 id="room-name">{{roomType}}</h2>
                             <h2 id="room-address">{{{roomDescription}}}</h2>
                             <h2 id="hotel-price">Fare: <div>{{roomFare}}</div></h2>
                         </div>
-                        <iframe class="map-bottom" width="258" height="230" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCIYzzzQZGLWDSOSovKWaq2UsyX1dQ796c&q={{this.itinerary.hotelProperty.geoCode.latitude}},{{this.itinerary.hotelProperty.geoCode.longitude}}" allowfullscreen>
+                        <iframe class="map-bottom" width="258" height="230" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCIYzzzQZGLWDSOSovKWaq2UsyX1dQ796c&q={{this.latitude}},{{this.longitude}}" allowfullscreen>
                         </iframe>
                         <div>
                               <button type="submit" class="room-button" value="{{roomType}}" alt="Hotel Image Unavailable">Book Now</button>
