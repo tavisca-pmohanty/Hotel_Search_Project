@@ -139,15 +139,15 @@ p{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    height: 600px;
     width:100%;
     padding:30px 0 30px;
     margin-top: 50px;
     background-image: url(../img/Atmosphere-Resorts-Spa-Luxury-Resort.jpg);
     background-size: cover;
-    height: 688px;
+    height: -webkit-fill-available;
     background-repeat: no-repeat;
     color: #fff;
+
 }
 #indate, #outdate
 {

@@ -21,6 +21,11 @@ p
     color: #94a4d1;
     font-weight: bold;
     margin-left: 23px;
+    margin-right: 30px;
+}
+body
+{
+    margin:0;
 }
 #welcome-page
 {
@@ -138,6 +143,7 @@ h1
 }
 label
 {
+    color:teal;
     font-weight: bold;
 	margin-top: 5%;
     margin-left: 9%;
