@@ -51,7 +51,7 @@ namespace HotelSearchEngine.Parser
             HotelSearchCriterionCache hotelSearchCriterionCache = new HotelSearchCriterionCache();
             HotelEngienSearch.HotelSearchCriterion hotelSearchCriterion = new HotelEngienSearch.HotelSearchCriterion();
             if (hotelSearchCriterionCache.CheckIfPresent(sessionId))
-            {
+            { 
                 hotelSearchCriterion = hotelSearchCriterionCache.FetchCriterion(sessionId);
             }
             return hotelSearchCriterion;

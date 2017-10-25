@@ -16,8 +16,8 @@ $(document).ready(function(){
                 roomDescription:roomItinerary[i].RoomDescription,
                 roomFare:roomItinerary[i].CurrencyType+" "+roomItinerary[i].Price,
             });
-          }
         }
+      }
 
 var template = $('#room-item');
 
