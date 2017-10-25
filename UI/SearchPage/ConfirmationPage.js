@@ -1,20 +1,16 @@
 $(document).ready(function()
 {
-	var data=sessionStorage.getItems('BookingSuccessfull');
+	var data=sessionStorage.getItem('BookingSuccessfull');
 	var updatedData=JSON.parse(data);
-	var confirmationDataList= new Array();
-	for(i=0;i<updatedData.length;i++)
-	{
-		confirmationDataList.push(
+		var confirmationDataList=
 		{
-			transactionId:updatedData.completeBookingResponseData.TransactionId,
-			hotel-name:updatedData.completeBookingResponseData.HotelName,
-			roomName:updatedData.completeBookingResponseData.RoomName,
-			checkIn:updatedData.completeBookingResponseData.CheckInDate,
-			checkOut:updatedData.completeBookingResponseData.CheckOutDate,
-			noOfNights:updatedData.completeBookingResponseData.NumOfNights,
-		});
-	}
+			transactionId:updatedData.data.TransactionId,
+			hotelName:updatedData.data.HotelName,
+			roomName:updatedData.data.RoomName,
+			checkIn:updatedData.data.CheckInDate,
+			checkOut:updatedData.data.CheckOutDate,
+			noOfNights:updatedData.data.NumOfNights,
+		};
 	var template = $('#confirmation-item');
 
 	  var compiledTemplate = Handlebars.compile(template.html());
@@ -22,4 +18,4 @@ $(document).ready(function()
 	  var html = compiledTemplate(confirmationDataList);
 
 	  $('#confirmation-container').html(html);
-}
+});

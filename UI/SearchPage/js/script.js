@@ -64,7 +64,9 @@ $("#rooms").on("change",function(){
          try {
              $.ajax({
                  type: "GET",
-                 url: "http://localhost:56883/index/AutoComplete/search/"+ $("#Location").val(),
+
+                 url: "http://localhost:64160/index/AutoComplete/search/"+ $("#Location").val(),
+
                  cache: false,
                  success: getSuccess,
                  crossDomain:true,
@@ -215,7 +217,9 @@ $("#rooms").on("change",function(){
         'Content-Type': 'application/json' 
     },
                  type: "POST",
-                 url: "http://localhost:56883/index/HotelListing/search/GetHotels",
+
+                 url: "http://localhost:64160/index/HotelListing/search/GetHotels",
+
                  cache: false,
                  data:JSON.stringify(data),
                 // contentType: 'json/application',
