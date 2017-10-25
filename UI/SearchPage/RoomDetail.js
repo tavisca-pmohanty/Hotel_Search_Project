@@ -7,8 +7,8 @@ $(document).ready(function(){
     
     for(var i=0;i<roomItinerary.length;i++)
        {
-             if(roomItinerary[i].SupplierName=="HotelBeds Test"|| roomItinerary.SupplierName=="TouricoTGSTest")
-           {
+           //   if(roomItinerary[i].SupplierName=="HotelBeds Test"|| roomItinerary.SupplierName=="TouricoTGSTest")
+           // {
                typeOfRooms.push({
                 image:roomItinerary[i].ImageUrl,
                 roomType:roomItinerary[i].RoomName,
@@ -17,7 +17,7 @@ $(document).ready(function(){
                 latitude:roomItinerary[i].Latitude,
                 longitude:roomItinerary[i].Longitude
             });
-         }
+         // }
       }
 
 var template = $('#room-item');
@@ -48,7 +48,7 @@ $(".room-button").click(function()
                                         'Content-Type': 'application/json' 
                                     },
                                      type: "POST",
-                                     url: "http://localhost:64160/index/HotelListing/search/GetRoomPricing",
+                                     url: "http://localhost:53552/index/HotelListing/search/GetRoomPricing",
                                      cache: false,
                                      data:JSON.stringify(data),
                                      dataType: 'json',

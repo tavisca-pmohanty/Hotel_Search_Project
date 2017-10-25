@@ -8,7 +8,7 @@ $(document).ready(function(){
 	var htmlData={
 		hotelName:" "+updatedData.HotelName,
 	 	roomType:" "+updatedData.RoomName,
-	 	numOfRooms:" "+updatedData.rooms,
+	 	numOfRooms:" "+updatedData.NumOfRooms,
 	 	checkInDate:" "+inDate[0],
 	 	checkOutDate:" "+outDate[0],
 	 	duration:" "+updatedData.Duration,
