@@ -1,9 +1,8 @@
-﻿using HotelEngienSearch;
-using HotelSearchEngine.Cache;
+﻿using Cache.CacheData;
+using HotelEngienSearch;
 using HotelSearchEngine.Model;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HotelSearchEngine.Parser
@@ -36,21 +35,9 @@ namespace HotelSearchEngine.Parser
                     }
                 }
                 hotelRoomAvailResponse.HotelName = hotelItinerary.HotelProperty.Name;
-                hotelRoomAvailResponse.HotelCriterionData = GetCachedCriterion(sessionId);
                 roomList.Add(hotelRoomAvailResponse);
             }
             return roomList;
-        }
-
-        public HotelSearchCriterion GetCachedCriterion(string sessionId)
-        {
-            HotelSearchCriterionCache hotelSearchCriterionCache = new HotelSearchCriterionCache();
-            HotelSearchCriterion hotelSearchCriterion = new HotelSearchCriterion();
-            if (hotelSearchCriterionCache.CheckIfPresent(sessionId))
-            {
-                hotelSearchCriterion = hotelSearchCriterionCache.FetchCriterion(sessionId);
-            }
-            return hotelSearchCriterion;
         }
     }
 }

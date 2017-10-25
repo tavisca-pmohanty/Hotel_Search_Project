@@ -1,11 +1,12 @@
-﻿using Logger;
+﻿using APITripEngine;
+using HotelSearchEngine;
+using Logger;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using TripEngine;
-using TripEngineServices;
+
 
 namespace ServiceProvider
 {
@@ -20,7 +21,7 @@ namespace ServiceProvider
                 var response = await hotelCompleteBooking.CompleteHotelBooking(request);
                 return JsonConvert.SerializeObject(response);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.LogError(ex);
                 throw ex;

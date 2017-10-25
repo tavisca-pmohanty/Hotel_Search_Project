@@ -25,7 +25,7 @@ namespace HotelSearchEngine
         private readonly string _defaultCompanyDk = "3285301P";
         private readonly string _defaultCompanyName = "ROVIA";
         private readonly int _defaultCompanyId = 0;
-        private readonly string _defaultPriceCurrencyCode = "INR";
+        private readonly string _defaultPriceCurrencyCode = "USD";
         private readonly float _deafultSearchRadius = 30;
         private readonly Dictionary<string, LocationCodeContext> _locationTypeResolveDictionary = new Dictionary<string, LocationCodeContext>()
         {

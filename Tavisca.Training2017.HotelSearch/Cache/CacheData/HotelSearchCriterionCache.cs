@@ -7,7 +7,7 @@ namespace Cache.CacheData
 {
     class HotelSearchCriterionCache
     {
-        Dictionary<string, HotelSearchCriterion> criterionDict;
+       static Dictionary<string, HotelSearchCriterion> criterionDict;
         public HotelSearchCriterionCache()
         {
             criterionDict = new Dictionary<string, HotelSearchCriterion>();

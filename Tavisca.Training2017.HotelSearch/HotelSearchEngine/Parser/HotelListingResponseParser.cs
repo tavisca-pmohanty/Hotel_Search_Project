@@ -15,20 +15,21 @@ namespace HotelSearchEngine.Parser
         }
         public async Task<List<HotelListingResponse>> ParserAsync(HotelSearchRS hotelSearchRS)
         {
-            HotelListingResponse hotelListingResponse = new HotelListingResponse();
-           foreach(var itinerary in hotelSearchRS.Itineraries)
+           
+           for(int i=0;i<hotelSearchRS.Itineraries.Length;i++)
             {
-                hotelListingResponse.Address = itinerary.HotelProperty.Address.City.Name;
+                HotelListingResponse hotelListingResponse = new HotelListingResponse();
+                hotelListingResponse.Address = hotelSearchRS.Itineraries[i].HotelProperty.Address.City.Name;
                 hotelListingResponse.SessionId = hotelSearchRS.SessionId;
-                hotelListingResponse.HotelName = itinerary.HotelProperty.Name;
-                hotelListingResponse.Price = itinerary.Fare.TotalFare.BaseEquivAmount;
-                hotelListingResponse.Rating = itinerary.HotelProperty.HotelRating.Rating;
-                hotelListingResponse.CurrencyType = itinerary.Fare.TotalFare.Currency;
-                for(int i=0;i<itinerary.HotelProperty.MediaContent.Length;i++)
+                hotelListingResponse.HotelName = hotelSearchRS.Itineraries[i].HotelProperty.Name;
+                hotelListingResponse.Price = hotelSearchRS.Itineraries[i].Fare.TotalFare.BaseEquivAmount;
+                hotelListingResponse.Rating = hotelSearchRS.Itineraries[i].HotelProperty.HotelRating.Rating;
+                hotelListingResponse.CurrencyType = hotelSearchRS.Itineraries[i].Fare.TotalFare.Currency;
+                for(int j=0;j< hotelSearchRS.Itineraries[i].HotelProperty.MediaContent.Length;j++)
                 {
-                    if(itinerary.HotelProperty.MediaContent[i].Url!=String.Empty)
+                    if(hotelSearchRS.Itineraries[i].HotelProperty.MediaContent[j].Url!=String.Empty)
                     {
-                        hotelListingResponse.ImageUrl = itinerary.HotelProperty.MediaContent[i].Url;
+                        hotelListingResponse.ImageUrl = hotelSearchRS.Itineraries[i].HotelProperty.MediaContent[j].Url;
                         break;
                     }
                 }

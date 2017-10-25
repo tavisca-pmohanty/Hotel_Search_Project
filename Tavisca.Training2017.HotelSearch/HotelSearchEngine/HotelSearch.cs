@@ -1,14 +1,10 @@
 ﻿using HotelEngienSearch;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
-using System.IO;
-using HotelSearchEngine.SessionLog;
 using Logger;
 using HotelSearchEngine.Parser;
-using HotelSearchEngine.Cache;
+using Cache.CacheData;
 
 namespace HotelSearchEngine
 {

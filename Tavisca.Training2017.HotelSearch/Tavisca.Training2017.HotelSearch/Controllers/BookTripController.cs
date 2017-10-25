@@ -7,8 +7,6 @@ using ServiceProvider;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using HotelSearchEngine;
-using TripEngineServices;
-using TripEngine;
 
 
 

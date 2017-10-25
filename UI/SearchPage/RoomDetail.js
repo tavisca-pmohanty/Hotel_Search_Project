@@ -34,7 +34,6 @@ $(".room-button").click(function()
     var roomName=this.value;
     var pricingRequest={
                     SessionId:roomItinerary.SessionId,
-                    HotelCriterionData:roomItinerary.HotelCriterionData,
                     RoomName:roomName
     }
     var numOfRooms=roomItinerary.HotelCriterionData.NoOfRooms;
@@ -48,7 +47,7 @@ $(".room-button").click(function()
                                         'Content-Type': 'application/json' 
                                     },
                                      type: "POST",
-                                     url: "http://localhost:56883/index/HotelListing/search/GetRoomPricing",
+                                     url: "http://localhost:49898/index/HotelListing/search/GetRoomPricing",
                                      cache: false,
                                      data:JSON.stringify(data),
                                      dataType: 'json',
