@@ -10,6 +10,7 @@ $(document).ready(function(){
        {
              if(roomItinerary[i].SupplierName=="TouricoTGSTest"||roomItinerary[i].SupplierName=="HotelBeds Test")
            {
+
                typeOfRooms.push({
                 // name: roomItinerary[i].HotelName,
                 
@@ -19,7 +20,7 @@ $(document).ready(function(){
                 latitude:roomItinerary[i].Latitude,
                 longitude:roomItinerary[i].Longitude
             });
-         }
+           }
       }
       
 
@@ -60,7 +61,7 @@ $(".room-button").click(function()
                                         'Content-Type': 'application/json' 
                                     },
                                      type: "POST",
-                                     url: "http://localhost:53552/index/HotelListing/search/GetRoomPricing",
+                                     url: "http://localhost:56883/index/HotelListing/search/GetRoomPricing",
                                      cache: false,
                                      data:JSON.stringify(data),
                                      dataType: 'json',
