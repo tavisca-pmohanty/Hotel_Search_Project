@@ -10,8 +10,11 @@ $(document).ready(function(){
     
              if(roomItinerary[i].SupplierName=="HotelBeds Test"|| roomItinerary.SupplierName=="TouricoTGSTest")
           {
-          typeOfRooms.push({
-                //name:roomItinerary.Itinerary.HotelProperty.Name,
+
+            typeOfRooms.push({
+                longitude:roomItinerary.Itinerary.HotelProperty.GeoCode.Longitude,
+                latitude:roomItinerary.Itinerary.HotelProperty.GeoCode.Latitude,
+                // name:roomItinerary.Itinerary.HotelProperty.Name,
                 image:roomItinerary.Itinerary.HotelProperty.MediaContent[0].Url,
                 roomType:roomItinerary.Itinerary.Rooms[i].RoomName,
                 roomDescription:roomItinerary.Itinerary.Rooms[i].RoomDescription,
