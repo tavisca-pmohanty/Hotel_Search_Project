@@ -5,7 +5,6 @@ using ServiceProvider;
 using Microsoft.AspNetCore.Http;
 
 using System;
-using TripEngineServices;
 
 namespace Tavisca.Training2017.HotelSearch.Controllers
 {

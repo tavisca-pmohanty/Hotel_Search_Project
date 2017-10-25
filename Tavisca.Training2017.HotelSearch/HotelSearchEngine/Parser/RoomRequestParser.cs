@@ -1,16 +1,6 @@
 ﻿using HotelEngienSearch;
-using HotelSearchEngine.SessionLog;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using Json;
-using Newtonsoft.Json;
-using System.Collections;
-using HotelSearchEngine.Model;
 using System.Threading.Tasks;
-using HotelSearchEngine.Cache;
+using Cache.CacheData;
 
 namespace HotelSearchEngine
 {

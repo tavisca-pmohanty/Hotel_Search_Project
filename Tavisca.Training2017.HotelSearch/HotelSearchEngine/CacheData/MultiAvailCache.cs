@@ -7,11 +7,7 @@ namespace Cache.CacheData
 {
     public class MultiAvailCache
     {
-        Dictionary<string, HotelItinerary[]> itineraryDict;
-        public MultiAvailCache()
-        {
-            itineraryDict = new Dictionary<string, HotelItinerary[]>();
-        }
+        static Dictionary<string, HotelItinerary[]> itineraryDict=new Dictionary<string, HotelItinerary[]>();
         public void Add(string sessionID,HotelItinerary[] itineraryList)
         {
             itineraryDict.Add(sessionID, itineraryList);

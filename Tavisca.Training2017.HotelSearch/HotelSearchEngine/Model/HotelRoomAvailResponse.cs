@@ -15,6 +15,5 @@ namespace HotelSearchEngine.Model
         public decimal Price { get; set; }
         public string SupplierName { get; set; }
         public string HotelName { get; set; }
-        public HotelSearchCriterion HotelCriterionData { get; set; }
     }
 }

@@ -1,11 +1,13 @@
-﻿using System;
+﻿using APITripEngine;
+using HotelSearchEngine.Models;
+using HotelSearchEngine.Parser;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using TripEngine.Models;
-using TripEngineServices;
 
-namespace TripEngine
+
+namespace HotelSearchEngine
 {
     public class TripFolderClient
     {
