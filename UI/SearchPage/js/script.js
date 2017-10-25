@@ -64,7 +64,7 @@ $("#rooms").on("change",function(){
          try {
              $.ajax({
                  type: "GET",
-                 url: "http://localhost:53552/index/AutoComplete/search/"+ $("#Location").val(),
+                 url: "http://localhost:56883/index/AutoComplete/search/"+ $("#Location").val(),
                  cache: false,
                  success: getSuccess,
                  crossDomain:true,
@@ -102,6 +102,71 @@ $("#rooms").on("change",function(){
      };
          
  });
+    
+    
+    
+    
+    window.onload = function() {
+
+       
+        if (sessionStorage.getItem('Storedlocation') == "Storedlocation") {
+            return;
+        }
+
+        // If values are not blank, restore them to the fields
+        var location= sessionStorage.getItem('Storedlocation');
+        if (location !== null){
+            $('#Location').val(location);
+            hotelName=location;
+                  }
+        var indate = sessionStorage.getItem('Storedindate');
+        if (indate !== null){ $('#indate').val(indate);
+                             inDate=indate;
+                            }
+
+        var rooms= sessionStorage.getItem('StoredRoomsCount');
+        if (rooms!== null) { 
+            $('#rooms').val(rooms);
+            rooms=rooms;
+            
+        }
+        var adults= sessionStorage.getItem('StoredAdultsCount');
+        if (adults!== null) $('#adults0').val(adults);
+        var children= sessionStorage.getItem('StoredChildrenCount');
+        if(children!==null) $('#children0').val(children);
+        
+        var outDate= sessionStorage.getItem('StoredOutDateCount');
+        if(outDate!==null) 
+        {
+            $('#outdate').val(outDate);
+        
+             outDate=outDate;
+        }
+        //var SelectedHotelonload=sessionStorage.getItem('StoredSelectedHotel');
+         
+        //if(SelectedHotelonload!==null)
+          //  {
+                //selectedHotel=SelectedHotelonload;
+        //    }
+         var retrievedSelectedHotel = sessionStorage.getItem('StoredSelectedHotel');
+       selectedHotel =JSON.parse(retrievedSelectedHotel);
+    }
+
+    // Before refreshing the page, save the form data to sessionStorage
+    window.onbeforeunload = function() 
+    {
+        sessionStorage.setItem("Storedlocation", $('#Location').val());
+        sessionStorage.setItem("Storedindate", $('#indate').val());
+        sessionStorage.setItem("StoredRoomsCount", $('#rooms').val());
+        sessionStorage.setItem("StoredAdultsCount", $('#adults0').val());
+        sessionStorage.setItem("StoredChildrenCount",$('#children0').val());
+        sessionStorage.setItem("StoredOutDateCount",$('#outdate').val());
+        sessionStorage.setItem('StoredSelectedHotel', JSON.stringify(selectedHotel));
+        
+    
+    }
+    
+    
 
     $("#submit").on("click",function(){
         inDate=$("#indate").val().toString();
@@ -150,7 +215,7 @@ $("#rooms").on("change",function(){
         'Content-Type': 'application/json' 
     },
                  type: "POST",
-                 url: "http://localhost:53552/index/HotelListing/search/GetHotels",
+                 url: "http://localhost:56883/index/HotelListing/search/GetHotels",
                  cache: false,
                  data:JSON.stringify(data),
                 // contentType: 'json/application',
