@@ -147,6 +147,7 @@
 }
 #filter-container h2
 {
+
    align-content: center;
     background: #089090;
     margin-right: 0px;
@@ -154,7 +155,6 @@
     padding-left: 31%;
     flex-shrink: 3;
     flex-wrap: wrap;
-
 }
   #hotel-name
   { 
@@ -263,11 +263,11 @@ input[type=radio] {
 {
   color:black;
 }
+
 #remove-filters
 {
   flex-shrink: 3;
   margin-top: 13%;
   padding-left: 32%;
-  font-size: 15px;
   font-size: 15px;
 }
