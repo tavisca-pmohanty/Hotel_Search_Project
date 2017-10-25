@@ -7,8 +7,12 @@ namespace HotelSearchEngine
 {
     public class HotelListingResponse
     {
-        public HotelItinerary Itinerary { get; set; }
-        public HotelSearchCriterion HotelCriterion { get; set; }
         public string SessionId { get; set; }
+        public string HotelName { get; set; }
+        public string Address { get; set; }
+        public float Rating { get; set; }
+        public string ImageUrl { get; set; }
+        public string CurrencyType { get; set; }
+        public decimal Price { get; set; }
     }
 }

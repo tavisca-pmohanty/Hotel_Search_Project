@@ -21,7 +21,7 @@ namespace TripEngine
         {
             try
             {
-                          TripProductPriceRQ tripProductPriceRQ = await new TripProductPriceRequestParser().ParserAsync(request);
+                TripProductPriceRQ tripProductPriceRQ = await new TripProductPriceRequestParser().ParserAsync(request);
                 TripProductPriceRS response = await client.PriceTripProductAsync(tripProductPriceRQ);
                 hotelRoomPriceResponse = await new HotelRoomPriceResponseParser().ParserAsync(response);
                 return hotelRoomPriceResponse;

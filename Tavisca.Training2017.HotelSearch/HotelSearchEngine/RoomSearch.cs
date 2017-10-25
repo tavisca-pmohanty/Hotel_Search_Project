@@ -1,23 +1,24 @@
-﻿using HotelEngienSearch;
+﻿using Cache.CacheData;
+using HotelEngienSearch;
 using HotelSearchEngine.Model;
+using HotelSearchEngine.Parser;
 using Logger;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HotelSearchEngine
 {
     public class RoomSearch
     {
-        HotelRoomAvailResponse roomList;
+        List<HotelRoomAvailResponse> roomList;
         HotelEngineClient client ;
         public RoomSearch()
         {
-            roomList = new HotelRoomAvailResponse();
+            roomList = new List<HotelRoomAvailResponse>();
             client = new HotelEngineClient();
         }
-        public async Task<HotelRoomAvailResponse> GetRoomDetailsAsync(RoomListingRequest request)
+        public async Task<List<HotelRoomAvailResponse>> GetRoomDetailsAsync(RoomListingRequest request)
         {
           
             try
@@ -25,12 +26,8 @@ namespace HotelSearchEngine
                 
                 HotelRoomAvailRQ roomAvailRequest = await new RoomRequestParser().ParserAsync(request);
                 HotelRoomAvailRS response = await client.HotelRoomAvailAsync(roomAvailRequest);
-               
-                HotelSearchCriterion hotelSearchCriterion = new HotelSearchCriterion();
-                
-                roomList.Itinerary = response.Itinerary;
-                roomList.SessionId = response.SessionId;
-                roomList.HotelCriterionData = request.HotelCriterion;
+                CachingItinerary(response.SessionId, response.Itinerary);
+                roomList = await new RoomResponseParser().ParserAsync(response.SessionId,roomAvailRequest.Itinerary);
                 return roomList;
             }
             catch (Exception ex)
@@ -42,8 +39,19 @@ namespace HotelSearchEngine
             {
                 await client.CloseAsync();
             }
-            
         }
-
+        public void CachingItinerary(string sessionId, HotelItinerary hotelItinerary)
+        {
+            SingleAvailCache singleAvailCache = new SingleAvailCache();
+            if(singleAvailCache.CheckIfPresent(sessionId))
+            {
+                singleAvailCache.Remove(sessionId);
+                singleAvailCache.Add(sessionId, hotelItinerary);
+            }
+            else
+            {
+                singleAvailCache.Add(sessionId, hotelItinerary);
+            }
+        }
     }
 }

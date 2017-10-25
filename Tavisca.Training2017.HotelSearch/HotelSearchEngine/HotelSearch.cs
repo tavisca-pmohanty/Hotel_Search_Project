@@ -7,17 +7,19 @@ using Newtonsoft.Json;
 using System.IO;
 using HotelSearchEngine.SessionLog;
 using Logger;
+using HotelSearchEngine.Parser;
+using HotelSearchEngine.Cache;
 
 namespace HotelSearchEngine
 {
     public class HotelSearch
     {
-        List<HotelListingResponse> itineraries;
+        List<HotelListingResponse> itineraryList;
         HotelEngineClient client;
         public HotelSearch()
         {
            
-            itineraries = new List<HotelListingResponse>();
+            itineraryList = new List<HotelListingResponse>();
             client = new HotelEngineClient();
         }
         public async Task<List<HotelListingResponse>> GetHotelListingAsync(HotelSearchRq request)
@@ -27,17 +29,10 @@ namespace HotelSearchEngine
             {
                 HotelSearchRQ searchRequest = await new HotelRequestParser().ParserAsync(request);
                 HotelSearchRS response = await client.HotelAvailAsync(searchRequest);
-                for (int i = 0; i < response.Itineraries.Length; i++)
-                {
-                    HotelListingResponse listingResponse = new HotelListingResponse
-                    {
-                        Itinerary = response.Itineraries[i],
-                        SessionId = response.SessionId,
-                        HotelCriterion = searchRequest.HotelSearchCriterion
-                    };
-                    itineraries.Add(listingResponse);
-                }
-                return itineraries;
+                CachingHotelSearchCriterion(searchRequest.SessionId, searchRequest.HotelSearchCriterion);
+                itineraryList = await new HotelListingResponseParser().ParserAsync(response);
+                CachingHotelItineraries(searchRequest.SessionId, response.Itineraries);
+                return itineraryList;
             }
             catch (Exception ex)
             {
@@ -47,6 +42,32 @@ namespace HotelSearchEngine
             finally
             {
                 await client.CloseAsync();
+            }
+        }
+        public void CachingHotelSearchCriterion(string sessionId,HotelSearchCriterion hotelSearchCriterion)
+        {
+            HotelSearchCriterionCache hotelSearchCriterionCache = new HotelSearchCriterionCache();
+            if(hotelSearchCriterionCache.CheckIfPresent(sessionId))
+            {
+                hotelSearchCriterionCache.Remove(sessionId);
+                hotelSearchCriterionCache.Add(sessionId, hotelSearchCriterion);
+            }
+            else
+            {
+                hotelSearchCriterionCache.Add(sessionId, hotelSearchCriterion);
+            }
+        }
+        public void CachingHotelItineraries(string sessionId,HotelItinerary[] itineraries)
+        {
+            MultiAvailCache multiAvailCache = new MultiAvailCache();
+            if(multiAvailCache.CheckIfPresent(sessionId))
+            {
+                multiAvailCache.Remove(sessionId);
+                multiAvailCache.Add(sessionId, itineraries);
+            }
+            else
+            {
+                multiAvailCache.Add(sessionId, itineraries);
             }
         }
     }
