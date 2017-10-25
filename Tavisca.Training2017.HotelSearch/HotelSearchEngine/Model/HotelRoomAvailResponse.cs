@@ -16,5 +16,7 @@ namespace HotelSearchEngine.Model
         public string SupplierName { get; set; }
         public int NumOfRooms { get; set; }
         public string HotelName { get; set; }
+        public float Longitude { get; set; }
+        public float Latitude { get; set; }
     }
 }

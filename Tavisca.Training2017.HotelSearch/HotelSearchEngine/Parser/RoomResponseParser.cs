@@ -37,6 +37,8 @@ namespace HotelSearchEngine.Parser
                 hotelRoomAvailResponse.HotelName = hotelItinerary.HotelProperty.Name;
                 HotelEngienSearch.HotelSearchCriterion hotelSearchCriterion = GetCachedCriterion(sessionId);
                 hotelRoomAvailResponse.NumOfRooms = hotelSearchCriterion.NoOfRooms;
+                hotelRoomAvailResponse.Latitude = hotelSearchCriterion.Location.GeoCode.Latitude;
+                hotelRoomAvailResponse.Longitude = hotelSearchCriterion.Location.GeoCode.Longitude;
                 roomList.Add(hotelRoomAvailResponse);
             }
             return roomList;
