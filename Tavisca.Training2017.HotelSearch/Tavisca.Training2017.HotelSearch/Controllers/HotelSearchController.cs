@@ -52,6 +52,7 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
                     ServiceRepository repository = new ServiceRepository();
                     var service = repository.GetService("HotelRooms");
                     string hotelListing = await service.GetRequestedDataAsync(requestData);
+
                     await HttpContext.Response.WriteAsync(hotelListing);
                 }
                 catch(Exception ex)
