@@ -142,12 +142,7 @@ $("#rooms").on("change",function(){
         
              outDate=outDate;
         }
-        //var SelectedHotelonload=sessionStorage.getItem('StoredSelectedHotel');
-         
-        //if(SelectedHotelonload!==null)
-          //  {
-                //selectedHotel=SelectedHotelonload;
-        //    }
+        
          var retrievedSelectedHotel = sessionStorage.getItem('StoredSelectedHotel');
        selectedHotel =JSON.parse(retrievedSelectedHotel);
     }
@@ -216,13 +211,8 @@ $("#rooms").on("change",function(){
         'Content-Type': 'application/json' 
     },
                  type: "POST",
-<<<<<<< HEAD
-                 url: "http://localhost:53552/index/HotelListing/search/GetHotels",
-=======
-
-                 url: "http://localhost:64160/index/HotelListing/search/GetHotels",
->>>>>>> a0e9b8f12c684ea5bbb0c5b8e39d399cfeb7f3d9
-                 cache: false,
+       url: "http://localhost:53552/index/HotelListing/search/GetHotels",
+      cache: false,
                  data:JSON.stringify(data),
                 // contentType: 'json/application',
                 dataType: 'json',
