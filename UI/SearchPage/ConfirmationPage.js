@@ -17,5 +17,5 @@ $(document).ready(function()
 
 	  var html = compiledTemplate(confirmationDataList);
 
-	  $('#confirmation-container').html(html);
+	  $('#confirmation-container').append(html);
 });

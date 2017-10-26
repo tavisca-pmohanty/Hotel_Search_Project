@@ -22,12 +22,16 @@
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>  
     <div id="confirmation-container">
-      
+     
+        
+        
+        
     </div>
 
     <script id="confirmation-item" type="text/x-handlebars-template">
         
           <div class="layout">
+               <h1>Booking Details</h1>
             <div class="data-field">
             <label>TransactionId:</label>
             <h4>{{transactionId}}</h4>
@@ -53,7 +57,15 @@
             <h4>{{noOfNights}}</h4>
             </div>
             <h1>Your Booking Is Confirmed</h1>
+              <div class="button-layout">
+                
+                <button type="button" id="print" class="btn btn-primary" onclick="window.print()">Print!!</button>
+                  
+             </div>
           </div>
+  
+
+
   </script> 
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>

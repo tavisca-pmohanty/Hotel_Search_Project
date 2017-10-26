@@ -23,6 +23,7 @@ var template = $('#itinerary-details');
 
   $('#booking-details').html(html);
   $("#booking").click(function(){
+        $("#booking").attr("disabled","disabled");
   			var cardNumber=$("#cardNum").val();
   			var cvv=$("#cvv").val();
   			var mobileNum=$("#mobile").val();
@@ -82,7 +83,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-                 url: "http://localhost:53552/book/tripfolder/booktrip",
+                 url: "http://localhost:56883/book/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -102,7 +103,7 @@ var template = $('#itinerary-details');
                   'Content-Type': 'application/json' 
            },
                  type: "POST",
-                 url: "http://localhost:53552/complete/booking/bookingcomplete",
+                 url: "http://localhost:56883/complete/booking/bookingcomplete",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -130,6 +131,7 @@ var template = $('#itinerary-details');
               else
               {
                 alert("Cannot confirm your booking at this moment.Please try again after sometime");
+                $("#booking").removeattr("disabled");
                 return;
               }
               
