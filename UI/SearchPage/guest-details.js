@@ -23,6 +23,7 @@ var template = $('#itinerary-details');
 
   $('#booking-details').html(html);
   $("#booking").click(function(){
+        $("#booking").attr("disabled","disabled");
   			var cardNumber=$("#cardNum").val();
   			var cvv=$("#cvv").val();
   			var mobileNum=$("#mobile").val();
@@ -130,6 +131,7 @@ var template = $('#itinerary-details');
               else
               {
                 alert("Cannot confirm your booking at this moment.Please try again after sometime");
+                $("#booking").removeattr("disabled");
                 return;
               }
               
