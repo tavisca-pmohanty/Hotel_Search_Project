@@ -21,8 +21,6 @@ $(document).ready(function(){
 
            }
       }
-      
-
   var temp = $("#common-item");
     var cmp = Handlebars.compile(temp.html());
     var htm = cmp({
@@ -31,6 +29,11 @@ $(document).ready(function(){
         latitude:roomItinerary[0].Latitude,
         longitude:roomItinerary[0].Longitude
     });
+
+         // }
+      
+      
+
    
 
   var template = $('#room-item');
@@ -60,7 +63,7 @@ $(".room-button").click(function()
                                         'Content-Type': 'application/json' 
                                     },
                                      type: "POST",
-                                     url: "http://localhost:56883/index/HotelListing/search/GetRoomPricing",
+                                     url: "http://localhost:64160/index/HotelListing/search/GetRoomPricing",
                                      cache: false,
                                      data:JSON.stringify(data),
                                      dataType: 'json',
