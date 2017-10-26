@@ -199,6 +199,7 @@ $("#rooms").on("change",function(){
             return;
         }
         $("#loaderdiv").show();
+        $("#submit").attr("disabled","disabled");
         var requestData={
                         "SelectedHotel":selectedHotel,
                         "InDate":inDate,
@@ -232,6 +233,7 @@ $("#rooms").on("change",function(){
          {
             alert("Sorry,Could not fetch the hotel details at this moment.Please try again after sometime");
             $("#loaderdiv").hide();
+            $("#submit").removeAttr("disabled");
             return;
          } 
          else{
