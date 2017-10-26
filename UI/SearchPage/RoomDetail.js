@@ -21,8 +21,6 @@ $(document).ready(function(){
 
            }
       }
-      
-
   var temp = $("#common-item");
     var cmp = Handlebars.compile(temp.html());
     var htm = cmp({
@@ -31,8 +29,6 @@ $(document).ready(function(){
         latitude:roomItinerary[0].Latitude,
         longitude:roomItinerary[0].Longitude
     });
-   
-
   var template = $('#room-item');
 
   var compiledTemplate = Handlebars.compile(template.html());
