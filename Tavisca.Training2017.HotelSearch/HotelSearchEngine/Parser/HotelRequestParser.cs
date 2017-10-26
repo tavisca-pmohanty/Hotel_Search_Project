@@ -90,6 +90,10 @@ namespace HotelSearchEngine
                     Name="TouricoTGSTest"
                 }
             };
+            listingRequest.HotelSearchCriterion.Attributes = new StateBag[1]
+            {
+              new StateBag() { Name="API_SESSION_ID", Value=listingRequest.SessionId},
+            };
             listingRequest.HotelSearchCriterion.MatrixResults = _matrixResults;
             listingRequest.HotelSearchCriterion.MaximumResults = _maxResults;
             listingRequest.HotelSearchCriterion.Pos = new PointOfSale();
