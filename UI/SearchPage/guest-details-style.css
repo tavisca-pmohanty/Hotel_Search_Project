@@ -143,7 +143,7 @@ p
 .container input 
 {
 	height: 40px;
-	width: 90%;
+	width: 50%;
 	box-shadow: 5px 5px 5px #888888;
 	font-size: 15px;
 	margin-top: 5px;
@@ -237,6 +237,10 @@ span
 {
 	padding-left: 10px;
 	width:100px;
+}
+#
+{
+    
 }
 
 
