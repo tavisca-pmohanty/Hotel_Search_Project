@@ -154,3 +154,16 @@ h4
     flex: auto;
     justify-content: center;
 }
+#print
+{
+  width:150px;
+    height: 50px;
+    background-color:teal;
+    color: white;
+    font-size: 20px;
+}
+.button-layout
+{
+    padding-left: 400px;
+    padding-bottom: 50px;
+}
