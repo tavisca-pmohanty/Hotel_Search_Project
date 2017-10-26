@@ -117,6 +117,7 @@ p
 }
 #expiryMonth
 {
+    margin-left: 2%;
 	padding-left: 10px;
 	height: 39px;
 	margin-bottom: 12px;
@@ -137,16 +138,19 @@ p
 
 .container label
 {
+    margin-top: 3%;
 	font-size: 18px;
+    margin-left: 2%;
 }
 
 .container input 
 {
-	height: 40px;
-	width: 90%;
-	box-shadow: 5px 5px 5px #888888;
-	font-size: 15px;
-	margin-top: 5px;
+	margin-left: 2%;
+    height: 40px;
+    width: 50%;
+    box-shadow: 5px 5px 5px #888888;
+    font-size: 15px;
+    margin-top: 5px;
     margin-bottom: 15px;
 }
 
@@ -159,6 +163,8 @@ p
 }
 #country-code
 {
+    margin-left: 2%;
+    box-shadow: 5px 5px 5px #888888;
 	padding-left: 10px;
 	margin-top: 15px;
     margin-bottom: 15px;
@@ -238,6 +244,7 @@ span
 	padding-left: 10px;
 	width:100px;
 }
+
 
 
 

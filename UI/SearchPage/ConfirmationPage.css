@@ -116,7 +116,7 @@ body
     flex-shrink: 1;
     justify-content: space-between;
     flex-direction: column;
-    margin-top: 100px;
+    
 } 
 #confirmation-container
 {
@@ -126,6 +126,7 @@ body
 }  
 h1
 {
+    text-align: center;
     margin-top: 10%;
     align-self: center;
     color: #f56e0c;
@@ -153,4 +154,17 @@ h4
     display: flex;
     flex: auto;
     justify-content: center;
+}
+#print
+{
+    
+    margin-left: 35%;
+    width:150px;
+    height: 50px;
+    background-color:teal;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 5%;
+    
+    
 }
