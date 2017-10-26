@@ -58,10 +58,13 @@ var template = $('#itinerary-details');
   				alert("Please enter a valid expiration year");
   				return;
   			}
+        var guestDetails={
+          GuestFirstName:guestFirstName,
+          GuestLastName:guestLastName,
+        }
   			var tripFolderRequest={
   				SessionId:updatedData.SessionId,
-  				GuestFName:guestFirstName,
-                GuestLName:guestLastName,
+  				Name:guestDetails,
   				CountryCode:countryCode,
                 CardNumber:cardNumber,
   				MobileNum:mobileNum,

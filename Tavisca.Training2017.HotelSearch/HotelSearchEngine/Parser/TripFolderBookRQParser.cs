@@ -175,10 +175,10 @@ namespace HotelSearchEngine.Parser
                             new StateBag(){ Name="IsPassportRequired" , Value="false"}
                         },
                         Email=request.Email_Id,
-                        FirstName=request.GuestFirstName,
+                        FirstName=request.Name.GuestFirstName,
                         Gender=Gender.Male,
                         KnownTravelerNumber="789456",
-                        LastName=request.GuestLastName,
+                        LastName=request.Name.GuestLastName,
                         PassengerType=PassengerType.Adult,
                         PhoneNumber=request.MobileNum,
                         UserName="rsarda@tavisca.com"

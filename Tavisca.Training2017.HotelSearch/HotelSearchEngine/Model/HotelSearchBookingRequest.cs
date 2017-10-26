@@ -10,8 +10,6 @@ namespace HotelSearchEngine.Models
     public  class HotelSearchBookingRequest
     {
         public string SessionId { get; set; }
-        public string GuestFirstName { get; set; }
-        public string GuestLastName { get; set; }
         public GuestName Name { get; set; }
         public long CountryCode { get; set; }
         public string MobileNum { get; set; }
