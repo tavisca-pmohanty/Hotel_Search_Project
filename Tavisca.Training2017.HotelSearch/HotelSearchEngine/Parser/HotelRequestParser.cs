@@ -78,6 +78,18 @@ namespace HotelSearchEngine
             float.TryParse(request.SelectedHotel.Latitude, out latitude);
             GeoCoordinates geocode = new GeoCoordinates(longitude, latitude);
             listingRequest.HotelSearchCriterion = new HotelSearchCriterion();
+            listingRequest.HotelSearchCriterion.ProcessingInfo = new HotelSearchProcessingInfo();
+            listingRequest.HotelSearchCriterion.ProcessingInfo.FareSources = new HotelFareSource[2]
+            {
+                new HotelFareSource()
+                {
+                    Name="HotelBeds Test",
+                },
+                new HotelFareSource()
+                {
+                    Name="TouricoTGSTest"
+                }
+            };
             listingRequest.HotelSearchCriterion.MatrixResults = _matrixResults;
             listingRequest.HotelSearchCriterion.MaximumResults = _maxResults;
             listingRequest.HotelSearchCriterion.Pos = new PointOfSale();
