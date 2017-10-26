@@ -22,7 +22,7 @@
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>  
     <div id="confirmation-container">
-      
+     
         
         
         
@@ -31,6 +31,7 @@
     <script id="confirmation-item" type="text/x-handlebars-template">
         
           <div class="layout">
+               <h1>Booking Details</h1>
             <div class="data-field">
             <label>TransactionId:</label>
             <h4>{{transactionId}}</h4>
@@ -57,7 +58,9 @@
             </div>
             <h1>Your Booking Is Confirmed</h1>
               <div class="button-layout">
-                <button type="button" id="print" onclick="window.print()">Print!</button>  
+                
+                <button type="button" id="print" class="btn btn-primary" onclick="window.print()">Print!!</button>
+                  
              </div>
           </div>
   
