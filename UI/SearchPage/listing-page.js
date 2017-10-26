@@ -5,6 +5,11 @@ Handlebars.registerHelper('times', function (n, block) {
     return accum;
 });
 
+    $(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+
 
 	$(document).ready(function(){
 	var result=sessionStorage.getItem('HotelListing');
@@ -22,6 +27,8 @@ Handlebars.registerHelper('times', function (n, block) {
 			
 		}
 
+        
+    
 		
 		
 	  var template = $('#hotel-item');
@@ -70,7 +77,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
+					                 url: "http://localhost:56883/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
@@ -93,6 +100,11 @@ Handlebars.registerHelper('times', function (n, block) {
 						  
 					}
 		});
+        
+        
+        $(window).load(function(){
+	$('#preloader').fadeOut('slow',function(){$(this).remove();});
+          });
 		$('input[type="radio"]').on('click change', function(e) {
    				var ratingSelected=this.value;
    				var filteredHotelList= new Array();
@@ -143,7 +155,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
+					                 url: "http://localhost:56883/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',

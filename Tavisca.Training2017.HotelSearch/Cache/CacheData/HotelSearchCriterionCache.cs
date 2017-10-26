@@ -10,6 +10,7 @@ namespace Cache.CacheData
        static Dictionary<string, HotelSearchCriterion> criterionDict;
         public HotelSearchCriterionCache()
         {
+            
             criterionDict = new Dictionary<string, HotelSearchCriterion>();
         }
         public void Add(string sessionId,HotelSearchCriterion hotelSearchCriterion)
