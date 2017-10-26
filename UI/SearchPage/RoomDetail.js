@@ -8,18 +8,17 @@ $(document).ready(function(){
          var commonData= new Array();
     for(var i=0;i<roomItinerary.length;i++)
        {
-             if(roomItinerary[i].SupplierName=="TouricoTGSTest"||roomItinerary[i].SupplierName=="HotelBeds Test")
+ if(roomItinerary[i].SupplierName=="TouricoTGSTest"||roomItinerary[i].SupplierName=="HotelBeds Test")
            {
 
                typeOfRooms.push({
-                // name: roomItinerary[i].HotelName,
-                
                 roomType:roomItinerary[i].RoomName,
                 roomDescription:roomItinerary[i].Description,
                 roomFare:roomItinerary[i].CurrencyType+" "+roomItinerary[i].Price,
                 latitude:roomItinerary[i].Latitude,
                 longitude:roomItinerary[i].Longitude
             });
+
            }
       }
       
