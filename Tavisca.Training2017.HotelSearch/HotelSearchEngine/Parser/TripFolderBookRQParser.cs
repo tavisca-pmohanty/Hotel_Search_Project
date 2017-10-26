@@ -174,13 +174,13 @@ namespace HotelSearchEngine.Parser
                             new StateBag(){ Name="Boyd Gaming"},
                             new StateBag(){ Name="IsPassportRequired" , Value="false"}
                         },
-                        Email="bmahapatra@tavisca.com",
-                        FirstName="Sandbox",
+                        Email=request.Email_Id,
+                        FirstName=request.Name.GuestFirstName,
                         Gender=Gender.Male,
                         KnownTravelerNumber="789456",
-                        LastName="Test",
+                        LastName=request.Name.GuestLastName,
                         PassengerType=PassengerType.Adult,
-                        PhoneNumber="1111111111",
+                        PhoneNumber=request.MobileNum,
                         UserName="rsarda@tavisca.com"
                     }
                 },

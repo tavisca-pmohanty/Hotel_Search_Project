@@ -97,6 +97,21 @@ namespace HotelSearchEngine
             listingRequest.HotelSearchCriterion.MatrixResults = _matrixResults;
             listingRequest.HotelSearchCriterion.MaximumResults = _maxResults;
             listingRequest.HotelSearchCriterion.Pos = new PointOfSale();
+            listingRequest.HotelSearchCriterion.Pos.AdditionalInfo = new StateBag[]
+            {
+               new StateBag() { Name="API_SESSION_ID", Value=listingRequest.SessionId},
+               new StateBag() { Name = "IPAddress", Value = "127.0.0.1" },
+               new StateBag() { Name = "DealerUrl", Value = "localhost" },
+               new StateBag() { Name = "SiteUrl", Value = "ota" },
+               new StateBag() { Name = "AccountId", Value = "169050" },
+               new StateBag() { Name = "UserId", Value = "3285301" },
+               new StateBag() { Name = "CountryName", Value = "United States" },
+               new StateBag() { Name = "CountryCode", Value = "US" },
+               new StateBag() { Name = "UserProfileCountryCode", Value = "US" },
+               new StateBag() { Name = "CustomerType", Value = "DTP" },
+               new StateBag() { Name = "DKCommissionIdentifier", Value = "3285301P" },
+               new StateBag() { Name = "MemberSignUpDate", Value = "Tue, 04 Jan 2011" }
+           };
             listingRequest.HotelSearchCriterion.Pos.PosId = _defaultPosId;
             listingRequest.HotelSearchCriterion.Pos.Requester = GetDefaultRequester();
             listingRequest.HotelSearchCriterion.PriceCurrencyCode = _defaultPriceCurrencyCode;
