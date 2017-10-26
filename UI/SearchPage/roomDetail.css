@@ -178,7 +178,7 @@ p
     width: 316px;
     color: black
 }
-#room-address
+#room-amenties
 {
     display: flex;
     flex-direction: row;
@@ -186,7 +186,7 @@ p
     flex-shrink: 3;
     flex-wrap: wrap;
     margin-top: 31px;
-    width: 316px;
+    width: auto;
     color: black;
 }
 #room-common-data
