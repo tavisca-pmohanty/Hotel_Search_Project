@@ -63,7 +63,7 @@ $(".room-button").click(function()
                                         'Content-Type': 'application/json' 
                                     },
                                      type: "POST",
-                                     url: "http://localhost:56883/index/HotelListing/search/GetRoomPricing",
+                                     url: "http://localhost:53552/index/HotelListing/search/GetRoomPricing",
                                      cache: false,
                                      data:JSON.stringify(data),
                                      dataType: 'json',
@@ -74,7 +74,8 @@ $(".room-button").click(function()
                           } 
                         catch (e)
                          {
-                                alert(e);
+                                alert("Sorry some unknown Error Occured...Please try again later.");
+                                Console.log(e);
                          }
             function getSuccess(dynamicPricingData)
                     {

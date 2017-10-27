@@ -64,7 +64,7 @@ $("#rooms").on("change",function(){
          try {
              $.ajax({
                  type: "GET",
-                 url: "http://localhost:56883/index/AutoComplete/search/"+ $("#Location").val(),
+                 url: "http://localhost:53552/index/AutoComplete/search/"+ $("#Location").val(),
                  cache: false,
                  success: getSuccess,
                  crossDomain:true,
@@ -219,7 +219,8 @@ $("#rooms").on("change",function(){
                  crossDomain:true,
              });
          } catch (e) {
-             alert(e);
+             alert("Sorry some unknown Error Occured...Please try again later.");
+             Console.log(e);
          }
          function getSuccess(data) { 
          if(data.length==0)

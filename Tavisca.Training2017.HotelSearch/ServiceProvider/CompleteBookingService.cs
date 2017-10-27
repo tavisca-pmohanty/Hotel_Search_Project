@@ -1,5 +1,6 @@
 ﻿using APITripEngine;
 using HotelSearchEngine;
+using HotelSearchEngine.Model;
 using Logger;
 using Newtonsoft.Json;
 using System;
@@ -16,7 +17,7 @@ namespace ServiceProvider
         {
             try
             {
-                var request = JsonConvert.DeserializeObject<TripFolderBookRS>(requestData);
+                var request = JsonConvert.DeserializeObject<CompleteBookingRequest>(requestData);
                 HotelCompleteBooking hotelCompleteBooking = new HotelCompleteBooking();
                 var response = await hotelCompleteBooking.CompleteHotelBooking(request);
                 return JsonConvert.SerializeObject(response);
