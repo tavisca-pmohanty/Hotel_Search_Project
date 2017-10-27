@@ -1,4 +1,6 @@
 ﻿using APITripEngine;
+using HotelSearchEngine.CacheData;
+using HotelSearchEngine.Model;
 using HotelSearchEngine.Models;
 using HotelSearchEngine.Parser;
 using System;
@@ -16,14 +18,16 @@ namespace HotelSearchEngine
         {
              tripsEngineClient = new TripsEngineClient();
         }
-        public async Task<TripFolderBookRS> GetTripFolderAsync(HotelSearchBookingRequest request)
+        public async Task<BookTripFolderResponse> GetTripFolderAsync(HotelSearchBookingRequest request)
         {
             try
             {
                 tripsEngineClient = new TripsEngineClient();
                 TripFolderBookRQ tripFolderBookRQ = await new TripFolderBookRQparser().ParserAsync(request);
                 TripFolderBookRS response = await tripsEngineClient.BookTripFolderAsync(tripFolderBookRQ);
-                return response;
+                CacheTripFolderResponse(response);
+                BookTripFolderResponse bookTripFolderResponse = await new BookTripFolderResponseParser().ParserAsync(response);
+                return bookTripFolderResponse;
             }
             catch(Exception ex)
             {
@@ -36,6 +40,20 @@ namespace HotelSearchEngine
                 await tripsEngineClient.CloseAsync();
             }
             
+        }
+
+        private void CacheTripFolderResponse(TripFolderBookRS response)
+        {
+            TripFolderCache tripFolderCache = new TripFolderCache();
+            if(tripFolderCache.CheckIfPresent(response.SessionId))
+            {
+                tripFolderCache.Remove(response.SessionId);
+                tripFolderCache.Add(response.SessionId, response);
+            }
+            else
+            {
+                tripFolderCache.Add(response.SessionId, response);
+            }
         }
     }
 }

@@ -36,26 +36,31 @@ var template = $('#itinerary-details');
   			var cardHolderName=$("#cardHolder").val();
   			if(mobileNum.length>10 || mobileNum.length<10)
   			{
+          $("#booking").removeAttr("disabled");
   				alert("Please enter a valid mobile number");
   				return;
   			}
   			if(cardNumber.length>16 || cardNumber.length<16)
   			{
+          $("#booking").removeAttr("disabled");
   				alert("Please enter a valid credit card number");
   				return;
   			}
   			if(cvv.length>3 || cvv.length<3)
   			{
+          $("#booking").removeAttr("disabled");
   				alert("Please enter a valid cvv number");
   				return;
   			}
   			if(expiryMonth==" ")
   			{
+          $("#booking").removeAttr("disabled");
   				alert("Please enter a valid expiration month");
   				return;
   			}
   			if(expiryYear==" ")
   			{
+          $("#booking").removeAttr("disabled");
   				alert("Please enter a valid expiration year");
   				return;
   			}
@@ -83,7 +88,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-                 url: "http://localhost:56883/book/tripfolder/booktrip",
+                 url: "http://localhost:53552/book/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -92,7 +97,9 @@ var template = $('#itinerary-details');
                  crossDomain:true,
              });
          } catch (e) {
-             alert(e);
+              $("#booking").removeAttr("disabled");
+             alert("Sorry some unknown Error Occured...Please try again later.");
+                    Console.log(e);
          }
          function getSuccess(tripFolderResponseData) {
           var data=JSON.stringify(tripFolderResponseData);
@@ -103,7 +110,7 @@ var template = $('#itinerary-details');
                   'Content-Type': 'application/json' 
            },
                  type: "POST",
-                 url: "http://localhost:56883/complete/booking/bookingcomplete",
+                 url: "http://localhost:53552/complete/booking/bookingcomplete",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -116,7 +123,8 @@ var template = $('#itinerary-details');
                  crossDomain:true,
              });
          } catch (e) {
-             alert(e);
+             alert("Sorry some unknown Error Occured...Please try again later.");
+                    Console.log(e);
          }
          function getSuccess(completeBookingResponseData) {
               if(completeBookingResponseData!=null)
@@ -131,7 +139,7 @@ var template = $('#itinerary-details');
               else
               {
                 alert("Cannot confirm your booking at this moment.Please try again after sometime");
-                $("#booking").removeattr("disabled");
+                $("#booking").removeAttr("disabled");
                 return;
               }
               

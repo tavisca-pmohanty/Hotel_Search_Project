@@ -17,7 +17,7 @@ namespace HotelSearchEngine
         {
             tripsEngineClient =new TripsEngineClient();
         }
-        public async Task<CompleteBookingResponse> CompleteHotelBooking(TripFolderBookRS request)
+        public async Task<CompleteBookingResponse> CompleteHotelBooking(CompleteBookingRequest request)
         {
 
             try

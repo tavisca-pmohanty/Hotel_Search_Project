@@ -77,7 +77,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-					                 url: "http://localhost:56883/index/HotelListing/search/GetHotelRooms",
+					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
@@ -88,7 +88,8 @@ Handlebars.registerHelper('times', function (n, block) {
 					      } 
 					    catch (e)
 					     {
-					         	alert(e);
+					         	alert("Sorry some unknown Error Occured...Please try again later.");
+					         	Console.log(e);
 					     }
 			         function getSuccess(data)
 			          {
@@ -155,7 +156,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-					                 url: "http://localhost:56883/index/HotelListing/search/GetHotelRooms",
+					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
@@ -166,7 +167,8 @@ Handlebars.registerHelper('times', function (n, block) {
 					      } 
 					    catch (e)
 					     {
-					         	alert(e);
+					         	alert("Sorry some unknown Error Occured...Please try again later.");
+					         	Console.log(e);
 					     }
 			         function getSuccess(data)
 			          {
