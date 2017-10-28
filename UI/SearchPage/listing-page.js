@@ -26,11 +26,6 @@ Handlebars.registerHelper('times', function (n, block) {
             });
 			
 		}
-
-        
-    
-		
-		
 	  var template = $('#hotel-item');
 
 	  var compiledTemplate = Handlebars.compile(template.html());
@@ -77,7 +72,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
+					                 url: "http://localhost:64160/index/HotelListing/search/GetHotelRooms",
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
@@ -103,33 +98,147 @@ Handlebars.registerHelper('times', function (n, block) {
 		});
         
         
-        $(window).load(function(){
+    $(window).load(function(){
 	$('#preloader').fadeOut('slow',function(){$(this).remove();});
           });
-		$('input[type="radio"]').on('click change', function(e) {
-   				var ratingSelected=this.value;
-   				var filteredHotelList= new Array();
-		for(i=0;i<result.length;i++)
+
+	$('input[name="rating"]').change(function(e) 
+	{
+				var ratingSelected=this.value;
+				var filteredHotelList= new Array();
+				for(i=0;i<result.length;i++)
+				{
+					if(result[i].Rating==ratingSelected)
+					{
+						filteredHotelList.push({
+												image:result[i].ImageUrl,
+												name:result[i].HotelName,
+												city:result[i].Address,
+												rating:result[i].Rating,
+												price:result[i].CurrencyType+" "+result[i].Price,
+						});
+					}	
+				}
+				
+				$("#hotelList-container").empty();
+				var template = $('#hotel-item');
+			  	var compiledTemplate = Handlebars.compile(template.html());
+			  	var html = compiledTemplate(filteredHotelList);
+	  			$('#hotelList-container').html(html);
+	});
+
+
+
+	  // filter for price
+
+	 
+		$('input:radio[name="price"]').change(function(e) 
 		{
-			if(result[i].Rating==ratingSelected)
-			{
-			filteredHotelList.push({
-			image:result[i].ImageUrl,
-			name:result[i].HotelName,
-			city:result[i].Address,
-			rating:result[i].Rating,
-			price:result[i].CurrencyType+" "+result[i].Price,
-			});
-		}
-		}
-		$("#hotelList-container").empty();
-		var template = $('#hotel-item');
+			var priceSelected=this.value;
+			var filteredHotelListPrice= new Array();
+			
+			if(priceSelected==1)
+					{
+						for(i=0;i<result.length;i++)
+						{
+							if(result[i].Price>=400)
+								{
+									filteredHotelListPrice.push({
+										image:result[i].ImageUrl,
+										name:result[i].HotelName,
+										city:result[i].Address,
+										rating:result[i].Rating,
+										price:result[i].CurrencyType+" "+result[i].Price,
+									});
+									break;
+								}
+						}
+					}
 
-	  var compiledTemplate = Handlebars.compile(template.html());
+				else if (priceSelected==2) 
+				{
+					for(i=0;i<result.length;i++)
+						{
+							if (result[i].Price>=300 && result[i].Price<400)
+							 {
+							 	filteredHotelListPrice.push({
+										image:result[i].ImageUrl,
+										name:result[i].HotelName,
+										city:result[i].Address,
+										rating:result[i].Rating,
+										price:result[i].CurrencyType+" "+result[i].Price,
+									});
+							 	
+							 }
+						}
+				}
+				else if(priceSelected==3)
+				{
+					for(i=0;i<result.length;i++)
+						{
+							if(result[i].Price>=200 && result[i].Price<300)
+							{
+								filteredHotelListPrice.push({
+										image:result[i].ImageUrl,
+										name:result[i].HotelName,
+										city:result[i].Address,
+										rating:result[i].Rating,
+										price:result[i].CurrencyType+" "+result[i].Price,
+									});
+								break;
+							}
+						}
+				}
+				else if(priceSelected==4)
+				{
+					for(i=0;i<result.length;i++)
+						{
+							if (result[i].Price>=100 && result[i].Price<200) 
+							{
+								filteredHotelListPrice.push({
+										image:result[i].ImageUrl,
+										name:result[i].HotelName,
+										city:result[i].Address,
+										rating:result[i].Rating,
+										price:result[i].CurrencyType+" "+result[i].Price,
+									});
+								break;
+							}
+						}
+				}
 
-	  var html = compiledTemplate(filteredHotelList);
+				else
+				{
+					for(i=0;i<result.length;i++)
+						{
+							if(result[i].Price>=0 && result[i].Price<100)
+							{
+								filteredHotelListPrice.push({
+										image:result[i].ImageUrl,
+										name:result[i].HotelName,
+										city:result[i].Address,
+										rating:result[i].Rating,
+										price:result[i].CurrencyType+" "+result[i].Price,
+									});
+								break;
+							}
+						}
+				}
 
-	  $('#hotelList-container').html(html);
+			$("#hotelList-container").empty();
+			var template = $('#hotel-item');
+
+	  		var compiledTemplate = Handlebars.compile(template.html());
+
+		  	var html = compiledTemplate(filteredHotelListPrice);
+		   	$('#hotelList-container').append(html);
+
+		
+
+	  // end of filter price
+
+
+
 	  	$(".room-button").click(function()
 		{
 				var data;
@@ -156,7 +265,11 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
+<<<<<<< HEAD
 					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
+=======
+					                 url: "http://localhost:64160/index/HotelListing/search/GetHotelRooms",
+>>>>>>> added filter for pricing
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
@@ -181,8 +294,11 @@ Handlebars.registerHelper('times', function (n, block) {
 					}
 		});
 	  });
+	  
+
 		$("#remove-filters").click(function(){
 			$('input[name=rating]').attr('checked',false);
+			$('input[name=price]').attr('checked',false);
 				$("#hotelList-container").empty();
 		var template = $('#hotel-item');
 

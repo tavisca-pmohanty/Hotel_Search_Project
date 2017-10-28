@@ -6,6 +6,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="guest-details-style.css">
 		<link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
 		<div class="main-container">
@@ -29,19 +30,19 @@
 										    <input type="text" id="guest-Lname" maxlength="50" placeholder="Guest Name" name="guest Name" required="true">
 										    <label><b>Country Code</b><span>*</span></label>
 										    <select   id="country-code" name="year" >
-		   											<option  value="91">India +91</option>
-		   											<option  value="62">Indonesia +62</option>
-		   											<option  value="354">Iceland +354</option>
-		   											<option  value="36">Hungry +36</option>
-		   											<option  value="854">Hong Kong +854</option>
-		   											<option  value="504">Honduras +504</option>
-		   											<option  value="509">Haiti +509</option>
-		   											<option  value="354">Iceland +354</option>
-		   											<option  value="224">Guinea +224</option>
-		   											<option  value="299">Greenland +299</option>
-		   											<option  value="233">Ghana +233</option>
-		   											<option  value="49">Germany +49</option>
-													<option  value="220">Gambia +220</option>
+		   											<option value="91">India +91</option>
+		   											<option value="62">Indonesia +62</option>
+		   											<option value="354">Iceland +354</option>
+		   											<option value="36">Hungry +36</option>
+		   											<option value="854">Hong Kong +854</option>
+		   											<option value="504">Honduras +504</option>
+		   											<option value="509">Haiti +509</option>
+		   											<option value="354">Iceland +354</option>
+		   											<option value="224">Guinea +224</option>
+		   											<option value="299">Greenland +299</option>
+		   											<option value="233">Ghana +233</option>
+		   											<option value="49">Germany +49</option>
+													<option value="220">Gambia +220</option>
 													<option value="33">France +33</option>
 													<option value="358">Finland +358</option>
 													<option value="372">Estonia +372</option>
@@ -57,7 +58,7 @@
 													<option value="1">Canada +1</option>
 													<option value="359">Bulgaria +359</option>
 
-												</select>
+											</select>
 										    <label><b>Mobile No</b><span>*</span></label>
 										    <input id="mobile" type="number" placeholder="Mobile Number" maxlength="10" name="mobile" required="true">
 										    </div>
@@ -67,13 +68,14 @@
 
 											</div>
 											</div>
+											<form>
 											<div id="payment-details">
-											<label><b>CardHolder Name</b><span>*</span></label>
-										    	<input type="text" id="cardHolder" placeholder="CardHolder Name" maxlength="30" name="CardHolder Name" required="true">
-										    <label><b>Debit/Credit Card Number</b><span>*</span></label>
-										    	<input type="number" id="cardNum" placeholder="Card number" name="Card number" required="true">
-										    <label><b>Expiry Date</b><span>*</span></label>
-										    
+												<label><b>CardHolder Name</b><span>*</span></label>
+											    	<input type="text" id="cardHolder" placeholder="CardHolder Name" maxlength="30" name="CardHolder Name" required="true">
+											    <label><b>Debit/Credit Card Number</b><span>*</span></label>
+											    	<input type="number" id="cardNum" placeholder="Card number" name="Card number" required="true">
+											    <label><b>Expiry Date</b><span>*</span></label>
+											    
 										    <div>
 											    <select id="expiryMonth" name="month" >
 		   											<option  value=" ">Month</option>
@@ -119,33 +121,44 @@
 										    <label><b>CVV Number</b><span>*</span></label>
 										    <input id="cvv" type="password" placeholder="cvv" name="cvv" required="true">
 										    <label><b>Email-Id</b><span>*</span></label>
+<<<<<<< HEAD
 										    <input type="text" id="email" placeholder="abc@gmail.com" name="Email-Id" required="true">
+=======
+										   <input type="text" id="email" placeholder="Email-Id" name="Email-Id" required="true">
+										
+									
+										    
+>>>>>>> added filter for pricing
 							</div>
+							</form>
 						</div>
 
 							<script id="itinerary-details" type="text/x-handlebars-template">
 								<div class="layout">
-    
-								<div id ="data-container">    
-    							<h2 id="hotel-name">Hotel Name:{{hotelName}}</h2>
-    							<h2 id="room-name">Room Type:{{roomType}}</h2>
-   							 	<h2 id="check-in">Check-In Date:{{checkInDate}}</h2>
-   							 	<h2 id="check-out">Check-Out Date:{{checkOutDate}}</h2>
-    							<h2 id="duration">No. of nights:{{duration}}</h2>
-    							<h2 id="numberOfRooms">Rooms:{{numOfRooms}}</h2>
-    							<h2 id="totalFare">Total Amount:{{amount}}</h2>
+									<div id ="data-container">    
+	    							<h2 id="hotel-name">Hotel Name:{{hotelName}}</h2>
+	    							<h2 id="room-name">Room Type:{{roomType}}</h2>
+	   							 	<h2 id="check-in">Check-In Date:{{checkInDate}}</h2>
+	   							 	<h2 id="check-out">Check-Out Date:{{checkOutDate}}</h2>
+	    							<h2 id="duration">No. of nights:{{duration}}</h2>
+	    							<h2 id="numberOfRooms">Rooms:{{numOfRooms}}</h2>
+	    							<h2 id="totalFare">Total Amount:{{amount}}</h2>
+									</div>
 								</div>
-								</div>
-  								</script>
+  							</script>
 
 						</div>
 
 						<button  id="booking">
+							<p><span class="glyphicon glyphicon-thumbs-up"></span></p>    
 						Complete Booking
 					</button>
 				</div>
 			</div>
 		</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   			<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
   			<script src="guest-details.js"></script>

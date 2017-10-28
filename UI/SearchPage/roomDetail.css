@@ -1,4 +1,4 @@
-#logo img
+#logo img                               
 {
     margin-left: 20px;
     margin-top: 13px;
@@ -167,16 +167,18 @@ p
     flex-shrink: 1;
     flex-wrap: wrap;
     margin-left: 0px;
-    width: 222px;
+        
     text-decoration: underline;
     text-decoration-color: black;
 }
 
 #hotel-price
 {
+    display: flex;
+    flex-direction: column;
     font-size: 15px;
-    width: 316px;
-    color: black
+    
+    color: black;
 }
 #room-amenties
 {
