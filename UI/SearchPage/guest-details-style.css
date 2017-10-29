@@ -115,6 +115,11 @@ p
 #data-container
 {
 	margin-left: 15px;
+
+}
+#data-container h2
+{
+	font-size: 23px;
 }
 #expiryMonth
 {
@@ -135,7 +140,8 @@ p
 
 #data-container
 {
-	margin-left: 15px;
+	margin-top: 10%;
+	margin-left: 6%;
 }
 
 
@@ -223,7 +229,7 @@ span
 	box-shadow: 10px 10px 5px teal;
 	border: 2px solid black;
 	flex-grow: 1;
-	
+	background-color: #fcffcc;
 	border-spacing: 10px;
 	flex-wrap: wrap;
 	color:black;
@@ -232,7 +238,7 @@ span
 
 #cvv
 {
-	    width: 12%;
+	width: 12%;
 	padding-left: 10px;
 	width:100px;
 	
@@ -267,17 +273,36 @@ span
 	padding-top: 1%;
 	font-weight: bold;
 	padding-left: 1%;
+	padding-right: 1%;
 	display: inline-flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin-top: 2%;
 	margin-bottom: 7%;
+	justify-content: space-between;
 	
+}
+#booking p
+{
+	margin-right: 6px;
 }
 .glyphicon 
 {
-
 	color: blue;
+	position: relative;
+    top: 0px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+   
+}
+#data-container span
+{
+	color: #1a8cff;
+	margin-right: 2%;
 }
 
 

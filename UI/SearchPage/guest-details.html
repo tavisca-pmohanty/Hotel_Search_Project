@@ -7,6 +7,9 @@
 		<link rel="stylesheet" type="text/css" href="guest-details-style.css">
 		<link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<div class="main-container">
@@ -65,7 +68,6 @@
 											
 											<div id="booking-details">
 												
-
 											</div>
 											</div>
 											<form>
@@ -121,14 +123,7 @@
 										    <label><b>CVV Number</b><span>*</span></label>
 										    <input id="cvv" type="password" placeholder="cvv" name="cvv" required="true">
 										    <label><b>Email-Id</b><span>*</span></label>
-<<<<<<< HEAD
 										    <input type="text" id="email" placeholder="abc@gmail.com" name="Email-Id" required="true">
-=======
-										   <input type="text" id="email" placeholder="Email-Id" name="Email-Id" required="true">
-										
-									
-										    
->>>>>>> added filter for pricing
 							</div>
 							</form>
 						</div>
@@ -136,13 +131,13 @@
 							<script id="itinerary-details" type="text/x-handlebars-template">
 								<div class="layout">
 									<div id ="data-container">    
-	    							<h2 id="hotel-name">Hotel Name:{{hotelName}}</h2>
-	    							<h2 id="room-name">Room Type:{{roomType}}</h2>
-	   							 	<h2 id="check-in">Check-In Date:{{checkInDate}}</h2>
-	   							 	<h2 id="check-out">Check-Out Date:{{checkOutDate}}</h2>
-	    							<h2 id="duration">No. of nights:{{duration}}</h2>
-	    							<h2 id="numberOfRooms">Rooms:{{numOfRooms}}</h2>
-	    							<h2 id="totalFare">Total Amount:{{amount}}</h2>
+	    							<h2 id="hotel-name"><span class="glyphicon glyphicon-circle-arrow-right"></span><strong>Hotel Name:</strong>{{hotelName}}</h2>
+	    							<h2 id="room-name"><span class="glyphicon glyphicon-circle-arrow-right"></span><strong>Room Type:</strong>{{roomType}}</h2>
+	   							 	<h2 id="check-in"><span class="glyphicon glyphicon-circle-arrow-right"></span><strong>Check-In Date:</strong>{{checkInDate}}</h2>
+	   							 	<h2 id="check-out"><span class="glyphicon glyphicon-circle-arrow-right"></span><strong>Check-Out Date:</strong>{{checkOutDate}}</h2>
+	    							<h2 id="duration"><span class="glyphicon glyphicon-circle-arrow-right"></span><strong>No. of nights:</strong>{{duration}}</h2>
+	    							<h2 id="numberOfRooms"><span class="glyphicon glyphicon-circle-arrow-right"></span><strong>Rooms:</strong>{{numOfRooms}}</h2>
+	    							<h2 id="totalFare"><span class="glyphicon glyphicon-circle-arrow-right"></span><strong>Total Amount:</strong>{{amount}}</h2>
 									</div>
 								</div>
   							</script>

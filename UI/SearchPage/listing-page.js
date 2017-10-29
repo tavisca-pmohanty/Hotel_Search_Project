@@ -96,7 +96,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						  
 					}
 		});
-        
+        3
         
     $(window).load(function(){
 	$('#preloader').fadeOut('slow',function(){$(this).remove();});
@@ -256,8 +256,8 @@ Handlebars.registerHelper('times', function (n, block) {
 					}
 				}
 				data=JSON.stringify(data);
-						 try
-						  {
+						try
+						{
 					             $.ajax({
 					                headers: 
 					                { 
@@ -265,33 +265,28 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-<<<<<<< HEAD
-					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
-=======
 					                 url: "http://localhost:64160/index/HotelListing/search/GetHotelRooms",
->>>>>>> added filter for pricing
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
 					                
 					                 success: getSuccess,
 					                 crossDomain:true,
-					             });
-					      } 
+					            });
+					    } 
 					    catch (e)
 					     {
 					         	alert("Sorry some unknown Error Occured...Please try again later.");
 					         	Console.log(e);
 					     }
 			         function getSuccess(data)
-			          {
+				        {
 			             
 			            	var roomItineraries=data;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
              				window.location="roomDetail.html";
-						  
-					}
+						}
 		});
 	  });
 	  

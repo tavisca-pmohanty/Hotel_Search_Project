@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
+
 </head>
 <body>
      <div class="se-pre-con"></div>
@@ -31,8 +32,9 @@
   <div id="main-container">
 
     <div id="filter-container">
-      <a id="remove-filters">Remove Filters</a>
+      
       <h2>Filters</h2>
+      <a id="remove-filters">Remove Filters</a>
       <h3>Rating</h3>
       <div>
         <div class="rating-container">
@@ -115,11 +117,11 @@
      
       <div id="data-container">
           <h2 id="hotel-name">{{name}}</h2>
-          <h2 id="hotel-address"><strong>Address: </strong>{{city}}</h2>
-          <h3 id="rating"><strong>Rating: </strong>{{#times rating}}
-                            <span class="glyphicon glyphicon-star-empty"></span>
+          <h2 id="hotel-address"><span class= "glyphicon glyphicon-map-marker"></span><strong>Address: </strong>{{city}}</h2>
+          <h3 id="rating"><span id="icon" class="glyphicon glyphicon-triangle-right"></span><strong>Rating: </strong>{{#times rating}}
+                            <span class="glyphicon glyphicon-star"></span>
                             {{/times}}</h3>
-          <h2 id="hotel-price"><strong>BaseFare: </strong>{{price}}</h2>
+          <h2 id="hotel-price"><span class="glyphicon glyphicon-triangle-right"></span><strong>BaseFare: </strong>{{price}}</h2>
       </div>
 <div>
       <button  class="room-button" value="{{name}} {{city}}" alt="Hotel Image Unavailable">Room Details</button>

@@ -117,7 +117,8 @@
     border: solid 2px black;
     margin-left: 13%;
     margin-top: 4.5%;
-    box-shadow: 10px 10px 5px teal;
+   box-shadow: 0px 8px 10px teal, 
+        -10px 8px 15px teal, 10px 8px 15px teal;
     /* margin-bottom: 43px; */
     flex-flow: wrap;
     flex-shrink: 1;
@@ -158,6 +159,7 @@
     padding-left: 34%;
     flex-shrink: 3;
     flex-wrap: wrap;
+    color: aliceblue;
 }
 
   #hotel-name
@@ -166,8 +168,8 @@
     font-weight: bold;
     text-decoration: underline;
     text-decoration-color: black;
-    color: teal;
-    font-size: 17px;
+    color: #0f0596;
+    font-size: 25px;
     flex-shrink: 1;
     flex-wrap: wrap;
    
@@ -205,10 +207,10 @@
   }
   .room-button
 {
-        display: inline;
+    display: inline;
     flex-shrink: 3;
     height: auto;
-     margin-top: 65%; 
+    margin-top: 65%; 
     font-weight: bold;
     background-color: #272020;
     color: white;
@@ -220,25 +222,15 @@
       margin-top: 50px;
   }
 
-  .glyphicon 
-  {
-      position: relative;
-      top: 1px;
-      display: inline-block;
-      font-family: 'Glyphicons Halflings';
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      color: goldenrod;
-      -moz-osx-font-smoothing: grayscale;
-  }
+  
+
 #main-container
 {
     display: inline-flex;
     flex-direction: row;
     flex-shrink: 1;
     flex-wrap: wrap;
+    width: 92%;
 }
 #filter-container
 {
@@ -265,6 +257,7 @@ input[type=radio] {
   text-decoration: underline;
   font-weight: bold;
   text-align: center;
+
 }
 .rating-container , .pricing-container
 {
@@ -272,9 +265,10 @@ input[type=radio] {
   flex-direction: row-reverse;
   justify-content: space-between;
   font-weight: bold;
-  
+  margin-right: 10%;
   margin-left: 5%;
   font-size:125%;
+  color: black;
   
 }
 .rating-container p
@@ -293,7 +287,7 @@ input[type=radio] {
 {
 
   flex-shrink: 3;
-  margin-top: 13%;
+  margin-top: 7%;
   padding-left: 32%;
   font-size: 15px;
 
@@ -308,4 +302,21 @@ input[type=radio] {
 	height: 100%;
 	z-index: 9999;
 	background: url(img/Facebook.gif) center no-repeat #fff;
+}
+#hotel-address span
+{
+  color: #1a8cff;
+}
+.glyphicon
+{
+  color:#ff471a;
+}
+#hotel-price span
+{
+  color:  #1a8cff;
+}
+#icon
+{
+  color: #1a8cff;
+  font-size: 15px;
 }
