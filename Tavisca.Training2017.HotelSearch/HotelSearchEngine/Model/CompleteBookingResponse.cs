@@ -14,5 +14,6 @@ namespace HotelSearchEngine.Model
         public DateTime CheckOutDate { get; set; }
         public int NumOfNights { get; set; }
         public string Status { get; set; }
+        public string BookingId { get; set; }
     }
 }

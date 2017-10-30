@@ -18,7 +18,7 @@ namespace HotelSearchEngine.Parser
         {
             response = new HotelRoomPriceResponse();
         }
-        public async Task<IResponse> ParserAsync(TripProductPriceRS roomPriceRS)
+        public async Task<HotelRoomPriceResponse> ParserAsync(TripProductPriceRS roomPriceRS)
         {
             HotelTripProduct hotelTripProduct = (HotelTripProduct)roomPriceRS.TripProduct;
             HotelItinerary hotelItinerary = hotelTripProduct.HotelItinerary;

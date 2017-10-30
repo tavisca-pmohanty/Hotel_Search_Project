@@ -1,0 +1,1 @@
+﻿{"TransactionId":"ce49a073-19db-4484-859e-87bc944c3144","HotelName":"Eldorado Hotel and Spa","RoomName":"Standard - RoomType 1","CheckInDate":"2017-12-12T00:00:00","CheckOutDate":"2017-12-13T00:00:00","NumOfNights":1,"Status":"Success","BookingId":"448378"}
