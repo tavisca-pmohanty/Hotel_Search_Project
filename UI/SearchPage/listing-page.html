@@ -107,7 +107,8 @@
             </div>
     </div>
   </div>
-  </div>
+ 
+
   
 <script id="hotel-item" type="text/x-handlebars-template">
     {{#each this}} 
@@ -121,6 +122,10 @@
           <h3 id="rating"><span id="icon" class="glyphicon glyphicon-triangle-right"></span><strong>Rating: </strong>{{#times rating}}
                             <span class="glyphicon glyphicon-star"></span>
                             {{/times}}</h3>
+          <h2 id="hotelDescription"><span id="icon" class="glyphicon glyphicon-triangle-right"></span><strong>Hotel-Description:</strong>{{description}}</h2>
+          
+          
+          
           <h2 id="hotel-price"><span class="glyphicon glyphicon-triangle-right"></span><strong>BaseFare: </strong>{{price}}</h2>
       </div>
 <div>

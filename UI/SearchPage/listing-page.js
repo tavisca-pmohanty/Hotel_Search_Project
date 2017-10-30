@@ -22,6 +22,7 @@ Handlebars.registerHelper('times', function (n, block) {
 			city:result[i].Address,
 			rating:result[i].Rating,
 			price:result[i].CurrencyType+" "+result[i].Price,
+            description:result[i].Description    
             });
 			
 		}
