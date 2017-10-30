@@ -186,7 +186,9 @@ var template = $('#itinerary-details');
                   Email_Id:emailId
                 }
                 sessionStorage.setItem('BookingSuccessfull',JSON.stringify(responseData));
+                  sessionStorage.setItem('MobileNumber',mobileNum);
                         window.location="ConfirmationPage.html";
+                  
               }
               else
               {
