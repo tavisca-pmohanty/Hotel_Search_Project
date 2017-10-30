@@ -36,7 +36,14 @@ namespace HotelSearchEngine.Parser
                     }
                 }
                 hotelListingResponse.SupplierName = hotelSearchRS.Itineraries[i].HotelFareSource.Name;
-                hotelListingResponse.Description = hotelSearchRS.Itineraries[i].HotelProperty.Descriptions[0].Description;
+                for (int k = 0; k < hotelSearchRS.Itineraries[i].HotelProperty.Descriptions.Length; k++)
+                {
+                    if (hotelSearchRS.Itineraries[i].HotelProperty.Descriptions[k].Description != null)
+                    {
+                        hotelListingResponse.Description = hotelSearchRS.Itineraries[i].HotelProperty.Descriptions[0].Description;
+                        break;
+                    }
+                }
                 hotelListingResponseList.HotelListingList.Add(hotelListingResponse);
             }
             return hotelListingResponseList;

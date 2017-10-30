@@ -28,7 +28,7 @@ $(document).ready(function()
                   'Content-Type': 'application/json' 
            },
                  type: "POST",
-                 url: "http://localhost:52970/Textmessage/SendMessage",
+                 url: "http://localhost:53552/Textmessage/SendMessage",
                   cache: false,
                  data:JSON.stringify(mobileNumber),
                 dataType: 'json',
