@@ -59,7 +59,7 @@ namespace Notification.Parser
             Attachment[] attach = null;
             for (int i = 0; i < 3; i++)
             {
-                if ((mailMessage.AttachmentsField[i].FileName == attachmentData[i].FileNameField) && (mailMessage.AttachmentsField[i].FileExtension == attachmentData[i].FileExtensionField) && (mailMessage.AttachmentsField[i].AttachmentFile == attachmentData[i].AttachmentFileField)
+                if ((mailMessage.AttachmentsField[i].FileName == attachmentData[i].FileNameField) && (mailMessage.AttachmentsField[i].FileExtension == attachmentData[i].FileExtensionField) && (mailMessage.AttachmentsField[i].AttachmentFile == attachmentData[i].AttachmentFileField))
                 {
                     attach[i] = (Attachment)attachmentData[i];
                     dict.Add(attach, attachmentData);
