@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AutoComplete.Contract;
+using AutoComplete.Model;
+using AutoComplete.Parser;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -10,7 +13,12 @@ namespace AutoComplete
 {
     public class SearchHotelSuggestion
     {
-        public async Task<string> GetSearchQueryData(string searchTerm)
+        List<IResponse> hotelSuggestionList;
+        public SearchHotelSuggestion()
+        {
+            hotelSuggestionList = new List<IResponse>();
+        }
+        public async Task<List<IResponse>> GetSearchQueryData(string searchTerm)
         {
             WebRequest req = WebRequest.Create(@"http://portal.dev-rovia.com/Services/api/Content/GetAutoCompleteDataGroups?type=city|airport|poi&query=" + searchTerm);
 
@@ -25,8 +33,8 @@ namespace AutoComplete
                     hotelList = reader.ReadToEnd();
                 }
             }
-           
-            return hotelList;
+            hotelSuggestionList = await new HotelSuggesstionRSParser().ParseHoteLDataAsync(hotelList);
+            return hotelSuggestionList;
         }
     }
 }

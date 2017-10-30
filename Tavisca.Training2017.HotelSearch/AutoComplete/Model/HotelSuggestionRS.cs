@@ -1,10 +1,10 @@
 ﻿
-using HotelSearchEngine.Contracts;
+using AutoComplete.Contract;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HotelEngienSearch
+namespace AutoComplete.Model
 {
    public class HotelSuggestionRS:IResponse
     {
