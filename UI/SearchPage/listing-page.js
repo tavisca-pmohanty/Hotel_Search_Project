@@ -73,11 +73,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-<<<<<<< HEAD
 					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
-=======
-					                 url: "http://localhost:52970/index/HotelListing/search/GetHotelRooms",
->>>>>>> layout fixes
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
@@ -116,12 +112,13 @@ Handlebars.registerHelper('times', function (n, block) {
 					if(hotelResult[i].Rating==ratingSelected)
 					{
 						filteredHotelList.push({
-												image:hotelResult[i].ImageUrl,
-												name:hotelResult[i].HotelName,
-												city:hotelResult[i].Address,
-												rating:hotelResult[i].Rating,
-												price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
-						});
+			image:hotelResult[i].ImageUrl,
+			name:hotelResult[i].HotelName,
+			city:hotelResult[i].Address,
+			rating:hotelResult[i].Rating,
+			price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
+            description:hotelResult[i].Description    
+            });
 					}	
 				}
 				
@@ -158,11 +155,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-<<<<<<< HEAD
 					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
-=======
-					                 url: "http://localhost:52970/index/HotelListing/search/GetHotelRooms",
->>>>>>> layout fixes
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
@@ -203,12 +196,13 @@ Handlebars.registerHelper('times', function (n, block) {
 							if(hotelResult[i].Price>=400)
 								{
 									filteredHotelListPrice.push({
-										image:hotelResult[i].ImageUrl,
-										name:hotelResult[i].HotelName,
-										city:hotelResult[i].Address,
-										rating:hotelResult[i].Rating,
-										price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
-									});
+			image:hotelResult[i].ImageUrl,
+			name:hotelResult[i].HotelName,
+			city:hotelResult[i].Address,
+			rating:hotelResult[i].Rating,
+			price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
+            description:hotelResult[i].Description    
+            });
 									
 								}
 						}
@@ -221,12 +215,13 @@ Handlebars.registerHelper('times', function (n, block) {
 							if (hotelResult[i].Price>=300 && hotelResult[i].Price<400)
 							 {
 							 	filteredHotelListPrice.push({
-										image:hotelResult[i].ImageUrl,
-										name:hotelResult[i].HotelName,
-										city:hotelResult[i].Address,
-										rating:hotelResult[i].Rating,
-										price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
-									});
+			image:hotelResult[i].ImageUrl,
+			name:hotelResult[i].HotelName,
+			city:hotelResult[i].Address,
+			rating:hotelResult[i].Rating,
+			price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
+            description:hotelResult[i].Description    
+            });
 							 }
 						}
 				}
@@ -237,12 +232,13 @@ Handlebars.registerHelper('times', function (n, block) {
 							if(hotelResult[i].Price>=200 && hotelResult[i].Price<300)
 							{
 								filteredHotelListPrice.push({
-										image:hotelResult[i].ImageUrl,
-										name:hotelResult[i].HotelName,
-										city:hotelResult[i].Address,
-										rating:hotelResult[i].Rating,
-										price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
-									});
+			image:hotelResult[i].ImageUrl,
+			name:hotelResult[i].HotelName,
+			city:hotelResult[i].Address,
+			rating:hotelResult[i].Rating,
+			price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
+            description:hotelResult[i].Description    
+            });
 							}
 						}
 				}
@@ -253,12 +249,13 @@ Handlebars.registerHelper('times', function (n, block) {
 							if (hotelResult[i].Price>=100 && hotelResult[i].Price<200) 
 							{
 								filteredHotelListPrice.push({
-										image:hotelResult[i].ImageUrl,
-										name:hotelResult[i].HotelName,
-										city:hotelResult[i].Address,
-										rating:hotelResult[i].Rating,
-										price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
-									});
+			image:hotelResult[i].ImageUrl,
+			name:hotelResult[i].HotelName,
+			city:hotelResult[i].Address,
+			rating:hotelResult[i].Rating,
+			price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
+            description:hotelResult[i].Description    
+            });
 							}
 						}
 				}
@@ -270,12 +267,13 @@ Handlebars.registerHelper('times', function (n, block) {
 							if(hotelResult[i].Price>=0 && hotelResult[i].Price<100)
 							{
 								filteredHotelListPrice.push({
-										image:hotelResult[i].ImageUrl,
-										name:hotelResult[i].HotelName,
-										city:hotelResult[i].Address,
-										rating:hotelResult[i].Rating,
-										price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
-									});
+			image:hotelResult[i].ImageUrl,
+			name:hotelResult[i].HotelName,
+			city:hotelResult[i].Address,
+			rating:hotelResult[i].Rating,
+			price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
+            description:hotelResult[i].Description    
+            });
 							}
 						}
 				}
@@ -320,11 +318,7 @@ Handlebars.registerHelper('times', function (n, block) {
 						        		'Content-Type': 'application/json' 
 					    			},
 					                 type: "POST",
-<<<<<<< HEAD
 					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
-=======
-					                 url: "http://localhost:52970/index/HotelListing/search/GetHotelRooms",
->>>>>>> layout fixes
 					                 cache: false,
 					                 data:JSON.stringify(data),
 					                 dataType: 'json',
