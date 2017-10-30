@@ -1,0 +1,308 @@
+body{                                            
+	margin:0;
+	background-color: white
+}
+#trip-info{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	background-color: white;
+}
+#guest-details{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	width: 50%;
+	justify-content: space-between;
+	box-shadow: 10px 10px 5px teal;
+}
+#payment-details{
+	border: 1px solid black;
+	width: auto;
+	background-color: white;
+	display: flex;
+	margin-top: 10px;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: 10px 10px 5px teal;
+}
+p
+{
+    font: 400 45px/01.7 'Courgette', Helvetica, sans-serif;
+    align-items: flex-end;
+    font-size: 26px;
+    color: #94a4d1;
+    font-weight: bold;
+    margin-left: 47px;
+    padding-left: 3%;
+}
+#header
+{
+	margin: 0px;
+	flex-grow: 1;
+	background-color: yellow;
+	height: 10px;
+}
+
+#logo img
+{
+	margin-left: 55px;
+    margin-top: 30px;
+    width: 107px;
+    height: 94px;
+}
+
+#guest-Fname
+{
+	padding-left: 10px;
+}
+#guest-Lname
+{
+	padding-left: 10px;
+}
+#logo
+{
+	height: 198px;
+	border-bottom: 1px solid black;
+	background: black;
+}
+#wrapper
+{
+
+	margin-left: 55px;
+}
+#wrapper h1
+{
+	
+	color: green
+	margin-bottom: 5px;
+}
+
+#wrapper h3
+{
+	
+	color: green;
+	margin-bottom: 5px;
+}
+
+#wrapper h4
+{
+	display: flex;
+	color:#1a8cff;
+}
+#wrapper p
+{
+	font-weight: bold;
+	font-size: 22px;
+}
+#parent-container
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.container
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 2px;
+	width: 10%;
+	flex-grow: 1;
+	margin-right: 84px;
+	
+}
+#data-container
+{
+	margin-left: 15px;
+
+}
+#data-container h2
+{
+	font-size: 23px;
+}
+#expiryMonth
+{
+	    width: 15%;
+    margin-left: 2%;
+	padding-left: 10px;
+	height: 39px;
+	margin-bottom: 12px;
+	box-shadow: 5px 5px 5px #888888;
+}
+#expiryYear
+{
+	    width: 15%;
+	padding-left: 10px;
+	height: 39px;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+#data-container
+{
+	margin-top: 10%;
+	margin-left: 6%;
+}
+
+
+.container label
+{
+    margin-top: 3%;
+	font-size: 18px;
+    margin-left: 2%;
+}
+
+.container input
+{
+	margin-left: 2%;
+    height: 40px;
+    width: 50%;
+    box-shadow: 5px 5px 5px #888888;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+
+}
+input:hover
+{
+	background-color: #ffff66;
+}
+
+select:hover
+{
+	background-color: #ffff66;
+}
+#mobile 
+{
+	padding-left: 10px;
+	margin-bottom: 100px;
+	padding-left: 10px;
+	
+}
+#country-code
+{
+    margin-left: 2%;
+    box-shadow: 5px 5px 5px #888888;
+	padding-left: 10px;
+	margin-top: 15px;
+    margin-bottom: 15px;
+    height: 41px;
+}
+
+#card-number
+{
+	padding-left: 10px;
+	margin-bottom: 120px;
+    width: 50%;
+}
+
+button
+{
+
+	margin-top: 55px;
+	min-width: 15%;
+	width: 15%;
+	background-color: yellow;
+	border: .5px solid black;
+	box-shadow: 10px 10px 5px teal;
+	margin-bottom: 50px;
+	font-size: 15px;
+	font-weight: bold;
+}
+span
+{
+	color: red;
+}
+#expiration
+{
+
+	margin-top: 5px;
+	height: 40px;
+	box-shadow: 5px 5px 5px #888888;
+	font-size: 15px;
+	width: 150px;
+	margin-bottom: 5px;
+}
+#booking-details
+{
+	width:40%;
+	box-shadow: 10px 10px 5px teal;
+	border: 2px solid black;
+	flex-grow: 1;
+	background-color: #fcffcc;
+	border-spacing: 10px;
+	flex-wrap: wrap;
+	color:black;
+	}
+
+
+#cvv
+{
+	width: 12%;
+	padding-left: 10px;
+	width:100px;
+	
+}
+#cardHolder
+{
+	padding-left: 10px;
+	width:48%;	
+
+}
+#cardNum
+{
+	padding-left: 10px;
+	width:48%;
+}
+#email
+{
+	padding-left: 10px;
+	width:48%;
+}
+#country-code
+{
+	padding-left: 10px;
+	width:100px;
+}
+#booking
+{
+	width: auto;
+	 word-break: break-all;
+	flex-shrink: 1;
+	margin-left: 1%;
+	padding-top: 1%;
+	font-weight: bold;
+	padding-left: 1%;
+	padding-right: 1%;
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 2%;
+	margin-bottom: 7%;
+	justify-content: space-between;
+	
+}
+#booking p
+{
+	margin-right: 6px;
+}
+.glyphicon 
+{
+	color: blue;
+	position: relative;
+    top: 0px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+   
+}
+#data-container span
+{
+	color: #1a8cff;
+	margin-right: 2%;
+}
+
+

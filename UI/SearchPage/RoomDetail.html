@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hotel-Amour</title>
+      <link rel="stylesheet" type="text/css" href="roomDetail.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="header-container">
+        <div id="logo"> 
+            <img src="logo.png">
+            <p>Hotel-Amour</p>
+        </div>
+        <div id="welcome-page">
+          <p>Say Yes To New Adventures!!!</p>
+        </div>
+    </div>
+     <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a >About Us</a>
+        <a href="index.html">Feedback</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    
+     <div id="roomlist-container">
+      
+              <div>
+                <img src="bus.gif" alt="Loading.."  />
+              </div> 
+    </div>
+
+    <script id="common-item" type="text/x-handlebars-template">
+      <div id="room-common-data">
+        <div id="hotel-name"><h1>{{hotelname}}</h1></div>
+          <div id="room-common-data-container">
+            <img id="hotel-image" src="{{image}}" width="258" height="245">   
+            <iframe class="map-bottom" width="258" height="240" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCIYzzzQZGLWDSOSovKWaq2UsyX1dQ796c&q={{this.latitude}},{{this.longitude}}" allowfullscreen>
+            </iframe>
+          </div>
+      </div>
+
+    </script>
+            
+    <script id="room-item" type="text/x-handlebars-template">
+        
+           {{#each this}} 
+              <div class="layout">
+                  
+                        <div id="data-container">
+                            <h2 id="room-name">{{roomType}}</h2>
+                            <h2 id="room-amenties"><span class="glyphicon glyphicon-bed" ></span><strong>Amenties:  </strong>{{{roomDescription}}}</h2>
+                            <h2 id="hotel-price"><span class="glyphicon glyphicon-triangle-right"></span><strong> Fare:</strong>{{roomFare}}</h2>
+
+                        </div>
+
+                        <div>
+                              <button type="submit" class="room-button" value="{{roomType}}" alt="Hotel Image Unavailable">Book Now</button>
+                          
+                        </div>
+              </div>
+          {{/each}}
+
+    </script>
+
+ 
+ 
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+    <script src="RoomDetail.js"></script>
+</body>
+</html>
