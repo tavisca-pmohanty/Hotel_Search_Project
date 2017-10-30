@@ -1,4 +1,5 @@
 ﻿using APITripEngine;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace HotelSearchEngine.Parser
         {
             bookTripFolderResponse = new BookTripFolderResponse();
         }
-        public async Task<BookTripFolderResponse> ParserAsync(TripFolderBookRS tripFolderBookRQ)
+        public async Task<IResponse> ParserAsync(TripFolderBookRS tripFolderBookRQ)
         {
             bookTripFolderResponse.SessionId = tripFolderBookRQ.SessionId;
             return bookTripFolderResponse;

@@ -1,11 +1,12 @@
 ﻿using HotelEngienSearch;
+using HotelSearchEngine.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HotelSearchEngine
 {
-    public class HotelListingResponse
+    public class HotelListingResponse:IResponse
     {
         public string SessionId { get; set; }
         public string HotelName { get; set; }

@@ -1,5 +1,6 @@
 ﻿using Cache.CacheData;
 using HotelEngienSearch;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using HotelSearchEngine.Parser;
 using Logger;
@@ -11,14 +12,14 @@ namespace HotelSearchEngine
 {
     public class RoomSearch
     {
-        List<HotelRoomAvailResponse> roomList;
+        List<IResponse> roomList;
         HotelEngineClient client ;
         public RoomSearch()
         {
-            roomList = new List<HotelRoomAvailResponse>();
+            roomList = new List<IResponse>();
             client = new HotelEngineClient();
         }
-        public async Task<List<HotelRoomAvailResponse>> GetRoomDetailsAsync(RoomListingRequest request)
+        public async Task<List<IResponse>> GetRoomDetailsAsync(RoomListingRequest request)
         {
           
             try

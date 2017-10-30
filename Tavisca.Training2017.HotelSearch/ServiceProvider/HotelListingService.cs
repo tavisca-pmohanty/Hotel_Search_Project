@@ -6,15 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using HotelSearchEngine;
 using Logger;
+using HotelSearchEngine.Contracts;
 
 namespace ServiceProvider
 {
     class HotelListingService:IHotelService
     {
-        List<HotelListingResponse> itineraries;
+        List<IResponse> itineraries;
         public HotelListingService()
         {
-            itineraries = new List<HotelListingResponse>();
+            itineraries = new List<IResponse>();
         
         }
 

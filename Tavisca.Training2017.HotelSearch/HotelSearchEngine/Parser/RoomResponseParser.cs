@@ -1,5 +1,6 @@
 ﻿using Cache.CacheData;
 using HotelEngienSearch;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using System;
 using System.Collections.Generic;
@@ -9,12 +10,12 @@ namespace HotelSearchEngine.Parser
 {
     class RoomResponseParser
     {
-        List<HotelRoomAvailResponse> roomList;
+        List<IResponse> roomList;
         public RoomResponseParser()
         {
-            roomList = new List<HotelRoomAvailResponse>();
+            roomList = new List<IResponse>();
         }
-        public async Task<List<HotelRoomAvailResponse>> ParserAsync(string sessionId,HotelItinerary hotelItinerary)
+        public async Task<List<IResponse>> ParserAsync(string sessionId,HotelItinerary hotelItinerary)
         {
             
             foreach(var room in hotelItinerary.Rooms)

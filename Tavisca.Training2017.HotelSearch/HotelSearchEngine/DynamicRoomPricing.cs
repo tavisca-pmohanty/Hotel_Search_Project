@@ -1,5 +1,6 @@
 ﻿using APITripEngine;
 using Cache.CacheData;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using HotelSearchEngine.Parser;
 using Logger;
@@ -13,7 +14,7 @@ namespace HotelSearchEngine
 {
     public class DynamicRoomPricing
     {
-        HotelRoomPriceResponse hotelRoomPriceResponse;
+        IResponse hotelRoomPriceResponse;
         TripsEngineClient client;
 
         public DynamicRoomPricing()
@@ -21,7 +22,7 @@ namespace HotelSearchEngine
             hotelRoomPriceResponse = new HotelRoomPriceResponse();
             client = new TripsEngineClient();
         }
-        public async Task<HotelRoomPriceResponse> GetDynamicPricingAsync(RoomPricingRequest request)
+        public async Task<IResponse> GetDynamicPricingAsync(RoomPricingRequest request)
         {
             try
             {

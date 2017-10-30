@@ -1,4 +1,5 @@
 ﻿using APITripEngine;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using System;
 using System.Collections.Generic;

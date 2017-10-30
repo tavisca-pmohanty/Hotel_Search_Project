@@ -1,4 +1,5 @@
 ﻿using APITripEngine;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace HotelSearchEngine.Parser
         {
             completeBookingResponse = new CompleteBookingResponse();
         }
-        public async Task<CompleteBookingResponse> ResponseParserAsync(CompleteBookingRS completeBookingRS)
+        public async Task<IResponse> ResponseParserAsync(CompleteBookingRS completeBookingRS)
         {
             completeBookingResponse.TransactionId = completeBookingRS.TripFolder.ConfirmationNumber;
             HotelTripProduct product = (HotelTripProduct)completeBookingRS.TripFolder.Products[0];
@@ -25,6 +26,7 @@ namespace HotelSearchEngine.Parser
             completeBookingResponse.CheckInDate = product.HotelItinerary.StayPeriod.Start;
             completeBookingResponse.CheckOutDate = product.HotelItinerary.StayPeriod.End;
             completeBookingResponse.NumOfNights = product.HotelItinerary.StayPeriod.Duration;
+            completeBookingResponse.Status = completeBookingRS.ServiceStatus.Status.ToString();
             return completeBookingResponse;
         }
     }

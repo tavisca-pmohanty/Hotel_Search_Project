@@ -1,4 +1,5 @@
 ﻿using HotelEngienSearch;
+using HotelSearchEngine.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,12 +9,12 @@ namespace HotelSearchEngine.Parser
 {
     class HotelListingResponseParser
     {
-        List<HotelListingResponse> hotelListingResponseList;
+        List<IResponse> hotelListingResponseList;
         public HotelListingResponseParser()
         {
-            hotelListingResponseList = new List<HotelListingResponse>();
+            hotelListingResponseList = new List<IResponse>();
         }
-        public async Task<List<HotelListingResponse>> ParserAsync(HotelSearchRS hotelSearchRS)
+        public async Task<List<IResponse>> ParserAsync(HotelSearchRS hotelSearchRS)
         {
            
            for(int i=0;i<hotelSearchRS.Itineraries.Length;i++)
