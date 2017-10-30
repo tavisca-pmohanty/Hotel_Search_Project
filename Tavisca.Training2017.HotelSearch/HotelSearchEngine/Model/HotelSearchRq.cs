@@ -1,4 +1,5 @@
-﻿using HotelSearchEngine.Contracts;
+﻿using AutoComplete.Model;
+using HotelSearchEngine.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
