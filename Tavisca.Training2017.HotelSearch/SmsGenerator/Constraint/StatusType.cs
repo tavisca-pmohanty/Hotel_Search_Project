@@ -4,7 +4,9 @@ using System.Text;
 
 namespace SmsGenerator
 {
-    class SuccessConstraint
+    public enum StatusType
     {
+
+        Success,Failure
     }
 }

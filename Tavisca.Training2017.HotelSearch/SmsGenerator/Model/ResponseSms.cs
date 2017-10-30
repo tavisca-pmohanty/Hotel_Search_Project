@@ -4,7 +4,9 @@ using System.Text;
 
 namespace SmsGenerator.Model
 {
-    class ResponseSms
+    public class ResponseSms
     {
+        public StatusType Status { get; set; }
+
     }
 }

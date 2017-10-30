@@ -41,11 +41,10 @@ var template = $('#itinerary-details');
           var num= number.length;
           if(num>12 && num<20)
           {
-               var regex = new RegExp("^[0-9]{num}$");
+              var regex = new RegExp("^[0-9]{16}$");
                if (!regex.test(number))
-                   {
-                      return false;
-                   }
+               
+                   return false;
               
               return luhnCheck(number);
           }

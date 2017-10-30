@@ -1,7 +1,8 @@
 $(document).ready(function()
 {
-	var data=sessionStorage.getItem('BookingSuccessfull');
-	var updatedData=JSON.parse(data);
+    var mobileNumber=sessionStorage.getItem('MobileNumber');
+	var responseData=sessionStorage.getItem('BookingSuccessfull');
+	var updatedData=JSON.parse(responseData);
 		var confirmationDataList=
 		{
 			transactionId:updatedData.data.TransactionId,
@@ -18,4 +19,33 @@ $(document).ready(function()
 	  var html = compiledTemplate(confirmationDataList);
 
 	  $('#confirmation-container').append(html);
+    
+    
+        try {
+             $.ajax({
+                 headers: { 
+                   'Accept': 'application/json',
+                  'Content-Type': 'application/json' 
+           },
+                 type: "POST",
+                 url: "http://localhost:64512/Textmessage/SendMessage",
+                  cache: false,
+                 data:JSON.stringify(mobileNumber),
+                dataType: 'json',
+                 success: getSuccess,
+                 crossDomain:true,
+             });
+         } 
+    catch (e) {
+             alert("Unfortunately message Could not be Sent");
+                    Console.log(e);
+         }
+    function getSuccess(result)
+    {
+        if(result.Status==0)
+            {
+                alert("SMS sent to your phone number successfully.");
+            }
+    }
+    
 });
