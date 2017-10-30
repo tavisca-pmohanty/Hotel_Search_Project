@@ -108,7 +108,8 @@
     flex-shrink: 1;
     flex-wrap: wrap;
     margin-left: 14%;
-    font: italic bold 12px/30px Georgia, serif;   
+    font: italic bold 12px/30px Georgia, serif;
+    width: 104%;   
 
   }
   .layout
