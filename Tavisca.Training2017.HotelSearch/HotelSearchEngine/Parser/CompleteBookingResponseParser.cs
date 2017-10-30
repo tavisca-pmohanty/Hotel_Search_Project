@@ -29,6 +29,7 @@ namespace HotelSearchEngine.Parser
             completeBookingResponse.CheckOutDate = product.HotelItinerary.StayPeriod.End;
             completeBookingResponse.NumOfNights = product.HotelItinerary.StayPeriod.Duration;
             completeBookingResponse.Status = completeBookingRS.ServiceStatus.Status.ToString();
+            completeBookingResponse.BookingId = completeBookingRS.TripFolder.ConfirmationNumber.ToString();
             return completeBookingResponse;
         }
     }
