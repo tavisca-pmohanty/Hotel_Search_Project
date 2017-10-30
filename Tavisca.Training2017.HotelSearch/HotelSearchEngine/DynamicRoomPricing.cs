@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine
 {
-    public class DynamicRoomPricing
+    public class DynamicRoomPricing:IResponseService
     {
         IResponse hotelRoomPriceResponse;
         TripsEngineClient client;
@@ -22,11 +22,12 @@ namespace HotelSearchEngine
             hotelRoomPriceResponse = new HotelRoomPriceResponse();
             client = new TripsEngineClient();
         }
-        public async Task<IResponse> GetDynamicPricingAsync(RoomPricingRequest request)
+        public async Task<IResponse> GetResponseAsync(IRequest request)
         {
             try
             {
-                TripProductPriceRQ tripProductPriceRQ = await new TripProductPriceRequestParser().ParserAsync(request);
+                RoomPricingRequest roomPricingRequest = (RoomPricingRequest)request;
+                TripProductPriceRQ tripProductPriceRQ = await new TripProductPriceRequestParser().ParserAsync(roomPricingRequest);
                 TripProductPriceRS response = await client.PriceTripProductAsync(tripProductPriceRQ);
                 hotelRoomPriceResponse = await new HotelRoomPriceResponseParser().ParserAsync(response);
                 HotelTripProduct hotelTripProduct = (HotelTripProduct)response.TripProduct;

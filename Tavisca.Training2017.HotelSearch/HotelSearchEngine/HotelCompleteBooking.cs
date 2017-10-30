@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine
 {
-    public class HotelCompleteBooking
+    public class HotelCompleteBooking:IResponseService
     {
         TripsEngineClient tripsEngineClient;
         IResponse completeBookingResponse;
@@ -24,12 +24,13 @@ namespace HotelSearchEngine
             completeBookingResponse = new CompleteBookingResponse();
             tripsEngineClient =new TripsEngineClient();
         }
-        public async Task<IResponse> CompleteHotelBooking(CompleteBookingRequest request)
+        public async Task<IResponse>GetResponseAsync(IRequest request)
         {
 
             try
             {
-                CompleteBookingRQ completeBookingRQ = await new CompleteBookingRequestParser().ParserAsync(request);
+                CompleteBookingRequest completeBookingRequest = (CompleteBookingRequest)request;
+                CompleteBookingRQ completeBookingRQ = await new CompleteBookingRequestParser().ParserAsync(completeBookingRequest);
                 CompleteBookingRS completeBookingRS = await tripsEngineClient.CompleteBookingAsync(completeBookingRQ);
                 completeBookingResponse = await new CompleteBookingResponseParser().ResponseParserAsync(completeBookingRS);
                 CompleteBookingResponse response = (CompleteBookingResponse)completeBookingResponse;

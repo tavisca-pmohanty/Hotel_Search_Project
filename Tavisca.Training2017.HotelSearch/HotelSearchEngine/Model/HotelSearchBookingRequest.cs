@@ -8,7 +8,7 @@ using System.Text;
 
 namespace HotelSearchEngine.Models
 {
-    public  class HotelSearchBookingRequest
+    public  class HotelSearchBookingRequest:IRequest
     {
         public string SessionId { get; set; }
         public GuestName Name { get; set; }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HotelEngienSearch
 { 
-    public class RoomListingRequest
+    public class RoomListingRequest:IRequest
     {
         public string SessionId { get; set; }
         public string HotelName { get; set; }

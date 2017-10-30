@@ -13,16 +13,17 @@ Handlebars.registerHelper('times', function (n, block) {
 	$(document).ready(function(){
 	var result=sessionStorage.getItem('HotelListing');
 	result= JSON.parse(result);
+	var hotelResult=result.HotelListingList;
 		var hotelList= new Array();
-		for(i=0;i<result.length;i++)
+		for(i=0;i<hotelResult.length;i++)
 		{
 			hotelList.push({
-			image:result[i].ImageUrl,
-			name:result[i].HotelName,
-			city:result[i].Address,
-			rating:result[i].Rating,
-			price:result[i].CurrencyType+" "+result[i].Price,
-            description:result[i].Description    
+			image:hotelResult[i].ImageUrl,
+			name:hotelResult[i].HotelName,
+			city:hotelResult[i].Address,
+			rating:hotelResult[i].Rating,
+			price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
+            description:hotelResult[i].Description    
             });
 			
 		}
@@ -50,14 +51,14 @@ Handlebars.registerHelper('times', function (n, block) {
 		{
 				var data;
 				var hotelName=this.value;
-				for(var i=0;i<result.length;i++)
+				for(var i=0;i<hotelResult.length;i++)
 				{
-					if(hotelName.toString()==(result[i].HotelName.toString()+" "+result[i].Address.toString()))
+					if(hotelName.toString()==(hotelResult[i].HotelName.toString()+" "+hotelResult[i].Address.toString()))
 					{
 						data=
 						{
-							HotelName:result[i].HotelName,
-							SessionId:result[i].SessionId,
+							HotelName:hotelResult[i].HotelName,
+							SessionId:hotelResult[i].SessionId,
 						}
 						break;
 					}
@@ -106,16 +107,16 @@ Handlebars.registerHelper('times', function (n, block) {
 	{
 				var ratingSelected=this.value;
 				var filteredHotelList= new Array();
-				for(i=0;i<result.length;i++)
+				for(i=0;i<hotelResult.length;i++)
 				{
-					if(result[i].Rating==ratingSelected)
+					if(hotelResult[i].Rating==ratingSelected)
 					{
 						filteredHotelList.push({
-												image:result[i].ImageUrl,
-												name:result[i].HotelName,
-												city:result[i].Address,
-												rating:result[i].Rating,
-												price:result[i].CurrencyType+" "+result[i].Price,
+												image:hotelResult[i].ImageUrl,
+												name:hotelResult[i].HotelName,
+												city:hotelResult[i].Address,
+												rating:hotelResult[i].Rating,
+												price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
 						});
 					}	
 				}
@@ -131,14 +132,14 @@ Handlebars.registerHelper('times', function (n, block) {
 		{
 				var data;
 				var hotelName=this.value;
-				for(var i=0;i<result.length;i++)
+				for(var i=0;i<hotelResult.length;i++)
 				{
-					if(hotelName.toString()==(result[i].HotelName.toString()+" "+result[i].Address.toString()))
+					if(hotelName.toString()==(hotelResult[i].HotelName.toString()+" "+hotelResult[i].Address.toString()))
 					{
 						data=
 						{
-							HotelName:result[i].HotelName,
-							SessionId:result[i].SessionId,
+							HotelName:hotelResult[i].HotelName,
+							SessionId:hotelResult[i].SessionId,
 						}
 						break;
 					}
@@ -189,16 +190,16 @@ Handlebars.registerHelper('times', function (n, block) {
 			
 			if(priceSelected==1)
 					{
-						for(i=0;i<result.length;i++)
+						for(i=0;i<hotelResult.length;i++)
 						{
-							if(result[i].Price>=400)
+							if(hotelResult[i].Price>=400)
 								{
 									filteredHotelListPrice.push({
-										image:result[i].ImageUrl,
-										name:result[i].HotelName,
-										city:result[i].Address,
-										rating:result[i].Rating,
-										price:result[i].CurrencyType+" "+result[i].Price,
+										image:hotelResult[i].ImageUrl,
+										name:hotelResult[i].HotelName,
+										city:hotelResult[i].Address,
+										rating:hotelResult[i].Rating,
+										price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
 									});
 									
 								}
@@ -207,48 +208,48 @@ Handlebars.registerHelper('times', function (n, block) {
 
 				else if (priceSelected==2) 
 				{
-					for(i=0;i<result.length;i++)
+					for(i=0;i<hotelResult.length;i++)
 						{
-							if (result[i].Price>=300 && result[i].Price<400)
+							if (hotelResult[i].Price>=300 && hotelResult[i].Price<400)
 							 {
 							 	filteredHotelListPrice.push({
-										image:result[i].ImageUrl,
-										name:result[i].HotelName,
-										city:result[i].Address,
-										rating:result[i].Rating,
-										price:result[i].CurrencyType+" "+result[i].Price,
+										image:hotelResult[i].ImageUrl,
+										name:hotelResult[i].HotelName,
+										city:hotelResult[i].Address,
+										rating:hotelResult[i].Rating,
+										price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
 									});
 							 }
 						}
 				}
 				else if(priceSelected==3)
 				{
-					for(i=0;i<result.length;i++)
+					for(i=0;i<hotelResult.length;i++)
 						{
-							if(result[i].Price>=200 && result[i].Price<300)
+							if(hotelResult[i].Price>=200 && hotelResult[i].Price<300)
 							{
 								filteredHotelListPrice.push({
-										image:result[i].ImageUrl,
-										name:result[i].HotelName,
-										city:result[i].Address,
-										rating:result[i].Rating,
-										price:result[i].CurrencyType+" "+result[i].Price,
+										image:hotelResult[i].ImageUrl,
+										name:hotelResult[i].HotelName,
+										city:hotelResult[i].Address,
+										rating:hotelResult[i].Rating,
+										price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
 									});
 							}
 						}
 				}
 				else if(priceSelected==4)
 				{
-					for(i=0;i<result.length;i++)
+					for(i=0;i<hotelResult.length;i++)
 						{
-							if (result[i].Price>=100 && result[i].Price<200) 
+							if (hotelResult[i].Price>=100 && hotelResult[i].Price<200) 
 							{
 								filteredHotelListPrice.push({
-										image:result[i].ImageUrl,
-										name:result[i].HotelName,
-										city:result[i].Address,
-										rating:result[i].Rating,
-										price:result[i].CurrencyType+" "+result[i].Price,
+										image:hotelResult[i].ImageUrl,
+										name:hotelResult[i].HotelName,
+										city:hotelResult[i].Address,
+										rating:hotelResult[i].Rating,
+										price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
 									});
 							}
 						}
@@ -256,16 +257,16 @@ Handlebars.registerHelper('times', function (n, block) {
 
 				else
 				{
-					for(i=0;i<result.length;i++)
+					for(i=0;i<hotelResult.length;i++)
 						{
-							if(result[i].Price>=0 && result[i].Price<100)
+							if(hotelResult[i].Price>=0 && hotelResult[i].Price<100)
 							{
 								filteredHotelListPrice.push({
-										image:result[i].ImageUrl,
-										name:result[i].HotelName,
-										city:result[i].Address,
-										rating:result[i].Rating,
-										price:result[i].CurrencyType+" "+result[i].Price,
+										image:hotelResult[i].ImageUrl,
+										name:hotelResult[i].HotelName,
+										city:hotelResult[i].Address,
+										rating:hotelResult[i].Rating,
+										price:hotelResult[i].CurrencyType+" "+hotelResult[i].Price,
 									});
 							}
 						}
@@ -289,14 +290,14 @@ Handlebars.registerHelper('times', function (n, block) {
 		{
 				var data;
 				var hotelName=this.value;
-				for(var i=0;i<result.length;i++)
+				for(var i=0;i<hotelResult.length;i++)
 				{
-					if(hotelName.toString()==(result[i].HotelName.toString()+" "+result[i].Address.toString()))
+					if(hotelName.toString()==(hotelResult[i].HotelName.toString()+" "+hotelResult[i].Address.toString()))
 					{
 						data=
 						{
-							HotelName:result[i].HotelName,
-							SessionId:result[i].SessionId,
+							HotelName:hotelResult[i].HotelName,
+							SessionId:hotelResult[i].SessionId,
 						}
 						break;
 					}
@@ -353,14 +354,14 @@ Handlebars.registerHelper('times', function (n, block) {
 		{
 				var data;
 				var hotelName=this.value;
-				for(var i=0;i<result.length;i++)
+				for(var i=0;i<hotelResult.length;i++)
 				{
-					if(hotelName.toString()==(result[i].HotelName.toString()+" "+result[i].Address.toString()))
+					if(hotelName.toString()==(hotelResult[i].HotelName.toString()+" "+hotelResult[i].Address.toString()))
 					{
 						data=
 						{
-							HotelName:result[i].HotelName,
-							SessionId:result[i].SessionId,
+							HotelName:hotelResult[i].HotelName,
+							SessionId:hotelResult[i].SessionId,
 						}
 						break;
 					}
