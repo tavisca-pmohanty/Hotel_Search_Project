@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
+
 </head>
 <body>
      <div class="se-pre-con"></div>
@@ -24,59 +25,90 @@
  <div class="topnav" id="myTopnav">
   <a href="index.html">Home</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+<div id="search-result">
+  Search Results
 </div>  
   <div id="main-container">
+
     <div id="filter-container">
-      <a id="remove-filters">Remove Filters</a>
+      
       <h2>Filters</h2>
-      <h3>By Star Rating:</h3>
-      <div class="rating-container">
-       <input class="radioBtn" type="radio" name="rating" value="5">
-      <p>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-      </p>
+      <a id="remove-filters">Remove Filters</a>
+      <h3>Rating</h3>
+      <div>
+        <div class="rating-container">
+             <input class="radioBtn" type="radio" name="rating" value="5">
+              <p>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+              </p>
+        </div>
+         <div class="rating-container">
+            <input class="radioBtn" type="radio" name="rating" value="4">
+            <p>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+            </p>
+        </div>
+         <div class="rating-container">
+            <input class="radioBtn" type="radio" name="rating" value="3">
+            <p>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+            </p>
+        </div>
+         <div class="rating-container">
+            <input class="radioBtn" type="radio" name="rating" value="2">
+            <p>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+            </p>
+        </div>
+         <div class="rating-container">
+            <input class="radioBtn" type="radio" name="rating" value="1">
+            <p>
+              <span class="glyphicon glyphicon-star"></span>
+            </p>
+        </div> 
+      </div>
+      <div>
+          <h3>Pricing</h3>
+          <div class="pricing-container">
+           <input id="1" class="radioBtn1" type="radio" name="price" value="1">
+            
+             400 and above
+          </div>
+          <div class="pricing-container">
+            <input id="2" class="radioBtn1"  type="radio" name="price" value="2">
+              300-400
+          </div>
+          <div class="pricing-container">
+            <input id="3" class="radioBtn1"  type="radio" name="price" value="3">
+              200-300
+          </div>
+          <div class="pricing-container">
+            <input id="4" class="radioBtn1"  type="radio" name="price" value="4">
+            
+              0-100
+          </div>  
+      </div>
+
     </div>
-     <div class="rating-container">
-      <input class="radioBtn" type="radio" name="rating" value="4">
-      <p>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-      </p>
-    </div>
-     <div class="rating-container">
-      <input class="radioBtn" type="radio" name="rating" value="3">
-      <p>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-      </p>
-    </div>
-     <div class="rating-container">
-      <input class="radioBtn" type="radio" name="rating" value="2">
-      <p>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-      </p>
-    </div>
-     <div class="rating-container">
-      <input class="radioBtn" type="radio" name="rating" value="1">
-      <p>
-        <span class="glyphicon glyphicon-star"></span>
-      </p>
-    </div>  
-    </div>
-  <div id="hotelList-container">
-<div>
+    <div id="hotelList-container">
+            <div>
                 <img src="bus.gif" alt="Loading.." />
             </div>
     </div>
   </div>
+  </div>
+  
 <script id="hotel-item" type="text/x-handlebars-template">
     {{#each this}} 
     <div class="layout">
@@ -85,11 +117,11 @@
      
       <div id="data-container">
           <h2 id="hotel-name">{{name}}</h2>
-          <h2 id="hotel-address">Address:{{city}}</h2>
-          <h3 id="rating">Rating:{{#times rating}}
-                            <span class="glyphicon glyphicon-star-empty"></span>
+          <h2 id="hotel-address"><span class= "glyphicon glyphicon-map-marker"></span><strong>Address: </strong>{{city}}</h2>
+          <h3 id="rating"><span id="icon" class="glyphicon glyphicon-triangle-right"></span><strong>Rating: </strong>{{#times rating}}
+                            <span class="glyphicon glyphicon-star"></span>
                             {{/times}}</h3>
-          <h2 id="hotel-price">Fare:<div>{{price}}</div></h2>
+          <h2 id="hotel-price"><span class="glyphicon glyphicon-triangle-right"></span><strong>BaseFare: </strong>{{price}}</h2>
       </div>
 <div>
       <button  class="room-button" value="{{name}} {{city}}" alt="Hotel Image Unavailable">Room Details</button>
@@ -98,7 +130,7 @@
    {{/each}}
     </script>
     
-
+  
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>

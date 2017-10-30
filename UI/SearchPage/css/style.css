@@ -13,23 +13,22 @@
 }
 #Location
 {
-    width: 68.6%;
-    margin-bottom: 45px;
-    margin-left: 25px;
+    width: 82.6%;
+    margin-bottom: 4%;
+    margin-left: 1% ;
+}
+#rooms
+{
+    width: 82.6%;
 }
 .travel-date
 {
-    margin-bottom: 35px;
-    margin-right: 32px;
-    color:black;
+    margin-bottom: 2%;
+    margin-right: 32px; 
 }
 body
 {
-    background-color: #080808;
-    overflow-x: hidden;
-    font-family: 'open Sans',sans-serif;
-    text-rendering: optimizeLegibility  !important;
-    -webkit-font-smoothing:antialiased !important;
+    background-color: black;
 }
 label
 {
@@ -106,6 +105,7 @@ p{
 #rooms-info
 {
         margin-left: 45px;
+        margin-top: 2%;
 }
 
 .navbar
@@ -131,7 +131,7 @@ p{
     opacity: 1;
     background-color: #111111 !important; 
 }
-/*header*/
+
 
 .header
 {
@@ -147,11 +147,16 @@ p{
     height: -webkit-fill-available;
     background-repeat: no-repeat;
     color: #fff;
+    flex-shrink: 1;
+    background-attachment: fixed;
 
 }
 #indate, #outdate
 {
     color: black;
+    border-radius: 4px;
+    padding-left: 2%;
+    padding-bottom: .5%;
 }
 
 .container
@@ -188,9 +193,10 @@ p{
 }
 .header button
 {
-    margin-top: 56px;
-    margin-left: 5px;
-    margin-bottom: 35px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    
+   
 }
 
 @media(max-width:768px)
@@ -221,13 +227,17 @@ p{
         font-size:10px; 
     }
     #rooms-info{
-        display: flex;
+        
         justify-content: space-between;
         flex-direction: column;
+        flex-shrink: 1;
+        flex-wrap: wrap;
     }
+
    
     
-#loader-div{
+#loader-div
+{
     align-content: center;
 }
     
@@ -236,27 +246,31 @@ p{
 .form-inline
 {
     color: black;
-    margin-left: 13px;
+    margin-left: 3%;
 }
- select {
-    text-transform: none;
-    color: black;
-        height: 32px;
+select 
+{
+   text-transform: none;
+   color: black;
+   height: 32px;
+   border-radius: 4px;
+}
+.text-info 
+{
+    color:#ab9ede;
+    font-size: 15px;
+}
 
-}
-.text-info {
-    color:black;
-}
-
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  align-content: center;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+.loader 
+{
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 83px;
+    height: 82px;   
+    margin-left: 2%;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
 }
 
 @-webkit-keyframes spin {
@@ -299,7 +313,7 @@ p{
     position: absolute;
     padding: 10px;
     pointer-events: none;
-    margin-left: 20px;
+    margin-left: 1%;
     color: skyblue;
 }
 .inner-addon {

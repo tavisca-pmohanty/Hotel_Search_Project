@@ -7,7 +7,7 @@ namespace ServiceProvider
 {
     public class Hotel
     {
-        public string  Name { get; set; }
+        public string  Name { get; set; } 
         public int HotelId { get; set; }
         public string address { get; set; }
         public  string  price { get; set; }

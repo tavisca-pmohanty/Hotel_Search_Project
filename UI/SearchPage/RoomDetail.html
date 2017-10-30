@@ -6,6 +6,9 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link href='http://fonts.googleapis.com/css?family=Average|Courgette' rel='stylesheet' type='text/css'/>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div id="header-container">
@@ -50,8 +53,8 @@
                   
                         <div id="data-container">
                             <h2 id="room-name">{{roomType}}</h2>
-                            <h2 id="room-amenties"><strong>Amenties:  </strong>{{{roomDescription}}}</h2>
-                            <h2 id="hotel-price"><strong>Fare:</strong> <div>{{roomFare}}</div></h2>
+                            <h2 id="room-amenties"><span class="glyphicon glyphicon-bed" ></span><strong>Amenties:  </strong>{{{roomDescription}}}</h2>
+                            <h2 id="hotel-price"><span class="glyphicon glyphicon-triangle-right"></span><strong> Fare:</strong>{{roomFare}}</h2>
 
                         </div>
 

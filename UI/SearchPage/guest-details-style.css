@@ -1,4 +1,4 @@
-body{
+body{                                            
 	margin:0;
 	background-color: white
 }
@@ -34,6 +34,7 @@ p
     color: #94a4d1;
     font-weight: bold;
     margin-left: 47px;
+    padding-left: 3%;
 }
 #header
 {
@@ -114,9 +115,15 @@ p
 #data-container
 {
 	margin-left: 15px;
+
+}
+#data-container h2
+{
+	font-size: 23px;
 }
 #expiryMonth
 {
+	    width: 15%;
     margin-left: 2%;
 	padding-left: 10px;
 	height: 39px;
@@ -125,6 +132,7 @@ p
 }
 #expiryYear
 {
+	    width: 15%;
 	padding-left: 10px;
 	height: 39px;
 	box-shadow: 5px 5px 5px #888888;
@@ -132,7 +140,8 @@ p
 
 #data-container
 {
-	margin-left: 15px;
+	margin-top: 10%;
+	margin-left: 6%;
 }
 
 
@@ -143,7 +152,7 @@ p
     margin-left: 2%;
 }
 
-.container input 
+.container input
 {
 	margin-left: 2%;
     height: 40px;
@@ -152,8 +161,17 @@ p
     font-size: 15px;
     margin-top: 5px;
     margin-bottom: 15px;
+
+}
+input:hover
+{
+	background-color: #ffff66;
 }
 
+select:hover
+{
+	background-color: #ffff66;
+}
 #mobile 
 {
 	padding-left: 10px;
@@ -180,9 +198,10 @@ p
 
 button
 {
+
 	margin-top: 55px;
-	height: 50px;
-	width: 270px;
+	min-width: 15%;
+	width: 15%;
 	background-color: yellow;
 	border: .5px solid black;
 	box-shadow: 10px 10px 5px teal;
@@ -210,7 +229,7 @@ span
 	box-shadow: 10px 10px 5px teal;
 	border: 2px solid black;
 	flex-grow: 1;
-	
+	background-color: #fcffcc;
 	border-spacing: 10px;
 	flex-wrap: wrap;
 	color:black;
@@ -219,6 +238,7 @@ span
 
 #cvv
 {
+	width: 12%;
 	padding-left: 10px;
 	width:100px;
 	
@@ -226,25 +246,63 @@ span
 #cardHolder
 {
 	padding-left: 10px;
-	width:400px;	
+	width:48%;	
 
 }
 #cardNum
 {
 	padding-left: 10px;
-	width:400px;
+	width:48%;
 }
 #email
 {
 	padding-left: 10px;
-	width:350px;
+	width:48%;
 }
 #country-code
 {
 	padding-left: 10px;
 	width:100px;
 }
-
-
+#booking
+{
+	width: auto;
+	 word-break: break-all;
+	flex-shrink: 1;
+	margin-left: 1%;
+	padding-top: 1%;
+	font-weight: bold;
+	padding-left: 1%;
+	padding-right: 1%;
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 2%;
+	margin-bottom: 7%;
+	justify-content: space-between;
+	
+}
+#booking p
+{
+	margin-right: 6px;
+}
+.glyphicon 
+{
+	color: blue;
+	position: relative;
+    top: 0px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+   
+}
+#data-container span
+{
+	color: #1a8cff;
+	margin-right: 2%;
+}
 
 

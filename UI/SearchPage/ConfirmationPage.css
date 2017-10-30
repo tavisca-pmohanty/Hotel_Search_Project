@@ -139,6 +139,10 @@ h1
 	justify-content: space-between;
 
 }
+input:visited
+{
+    background-color: lightyellow;
+}
 label
 {
     color:teal;
