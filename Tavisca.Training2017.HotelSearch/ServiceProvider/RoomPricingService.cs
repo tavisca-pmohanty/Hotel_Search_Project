@@ -17,7 +17,7 @@ namespace ServiceProvider
             {
                 var request = JsonConvert.DeserializeObject<RoomPricingRequest>(requestData);
                 DynamicRoomPricing roomPriceService = new DynamicRoomPricing();
-                var response = await roomPriceService.GetDynamicPricingAsync(request);
+                var response = await roomPriceService.GetResponseAsync(request);
                 var result = JsonConvert.SerializeObject(response);
                 return result;
             }

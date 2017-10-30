@@ -14,19 +14,14 @@ namespace ServiceProvider
     public class RoomInfoService :IHotelService
     {
 
-        List<IResponse> roomItinaries;
-        public RoomInfoService()
-        {
-            roomItinaries = new List<IResponse>();
-        }
-
+        IResponse roomItinaries;
         public async Task<string> GetRequestedDataAsync(string searchTerm)
         {
             try
             {
                 RoomSearch search = new RoomSearch();
                 var request = JsonConvert.DeserializeObject<RoomListingRequest>(searchTerm);
-                roomItinaries = await search.GetRoomDetailsAsync(request);
+                roomItinaries = await search.GetResponseAsync(request);
                 return JsonConvert.SerializeObject(roomItinaries);
             }
             catch(Exception ex)

@@ -12,20 +12,14 @@ namespace ServiceProvider
 {
     class HotelListingService:IHotelService
     {
-        List<IResponse> itineraries;
-        public HotelListingService()
-        {
-            itineraries = new List<IResponse>();
-        
-        }
-
+        IResponse itineraries;
         public async Task<string> GetRequestedDataAsync(string request)
         { 
             try
             {
                 HotelSearch search = new HotelSearch();
                 var hotelRequest = JsonConvert.DeserializeObject<HotelSearchRq>(request);
-                itineraries = await search.GetHotelListingAsync(hotelRequest);
+                itineraries = await search.GetResponseAsync(hotelRequest);
                 return JsonConvert.SerializeObject(itineraries);
             }
             catch(Exception ex)

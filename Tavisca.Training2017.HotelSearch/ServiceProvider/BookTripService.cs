@@ -19,7 +19,7 @@ namespace ServiceProvider
         {
             TripFolderClient tripFolder = new TripFolderClient();
             var request = JsonConvert.DeserializeObject<HotelSearchBookingRequest>(requestData);
-            var response = await tripFolder.GetTripFolderAsync(request);
+            var response = await tripFolder.GetResponseAsync(request);
             var responseData = JsonConvert.SerializeObject(response);
             return responseData;              
         }

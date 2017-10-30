@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine
 {
-    public class TripFolderClient
+    public class TripFolderClient:IResponseService
     {
         TripsEngineClient tripsEngineClient;
         IResponse bookTripFolderResponse;
@@ -21,12 +21,13 @@ namespace HotelSearchEngine
              tripsEngineClient = new TripsEngineClient();
             bookTripFolderResponse = new BookTripFolderResponse();
         }
-        public async Task<IResponse> GetTripFolderAsync(HotelSearchBookingRequest request)
+        public async Task<IResponse> GetResponseAsync(IRequest request)
         {
             try
             {
+                HotelSearchBookingRequest hotelSearchBookingRequest = (HotelSearchBookingRequest)request;
                 tripsEngineClient = new TripsEngineClient();
-                TripFolderBookRQ tripFolderBookRQ = await new TripFolderBookRQparser().ParserAsync(request);
+                TripFolderBookRQ tripFolderBookRQ = await new TripFolderBookRQparser().ParserAsync(hotelSearchBookingRequest);
                 TripFolderBookRS response = await tripsEngineClient.BookTripFolderAsync(tripFolderBookRQ);
                 CacheTripFolderResponse(response);
                 bookTripFolderResponse = await new BookTripFolderResponseParser().ParserAsync(response);

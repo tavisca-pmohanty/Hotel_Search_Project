@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HotelEngienSearch
 {
-    public class HotelSearchRq
+    public class HotelSearchRq:IRequest
     {
         public HotelSuggestionRS SelectedHotel { get; set; }
         public DateTime InDate { get; set; }

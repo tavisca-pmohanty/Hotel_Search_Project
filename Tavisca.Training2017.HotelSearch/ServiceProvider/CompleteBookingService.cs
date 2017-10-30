@@ -18,9 +18,7 @@ namespace ServiceProvider
             {
                 var request = JsonConvert.DeserializeObject<CompleteBookingRequest>(requestData);
                 HotelCompleteBooking hotelCompleteBooking = new HotelCompleteBooking();
-                var response = await hotelCompleteBooking.CompleteHotelBooking(request);
-         
-
+                var response = await hotelCompleteBooking.GetResponseAsync(request);
                 return JsonConvert.SerializeObject(response);
             }
             catch (Exception ex)

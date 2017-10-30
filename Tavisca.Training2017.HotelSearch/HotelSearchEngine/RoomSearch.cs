@@ -10,22 +10,21 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine
 {
-    public class RoomSearch
+    public class RoomSearch:IResponseService
     {
-        List<IResponse> roomList;
+        IResponse roomList;
         HotelEngineClient client ;
         public RoomSearch()
         {
-            roomList = new List<IResponse>();
             client = new HotelEngineClient();
         }
-        public async Task<List<IResponse>> GetRoomDetailsAsync(RoomListingRequest request)
+        public async Task<IResponse> GetResponseAsync(IRequest request)
         {
           
             try
             {
-                
-                HotelRoomAvailRQ roomAvailRequest = await new RoomRequestParser().ParserAsync(request);
+                RoomListingRequest roomListingRequest = (RoomListingRequest)request;
+                HotelRoomAvailRQ roomAvailRequest = await new RoomRequestParser().ParserAsync(roomListingRequest);
                 HotelRoomAvailRS response = await client.HotelRoomAvailAsync(roomAvailRequest);
                 CachingItinerary(response.SessionId, response.Itinerary);
                 roomList = await new RoomResponseParser().ParserAsync(response.SessionId,response.Itinerary);

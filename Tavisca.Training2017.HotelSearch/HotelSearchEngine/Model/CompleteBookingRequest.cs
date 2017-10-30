@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HotelSearchEngine.Model
 {
-    public class CompleteBookingRequest
+    public class CompleteBookingRequest:IRequest
     {
         public string SessionId { get; set; }
     }

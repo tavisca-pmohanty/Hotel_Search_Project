@@ -2,7 +2,8 @@
 $(document).ready(function(){
                 
     var data=sessionStorage.getItem('RoomListing');
-   var roomItinerary= JSON.parse(data);
+    var roomData=JSON.parse(data);
+   var roomItinerary= roomData.HotelRoomList;
 
         var typeOfRooms= new Array();
          var commonData= new Array();

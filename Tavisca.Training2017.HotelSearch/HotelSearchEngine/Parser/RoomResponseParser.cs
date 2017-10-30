@@ -10,17 +10,17 @@ namespace HotelSearchEngine.Parser
 {
     class RoomResponseParser
     {
-        List<IResponse> roomList;
+        HotelRoomAvailResponse roomList;
         public RoomResponseParser()
         {
-            roomList = new List<IResponse>();
+            roomList = new HotelRoomAvailResponse();
         }
-        public async Task<List<IResponse>> ParserAsync(string sessionId,HotelItinerary hotelItinerary)
+        public async Task<IResponse> ParserAsync(string sessionId,HotelItinerary hotelItinerary)
         {
             
             foreach(var room in hotelItinerary.Rooms)
             {
-                HotelRoomAvailResponse hotelRoomAvailResponse = new HotelRoomAvailResponse();
+                HotelRoomAvailData hotelRoomAvailResponse = new HotelRoomAvailData();
                 hotelRoomAvailResponse.SessionId = sessionId;
                 hotelRoomAvailResponse.CurrencyType = room.DisplayRoomRate.TotalFare.Currency;
                 hotelRoomAvailResponse.Description = room.RoomDescription;
@@ -40,7 +40,7 @@ namespace HotelSearchEngine.Parser
                 hotelRoomAvailResponse.NumOfRooms = hotelSearchCriterion.NoOfRooms;
                 hotelRoomAvailResponse.Latitude = hotelSearchCriterion.Location.GeoCode.Latitude;
                 hotelRoomAvailResponse.Longitude = hotelSearchCriterion.Location.GeoCode.Longitude;
-                roomList.Add(hotelRoomAvailResponse);
+                roomList.HotelRoomList.Add(hotelRoomAvailResponse);
             }
             return roomList;
         }

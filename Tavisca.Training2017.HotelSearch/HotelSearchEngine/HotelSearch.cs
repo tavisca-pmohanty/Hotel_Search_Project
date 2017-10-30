@@ -6,25 +6,27 @@ using Logger;
 using HotelSearchEngine.Parser;
 using Cache.CacheData;
 using HotelSearchEngine.Contracts;
+using HotelSearchEngine.Model;
 
 namespace HotelSearchEngine
 {
-    public class HotelSearch
+    public class HotelSearch:IResponseService
     {
-        List<IResponse> itineraryList;
+        IResponse itineraryList;
         HotelEngineClient client;
         public HotelSearch()
         {
-           
-            itineraryList = new List<IResponse>();
+
+            itineraryList = new HotelListingResponse();
             client = new HotelEngineClient();
         }
-        public async Task<List<IResponse>> GetHotelListingAsync(HotelSearchRq request)
+        public async Task<IResponse> GetResponseAsync(IRequest request)
         {
             
             try
             {
-                HotelSearchRQ searchRequest = await new HotelRequestParser().ParserAsync(request);
+                HotelSearchRq hotelSearchRq = (HotelSearchRq)request; 
+                HotelSearchRQ searchRequest = await new HotelRequestParser().ParserAsync(hotelSearchRq);
                 HotelSearchRS response = await client.HotelAvailAsync(searchRequest);
                 CachingHotelSearchCriterion(searchRequest.SessionId, searchRequest.HotelSearchCriterion);
                 itineraryList = await new HotelListingResponseParser().ParserAsync(response);
