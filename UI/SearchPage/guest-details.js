@@ -26,6 +26,57 @@ var template = $('#itinerary-details');
         $("#booking").attr("disabled","disabled");
   			var cardNumber=$("#cardNum").val();
   			var cvv=$("#cvv").val();
+            if(!ValidateCard(cardNumber))
+                {
+                 
+                    alert("please Enter Valid Card Number");
+                    $("#booking").removeAttr("disabled");
+                    return;
+                    
+                }
+
+  function ValidateCard(number) 
+      {
+          
+          var num= number.length;
+          if(num>12 && num<20)
+          {
+               var regex = new RegExp("^[0-9]{num}$");
+               if (!regex.test(number))
+                   {
+                      return false;
+                   }
+              
+              return luhnCheck(number);
+          }
+          else
+              {
+          return false;
+              }
+    }             
+     function luhnCheck(val) 
+      {
+       var sum = 0;
+            for (var i = 0; i < val.length; i++) 
+            {
+               var intVal = parseInt(val.substr(i, 1));
+                   if (i % 2 == 0) {
+                         intVal *= 2;
+                        if (intVal > 9) 
+                        {
+                          intVal = 1 + (intVal % 10);
+                               }
+        }
+        sum += intVal;
+        }
+              return (sum % 10) == 0;
+                     
+
+
+    }
+      
+  			var cvv=$("#cvv").val();
+      
   			var mobileNum=$("#mobile").val();
   			var expiryMonth=$("#expiryMonth option:selected").val();
   			var expiryYear=$("#expiryYear option:selected").val();
@@ -89,7 +140,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-                 url: "http://localhost:64160/book/tripfolder/booktrip",
+                 url: "http://localhost:64512/book/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -111,7 +162,7 @@ var template = $('#itinerary-details');
                   'Content-Type': 'application/json' 
            },
                  type: "POST",
-                 url: "http://localhost:64160/complete/booking/bookingcomplete",
+                 url: "http://localhost:64512/complete/booking/bookingcomplete",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
