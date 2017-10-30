@@ -5,20 +5,21 @@ using System.Threading.Tasks;
 using Logger;
 using HotelSearchEngine.Parser;
 using Cache.CacheData;
+using HotelSearchEngine.Contracts;
 
 namespace HotelSearchEngine
 {
     public class HotelSearch
     {
-        List<HotelListingResponse> itineraryList;
+        List<IResponse> itineraryList;
         HotelEngineClient client;
         public HotelSearch()
         {
            
-            itineraryList = new List<HotelListingResponse>();
+            itineraryList = new List<IResponse>();
             client = new HotelEngineClient();
         }
-        public async Task<List<HotelListingResponse>> GetHotelListingAsync(HotelSearchRq request)
+        public async Task<List<IResponse>> GetHotelListingAsync(HotelSearchRq request)
         {
             
             try

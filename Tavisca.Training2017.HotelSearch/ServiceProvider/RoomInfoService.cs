@@ -1,5 +1,6 @@
 ﻿using HotelEngienSearch;
 using HotelSearchEngine;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using Logger;
 using Newtonsoft.Json;
@@ -13,10 +14,10 @@ namespace ServiceProvider
     public class RoomInfoService :IHotelService
     {
 
-        List<HotelRoomAvailResponse> roomItinaries;
+        List<IResponse> roomItinaries;
         public RoomInfoService()
         {
-            roomItinaries = new List<HotelRoomAvailResponse>();
+            roomItinaries = new List<IResponse>();
         }
 
         public async Task<string> GetRequestedDataAsync(string searchTerm)

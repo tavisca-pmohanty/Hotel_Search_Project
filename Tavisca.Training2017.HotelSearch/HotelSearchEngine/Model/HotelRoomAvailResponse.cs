@@ -1,11 +1,12 @@
 ﻿using HotelEngienSearch;
+using HotelSearchEngine.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HotelSearchEngine.Model
 {
-    public class HotelRoomAvailResponse
+    public class HotelRoomAvailResponse:IResponse
     {
         public string SessionId { get; set; }
         public string ImageUrl { get; set; }

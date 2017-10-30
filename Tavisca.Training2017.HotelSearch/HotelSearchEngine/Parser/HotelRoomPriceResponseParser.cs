@@ -1,5 +1,6 @@
 ﻿
 using APITripEngine;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace HotelSearchEngine.Parser
         {
             response = new HotelRoomPriceResponse();
         }
-        public async Task<HotelRoomPriceResponse> ParserAsync(TripProductPriceRS roomPriceRS)
+        public async Task<IResponse> ParserAsync(TripProductPriceRS roomPriceRS)
         {
             HotelTripProduct hotelTripProduct = (HotelTripProduct)roomPriceRS.TripProduct;
             HotelItinerary hotelItinerary = hotelTripProduct.HotelItinerary;

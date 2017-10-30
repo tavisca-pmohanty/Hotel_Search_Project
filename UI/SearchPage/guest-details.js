@@ -127,7 +127,7 @@ var template = $('#itinerary-details');
                     Console.log(e);
          }
          function getSuccess(completeBookingResponseData) {
-              if(completeBookingResponseData!=null)
+              if(completeBookingResponseData.Status=="Success")
               {
                 var responseData={
                   data:completeBookingResponseData,

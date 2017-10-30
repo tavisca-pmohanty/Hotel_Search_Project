@@ -1,4 +1,5 @@
 ﻿using APITripEngine;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using HotelSearchEngine.Parser;
 using Logger;
@@ -13,11 +14,13 @@ namespace HotelSearchEngine
     public class HotelCompleteBooking
     {
         TripsEngineClient tripsEngineClient;
+        IResponse completeBookingResponse;
         public HotelCompleteBooking()
         {
+            completeBookingResponse = new CompleteBookingResponse();
             tripsEngineClient =new TripsEngineClient();
         }
-        public async Task<CompleteBookingResponse> CompleteHotelBooking(CompleteBookingRequest request)
+        public async Task<IResponse> CompleteHotelBooking(CompleteBookingRequest request)
         {
 
             try
@@ -25,7 +28,7 @@ namespace HotelSearchEngine
               
                 CompleteBookingRQ completeBookingRQ = await new CompleteBookingRequestParser().ParserAsync(request);
                 CompleteBookingRS completeBookingRS = await tripsEngineClient.CompleteBookingAsync(completeBookingRQ);
-                CompleteBookingResponse completeBookingResponse = await new CompleteBookingResponseParser().ResponseParserAsync(completeBookingRS);
+                completeBookingResponse = await new CompleteBookingResponseParser().ResponseParserAsync(completeBookingRS);
                 return completeBookingResponse;
             }
             catch(Exception ex)

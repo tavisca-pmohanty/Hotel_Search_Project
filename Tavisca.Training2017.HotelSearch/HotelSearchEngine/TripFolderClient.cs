@@ -1,5 +1,6 @@
 ﻿using APITripEngine;
 using HotelSearchEngine.CacheData;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using HotelSearchEngine.Models;
 using HotelSearchEngine.Parser;
@@ -14,11 +15,13 @@ namespace HotelSearchEngine
     public class TripFolderClient
     {
         TripsEngineClient tripsEngineClient;
+        IResponse bookTripFolderResponse;
         public TripFolderClient()
         {
              tripsEngineClient = new TripsEngineClient();
+            bookTripFolderResponse = new BookTripFolderResponse();
         }
-        public async Task<BookTripFolderResponse> GetTripFolderAsync(HotelSearchBookingRequest request)
+        public async Task<IResponse> GetTripFolderAsync(HotelSearchBookingRequest request)
         {
             try
             {
@@ -26,7 +29,7 @@ namespace HotelSearchEngine
                 TripFolderBookRQ tripFolderBookRQ = await new TripFolderBookRQparser().ParserAsync(request);
                 TripFolderBookRS response = await tripsEngineClient.BookTripFolderAsync(tripFolderBookRQ);
                 CacheTripFolderResponse(response);
-                BookTripFolderResponse bookTripFolderResponse = await new BookTripFolderResponseParser().ParserAsync(response);
+                bookTripFolderResponse = await new BookTripFolderResponseParser().ParserAsync(response);
                 return bookTripFolderResponse;
             }
             catch(Exception ex)
