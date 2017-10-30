@@ -41,7 +41,7 @@ var template = $('#itinerary-details');
           var num= number.length;
           if(num>12 && num<20)
           {
-              var regex = new RegExp("^[0-9]{16}$");
+               var regex = new RegExp("^[0-9]{16}$");
                if (!regex.test(number))
                
                    return false;
@@ -114,6 +114,12 @@ var template = $('#itinerary-details');
   				alert("Please enter a valid expiration year");
   				return;
   			}
+        if(ValidateEmail(emailId)==false)
+          {
+              $("#booking").removeAttr("disabled");
+  				alert("Please enter a valid email ID");
+  				return;
+          }
         
         var guestDetails={
           GuestFirstName:guestFirstName,
@@ -139,7 +145,7 @@ var template = $('#itinerary-details');
         					'Content-Type': 'application/json' 
    				 },
                  type: "POST",
-                 url: "http://localhost:53552/book/tripfolder/booktrip",
+                 url: "http://localhost:64512/book/tripfolder/booktrip",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -161,7 +167,7 @@ var template = $('#itinerary-details');
                   'Content-Type': 'application/json' 
            },
                  type: "POST",
-                 url: "http://localhost:53552/complete/booking/bookingcomplete",
+                 url: "http://localhost:64512/complete/booking/bookingcomplete",
                  cache: false,
                  data:JSON.stringify(data),
                 dataType: 'json',
@@ -199,5 +205,13 @@ var template = $('#itinerary-details');
          }
 
          }
+      function ValidateEmail(mail)   
+      {  
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))  
+        {  
+            return (true);  
+        }  
+            return (false);  
+      }  
   });
 });
