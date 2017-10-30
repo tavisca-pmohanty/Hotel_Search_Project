@@ -77,7 +77,7 @@
     color:white;
     background-color: black;
     text-align: center;
-    text-decoration: underline;
+    
     text-decoration-color: teal;
     font-size: 255%;
   }
@@ -107,7 +107,10 @@
     flex-direction: column;
     flex-shrink: 1;
     flex-wrap: wrap;
-    margin-left: 14%;   
+    margin-left: 14%;
+    font: italic bold 12px/30px Georgia, serif;
+    width: 104%;   
+
   }
   .layout
 {
@@ -172,6 +175,7 @@
     font-size: 25px;
     flex-shrink: 1;
     flex-wrap: wrap;
+
    
   }
   #hotel-price
@@ -210,12 +214,15 @@
     display: inline;
     flex-shrink: 3;
     height: auto;
-    margin-top: 65%; 
+    margin-top: 5%;
     font-weight: bold;
     background-color: #272020;
     color: white;
     flex-flow: row;
     margin-bottom: 10px;
+    margin-left: -3%;
+    width: 100%;
+
 }       
   #welcome-page
   {
@@ -322,4 +329,8 @@ input[type=radio] {
 }
 #hotelDescription{
     font-size: 15px;
+
+    
+    flex-wrap: wrap;
+    flex-shrink: 1;
 }

@@ -116,10 +116,12 @@ p
 #data-container
 {
     margin-left: 3%;
-    
+    font: italic bold 12px/30px Georgia, serif;   
     margin-top: 3px;
     flex-wrap: wrap;
     flex-shrink: 1;
+        width: 70%;
+
 }
 #hotel-image
 {   
