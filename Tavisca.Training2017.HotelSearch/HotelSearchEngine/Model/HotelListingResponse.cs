@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HotelSearchEngine.Model
 {
-    class HotelListingResponse:IResponse
+    public class HotelListingResponse:IResponse
     {
         public List<HotelListingData> HotelListingList { get; set; }
         public HotelListingResponse()
