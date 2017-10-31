@@ -8,20 +8,21 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine.Parser
 {
-    class RoomResponseParser
+    class RoomResponseParser:IParser
     {
         HotelRoomAvailResponse roomList;
         public RoomResponseParser()
         {
             roomList = new HotelRoomAvailResponse();
         }
-        public async Task<IResponse> ParserAsync(string sessionId,HotelItinerary hotelItinerary)
+        public async Task<IResponse> ParserAsync(IRequest request)
         {
-            
+            HotelRoomAvailRS hotelRoomAvailRS = (HotelRoomAvailRS)request;
+            HotelItinerary hotelItinerary = hotelRoomAvailRS.Itinerary;
             foreach(var room in hotelItinerary.Rooms)
             {
                 HotelRoomAvailData hotelRoomAvailResponse = new HotelRoomAvailData();
-                hotelRoomAvailResponse.SessionId = sessionId;
+                hotelRoomAvailResponse.SessionId = hotelRoomAvailRS.SessionId;
                 hotelRoomAvailResponse.CurrencyType = room.DisplayRoomRate.TotalFare.Currency;
                 hotelRoomAvailResponse.Description = room.RoomDescription;
                 hotelRoomAvailResponse.Price = room.DisplayRoomRate.TotalFare.Amount;
@@ -36,7 +37,7 @@ namespace HotelSearchEngine.Parser
                     }
                 }
                 hotelRoomAvailResponse.HotelName = hotelItinerary.HotelProperty.Name;
-                HotelEngienSearch.HotelSearchCriterion hotelSearchCriterion = GetCachedCriterion(sessionId);
+                HotelEngienSearch.HotelSearchCriterion hotelSearchCriterion = GetCachedCriterion(hotelRoomAvailRS.SessionId);
                 hotelRoomAvailResponse.NumOfRooms = hotelSearchCriterion.NoOfRooms;
                 hotelRoomAvailResponse.Latitude = hotelSearchCriterion.Location.GeoCode.Latitude;
                 hotelRoomAvailResponse.Longitude = hotelSearchCriterion.Location.GeoCode.Longitude;

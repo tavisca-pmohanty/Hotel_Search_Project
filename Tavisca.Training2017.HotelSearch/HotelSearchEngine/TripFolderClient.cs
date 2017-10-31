@@ -25,9 +25,8 @@ namespace HotelSearchEngine
         {
             try
             {
-                HotelSearchBookingRequest hotelSearchBookingRequest = (HotelSearchBookingRequest)request;
                 tripsEngineClient = new TripsEngineClient();
-                TripFolderBookRQ tripFolderBookRQ = await new TripFolderBookRQparser().ParserAsync(hotelSearchBookingRequest);
+                TripFolderBookRQ tripFolderBookRQ =(TripFolderBookRQ) await new TripFolderBookRQparser().ParserAsync(request);
                 TripFolderBookRS response = await tripsEngineClient.BookTripFolderAsync(tripFolderBookRQ);
                 CacheTripFolderResponse(response);
                 bookTripFolderResponse = await new BookTripFolderResponseParser().ParserAsync(response);

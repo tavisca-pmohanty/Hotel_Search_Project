@@ -11,15 +11,16 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine.Parser
 {
-    class HotelRoomPriceResponseParser
+    class HotelRoomPriceResponseParser:IParser
     {
         HotelRoomPriceResponse response;
         public HotelRoomPriceResponseParser()
         {
             response = new HotelRoomPriceResponse();
         }
-        public async Task<HotelRoomPriceResponse> ParserAsync(TripProductPriceRS roomPriceRS)
+        public async Task<IResponse> ParserAsync(IRequest request)
         {
+            TripProductPriceRS roomPriceRS = (TripProductPriceRS)request;
             HotelTripProduct hotelTripProduct = (HotelTripProduct)roomPriceRS.TripProduct;
             HotelItinerary hotelItinerary = hotelTripProduct.HotelItinerary;
             response.CheckInDate = hotelItinerary.StayPeriod.Start;

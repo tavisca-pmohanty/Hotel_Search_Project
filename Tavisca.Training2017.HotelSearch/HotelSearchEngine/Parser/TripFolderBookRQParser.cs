@@ -1,6 +1,7 @@
 ﻿
 using APITripEngine;
 using Cache.CacheData;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Models;
 using Newtonsoft.Json;
 using System;
@@ -11,11 +12,12 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine.Parser
 {
-    public class TripFolderBookRQparser
+    public class TripFolderBookRQparser:IParser
     {
 
-        public async Task<TripFolderBookRQ> ParserAsync(HotelSearchBookingRequest request)
+        public async Task<IResponse> ParserAsync(IRequest requestData)
         {
+            HotelSearchBookingRequest request = (HotelSearchBookingRequest)requestData;
             List<HotelCancellationRule> cancellationRuleList = new List<HotelCancellationRule>();
             string jsonItinerary = JsonConvert.SerializeObject(GetCachedItinerary(request.SessionId));
             HotelItinerary itinerary = JsonConvert.DeserializeObject<APITripEngine.HotelItinerary>(jsonItinerary);

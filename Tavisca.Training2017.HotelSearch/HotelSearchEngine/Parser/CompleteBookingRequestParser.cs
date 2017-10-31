@@ -1,5 +1,6 @@
 ﻿using APITripEngine;
 using HotelSearchEngine.CacheData;
+using HotelSearchEngine.Contracts;
 using HotelSearchEngine.Model;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,11 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine.Parser
 {
-    public class CompleteBookingRequestParser
+    public class CompleteBookingRequestParser:IParser
     {
-        public async Task<CompleteBookingRQ> ParserAsync(CompleteBookingRequest completeBookingRequest)
+        public async Task<IResponse> ParserAsync(IRequest requestData)
         {
+            CompleteBookingRequest completeBookingRequest = (CompleteBookingRequest)requestData;
             TripFolderBookRS request = GetCachedTripFolderBookRS(completeBookingRequest.SessionId);
             CompleteBookingRQ completeBookingRQ = new CompleteBookingRQ();
             completeBookingRQ.SessionId = request.SessionId;

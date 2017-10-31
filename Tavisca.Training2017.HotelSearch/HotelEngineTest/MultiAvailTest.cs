@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using Tavisca.Training2017.HotelSearch.Controllers;
 using System.Threading.Tasks;
 using HotelSearchEngine.Contracts;
+using HotelSearchEngine.Model;
+using AutoComplete.Model;
 
 namespace HotelEngineTest
 {
@@ -31,9 +33,9 @@ namespace HotelEngineTest
             request.SelectedHotel.SearchType = "City";
             request.SelectedHotel.StateCode = "";
             HotelSearch search = new HotelSearch();
-            List<IResponse> hotelItinerary = await search.GetHotelListingAsync(request);
+            HotelListingResponse hotelItinerary =(HotelListingResponse) await search.GetResponseAsync(request);
             bool itemsInList = false;
-            if (hotelItinerary.Count > 0)
+            if (hotelItinerary.HotelListingList.Count >= 0)
             {
                 itemsInList = true;
             }

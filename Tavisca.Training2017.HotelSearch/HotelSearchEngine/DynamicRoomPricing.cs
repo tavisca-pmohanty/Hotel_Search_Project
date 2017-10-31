@@ -26,8 +26,7 @@ namespace HotelSearchEngine
         {
             try
             {
-                RoomPricingRequest roomPricingRequest = (RoomPricingRequest)request;
-                TripProductPriceRQ tripProductPriceRQ = await new TripProductPriceRequestParser().ParserAsync(roomPricingRequest);
+                TripProductPriceRQ tripProductPriceRQ = (TripProductPriceRQ)await new TripProductPriceRequestParser().ParserAsync(request);
                 TripProductPriceRS response = await client.PriceTripProductAsync(tripProductPriceRQ);
                 hotelRoomPriceResponse = await new HotelRoomPriceResponseParser().ParserAsync(response);
                 HotelTripProduct hotelTripProduct = (HotelTripProduct)response.TripProduct;

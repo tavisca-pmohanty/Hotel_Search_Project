@@ -1,10 +1,11 @@
 ﻿using HotelEngienSearch;
 using System.Threading.Tasks;
 using Cache.CacheData;
+using HotelSearchEngine.Contracts;
 
 namespace HotelSearchEngine
 {
-    public class RoomRequestParser
+    public class RoomRequestParser:IParser
     {
         HotelRoomAvailRQ roomRequest;
         public RoomRequestParser()
@@ -12,8 +13,9 @@ namespace HotelSearchEngine
             roomRequest = new HotelRoomAvailRQ();
          
         }
-        public async Task<HotelRoomAvailRQ> ParserAsync(RoomListingRequest request)
+        public async Task<IResponse> ParserAsync(IRequest requestData)
         {
+            RoomListingRequest request = (RoomListingRequest)requestData;
             HotelItinerary hotelItinerary = GetCachedItinerary(request.SessionId, request.HotelName);
             HotelSearchCriterion hotelSearchCriterion = GetCachedCriterion(request.SessionId);
             roomRequest.ResultRequested = ResponseType.Complete;

@@ -22,12 +22,11 @@ namespace HotelSearchEngine
         {
           
             try
-            {
-                RoomListingRequest roomListingRequest = (RoomListingRequest)request;
-                HotelRoomAvailRQ roomAvailRequest = await new RoomRequestParser().ParserAsync(roomListingRequest);
+            { 
+                HotelRoomAvailRQ roomAvailRequest =(HotelRoomAvailRQ) await new RoomRequestParser().ParserAsync(request);
                 HotelRoomAvailRS response = await client.HotelRoomAvailAsync(roomAvailRequest);
                 CachingItinerary(response.SessionId, response.Itinerary);
-                roomList = await new RoomResponseParser().ParserAsync(response.SessionId,response.Itinerary);
+                roomList = await new RoomResponseParser().ParserAsync(response);
                 return roomList;
             }
             catch (Exception ex)
