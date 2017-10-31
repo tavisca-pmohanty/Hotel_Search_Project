@@ -7,18 +7,20 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using HotelEngienSearch;
+using HotelSearchEngine.Contracts;
 
 namespace HotelSearchEngine.Parser
 {
-    class TripProductPriceRequestParser
+    class TripProductPriceRequestParser:IParser
     {
         TripProductPriceRQ pricingRequest;
         public TripProductPriceRequestParser()
         {
             pricingRequest = new TripProductPriceRQ();
         }
-        public async Task<TripProductPriceRQ> ParserAsync(RoomPricingRequest request)
+        public async Task<IResponse> ParserAsync(IRequest requestData)
         {
+            RoomPricingRequest request = (RoomPricingRequest)requestData;
             HotelEngienSearch.HotelItinerary itinerary = GetCachedItinerary(request.SessionId);
             HotelEngienSearch.Room roomDetails = new HotelEngienSearch.Room();
             for (int i = 0; i < itinerary.Rooms.Length; i++)

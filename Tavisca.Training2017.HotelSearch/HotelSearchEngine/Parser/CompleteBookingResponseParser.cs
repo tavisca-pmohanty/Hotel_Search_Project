@@ -12,15 +12,16 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine.Parser
 {
-    public class CompleteBookingResponseParser
+    public class CompleteBookingResponseParser:IParser
     {
        CompleteBookingResponse completeBookingResponse;
         public CompleteBookingResponseParser()
         {
             completeBookingResponse = new CompleteBookingResponse();
         }
-        public async Task<IResponse> ResponseParserAsync(CompleteBookingRS completeBookingRS)
+        public async Task<IResponse> ParserAsync(IRequest request)
         {
+            CompleteBookingRS completeBookingRS = (CompleteBookingRS)request;
             completeBookingResponse.TransactionId = completeBookingRS.SessionId;
             HotelTripProduct product = (HotelTripProduct)completeBookingRS.TripFolder.Products[0];
             completeBookingResponse.HotelName = product.HotelItinerary.HotelProperty.Name;

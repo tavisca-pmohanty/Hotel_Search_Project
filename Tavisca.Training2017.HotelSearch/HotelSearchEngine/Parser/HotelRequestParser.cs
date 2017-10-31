@@ -1,4 +1,5 @@
 ﻿using HotelEngienSearch;
+using HotelSearchEngine.Contracts;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine
 {
-    class HotelRequestParser
+    class HotelRequestParser:IParser
     {
         private readonly bool _AvailableItineraries = true;
         private readonly int _maxResults = 1500;
@@ -58,9 +59,9 @@ namespace HotelSearchEngine
         private readonly int _defaultPagingInfoEndNumber = 0;
         private readonly int _defaultTotalRecordsBeforeFiltering = 0;
         private readonly int _defaultTotalResults = 0;
-        public async Task<HotelSearchRQ> ParserAsync(HotelSearchRq request)
+        public async Task<IResponse> ParserAsync(IRequest requestData)
         {
-
+            HotelSearchRq request = (HotelSearchRq)requestData;
             HotelSearchRQ listingRequest = new HotelSearchRQ();
             //listingRequest.SessionId = Guid.NewGuid().ToString();
             listingRequest.ResultRequested = ResponseType.Complete;

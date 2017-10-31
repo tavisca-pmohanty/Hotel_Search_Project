@@ -26,7 +26,7 @@ namespace HotelSearchEngine
             try
             {
                 HotelSearchRq hotelSearchRq = (HotelSearchRq)request; 
-                HotelSearchRQ searchRequest = await new HotelRequestParser().ParserAsync(hotelSearchRq);
+                HotelSearchRQ searchRequest = (HotelSearchRQ)await new HotelRequestParser().ParserAsync(hotelSearchRq);
                 HotelSearchRS response = await client.HotelAvailAsync(searchRequest);
                 CachingHotelSearchCriterion(searchRequest.SessionId, searchRequest.HotelSearchCriterion);
                 itineraryList = await new HotelListingResponseParser().ParserAsync(response);

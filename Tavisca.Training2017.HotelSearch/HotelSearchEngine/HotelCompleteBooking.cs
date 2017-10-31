@@ -29,10 +29,9 @@ namespace HotelSearchEngine
 
             try
             {
-                CompleteBookingRequest completeBookingRequest = (CompleteBookingRequest)request;
-                CompleteBookingRQ completeBookingRQ = await new CompleteBookingRequestParser().ParserAsync(completeBookingRequest);
+                CompleteBookingRQ completeBookingRQ = (CompleteBookingRQ)await new CompleteBookingRequestParser().ParserAsync(request);
                 CompleteBookingRS completeBookingRS = await tripsEngineClient.CompleteBookingAsync(completeBookingRQ);
-                completeBookingResponse = await new CompleteBookingResponseParser().ResponseParserAsync(completeBookingRS);
+                completeBookingResponse = await new CompleteBookingResponseParser().ParserAsync(completeBookingRS);
                 CompleteBookingResponse response = (CompleteBookingResponse)completeBookingResponse;
                 if (response.Status == "Success")
                 {

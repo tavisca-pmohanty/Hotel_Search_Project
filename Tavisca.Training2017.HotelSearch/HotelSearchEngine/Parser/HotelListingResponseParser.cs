@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine.Parser
 {
-    class HotelListingResponseParser
+    class HotelListingResponseParser:IParser
     {
         HotelListingResponse hotelListingResponseList;
         public HotelListingResponseParser()
         {
             hotelListingResponseList = new HotelListingResponse();
         }
-        public async Task<IResponse> ParserAsync(HotelSearchRS hotelSearchRS)
+        public async Task<IResponse> ParserAsync(IRequest request)
         {
+            HotelSearchRS hotelSearchRS = (HotelSearchRS)request;
            
            for(int i=0;i<hotelSearchRS.Itineraries.Length;i++)
             {
