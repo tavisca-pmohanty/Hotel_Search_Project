@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SmsGenerator;
 using Newtonsoft.Json;
+using Logger;
 
 namespace ServiceProvider
 {
@@ -17,8 +18,16 @@ namespace ServiceProvider
 
         public async Task<string> GetRequestedDataAsync(string searchTerm)
         {
-           var response= await smsNotification.GetMessage(searchTerm);
-            return JsonConvert.SerializeObject(response);
+            try
+            {
+                var response = await smsNotification.GetMessage(searchTerm);
+                return JsonConvert.SerializeObject(response);
+            }
+            catch (Exception ex)
+            {
+                Log.LogError(ex);
+                throw ex;
+            }
         }
     }
 }
