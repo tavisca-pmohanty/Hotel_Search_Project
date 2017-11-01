@@ -64,38 +64,14 @@ Handlebars.registerHelper('times', function (n, block) {
 					}
 				}
 						data=JSON.stringify(data);
-						 try
-						  {
-					             $.ajax({
-					                headers: 
-					                { 
-						       		 	'Accept': 'application/json',
-						        		'Content-Type': 'application/json' 
-					    			},
-					                 type: "POST",
-					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
-					                 cache: false,
-					                 data:JSON.stringify(data),
-					                 dataType: 'json',
-					                
-					                 success: getSuccess,
-					                 crossDomain:true,
-					             });
-					      } 
-					    catch (e)
-					     {
-					         	alert("Sorry some unknown Error Occured...Please try again later.");
-					         	Console.log(e);
-					     }
-			         function getSuccess(data)
-			          {
+						 sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",data,function(result){
 			             
-			            	var roomItineraries=data;
+			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
              				window.location="roomDetail.html";
 						  
-					}
+					});
 		});
         
         
@@ -146,36 +122,12 @@ Handlebars.registerHelper('times', function (n, block) {
 					}
 				}
 				data=JSON.stringify(data);
-						try
-						{
-					             $.ajax({
-					                headers: 
-					                { 
-						       		 	'Accept': 'application/json',
-						        		'Content-Type': 'application/json' 
-					    			},
-					                 type: "POST",
-					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
-					                 cache: false,
-					                 data:JSON.stringify(data),
-					                 dataType: 'json',
-					                
-					                 success: getSuccess,
-					                 crossDomain:true,
-					            });
-					    } 
-					    catch (e)
-					  	{
-					         	alert(e);
-					    }
-			         function getSuccess(data)
-				        {
-			             
-			            	var roomItineraries=data;
+						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",data,function(result){
+			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
              				window.location="roomDetail.html";
-						}
+						});
 		});
 	});
 
@@ -309,37 +261,13 @@ Handlebars.registerHelper('times', function (n, block) {
 					}
 				}
 				data=JSON.stringify(data);
-						try
-						{
-					             $.ajax({
-					                headers: 
-					                { 
-						       		 	'Accept': 'application/json',
-						        		'Content-Type': 'application/json' 
-					    			},
-					                 type: "POST",
-					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
-					                 cache: false,
-					                 data:JSON.stringify(data),
-					                 dataType: 'json',
-					                
-					                 success: getSuccess,
-					                 crossDomain:true,
-					            });
-					    } 
-					    catch (e)
-					     {
-					         	alert("Sorry some unknown Error Occured...Please try again later.");
-					         	Console.log(e);
-					     }
-			         function getSuccess(data)
-				        {
+						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",data,function(result){
 			             
-			            	var roomItineraries=data;
+			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
              				window.location="roomDetail.html";
-						}
+						});
 		});
 	  });
 	  
@@ -373,36 +301,13 @@ Handlebars.registerHelper('times', function (n, block) {
 					}
 				}
 				data=JSON.stringify(data);
-						try
-						{
-					             $.ajax({
-					                headers: 
-					                { 
-						       		 	'Accept': 'application/json',
-						        		'Content-Type': 'application/json' 
-					    			},
-					                 type: "POST",
-					                 url: "http://localhost:53552/index/HotelListing/search/GetHotelRooms",
-					                 cache: false,
-					                 data:JSON.stringify(data),
-					                 dataType: 'json',
-					                
-					                 success: getSuccess,
-					                 crossDomain:true,
-					            });
-					    } 
-					    catch (e)
-					  	{
-					         	alert(e);
-					    }
-			         function getSuccess(data)
-				        {
+						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",data,function(result){
 			             
-			            	var roomItineraries=data;
+			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
              				window.location="roomDetail.html";
-						}
+						});
 		});
 		});
 	});

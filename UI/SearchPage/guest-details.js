@@ -138,56 +138,13 @@ var template = $('#itinerary-details');
   				Email_Id:emailId
   			}
   			var data=JSON.stringify(tripFolderRequest);
-  			try {
-             $.ajax({
-                 headers: { 
-       						 'Accept': 'application/json',
-        					'Content-Type': 'application/json' 
-   				 },
-                 type: "POST",
-                 url: "http://localhost:53552/book/tripfolder/booktrip",
-                 cache: false,
-                 data:JSON.stringify(data),
-                dataType: 'json',
-                
-                 success: getSuccess,
-                 crossDomain:true,
-             });
-         } catch (e) {
-              $("#booking").removeAttr("disabled");
-             alert("Sorry some unknown Error Occured...Please try again later.");
-                    Console.log(e);
-         }
-         function getSuccess(tripFolderResponseData) {
-          var data=JSON.stringify(tripFolderResponseData);
-              try {
-             $.ajax({
-                 headers: { 
-                   'Accept': 'application/json',
-                  'Content-Type': 'application/json' 
-           },
-                 type: "POST",
-                 url: "http://localhost:53552/complete/booking/bookingcomplete",
-                 cache: false,
-                 data:JSON.stringify(data),
-                dataType: 'json',
-                
-                 success: getSuccess,
-                  statusCode: {
-                  500: function(xhr) {
-                   alert('page not found');
-                    }},
-                 crossDomain:true,
-             });
-         } catch (e) {
-             alert("Sorry some unknown Error Occured...Please try again later.");
-                    Console.log(e);
-         }
-         function getSuccess(completeBookingResponseData) {
-              if(completeBookingResponseData.Status=="Success")
+  			sendRequest("http://localhost:53552/book/tripfolder/BookTrip",data,function(result){
+          var data=JSON.stringify(result);
+             sendRequest("http://localhost:53552/complete/booking/bookingcomplete",data,function(result){
+              if(result.Status=="Success")
               {
                 var responseData={
-                  data:completeBookingResponseData,
+                  data:result,
                   Email_Id:emailId
                 }
                 sessionStorage.setItem('BookingSuccessfull',JSON.stringify(responseData));
@@ -202,9 +159,9 @@ var template = $('#itinerary-details');
                 return;
               }
               
-         }
+         });
 
-         }
+         });
       function ValidateEmail(mail)   
       {  
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))  
