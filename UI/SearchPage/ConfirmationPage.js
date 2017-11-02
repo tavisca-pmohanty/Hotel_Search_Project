@@ -26,6 +26,10 @@ $(document).ready(function()
             {
                 alert("SMS sent to your phone number successfully.");
             }
+            else
+            {
+                alert("Not able to send sms at this moment.");
+            }
     });
     
 });

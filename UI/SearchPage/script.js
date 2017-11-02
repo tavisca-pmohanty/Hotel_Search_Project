@@ -1,5 +1,6 @@
 function sendRequest(uri,request,callback)
 {
+    try{
              $.ajax({
                  headers: { 
         'Accept': 'application/json',
@@ -14,4 +15,9 @@ function sendRequest(uri,request,callback)
                  success: callback,
                  crossDomain:true,
              });
+         }
+         catch(e)
+         {
+            alert("Sorry cannot connect to the server at this moment.Please try again later");
+         }
 }
