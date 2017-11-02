@@ -1,28 +1,29 @@
-﻿using HotelEngienSearch;
+﻿using Adapter.Parser;
+using Cache.CacheData;
+using HotelContract.Contracts;
+using HotelContract.Model;
+using HotelEngienSearch;
 using HotelSearchEngine;
-using HotelSearchEngine.Contracts;
-using HotelSearchEngine.Model;
 using Logger;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ServiceProvider
 {
     public class RoomInfoService :IHotelService
     {
-
-        IResponse roomItinaries;
         public async Task<string> GetRequestedDataAsync(string searchTerm)
         {
             try
             {
                 RoomSearch search = new RoomSearch();
                 var request = JsonConvert.DeserializeObject<RoomListingRequest>(searchTerm);
-                roomItinaries = await search.GetResponseAsync(request);
-                return JsonConvert.SerializeObject(roomItinaries);
+                HotelRoomAvailRQ hotelRoomAvailRQ = await new RoomRequestParser().ParserAsync(request);
+                HotelRoomAvailRS hotelRoomAvailRS = await search.GetResponseAsync(hotelRoomAvailRQ);
+                HotelRoomAvailResponse hotelRoomAvailResponse = await new RoomResponseParser().ParserAsync(hotelRoomAvailRS);
+                CachingItinerary(hotelRoomAvailRS.SessionId, hotelRoomAvailRS.Itinerary);
+                return JsonConvert.SerializeObject(hotelRoomAvailResponse);
             }
             catch(Exception ex)
             {
@@ -30,5 +31,18 @@ namespace ServiceProvider
                 throw ex;
             }
         }
+        public void CachingItinerary(string sessionId, HotelItinerary hotelItinerary)
+        {
+            SingleAvailCache singleAvailCache = new SingleAvailCache();
+            if (singleAvailCache.CheckIfPresent(sessionId))
+            {
+                singleAvailCache.Remove(sessionId);
+                singleAvailCache.Add(sessionId, hotelItinerary);
+            }
+            else
+            {
+                singleAvailCache.Add(sessionId, hotelItinerary);
+            }
         }
+    }
 }

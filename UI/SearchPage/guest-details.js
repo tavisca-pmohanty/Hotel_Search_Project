@@ -14,7 +14,14 @@ $(document).ready(function(){
 	 	duration:" "+updatedData.Duration,
 	 	amount:" "+(currencyType+" "+updatedData.Price)
 }
-generateHandles('#itinerary-details','#booking-details',htmlData);
+
+var template = $('#itinerary-details');
+
+  var compiledTemplate = Handlebars.compile(template.html());
+
+  var html = compiledTemplate(htmlData);
+
+  $('#booking-details').html(html);
   $("#booking").click(function(){
         $("#booking").attr("disabled","disabled");
   			var cardNumber=$("#cardNum").val();
@@ -131,9 +138,9 @@ generateHandles('#itinerary-details','#booking-details',htmlData);
   				Email_Id:emailId
   			}
   			var requestData=JSON.stringify(tripFolderRequest);
-  			sendRequest("http://localhost:53552/book/tripfolder/BookTrip",requestData,function(result){
+  			sendRequest("http://localhost:59865/book/tripfolder/BookTrip",requestData,function(result){
           var data=JSON.stringify(result);
-             sendRequest("http://localhost:53552/complete/booking/bookingcomplete",data,function(result){
+             sendRequest("http://localhost:59865/complete/booking/bookingcomplete",data,function(result){
               if(result.Status=="Success")
               {
                 var responseData={

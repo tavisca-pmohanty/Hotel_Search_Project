@@ -12,7 +12,6 @@ $(document).ready(function()
 			checkOut:updatedData.data.CheckOutDate,
 			noOfNights:updatedData.data.NumOfNights,
 		};
-        generateHandles('#confirmation-item','#confirmation-container',confirmationDataList);
 	var template = $('#confirmation-item');
 
 	  var compiledTemplate = Handlebars.compile(template.html());
@@ -22,7 +21,7 @@ $(document).ready(function()
 	  $('#confirmation-container').append(html);
     
     
-        sendRequest("http://localhost:53552/TextMessage/SendMessage",mobileNumber,function(result){
+        sendRequest("http://localhost:59865/TextMessage/SendMessage",mobileNumber,function(result){
         if(result.Status==0)
             {
                 alert("SMS sent to your phone number successfully.");
