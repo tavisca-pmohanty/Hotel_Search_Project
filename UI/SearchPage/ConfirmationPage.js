@@ -12,6 +12,7 @@ $(document).ready(function()
 			checkOut:updatedData.data.CheckOutDate,
 			noOfNights:updatedData.data.NumOfNights,
 		};
+        generateHandles('#confirmation-item','#confirmation-container',confirmationDataList);
 	var template = $('#confirmation-item');
 
 	  var compiledTemplate = Handlebars.compile(template.html());
