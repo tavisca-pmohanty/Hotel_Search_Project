@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ServiceProvider
 {
-    public class RoomInfoService :IHotelService
+    public class RoomInfoService :Notifier
     {
 
         IResponse roomItinaries;

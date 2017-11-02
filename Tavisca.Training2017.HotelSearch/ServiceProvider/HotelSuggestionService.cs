@@ -12,7 +12,7 @@ using AutoComplete.Contract;
 
 namespace ServiceProvider
 {
-    public class HotelSuggestionService:IHotelService
+    public class HotelSuggestionService:Notifier
     {
         List<IResponse> hotelList;
         public HotelSuggestionService()

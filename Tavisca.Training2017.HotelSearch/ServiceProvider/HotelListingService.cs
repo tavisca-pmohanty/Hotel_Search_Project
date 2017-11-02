@@ -10,7 +10,7 @@ using HotelSearchEngine.Contracts;
 
 namespace ServiceProvider
 {
-    class HotelListingService:IHotelService
+    class HotelListingService:Notifier
     {
         IResponse itineraries;
         public async Task<string> GetRequestedDataAsync(string request)

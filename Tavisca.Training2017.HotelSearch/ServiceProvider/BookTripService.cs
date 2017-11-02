@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ServiceProvider
 {
-    public class BookTripService : IHotelService
+    public class BookTripService : Notifier
     {
 
 
