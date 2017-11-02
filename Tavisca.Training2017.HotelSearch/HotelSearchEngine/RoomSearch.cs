@@ -1,8 +1,4 @@
-﻿using Cache.CacheData;
-using HotelEngienSearch;
-using HotelSearchEngine.Contracts;
-using HotelSearchEngine.Model;
-using HotelSearchEngine.Parser;
+﻿using HotelEngienSearch;
 using Logger;
 using System;
 using System.Collections.Generic;
@@ -10,24 +6,20 @@ using System.Threading.Tasks;
 
 namespace HotelSearchEngine
 {
-    public class RoomSearch:IResponseService
+    public class RoomSearch
     {
-        IResponse roomList;
         HotelEngineClient client ;
         public RoomSearch()
         {
             client = new HotelEngineClient();
         }
-        public async Task<IResponse> GetResponseAsync(IRequest request)
+        public async Task<HotelRoomAvailRS> GetResponseAsync(HotelRoomAvailRQ hotelRoomAvailRQ)
         {
           
             try
             { 
-                HotelRoomAvailRQ roomAvailRequest =(HotelRoomAvailRQ) await new RoomRequestParser().ParserAsync(request);
-                HotelRoomAvailRS response = await client.HotelRoomAvailAsync(roomAvailRequest);
-                CachingItinerary(response.SessionId, response.Itinerary);
-                roomList = await new RoomResponseParser().ParserAsync(response);
-                return roomList;
+               return await client.HotelRoomAvailAsync(hotelRoomAvailRQ);
+                
             }
             catch (Exception ex)
             {
@@ -39,18 +31,6 @@ namespace HotelSearchEngine
                 await client.CloseAsync();
             }
         }
-        public void CachingItinerary(string sessionId, HotelItinerary hotelItinerary)
-        {
-            SingleAvailCache singleAvailCache = new SingleAvailCache();
-            if(singleAvailCache.CheckIfPresent(sessionId))
-            {
-                singleAvailCache.Remove(sessionId);
-                singleAvailCache.Add(sessionId, hotelItinerary);
-            }
-            else
-            {
-                singleAvailCache.Add(sessionId, hotelItinerary);
-            }
-        }
+       
     }
 }

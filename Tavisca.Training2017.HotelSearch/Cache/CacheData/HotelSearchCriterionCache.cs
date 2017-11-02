@@ -5,14 +5,9 @@ using System.Text;
 
 namespace Cache.CacheData
 {
-    class HotelSearchCriterionCache
+    public class HotelSearchCriterionCache
     {
-       static Dictionary<string, HotelSearchCriterion> criterionDict;
-        public HotelSearchCriterionCache()
-        {
-            
-            criterionDict = new Dictionary<string, HotelSearchCriterion>();
-        }
+        static Dictionary<string, HotelSearchCriterion> criterionDict=new Dictionary<string, HotelSearchCriterion>();
         public void Add(string sessionId,HotelSearchCriterion hotelSearchCriterion)
         {
             criterionDict.Add(sessionId, hotelSearchCriterion);

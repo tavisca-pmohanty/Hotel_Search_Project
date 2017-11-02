@@ -11,7 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Adapter\Adapter.csproj" />
     <ProjectReference Include="..\AutoComplete\AutoComplete.csproj" />
+    <ProjectReference Include="..\Cache\Cache.csproj" />
+    <ProjectReference Include="..\Contract\HotelContract.csproj" />
     <ProjectReference Include="..\HotelSearchEngine\HotelSearchEngine.csproj" />
     <ProjectReference Include="..\Logger\Logger.csproj" />
     <ProjectReference Include="..\SmsGenerator\SmsGenerator.csproj" />
