@@ -27,13 +27,7 @@ Handlebars.registerHelper('times', function (n, block) {
             });
 			
 		}
-	  var template = $('#hotel-item');
-
-	  var compiledTemplate = Handlebars.compile(template.html());
-
-	  var html = compiledTemplate(hotelList);
-
-	  $('#hotelList-container').html(html);
+	  generateHandles('#hotel-item','#hotelList-container',hotelList);
 
 	function myFunction() 
 	{
@@ -99,10 +93,7 @@ Handlebars.registerHelper('times', function (n, block) {
 				}
 				
 				$("#hotelList-container").empty();
-				var template = $('#hotel-item');
-			  	var compiledTemplate = Handlebars.compile(template.html());
-			  	var html = compiledTemplate(filteredHotelList);
-	  			$('#hotelList-container').html(html);
+				generateHandles('#hotel-item','#hotelList-container',filteredHotelList);
 
 
 	  	$(".room-button").click(function()
@@ -231,13 +222,7 @@ Handlebars.registerHelper('times', function (n, block) {
 				}
 
 			$("#hotelList-container").empty();
-			var template = $('#hotel-item');
-
-	  		var compiledTemplate = Handlebars.compile(template.html());
-
-		  	var html = compiledTemplate(filteredHotelListPrice);
-		   	$('#hotelList-container').append(html);
-
+			generateHandles('#hotel-item','#hotelList-container',filteredHotelListPrice);
 		
 
 	  // end of filter price
@@ -276,14 +261,8 @@ Handlebars.registerHelper('times', function (n, block) {
 			$('input[name=rating]').attr('checked',false);
 			$('input[name=price]').attr('checked',false);
 				$("#hotelList-container").empty();
-		var template = $('#hotel-item');
-
-	  var compiledTemplate = Handlebars.compile(template.html());
-
-	  var html = compiledTemplate(hotelList);
-
-	  $('#hotelList-container').html(html);
-
+		generateHandles('#hotel-item','#hotelList-container',hotelList);
+});
 	  	$(".room-button").click(function()
 		{
 				var data;
@@ -309,6 +288,4 @@ Handlebars.registerHelper('times', function (n, block) {
              				window.location="roomDetail.html";
 						});
 		});
-		});
 	});
-

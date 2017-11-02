@@ -30,13 +30,6 @@ $(document).ready(function(){
         latitude:roomItinerary[0].Latitude,
         longitude:roomItinerary[0].Longitude
     });
-
-         // }
-      
-      
-
-   
-
   var template = $('#room-item');
 
   var compiledTemplate = Handlebars.compile(template.html());
