@@ -54,8 +54,13 @@ $(".room-button").click(function()
                     roomName:roomName
     }
     var numOfRooms=roomItinerary.NoOfRooms;
+<<<<<<< HEAD
     var data=JSON.stringify(pricingRequest);
                     sendRequest("http://localhost:59865/index/HotelListing/search/GetRoomPricing",data,function(result){
+=======
+    var requestData=JSON.stringify(pricingRequest);
+                    sendRequest("http://localhost:53552/index/HotelListing/search/GetRoomPricing",requestData,function(result){
+>>>>>>> b3b9d8041ea74829ee379048430499e8a6a654f8
                       var dynamicPricing;
                       if(result==null)
                       {

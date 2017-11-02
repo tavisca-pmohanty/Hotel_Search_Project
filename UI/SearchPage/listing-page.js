@@ -121,8 +121,13 @@ Handlebars.registerHelper('times', function (n, block) {
 						break;
 					}
 				}
+<<<<<<< HEAD
 				data=JSON.stringify(data);
 						sendRequest("http://localhost:59865/index/HotelListing/search/GetHotelRooms",data,function(result){
+=======
+				requestData=JSON.stringify(data);
+						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",requestData,function(result){
+>>>>>>> b3b9d8041ea74829ee379048430499e8a6a654f8
 			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
@@ -260,8 +265,13 @@ Handlebars.registerHelper('times', function (n, block) {
 						break;
 					}
 				}
+<<<<<<< HEAD
 				data=JSON.stringify(data);
 						sendRequest("http://localhost:59865/index/HotelListing/search/GetHotelRooms",data,function(result){
+=======
+				requestData=JSON.stringify(data);
+						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",requestData,function(result){
+>>>>>>> b3b9d8041ea74829ee379048430499e8a6a654f8
 			             
 			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
@@ -300,8 +310,13 @@ Handlebars.registerHelper('times', function (n, block) {
 						break;
 					}
 				}
+<<<<<<< HEAD
 				data=JSON.stringify(data);
 						sendRequest("http://localhost:59865/index/HotelListing/search/GetHotelRooms",data,function(result){
+=======
+				requestData=JSON.stringify(data);
+						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",requestData,function(result){
+>>>>>>> b3b9d8041ea74829ee379048430499e8a6a654f8
 			             
 			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
