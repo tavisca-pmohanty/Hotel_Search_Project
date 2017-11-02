@@ -205,8 +205,8 @@ $("#rooms").on("change",function(){
         };
         var data=JSON.stringify(requestData);
          
-         var result=getResult("http://localhost:53552/index/HotelListing/search/GetHotels",data);
-         var hotelData=JSON.parse(result);
+         sendRequest("http://localhost:53552/index/HotelListing/search/GetHotels",data,function(result){
+         var hotelData=result;
          if(hotelData.length==0)
          {
             alert("Sorry,Could not fetch the hotel details at this moment.Please try again after sometime");
@@ -217,8 +217,8 @@ $("#rooms").on("change",function(){
          else{
 
              window.location="listing-page.html";
-             sessionStorage.setItem('HotelListing',JSON.stringify(data));
+             sessionStorage.setItem('HotelListing',JSON.stringify(hotelData));
          }
-            }
+            });
     });
 });

@@ -21,31 +21,15 @@ $(document).ready(function()
 	  $('#confirmation-container').append(html);
     
     
-        try {
-             $.ajax({
-                 headers: { 
-                   'Accept': 'application/json',
-                  'Content-Type': 'application/json' 
-           },
-                 type: "POST",
-                 url: "http://localhost:53552/Textmessage/SendMessage",
-                  cache: false,
-                 data:JSON.stringify(mobileNumber),
-                dataType: 'json',
-                 success: getSuccess,
-                 crossDomain:true,
-             });
-         } 
-    catch (e) {
-             alert("Unfortunately message Could not be Sent");
-                    Console.log(e);
-         }
-    function getSuccess(result)
-    {
+        sendRequest("http://localhost:53552/TextMessage/SendMessage",mobileNumber,function(result){
         if(result.Status==0)
             {
                 alert("SMS sent to your phone number successfully.");
             }
-    }
+            else
+            {
+                alert("Not able to send sms at this moment.");
+            }
+    });
     
 });

@@ -55,33 +55,9 @@ $(".room-button").click(function()
     }
     var numOfRooms=roomItinerary.NoOfRooms;
     var data=JSON.stringify(pricingRequest);
-                    try
-                          {
-                                 $.ajax({
-                                    headers: 
-                                    { 
-                                        'Accept': 'application/json',
-                                        'Content-Type': 'application/json' 
-                                    },
-                                     type: "POST",
-                                     url: "http://localhost:53552/index/HotelListing/search/GetRoomPricing",
-                                     cache: false,
-                                     data:JSON.stringify(data),
-                                     dataType: 'json',
-                                    
-                                     success: getSuccess,
-                                     crossDomain:true,
-                                 });
-                          } 
-                        catch (e)
-                         {
-                                alert("Sorry some unknown Error Occured...Please try again later.");
-                                Console.log(e);
-                         }
-            function getSuccess(dynamicPricingData)
-                    {
+                    sendRequest("http://localhost:53552/index/HotelListing/search/GetRoomPricing",data,function(result){
                       var dynamicPricing;
-                      if(dynamicPricingData==null)
+                      if(result==null)
                       {
                          alert("Cannot connect to the server at this moment to get the updated price.Please try again later or select some other room");
                          return;
@@ -89,12 +65,11 @@ $(".room-button").click(function()
                       else
                       {
                         
-                      }
-                        
-                        sessionStorage.setItem('UpdatedRoomListing',JSON.stringify(dynamicPricingData));
+                        sessionStorage.setItem('UpdatedRoomListing',JSON.stringify(result));
                         window.location="guest-details.html";
                     }
                 });      
+});
 });
 
 
