@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ServiceProvider
 {
-    public class RoomPricingService:IHotelService
+    public class RoomPricingService:Notifier
     {
         public async Task<string> GetRequestedDataAsync(string requestData)
         {

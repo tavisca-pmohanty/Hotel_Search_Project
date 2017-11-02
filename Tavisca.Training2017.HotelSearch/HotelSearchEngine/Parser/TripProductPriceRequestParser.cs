@@ -27,7 +27,6 @@ namespace HotelSearchEngine.Parser
             {
                 if (request.RoomName.Equals(itinerary.Rooms[i].RoomName))
                 {
-
                     roomDetails = itinerary.Rooms[i];
                     break;
                 }

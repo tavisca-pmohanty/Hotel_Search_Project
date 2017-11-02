@@ -8,7 +8,7 @@ using Logger;
 
 namespace ServiceProvider
 {
-    public class MessageService:IHotelService
+    public class MessageService:Notifier
     {
         SmsNotification smsNotification;
         public MessageService()
