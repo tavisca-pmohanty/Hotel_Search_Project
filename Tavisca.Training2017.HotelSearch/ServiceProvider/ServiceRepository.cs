@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelContract.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,10 +7,10 @@ namespace ServiceProvider
 {
     public class ServiceRepository
     {
-        Dictionary<string, Notifier> services;
+        Dictionary<string, IHotelService> services;
         public ServiceRepository()
         {
-            services = new Dictionary<string, Notifier>();
+            services = new Dictionary<string, IHotelService>();
             services.Add("AutoComplete", new HotelSuggestionService());
             services.Add("HotelListing", new HotelListingService());
             services.Add("HotelRooms", new RoomInfoService());
@@ -19,7 +20,7 @@ namespace ServiceProvider
             //services.Add("Notification", new NotificationService());
             services.Add("SmsAlert", new MessageService());
         }
-        public Notifier GetService(string serviceType)
+        public IHotelService GetService(string serviceType)
         {
             return services[serviceType];
         }

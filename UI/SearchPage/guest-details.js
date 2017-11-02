@@ -138,9 +138,9 @@ var template = $('#itinerary-details');
   				Email_Id:emailId
   			}
   			var requestData=JSON.stringify(tripFolderRequest);
-  			sendRequest("http://localhost:53552/book/tripfolder/BookTrip",requestData,function(result){
+  			sendRequest("http://localhost:59865/book/tripfolder/BookTrip",requestData,function(result){
           var data=JSON.stringify(result);
-             sendRequest("http://localhost:53552/complete/booking/bookingcomplete",data,function(result){
+             sendRequest("http://localhost:59865/complete/booking/bookingcomplete",data,function(result){
               if(result.Status=="Success")
               {
                 var responseData={

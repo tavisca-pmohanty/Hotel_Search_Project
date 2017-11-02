@@ -11,7 +11,7 @@ namespace APITripEngine
 {
     using System.Runtime.Serialization;
     using System;
-    using HotelSearchEngine.Contracts;
+
 
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
@@ -265,7 +265,7 @@ namespace APITripEngine
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TripFolderBookRQ", Namespace="http://tavisca.com")]
-    public partial class TripFolderBookRQ : APITripEngine.WebServiceRQ,IResponse
+    public partial class TripFolderBookRQ : APITripEngine.WebServiceRQ
     {
         
         private APITripEngine.TripFolder TripFolderField;
@@ -302,7 +302,7 @@ namespace APITripEngine
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompleteBookingRQ", Namespace="http://tavisca.com")]
-    public partial class CompleteBookingRQ : APITripEngine.WebServiceRQ,IResponse
+    public partial class CompleteBookingRQ : APITripEngine.WebServiceRQ
     {
         
         private APITripEngine.Payment ExternalPaymentField;
@@ -503,7 +503,7 @@ namespace APITripEngine
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TripProductPriceRQ", Namespace="http://tavisca.com")]
-    public partial class TripProductPriceRQ : APITripEngine.WebServiceRQ,IResponse
+    public partial class TripProductPriceRQ : APITripEngine.WebServiceRQ
     {
         
         private APITripEngine.TripProduct TripProductField;
@@ -22055,7 +22055,7 @@ namespace APITripEngine
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TripFolderBookRS", Namespace="http://tavisca.com")]
-    public partial class TripFolderBookRS : APITripEngine.WebServiceRS,IRequest
+    public partial class TripFolderBookRS : APITripEngine.WebServiceRS
     {
         
         private APITripEngine.ErrorInfo[] ErrorInfoListField;
@@ -22092,7 +22092,7 @@ namespace APITripEngine
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompleteBookingRS", Namespace="http://tavisca.com")]
-    public partial class CompleteBookingRS : APITripEngine.WebServiceRS,IRequest
+    public partial class CompleteBookingRS : APITripEngine.WebServiceRS
     {
         
         private APITripEngine.ErrorInfo[] ErrorInfoListField;
@@ -22248,7 +22248,7 @@ namespace APITripEngine
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TripProductPriceRS", Namespace="http://tavisca.com")]
-    public partial class TripProductPriceRS : APITripEngine.WebServiceRS,IRequest
+    public partial class TripProductPriceRS : APITripEngine.WebServiceRS
     {
         
         private APITripEngine.ErrorInfo[] ErrorInfoListField;

@@ -1,23 +1,20 @@
 ﻿using AutoComplete;
-using ServiceProvider;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Json;
 using Newtonsoft.Json;
-using HotelEngienSearch;
 using Logger;
-using AutoComplete.Model;
-using AutoComplete.Contract;
+using HotelContract.Model;
+using HotelContract.Contracts;
 
 namespace ServiceProvider
 {
-    public class HotelSuggestionService:Notifier
+    public class HotelSuggestionService:IHotelService
     {
-        List<IResponse> hotelList;
+        List<HotelSuggestionRS> hotelList;
         public HotelSuggestionService()
         {
-            hotelList = new List<IResponse>();
+            hotelList = new List<HotelSuggestionRS>();
         }
         public async Task<string> GetRequestedDataAsync(string searchTerm)
         {

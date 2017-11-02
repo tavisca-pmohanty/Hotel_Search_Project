@@ -1,24 +1,21 @@
-﻿using AutoComplete.Contract;
-using AutoComplete.Model;
-using AutoComplete.Parser;
-using System;
+﻿using HotelContract.Model;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Adapter.Parser;
 
 namespace AutoComplete
 {
     public class SearchHotelSuggestion
     {
-        List<IResponse> hotelSuggestionList;
+        List<HotelSuggestionRS> hotelSuggestionList;
         public SearchHotelSuggestion()
         {
-            hotelSuggestionList = new List<IResponse>();
+            hotelSuggestionList = new List<HotelSuggestionRS>();
         }
-        public async Task<List<IResponse>> GetSearchQueryData(string searchTerm)
+        public async Task<List<HotelSuggestionRS>> GetSearchQueryData(string searchTerm)
         {
             WebRequest req = WebRequest.Create(@"http://portal.dev-rovia.com/Services/api/Content/GetAutoCompleteDataGroups?type=city|airport|poi&query=" + searchTerm);
 

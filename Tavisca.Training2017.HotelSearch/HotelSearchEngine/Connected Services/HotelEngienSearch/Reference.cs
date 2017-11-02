@@ -9,10 +9,8 @@
 
 namespace HotelEngienSearch
 {
-    using HotelSearchEngine.Contracts;
-    using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="WebServiceRQ", Namespace="http://tavisca.com")]
@@ -73,8 +71,8 @@ namespace HotelEngienSearch
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="HotelRoomAvailRQ", Namespace="http://tavisca.com")]
-    public partial class HotelRoomAvailRQ : HotelEngienSearch.WebServiceRQ,IResponse
-    {
+    public partial class HotelRoomAvailRQ : HotelEngienSearch.WebServiceRQ
+    { 
         
         private HotelEngienSearch.HotelSearchCriterion HotelSearchCriterionField;
         
@@ -266,7 +264,7 @@ namespace HotelEngienSearch
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="HotelSearchRQ", Namespace="http://tavisca.com")]
-    public partial class HotelSearchRQ : HotelEngienSearch.WebServiceRQ,IResponse
+    public partial class HotelSearchRQ : HotelEngienSearch.WebServiceRQ
     {
         
         private HotelEngienSearch.HotelFilter[] FiltersField;
@@ -9187,7 +9185,7 @@ namespace HotelEngienSearch
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="HotelRoomAvailRS", Namespace="http://tavisca.com")]
-    public partial class HotelRoomAvailRS : HotelEngienSearch.WebServiceRS,IRequest
+    public partial class HotelRoomAvailRS : HotelEngienSearch.WebServiceRS
     {
         
         private HotelEngienSearch.HotelItinerary ItineraryField;
@@ -9350,7 +9348,7 @@ namespace HotelEngienSearch
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="HotelSearchRS", Namespace="http://tavisca.com")]
-    public partial class HotelSearchRS : HotelEngienSearch.WebServiceRS,IRequest
+    public partial class HotelSearchRS : HotelEngienSearch.WebServiceRS
     {
         
         private HotelEngienSearch.HotelItinerary[] ItinerariesField;
