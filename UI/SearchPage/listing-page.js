@@ -121,10 +121,21 @@ Handlebars.registerHelper('times', function (n, block) {
 						break;
 					}
 				}
+<<<<<<< HEAD
 
 				data=JSON.stringify(data);
 						sendRequest("http://localhost:59865/index/HotelListing/search/GetHotelRooms",data,function(result){
              var roomItineraries=result;
+=======
+<<<<<<< HEAD
+				data=JSON.stringify(data);
+						sendRequest("http://localhost:59865/index/HotelListing/search/GetHotelRooms",data,function(result){
+=======
+				requestData=JSON.stringify(data);
+						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",requestData,function(result){
+>>>>>>> b3b9d8041ea74829ee379048430499e8a6a654f8
+			            	var roomItineraries=result;
+>>>>>>> 33556536cd9fb48c4b9b5765e939aa4ed4c10dd2
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
              				window.location="roomDetail.html";
@@ -264,7 +275,6 @@ Handlebars.registerHelper('times', function (n, block) {
 				requestData=JSON.stringify(data);
 						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",requestData,function(result)
                                     {
-			             
 			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
