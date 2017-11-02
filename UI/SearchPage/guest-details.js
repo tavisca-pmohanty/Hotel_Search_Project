@@ -14,14 +14,7 @@ $(document).ready(function(){
 	 	duration:" "+updatedData.Duration,
 	 	amount:" "+(currencyType+" "+updatedData.Price)
 }
-
-var template = $('#itinerary-details');
-
-  var compiledTemplate = Handlebars.compile(template.html());
-
-  var html = compiledTemplate(htmlData);
-
-  $('#booking-details').html(html);
+generateHandles('#itinerary-details','#booking-details',htmlData);
   $("#booking").click(function(){
         $("#booking").attr("disabled","disabled");
   			var cardNumber=$("#cardNum").val();
