@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ServiceProvider
 {
-    public interface IHotelService
+    public interface Notifier
     {
         Task<string> GetRequestedDataAsync(string searchTerm);
     }

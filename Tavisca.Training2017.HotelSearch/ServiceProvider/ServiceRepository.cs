@@ -6,10 +6,10 @@ namespace ServiceProvider
 {
     public class ServiceRepository
     {
-        Dictionary<string, IHotelService> services;
+        Dictionary<string, Notifier> services;
         public ServiceRepository()
         {
-            services = new Dictionary<string, IHotelService>();
+            services = new Dictionary<string, Notifier>();
             services.Add("AutoComplete", new HotelSuggestionService());
             services.Add("HotelListing", new HotelListingService());
             services.Add("HotelRooms", new RoomInfoService());
@@ -19,7 +19,7 @@ namespace ServiceProvider
             //services.Add("Notification", new NotificationService());
             services.Add("SmsAlert", new MessageService());
         }
-        public IHotelService GetService(string serviceType)
+        public Notifier GetService(string serviceType)
         {
             return services[serviceType];
         }
