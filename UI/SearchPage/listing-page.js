@@ -58,7 +58,7 @@ Handlebars.registerHelper('times', function (n, block) {
 					}
 				}
 						data=JSON.stringify(data);
-						 sendRequest("http://localhost:59865/index/HotelListing/search/GetHotelRooms",data,function(result){
+						 sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",data,function(result){
 			             
 			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));

@@ -64,7 +64,7 @@ $("#rooms").on("change",function(){
          try {
              $.ajax({
                  type: "GET",
-                 url: "http://localhost:59865/index/AutoComplete/search/"+ $("#Location").val(),
+                 url: "http://localhost:53552/index/AutoComplete/search/"+ $("#Location").val(),
                  cache: false,
                  success: getSuccess,
                  crossDomain:true,
@@ -205,7 +205,7 @@ $("#rooms").on("change",function(){
         };
         var data=JSON.stringify(requestData);
          
-         sendRequest("http://localhost:59865/index/HotelListing/search/GetHotels",data,function(result){
+         sendRequest("http://localhost:53552/index/HotelListing/search/GetHotels",data,function(result){
          var hotelData=result;
          if(hotelData.length==0)
          {
