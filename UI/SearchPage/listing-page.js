@@ -246,8 +246,7 @@ Handlebars.registerHelper('times', function (n, block) {
 					}
 				}
 				requestData=JSON.stringify(data);
-						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",requestData,function(result){
-			             
+						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",requestData,function(result){		             
 			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 
@@ -281,7 +280,6 @@ Handlebars.registerHelper('times', function (n, block) {
 				}
 				requestData=JSON.stringify(data);
 						sendRequest("http://localhost:53552/index/HotelListing/search/GetHotelRooms",requestData,function(result){
-			             
 			            	var roomItineraries=result;
             				sessionStorage.setItem('RoomListing',JSON.stringify(roomItineraries));
 

@@ -22,7 +22,7 @@ $(document).ready(function()
 	  $('#confirmation-container').append(html);
     
     
-        sendRequest("http://localhost:53552/TextMessage/SendMessage",mobileNumber,function(result){
+        sendRequest("http://localhost:59865/TextMessage/SendMessage",mobileNumber,function(result){
         if(result.Status==0)
             {
                 alert("SMS sent to your phone number successfully.");

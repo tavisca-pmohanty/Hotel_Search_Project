@@ -3,35 +3,23 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Logger;
-using HotelSearchEngine.Parser;
-using Cache.CacheData;
-using HotelSearchEngine.Contracts;
-using HotelSearchEngine.Model;
+using HotelContract.Model;
 
 namespace HotelSearchEngine
 {
-    public class HotelSearch:IResponseService
+    public class HotelSearch
     {
-        IResponse itineraryList;
         HotelEngineClient client;
         public HotelSearch()
         {
-
-            itineraryList = new HotelListingResponse();
             client = new HotelEngineClient();
         }
-        public async Task<IResponse> GetResponseAsync(IRequest request)
+        public async Task<HotelSearchRS> GetResponseAsync(HotelSearchRQ request)
         {
             
             try
             {
-                HotelSearchRq hotelSearchRq = (HotelSearchRq)request; 
-                HotelSearchRQ searchRequest = (HotelSearchRQ)await new HotelRequestParser().ParserAsync(hotelSearchRq);
-                HotelSearchRS response = await client.HotelAvailAsync(searchRequest);
-                CachingHotelSearchCriterion(searchRequest.SessionId, searchRequest.HotelSearchCriterion);
-                itineraryList = await new HotelListingResponseParser().ParserAsync(response);
-                CachingHotelItineraries(searchRequest.SessionId, response.Itineraries);
-                return itineraryList;
+                return await client.HotelAvailAsync(request);
             }
             catch (Exception ex)
             {
@@ -43,31 +31,6 @@ namespace HotelSearchEngine
                 await client.CloseAsync();
             }
         }
-        public void CachingHotelSearchCriterion(string sessionId,HotelSearchCriterion hotelSearchCriterion)
-        {
-            HotelSearchCriterionCache hotelSearchCriterionCache = new HotelSearchCriterionCache();
-            if(hotelSearchCriterionCache.CheckIfPresent(sessionId))
-            {
-                hotelSearchCriterionCache.Remove(sessionId);
-                hotelSearchCriterionCache.Add(sessionId, hotelSearchCriterion);
-            }
-            else
-            {
-                hotelSearchCriterionCache.Add(sessionId, hotelSearchCriterion);
-            }
-        }
-        public void CachingHotelItineraries(string sessionId,HotelItinerary[] itineraries)
-        {
-            MultiAvailCache multiAvailCache = new MultiAvailCache();
-            if(multiAvailCache.CheckIfPresent(sessionId))
-            {
-                multiAvailCache.Remove(sessionId);
-                multiAvailCache.Add(sessionId, itineraries);
-            }
-            else
-            {
-                multiAvailCache.Add(sessionId, itineraries);
-            }
-        }
+       
     }
 }

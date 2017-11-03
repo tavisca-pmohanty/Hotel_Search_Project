@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using SmsGenerator;
 using Newtonsoft.Json;
 using Logger;
+using HotelContract.Contracts;
 
 namespace ServiceProvider
 {

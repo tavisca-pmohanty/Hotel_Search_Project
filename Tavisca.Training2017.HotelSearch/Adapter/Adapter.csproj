@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cache\Cache.csproj" />
+    <ProjectReference Include="..\Contract\HotelContract.csproj" />
+    <ProjectReference Include="..\HotelSearchEngine\HotelSearchEngine.csproj" />
+  </ItemGroup>
+
+</Project>
