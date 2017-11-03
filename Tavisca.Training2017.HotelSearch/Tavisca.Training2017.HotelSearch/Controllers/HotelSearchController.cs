@@ -13,7 +13,7 @@ namespace Tavisca.Training2017.HotelSearch.Controllers
     {
         [Route("GetHotels")]
         [HttpPost]
-        public async Task GetHotelListingAsync([FromBody]string requestData)
+        public async Task GetHotelListingAsync([FromBody] string requestData)
         {
             if (requestData == null)
             {

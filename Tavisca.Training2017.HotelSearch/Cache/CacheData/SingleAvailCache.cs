@@ -5,13 +5,9 @@ using System.Text;
 
 namespace Cache.CacheData
 {
-    class SingleAvailCache
+    public class SingleAvailCache
     {
-        static Dictionary<string, HotelItinerary> itineraryDict;
-        public SingleAvailCache()
-        {
-            itineraryDict = new Dictionary<string, HotelItinerary>();
-        }
+        static Dictionary<string, HotelItinerary> itineraryDict = new Dictionary<string, HotelItinerary>();
         public void Add(string sessionId,HotelItinerary hotelItinerary)
         {
             itineraryDict.Add(sessionId, hotelItinerary);

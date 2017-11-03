@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelContract.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
