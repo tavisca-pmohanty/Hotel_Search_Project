@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Adapter.Parser;
 using System;
 using HotelSearchEngine.CacheData;
+using HotelContract.Contracts;
+
 
 namespace ServiceProvider
 {
